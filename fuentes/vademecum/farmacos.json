@@ -1246,7 +1246,7 @@
    "cl": "Corticoide tópico deglutido.",
    "ind": "Esofagitis eosinofílica.",
    "lin": "1.ª línea (junto con IBP y dieta).",
-   "dos": "Orodispersable 1 mg c/12 h por 6–12 semanas donde exista; en Chile, <b>preparado magistral</b>: suspensión viscosa de budesonida 1 mg c/12 h (por ejemplo, ampollas de nebulización mezcladas con sucralosa). Mantención 0,5–1 mg c/12 h. No comer ni beber 30–60 min después.",
+   "dos": "1 mg c/12 h por 6–12 semanas; mantención 0,5–1 mg c/12 h. En Chile, <b>receta magistral</b>: <i>Budesonida 1 mg/5 mL en saliva artificial, csp 300 mL. Tomar 5 mL después del desayuno y 5 mL después de la comida.</i> (300 mL rinden 30 días.) No comer ni beber 30–60 min después.",
    "aj": "—",
    "resp": "Histológica a las 6–12 semanas (biopsias de control).",
    "plan": [
@@ -1264,7 +1264,7 @@
     "bol",
     "off"
    ],
-   "ch": "La orodispersable no está disponible: se indica con <b>receta magistral</b> (suspensión viscosa).",
+   "ch": "La orodispersable no está disponible: se indica con <b>receta magistral</b> (budesonida 1 mg/5 mL en saliva artificial, csp 300 mL; 5 mL después del desayuno y de la comida).",
    "ev": "AGA-JTF 2020 EoE (Hirano, Gastroenterology 2020)"
   },
   {
