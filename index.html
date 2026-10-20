@@ -1,0 +1,826 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="author" content="Dr. Moisés Oropeza">
+<meta name="description" content="Repositorio de estudio de neurogastroenterología 2026: guía Roma V, Chicago 4.0 y Lyon 2.0, consulta rápida, fenotipador terapéutico, intérpretes de estudios, vademécum con disponibilidad en Chile, calculadoras, atlas, material para pacientes y quiz.">
+<meta name="theme-color" content="#1d4a4f">
+<title>Repositorio Neurogastroenterología 2026</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+
+:root{
+  --bg:#f7f5f1; --panel:#fffefb; --panel-2:#f1ede6; --fg:#1c2530; --fg-2:#4a5664;
+  --fg-3:#78838f; --line:#ddd6cb; --line-2:#c9c0b2;
+  --marino:#1d4a4f; --marino-2:#2a6a70; --acento:#8b3a62; --acento-2:#b0507f;
+  --verde:#3d6b2a; --rojo:#9e2b25; --ambar:#8a6414;
+  --cu:#1d4a4f; --ec:#8b3a62;
+  --sh:0 1px 2px rgba(28,37,48,.06),0 4px 14px rgba(28,37,48,.05);
+  --sh-2:0 2px 6px rgba(28,37,48,.09),0 12px 32px rgba(28,37,48,.09);
+  --r:12px; --maxw:1120px;
+  --ff-s:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --ff-b:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  --ff-m:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#12161c; --panel:#1a2029; --panel-2:#222b36; --fg:#e6e9ed; --fg-2:#b3bcc6;
+  --fg-3:#8b95a1; --line:#2c3642; --line-2:#3d4956;
+  --marino:#7fcfc8; --marino-2:#9fdcd6; --acento:#e49ac0; --acento-2:#efb5d2;
+  --verde:#9ccc7a; --rojo:#e88a84; --ambar:#d9b25c;
+  --cu:#7fcfc8; --ec:#e49ac0;
+  --sh:0 1px 2px rgba(0,0,0,.3),0 4px 14px rgba(0,0,0,.25);
+  --sh-2:0 2px 6px rgba(0,0,0,.35),0 12px 32px rgba(0,0,0,.4);
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#12161c; --panel:#1a2029; --panel-2:#222b36; --fg:#e6e9ed; --fg-2:#b3bcc6;
+  --fg-3:#8b95a1; --line:#2c3642; --line-2:#3d4956;
+  --marino:#7fcfc8; --marino-2:#9fdcd6; --acento:#e49ac0; --acento-2:#efb5d2;
+  --verde:#9ccc7a; --rojo:#e88a84; --ambar:#d9b25c;
+  --cu:#7fcfc8; --ec:#e49ac0;
+  --sh:0 1px 2px rgba(0,0,0,.3),0 4px 14px rgba(0,0,0,.25);
+  --sh-2:0 2px 6px rgba(0,0,0,.35),0 12px 32px rgba(0,0,0,.4);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--ff-b);font-size:16px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;margin:0}
+h1,h2,h3,h4{font-family:var(--ff-s);text-wrap:balance;line-height:1.22;margin:0}
+a{color:var(--marino-2)}
+table{font-variant-numeric:tabular-nums}
+
+/* ---------- barra superior ---------- */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:60;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--line)}
+.top-in{max-width:var(--maxw);margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:9px;font-family:var(--ff-s);font-weight:700;font-size:1.02rem;
+  letter-spacing:-.01em;color:var(--fg);text-decoration:none;white-space:nowrap}
+.brand .dot{width:22px;height:22px;border-radius:6px;background:linear-gradient(135deg,var(--marino),var(--acento));
+  display:grid;place-items:center;color:#fff;font-size:.62rem;font-weight:700;font-family:var(--ff-b);flex:none}
+:root[data-theme="dark"] .brand .dot,
+:root:not([data-theme="light"]) .brand .dot{color:#0f1419}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .brand .dot{color:#fff}}
+nav.tabs{display:flex;gap:2px;flex-wrap:wrap;margin-left:auto}
+nav.tabs a{font-size:.78rem;font-weight:600;color:var(--fg-2);text-decoration:none;padding:6px 8px;border-radius:7px;
+  letter-spacing:.01em;white-space:nowrap}
+nav.tabs a:hover{background:var(--panel-2);color:var(--fg)}
+nav.tabs a[aria-current="true"]{background:var(--marino);color:var(--bg)}
+.tema{background:none;border:1px solid var(--line-2);color:var(--fg-2);border-radius:7px;width:30px;height:30px;
+  cursor:pointer;font-size:.85rem;flex:none;display:grid;place-items:center}
+.tema:hover{border-color:var(--marino);color:var(--marino)}
+
+/* ---------- estructura ---------- */
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:20px;padding-block:0 72px}
+section.vista{display:none}
+section.vista.on{display:block}
+.eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--acento);
+  margin:0 0 10px}
+h2.sec{font-size:clamp(1.5rem,3.6vw,2.05rem);font-weight:700;letter-spacing:-.02em;margin:0 0 6px}
+h3.sub{font-size:clamp(1.12rem,2.4vw,1.32rem);font-weight:700;margin:38px 0 12px;
+  padding-bottom:7px;border-bottom:2px solid var(--line)}
+h4.min{font-size:.99rem;font-weight:700;font-family:var(--ff-b);margin:24px 0 8px;color:var(--marino)}
+p{margin:0 0 13px;color:var(--fg-2);max-width:74ch}
+p.lead{font-size:1.05rem;color:var(--fg-2);max-width:68ch}
+ul,ol{margin:0 0 14px;padding-left:22px;color:var(--fg-2)}
+li{margin-bottom:6px}
+li>strong,p>strong{color:var(--fg)}
+hr.d{border:0;border-top:1px solid var(--line);margin:34px 0}
+
+/* ---------- portada ---------- */
+.hero{padding-block:44px 30px;border-bottom:1px solid var(--line);margin-bottom:34px}
+.hero h1{font-size:clamp(1.9rem,6vw,3.1rem);font-weight:700;letter-spacing:-.03em;margin:0 0 14px}
+.hero h1 em{font-style:italic;color:var(--acento)}
+.hero .sub{font-size:clamp(1rem,2.3vw,1.12rem);color:var(--fg-2);max-width:62ch;margin:0 0 20px}
+.meta{display:flex;gap:8px;flex-wrap:wrap;font-size:.74rem}
+.meta span{background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:4px 11px;
+  color:var(--fg-2);font-weight:600}
+.cifras{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin:26px 0 0}
+.cifras div{background:var(--panel);padding:15px 16px}
+.cifras b{display:block;font-family:var(--ff-s);font-size:1.7rem;font-weight:700;letter-spacing:-.02em;
+  color:var(--marino);line-height:1.1}
+.cifras small{display:block;font-size:.73rem;color:var(--fg-3);margin-top:3px;line-height:1.35}
+
+/* ---------- autor ---------- */
+.autor{display:flex;align-items:center;gap:13px;margin:24px 0 0;padding:14px 16px;
+  background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--acento);
+  border-radius:0 var(--r) var(--r) 0;max-width:620px;min-width:0}
+.autor .ini{flex:none;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--marino),var(--acento));color:var(--bg);
+  font-family:var(--ff-s);font-weight:700;font-size:1rem;letter-spacing:.02em}
+.autor .d{min-width:0}
+.autor .n{font-family:var(--ff-s);font-weight:700;font-size:1.02rem;color:var(--fg);line-height:1.25}
+.autor .r{font-size:.79rem;color:var(--fg-3);line-height:1.4}
+.autor .r em{font-style:normal;color:var(--fg-2)}
+
+/* ---------- tarjetas de módulo ---------- */
+.mods{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:16px 0 0}
+.mod{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:20px;
+  display:flex;flex-direction:column;gap:9px;box-shadow:var(--sh);text-decoration:none;color:inherit;
+  transition:box-shadow .16s,transform .16s,border-color .16s;min-width:0}
+.mod:hover{box-shadow:var(--sh-2);transform:translateY(-2px);border-color:var(--line-2)}
+.mod .n{font-family:var(--ff-m);font-size:.7rem;font-weight:500;color:var(--acento);letter-spacing:.06em}
+.mod h3{font-size:1.1rem;font-weight:700}
+.mod p{font-size:.86rem;margin:0;color:var(--fg-2)}
+.mod .tag{margin-top:auto;font-size:.71rem;font-weight:600;color:var(--fg-3);display:flex;gap:6px;flex-wrap:wrap}
+.mod .tag i{font-style:normal;background:var(--panel-2);border-radius:5px;padding:2px 7px}
+.mod .go{font-size:.8rem;font-weight:700;color:var(--marino-2)}
+
+/* ---------- avisos ---------- */
+.box{border:1px solid var(--line);border-left:3px solid var(--marino);background:var(--panel);
+  border-radius:0 var(--r) var(--r) 0;padding:15px 17px;margin:20px 0}
+.box .t{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--marino);
+  margin-bottom:6px}
+.box p:last-child{margin-bottom:0}
+.box.ojo{border-left-color:var(--acento)}.box.ojo .t{color:var(--acento)}
+.box.mal{border-left-color:var(--rojo)}.box.mal .t{color:var(--rojo)}
+.box.bien{border-left-color:var(--verde)}.box.bien .t{color:var(--verde)}
+.box.clave{border-left-color:var(--ambar);background:color-mix(in srgb,var(--ambar) 7%,var(--panel))}
+.box.clave .t{color:var(--ambar)}
+
+/* ---------- tablas ---------- */
+.tw{overflow-x:auto;margin:16px 0;border:1px solid var(--line);border-radius:var(--r);background:var(--panel);
+  min-width:0;-webkit-overflow-scrolling:touch}
+table.t{border-collapse:collapse;width:100%;font-size:.855rem;min-width:520px}
+table.t caption{caption-side:top;text-align:left;font-size:.76rem;color:var(--fg-3);padding:11px 14px 0;font-weight:600}
+table.t th,table.t td{padding:9px 13px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+table.t thead th{background:var(--panel-2);font-size:.72rem;font-weight:700;letter-spacing:.05em;
+  text-transform:uppercase;color:var(--fg-2);white-space:nowrap;position:sticky;top:0}
+table.t tbody tr:last-child td{border-bottom:0}
+table.t tbody tr:hover{background:var(--panel-2)}
+table.t td strong{color:var(--fg)}
+.si{color:var(--verde);font-weight:700}.no{color:var(--rojo);font-weight:700}
+.nota{font-size:.75rem;color:var(--fg-3);margin:-8px 0 16px;max-width:none}
+
+/* ---------- píldoras CU / EC ---------- */
+.cu-ec{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin:16px 0}
+.col{border:1px solid var(--line);border-radius:var(--r);background:var(--panel);padding:16px 18px;min-width:0}
+.col.cu{border-top:3px solid var(--cu)}.col.ec{border-top:3px solid var(--ec)}
+.col h4{font-family:var(--ff-b);font-size:.78rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  margin:0 0 10px}
+.col.cu h4{color:var(--cu)}.col.ec h4{color:var(--ec)}
+.col ul{margin:0;padding-left:19px;font-size:.87rem}
+
+/* ---------- láminas ---------- */
+.lam-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin:14px 0 4px}
+figure.lam{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;
+  display:flex;flex-direction:column;min-width:0;box-shadow:var(--sh)}
+figure.lam img{display:block;width:100%;height:auto;max-width:100%;background:#fff;cursor:zoom-in}
+figure.lam figcaption{font-size:.755rem;line-height:1.4;color:var(--fg-2);padding:9px 11px 10px;
+  border-top:1px solid var(--line);display:flex;flex-direction:column;gap:4px}
+figure.lam .cred{font-size:.66rem;color:var(--fg-3);font-family:var(--ff-m)}
+.laminas{margin:26px 0;padding:16px 18px;border:1px dashed var(--line-2);border-radius:var(--r);
+  background:color-mix(in srgb,var(--panel) 60%,transparent)}
+.lam-h{font-size:.7rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--acento)}
+
+/* ---------- atlas ---------- */
+.atlas-bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:18px 0 6px;
+  position:sticky;top:calc(env(safe-area-inset-top,0px) + 52px);z-index:20;
+  background:color-mix(in srgb,var(--bg) 92%,transparent);padding:8px 0;border-bottom:1px solid var(--line)}
+.atlas-bar input{flex:1 1 180px;min-width:0;background:var(--panel);border:1px solid var(--line-2);color:var(--fg);
+  border-radius:8px;padding:7px 11px;font:inherit;font-size:.85rem}
+.chip{background:var(--panel);border:1px solid var(--line-2);color:var(--fg-2);border-radius:999px;
+  padding:5px 12px;font-size:.76rem;font-weight:600;cursor:pointer;font-family:inherit}
+.chip:hover{border-color:var(--marino);color:var(--marino)}
+.chip[aria-pressed="true"]{background:var(--marino);border-color:var(--marino);color:var(--bg)}
+.grupo{margin:30px 0 0}
+.grupo>h4{font-family:var(--ff-b);font-size:.75rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--acento);margin:0 0 2px}
+.grupo>.gd{font-size:.82rem;color:var(--fg-3);margin:0 0 6px}
+.vacio{color:var(--fg-3);font-size:.88rem;padding:20px 0}
+
+/* ---------- lightbox ---------- */
+.lb{position:fixed;inset:0;z-index:200;background:rgba(10,13,18,.93);display:flex;align-items:center;
+  justify-content:center;flex-direction:column;gap:12px;padding:20px}
+.lb img{max-width:100%;max-height:78vh;object-fit:contain;background:#fff;border-radius:6px}
+.lb .cap{color:#e8eaee;font-size:.85rem;text-align:center;max-width:70ch;line-height:1.5}
+.lb .cap b{display:block;font-size:.7rem;color:#9aa3ae;font-family:var(--ff-m);font-weight:500;margin-top:5px}
+.lb .x{position:absolute;top:calc(env(safe-area-inset-top,0px) + 12px);right:14px;background:rgba(255,255,255,.12);
+  border:0;color:#fff;width:36px;height:36px;border-radius:50%;font-size:1.1rem;cursor:pointer}
+
+/* ---------- acordeón ---------- */
+details.ac{border:1px solid var(--line);border-radius:var(--r);background:var(--panel);margin:10px 0;overflow:hidden}
+details.ac>summary{cursor:pointer;padding:13px 16px;font-weight:600;font-size:.94rem;list-style:none;
+  display:flex;gap:10px;align-items:center}
+details.ac>summary::-webkit-details-marker{display:none}
+details.ac>summary::before{content:"+";font-family:var(--ff-m);color:var(--acento);font-weight:700;flex:none}
+details.ac[open]>summary::before{content:"–"}
+details.ac[open]>summary{border-bottom:1px solid var(--line);background:var(--panel-2)}
+details.ac .in{padding:14px 16px 4px}
+
+/* ---------- misc ---------- */
+.ref{font-size:.78rem;color:var(--fg-3);font-style:italic}
+.pill{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+  border-radius:5px;padding:2px 7px;vertical-align:middle}
+.pill.f3{background:color-mix(in srgb,var(--marino) 16%,transparent);color:var(--marino)}
+.pill.no-cl{background:color-mix(in srgb,var(--rojo) 16%,transparent);color:var(--rojo)}
+.pill.lrs{background:color-mix(in srgb,var(--verde) 16%,transparent);color:var(--verde)}
+.qs{display:grid;gap:10px;counter-reset:q;margin:16px 0}
+.qs>div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:13px 16px 13px 46px;
+  position:relative;font-size:.92rem;color:var(--fg-2)}
+.qs>div::before{counter-increment:q;content:counter(q);position:absolute;left:14px;top:12px;
+  font-family:var(--ff-s);font-weight:700;font-size:1.15rem;color:var(--acento)}
+.qs>div b{display:block;color:var(--fg);font-weight:700;margin-bottom:3px}
+.foot{border-top:1px solid var(--line);margin-top:44px;padding-top:20px;font-size:.8rem;color:var(--fg-3)}
+.foot a{color:var(--marino-2)}
+@media (max-width:1240px){.brand span:not(.dot){display:none}}
+@media (max-width:700px){
+  .wrap{padding-inline:16px}.top-in{padding:9px 16px;flex-wrap:nowrap;gap:10px}
+  .brand span:not(.dot){display:none}
+  nav.tabs{margin-left:0;flex:1 1 auto;min-width:0;flex-wrap:nowrap;overflow-x:auto;
+    scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  nav.tabs::-webkit-scrollbar{display:none}
+  .tema{margin-left:0}
+  .atlas-bar{position:static;padding:8px 0 10px}
+  .lam-g{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+  .laminas{padding:12px 13px}
+  table.t{min-width:440px}
+}
+
+/* ---------- variante pública: láminas sin imagen ---------- */
+figure.lam.sinimg{background:var(--panel-2,rgba(128,128,128,.08))}
+figure.lam.sinimg figcaption{border-top:0;border-left:3px solid var(--acento,#8b3a62);
+  padding:11px 13px;min-height:0}
+.lam-g:has(.sinimg){grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.aviso-pub{border:1px solid var(--line,#ddd);border-left:3px solid var(--acento,#8b3a62);
+  background:var(--panel,#fff);border-radius:0 12px 12px 0;padding:15px 17px;margin:20px 0}
+.aviso-pub .t{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--acento,#8b3a62);margin-bottom:6px}
+.aviso-pub p{margin:0}
+
+
+.mod.off{cursor:default;opacity:.78;border-style:dashed}
+.mod.off:hover{box-shadow:var(--sh);transform:none}
+.mod.off .go{color:var(--fg-3)}
+.estado{display:inline-block;font-family:var(--ff-m);font-size:.66rem;letter-spacing:.05em;padding:2px 7px;border-radius:5px;margin-left:6px;vertical-align:2px}
+.estado.ok{background:color-mix(in srgb,var(--verde) 16%,transparent);color:var(--verde)}
+.estado.pr{background:color-mix(in srgb,var(--ambar) 16%,transparent);color:var(--ambar)}
+
+/* ---------- consulta rápida ---------- */
+.algo-r ol{counter-reset:none;padding-left:22px;margin:12px 0}
+.algo-r li{margin-bottom:8px;font-size:.92rem}
+details.ac .in .tw{margin:10px 0}
+details.ac[hidden]{display:none}
+/* ---------- vademécum ---------- */
+.vad-f{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 0}
+.vad-n{font-size:.78rem;color:var(--fg-3);margin:12px 0 4px}
+.vad-sum{display:flex;flex-direction:column;gap:3px;min-width:0;flex:1}
+.vad-sum .nm{font-family:var(--ff-s);font-size:1.02rem;font-weight:700;color:var(--fg)}
+.vad-sum .gr{font-size:.74rem;color:var(--fg-3);font-weight:500}
+.vad-pills{display:flex;gap:5px;flex-wrap:wrap;flex:none;max-width:45%;justify-content:flex-end}
+.cob{display:inline-block;font-size:.64rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border-radius:5px;padding:2px 7px;white-space:nowrap}
+.cob.bol{background:color-mix(in srgb,var(--verde) 16%,transparent);color:var(--verde)}
+.cob.ver,.cob.off{background:color-mix(in srgb,var(--ambar) 16%,transparent);color:var(--ambar)}
+.cob.nd{background:color-mix(in srgb,var(--rojo) 14%,transparent);color:var(--rojo)}
+.cob.hosp{background:var(--panel-2);color:var(--fg-2)}
+dl.vad{display:grid;grid-template-columns:150px 1fr;gap:8px 16px;margin:4px 0 12px;font-size:.88rem}
+dl.vad dt{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--acento);padding-top:3px}
+dl.vad dd{margin:0;color:var(--fg-2)}
+dl.vad dd b{color:var(--fg)}
+table.vplan{border-collapse:collapse;width:100%;font-size:.84rem;margin:2px 0}
+table.vplan th{font-weight:600;color:var(--fg);text-align:left;vertical-align:top;padding:5px 10px 5px 0;width:34%;border-bottom:1px solid var(--line)}
+table.vplan td{vertical-align:top;padding:5px 0;border-bottom:1px solid var(--line)}
+#vad-tabs{margin:0 0 12px}
+#v-vademecum [hidden]{display:none!important}
+#vad-lin{margin-top:6px}
+@media (max-width:700px){dl.vad{grid-template-columns:1fr;gap:2px}dl.vad dd{margin-bottom:8px}.vad-pills{max-width:none;justify-content:flex-start}
+  details.ac>summary{flex-wrap:wrap}}
+
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="#inicio"><span class="dot">NG</span><span>Repositorio Neurogastro 2026</span></a>
+    <nav class="tabs" id="tabs">
+      <a href="#inicio">Inicio</a>
+      <a href="guia-2026.html">Guía</a>
+      <a href="#rapida">Rápida</a>
+      <a href="fenotipos/">Fenotipos</a>
+      <a href="estudios/">Estudios</a>
+      <a href="#vademecum">Vademécum</a>
+      <a href="calc/">Calculadoras</a>
+      <a href="atlas/">Atlas</a>
+      <a href="pacientes/">Pacientes</a>
+      <a href="quiz/">Quiz</a>
+      <a href="#fuentes">Fuentes</a>
+    </nav>
+    <button class="tema" id="tema" title="Cambiar tema" aria-label="Cambiar tema">◐</button>
+  </div>
+</header>
+<div class="wrap">
+
+<section class="vista on" id="v-inicio">
+  <div class="hero">
+    <p class="eyebrow">Postgrado Gastroenterología · Universidad de los Andes</p>
+    <h1>Neurogastroenterología:<br><em>repositorio de estudio 2026</em></h1>
+    <p class="sub">Guía de repaso de los trastornos de la interacción cerebro-intestino y de la motilidad, con Roma V, Chicago 4.0 y Lyon 2.0; herramientas para decidir el tratamiento por fenotipo e interpretar los estudios funcionales; fármacos con su disponibilidad en Chile, calculadoras, atlas, material para pacientes y un banco de casos propio.</p>
+    <div class="meta">
+      <span>Actualizado octubre 2026</span>
+      <span>Roma V · Chicago 4.0 · Lyon 2.0</span>
+      <span>AGA · ACG · ESNM</span>
+    </div>
+    <div class="autor">
+      <span class="ini">MO</span>
+      <div class="d">
+        <div class="n">Dr. Moisés Oropeza</div>
+        <div class="r"><em>Residente de Gastroenterología, Universidad de los Andes</em> · Clínica Dávila / Clínica Universidad de los Andes — compilación y edición del repositorio</div>
+      </div>
+    </div>
+    <div class="cifras">
+      <div><b>16</b><small>bloques temáticos en la guía</small></div>
+      <div><b>29</b><small>perlas de examen por entidad</small></div>
+      <div><b>128</b><small>flashcards</small></div>
+      <div><b>192</b><small>preguntas y casos con corrección razonada</small></div>
+      <div><b>31</b><small>herramientas: fenotipadores, intérpretes y calculadoras</small></div>
+      <div><b>~41 %</b><small>de la población cumple criterios de al menos un TICI (estudio global de la Fundación Roma)</small></div>
+    </div>
+  </div>
+
+  <p class="eyebrow">Módulos</p>
+  <h2 class="sec">Cómo está organizado</h2>
+  <p class="lead">Nueve piezas independientes: cada una se actualiza sin tocar las demás.</p>
+
+  <div class="mods">
+    <a class="mod" href="guia-2026.html">
+      <span class="n">MÓDULO 01 <span class="estado ok">16 / 16 BLOQUES</span></span>
+      <h3>Guía de estudio Neurogastroenterología 2026</h3>
+      <p>De Roma V al laboratorio de motilidad: ERGE y Lyon 2.0, TICI esofágicos, eructos y rumiación, disfagia y EoE, Chicago 4.0 y acalasia, dispepsia, gastroparesia y náuseas, SII, diarrea crónica, constipación, distensión y SIBO, pseudoobstrucción, anorrectal, dolor y neuromoduladores. Cada bloque abre con «qué cambió», trae algoritmos con fármaco, dosis y criterio de falla, y cierra con caso, flashcards y preguntas.</p>
+      <span class="tag"><i>29 perlas</i><i>Roma V · Chicago 4.0 · Lyon 2.0</i><i>Navegación lateral</i></span>
+      <span class="go">Abrir →</span>
+    </a>
+    <a class="mod" href="#rapida">
+      <span class="n">MÓDULO 02 <span class="estado ok">17 TARJETAS</span></span>
+      <h3>Consulta rápida</h3>
+      <p>Criterios y cortes para el paciente delante: banderas rojas de Roma V, Lyon 2.0 en una tabla, pirosis refractaria, fenotipos esofágicos, rumiación y eructos, EoE, Chicago 4.0, dispepsia, gastroparesia, SII por subtipo, diarrea crónica, escalera de constipación, SIBO, Ogilvie, anorrectal, neuromoduladores y preparación de estudios.</p>
+      <span class="tag"><i>Buscador</i><i>Cortes numéricos</i></span>
+      <span class="go">Abrir →</span>
+    </a>
+    <a class="mod" href="fenotipos/">
+      <span class="n">MÓDULO 03 <span class="estado ok">7 FENOTIPADORES</span></span>
+      <h3>Fenotipador terapéutico</h3>
+      <p>Ubica al paciente en su fenotipo y marca el escalón siguiente con fármaco, dosis y criterio de falla: SII por subtipo y síntoma dominante, constipación (tránsito o evacuación), reflujo (ERGE, hipersensibilidad, funcional, rumiación, eructo), dispepsia, náuseas y vómitos, diarrea crónica y dolor abdominal.</p>
+      <span class="tag"><i>Escalera marcada</i><i>Ejemplos clínicos</i><i>Sin conexión</i></span>
+      <span class="go">Abrir →</span>
+    </a>
+    <a class="mod" href="estudios/">
+      <span class="n">MÓDULO 04 <span class="estado ok">8 INTÉRPRETES</span></span>
+      <h3>Intérpretes de estudios</h3>
+      <p>Se ingresan los valores del informe y devuelve la conclusión: pH-impedancia (Lyon 2.0, con y sin tratamiento), cápsula de 96 h, manometría esofágica (Chicago 4.0), FLIP, vaciamiento gástrico, test de aire espirado, tránsito colónico y manometría anorrectal (Londres).</p>
+      <span class="tag"><i>Lyon 2.0</i><i>Chicago 4.0</i><i>Londres</i></span>
+      <span class="go">Abrir →</span>
+    </a>
+    <a class="mod" href="#vademecum">
+      <span class="n">MÓDULO 05 <span class="estado ok">68 FÁRMACOS</span></span>
+      <h3>Vademécum neurogastroenterológico</h3>
+      <p>Por fármaco: mecanismo, línea, dosis, ajustes, cuándo esperar respuesta, seguimiento, efectos adversos y disponibilidad en Chile (5 sin registro). Antisecretores y P-CAB, procinéticos y antieméticos, antiespasmódicos, laxantes y secretagogos, antidiarreicos y secuestrantes, neuromoduladores, EoE y fármacos de crisis.</p>
+      <span class="tag"><i>Disponibilidad en Chile</i><i>Líneas por enfermedad</i><i>Filtros</i></span>
+      <span class="go">Abrir →</span>
+    </a>
+    <a class="mod" href="calc/">
+      <span class="n">MÓDULO 06 <span class="estado ok">16 CALCULADORAS</span></span>
+      <h3>Calculadoras</h3>
+      <p>Criterios de Roma V (SII y subtipo, dispepsia, constipación), GerdQ, índice de síntomas de reflujo, Eckardt, equivalencia de IBP, GCSI, Sigstad, IBS-SSS, Agachan-Wexner, Wexner y St Mark's, PHQ-9, GAD-7 y PHQ-15.</p>
+      <span class="tag"><i>Ficha de uso y escala</i><i>Ejemplos</i><i>Sin conexión</i></span>
+      <span class="go">Abrir →</span>
+    </a>
+    <a class="mod" href="atlas/">
+      <span class="n">MÓDULO 07 <span class="estado ok">7 LÁMINAS</span></span>
+      <h3>Atlas</h3>
+      <p>Esquemas originales: mecanismos y dianas de los TICI, patrones de Chicago 4.0, algoritmo de Lyon 2.0, FLIP, escala de Bristol, tipos de disinergia y escalera de constipación.</p>
+      <span class="tag"><i>SVG propios</i><i>Modo oscuro</i></span>
+      <span class="go">Abrir →</span>
+    </a>
+    <a class="mod" href="pacientes/">
+      <span class="n">MÓDULO 08 <span class="estado ok">9 HOJAS</span></span>
+      <h3>Material para pacientes</h3>
+      <p>Hojas imprimibles en lenguaje simple: intestino irritable, dieta baja en FODMAP, constipación y postura, respiración diafragmática, reflujo, gastroparesia, neuromoduladores, preparación de exámenes y diario de síntomas con escala de Bristol.</p>
+      <span class="tag"><i>Imprimir por hoja</i><i>Lenguaje simple</i></span>
+      <span class="go">Abrir →</span>
+    </a>
+    <a class="mod" href="quiz/">
+      <span class="n">MÓDULO 09 <span class="estado ok">128 CASOS</span></span>
+      <h3>Quiz Neurogastroenterología</h3>
+      <p>Banco propio de 128 casos clínicos (8 por bloque), con explicación, por qué no las otras, perla y referencias. Modos estudio y examen cronometrado, flashcards, progreso por tema, exportación a CSV, Anki y PDF, y sincronización con Google Sheets.</p>
+      <span class="tag"><i>Casos clínicos</i><i>Google Sheets</i><i>Sin conexión</i></span>
+      <span class="go">Abrir →</span>
+    </a>
+  </div>
+
+  <div class="box clave">
+    <div class="t">Cómo usar este repositorio</div>
+    <p><strong>Para estudiar un tema:</strong> Módulo 01 y, para repasar, el 09. <strong>Con el paciente delante:</strong> Módulos 02 y 03. <strong>Con un informe de motilidad en la mano:</strong> Módulo 04. <strong>Para indicar un fármaco y saber si existe en Chile:</strong> Módulo 05. <strong>Para explicar y entregar indicaciones:</strong> Módulos 07 y 08.</p>
+  </div>
+</section>
+
+<section class="vista" id="v-rapida">
+<!-- RAPIDA:INICIO -->
+<div class="hero" style="padding-block:34px 20px">
+  <p class="eyebrow">Módulo 02</p>
+  <h1 style="font-size:clamp(1.6rem,4.6vw,2.4rem)">Consulta rápida</h1>
+  <p class="sub">Criterios, cortes y conductas para decidir con el paciente delante. Cada tarjeta remite al bloque de la guía y a su intérprete o calculadora.</p>
+</div>
+
+<div class="atlas-bar">
+  <input type="search" id="rq" placeholder="Buscar: Lyon, IRP, Bristol, SIBO, disinergia, amitriptilina…" aria-label="Buscar en consulta rápida">
+  <button class="chip" type="button" id="r-abrir">Abrir todo</button>
+  <button class="chip" type="button" id="r-cerrar">Cerrar todo</button>
+</div>
+<div id="r-lista">
+
+<details class="ac" data-k="roma v tici criterios clínicos banderas rojas alarma estudio mínimo">
+<summary>Roma V: diagnóstico positivo y banderas rojas</summary><div class="in">
+<div class="tw"><table class="t"><thead><tr><th>Elemento</th><th>Roma V</th><th>Conducta</th></tr></thead><tbody>
+<tr><td><strong>Criterios clínicos</strong></td><td>Síntomas ~8 semanas, molestos, con el patrón del trastorno</td><td>Diagnóstico positivo en la primera consulta</td></tr>
+<tr><td><strong>Criterios de investigación</strong></td><td>Más estrictos (frecuencia y duración)</td><td>Ensayos clínicos; no exigirlos en la consulta</td></tr>
+<tr><td><strong>Banderas rojas</strong></td><td>Edad de inicio ≥ 45–50, sangrado, anemia, baja de peso no intencionada, síntomas nocturnos que despiertan, fiebre, masa, antecedente familiar de cáncer colorrectal, EII o celíaca, inicio reciente progresivo</td><td>Estudiar dirigido antes de rotular TICI</td></tr>
+<tr><td><strong>Estudio mínimo</strong></td><td>Hemograma, PCR, serología de celíaca (diarrea o mixto), calprotectina (diarrea)</td><td>No repetir estudios ya normales</td></tr>
+<tr><td><strong>Primer tratamiento</strong></td><td>Explicación del modelo cerebro-intestino, metas y seguimiento</td><td>Mejora resultados por sí mismo</td></tr>
+</tbody></table></div>
+<p class="ref">Bloque 1 · Roma V 2026</p>
+</div></details>
+
+<details class="ac" data-k="erge lyon 2.0 pirosis regurgitación tea phmetría impedancia mnbi la b esofagitis">
+<summary>ERGE: Lyon 2.0 en una tabla</summary><div class="in">
+<div class="tw"><table class="t"><thead><tr><th>Métrica</th><th>Concluyente a favor</th><th>Zona gris</th><th>En contra</th></tr></thead><tbody>
+<tr><td><strong>Endoscopía</strong></td><td>LA B, C o D · Barrett largo · estenosis péptica</td><td>LA A</td><td>Normal (no excluye)</td></tr>
+<tr><td><strong>TEA (pH-impedancia 24 h)</strong></td><td>&gt; 6 %</td><td>4–6 %</td><td>&lt; 4 %</td></tr>
+<tr><td><strong>Cápsula 96 h</strong></td><td>TEA &gt; 6 % en ≥ 2 días</td><td>—</td><td>TEA &lt; 4 % todos los días</td></tr>
+<tr><td><strong>Número de reflujos</strong></td><td>&gt; 80</td><td>40–80</td><td>&lt; 40</td></tr>
+<tr><td><strong>MNBI</strong></td><td>&lt; 1.500 Ω</td><td>1.500–2.500 Ω</td><td>&gt; 2.500 Ω</td></tr>
+<tr><td><strong>Con IBP 2 veces al día</strong></td><td>TEA &gt; 4 % y &gt; 80 reflujos = refractaria</td><td colspan="2">TEA &lt; 4 %: el síntoma no es reflujo ácido</td></tr>
+</tbody></table></div>
+<p class="ref">Bloques 2 y 16 · Intérprete de pH-impedancia</p>
+</div></details>
+
+<details class="ac" data-k="ibp p-cab vonoprazán tegoprazán fexuprazán refractaria escalonado optimizar">
+<summary>Pirosis que no responde al IBP</summary><div class="in">
+<div class="algo-r"><ol>
+<li><strong>Verificar adherencia y horario</strong>: IBP 30–60 min antes del desayuno; dosis doble antes de desayuno y cena por 8 semanas.</li>
+<li><strong>Endoscopía sin IBP</strong> (2–4 semanas) con biopsias para EoE.</li>
+<li><strong>Sin ERGE probada</strong> → cápsula 96 h o pH-impedancia <strong>sin tratamiento</strong>.</li>
+<li><strong>Con ERGE probada</strong> → pH-impedancia <strong>con IBP</strong>.</li>
+<li>Resultado: ERGE refractaria (P-CAB, alginato, baclofeno, cirugía) · hipersensibilidad al reflujo o pirosis funcional (neuromodulador, terapia cerebro-intestino) · rumiación o eructo supragástrico (respiración diafragmática).</li>
+</ol></div>
+<p class="ref">Bloques 2 y 3 · Fenotipador de reflujo</p>
+</div></details>
+
+<details class="ac" data-k="pirosis funcional hipersensibilidad reflujo dolor torácico globo disfagia funcional roma v esófago">
+<summary>TICI esofágicos: cómo separar los fenotipos</summary><div class="in">
+<div class="tw"><table class="t"><thead><tr><th>Fenotipo</th><th>TEA</th><th>Asociación sintomática</th><th>Tratamiento</th></tr></thead><tbody>
+<tr><td><strong>ERGE no erosiva</strong></td><td>&gt; 6 %</td><td>Cualquiera</td><td>Antisecretor</td></tr>
+<tr><td><strong>Hipersensibilidad al reflujo</strong></td><td>&lt; 4 %</td><td>SI &gt; 50 % y/o SAP &gt; 95 %</td><td>Neuromodulador ± antisecretor</td></tr>
+<tr><td><strong>Pirosis funcional</strong></td><td>&lt; 4 %</td><td>Negativa</td><td>Neuromodulador, terapia cerebro-intestino; suspender IBP</td></tr>
+<tr><td><strong>Dolor torácico funcional</strong></td><td>Normal</td><td>Negativa</td><td>Descartar cardiopatía; neuromodulador</td></tr>
+<tr><td><strong>Globo</strong></td><td>—</td><td>—</td><td>Explicación; neuromodulador si persiste</td></tr>
+</tbody></table></div>
+<p class="ref">Bloque 3 · Roma V</p>
+</div></details>
+
+<details class="ac" data-k="rumiación eructo supragástrico r-cpd abelchia incapacidad eructar botox respiración diafragmática">
+<summary>Rumiación, eructos e incapacidad para eructar</summary><div class="in">
+<div class="tw"><table class="t"><thead><tr><th>Entidad</th><th>Pista</th><th>Confirmación</th><th>Tratamiento</th></tr></thead><tbody>
+<tr><td><strong>Rumiación</strong></td><td>Regurgitación sin esfuerzo minutos después de comer; remasticación</td><td>Manometría con impedancia y comida real: onda R &gt; 30 mmHg</td><td>Respiración diafragmática con biorretroalimentación; baclofeno</td></tr>
+<tr><td><strong>Eructo supragástrico</strong></td><td>Eructos muy frecuentes, desaparecen al hablar o dormir</td><td>Impedancia: aire que entra y sale en segundos</td><td>Logopedia, respiración diafragmática, TCC</td></tr>
+<tr><td><strong>R-CPD</strong></td><td>Nunca ha eructado, gorgoteo cervical, distensión</td><td>Clínica (manometría con agua carbonatada)</td><td>Toxina botulínica en el cricofaríngeo</td></tr>
+</tbody></table></div>
+<p class="ref">Bloque 4</p>
+</div></details>
+
+<details class="ac" data-k="disfagia eoe esofagitis eosinofílica biopsias eosinófilos erefs dupilumab budesonida">
+<summary>Disfagia y esofagitis eosinofílica</summary><div class="in">
+<div class="tw"><table class="t"><thead><tr><th>Paso</th><th>Criterio</th><th>Conducta</th></tr></thead><tbody>
+<tr><td><strong>Triaje</strong></td><td>Orofaríngea frente a esofágica; sólidos (mecánica) frente a sólidos y líquidos (motora)</td><td>Orofaríngea: videofluoroscopía y fonoaudiología</td></tr>
+<tr><td><strong>Endoscopía</strong></td><td>≥ 6 biopsias de 2 niveles aunque la mucosa sea normal</td><td>Sin IBP ni corticoide tópico ≥ 3 semanas</td></tr>
+<tr><td><strong>Diagnóstico de EoE</strong></td><td>≥ 15 eosinófilos/campo de alto aumento + síntomas</td><td>EREFS para describir</td></tr>
+<tr><td><strong>Tratamiento</strong></td><td>IBP dosis alta · budesonida orodispersable · dieta de eliminación · dupilumab</td><td>Biopsias de control a las 8–12 semanas</td></tr>
+<tr><td><strong>Endoscopía normal con biopsias normales</strong></td><td>—</td><td>Manometría de alta resolución</td></tr>
+</tbody></table></div>
+<p class="ref">Bloque 5</p>
+</div></details>
+
+<details class="ac" data-k="chicago 4.0 manometría irp dci dl acalasia egjoo iem espasmo jackhammer ausente">
+<summary>Chicago 4.0: lectura jerárquica</summary><div class="in">
+<div class="tw"><table class="t"><thead><tr><th>IRP</th><th>Cuerpo esofágico</th><th>Diagnóstico</th></tr></thead><tbody>
+<tr><td rowspan="3"><strong>Elevado</strong> (&gt; 15 supino / &gt; 12 sentado)</td><td>100 % fallidas, sin presurización</td><td>Acalasia tipo I</td></tr>
+<tr><td>100 % fallidas, presurización panesofágica ≥ 20 %</td><td>Acalasia tipo II</td></tr>
+<tr><td>≥ 20 % prematuras (DL &lt; 4,5 s)</td><td>Acalasia tipo III</td></tr>
+<tr><td><strong>Elevado</strong></td><td>Peristalsis presente, presión intrabolo ≥ 20 %</td><td>EGJOO (exige síntomas + prueba de apoyo)</td></tr>
+<tr><td rowspan="4"><strong>Normal</strong></td><td>100 % fallidas</td><td>Contractilidad ausente</td></tr>
+<tr><td>≥ 20 % prematuras</td><td>Espasmo esofágico distal</td></tr>
+<tr><td>≥ 20 % con DCI &gt; 8.000</td><td>Esófago hipercontráctil</td></tr>
+<tr><td>&gt; 70 % inefectivas o ≥ 50 % fallidas</td><td>Motilidad esofágica inefectiva</td></tr>
+</tbody></table></div>
+<p class="ref">Bloque 6 · Intérprete de manometría esofágica</p>
+</div></details>
+
+<details class="ac" data-k="dispepsia funcional sdp sde distrés posprandial dolor epigástrico pylori endoscopía procinético">
+<summary>Dispepsia funcional: SDP y SDE</summary><div class="in">
+<div class="tw"><table class="t"><thead><tr><th></th><th>SDP</th><th>SDE</th></tr></thead><tbody>
+<tr><td><strong>Criterio</strong></td><td>Plenitud posprandial o saciedad precoz molestas ≥ 2 días/semana</td><td>Dolor o ardor epigástrico molesto ≥ 1 día/semana</td></tr>
+<tr><td><strong>Regla</strong></td><td colspan="2">Con plenitud o saciedad, el dolor posprandial forma parte del SDP. Náusea predominante o vómitos excluyen dispepsia.</td></tr>
+<tr><td><strong>Siempre</strong></td><td colspan="2"><i>H. pylori</i> (test de aliento o antígeno, sin IBP 2 semanas). Chile: endoscopía en ≥ 40 años con epigastralgia &gt; 15 días o banderas rojas.</td></tr>
+<tr><td><strong>1.ª línea (4–8 sem)</strong></td><td>Procinético o IBP</td><td>IBP dosis estándar, sin escalar</td></tr>
+<tr><td><strong>2.ª línea</strong></td><td>Mirtazapina (baja de peso) · buspirona (saciedad)</td><td>Tricíclico en dosis baja</td></tr>
+</tbody></table></div>
+<p class="ref">Bloque 7 · Fenotipador de dispepsia</p>
+</div></details>
+
+<details class="ac" data-k="gastroparesia vaciamiento gástrico 4 h metoclopramida eritromicina g-poem náuseas vómitos cíclicos cannabinoides">
+<summary>Gastroparesia y síndromes de náuseas y vómitos</summary><div class="in">
+<div class="tw"><table class="t"><thead><tr><th>Entidad</th><th>Criterio</th><th>Conducta</th></tr></thead><tbody>
+<tr><td><strong>Gastroparesia</strong></td><td>Retención &gt; 10 % a las 4 h (glicemia &lt; 275 mg/dL)</td><td>Dieta de partículas pequeñas; metoclopramida ≤ 12 semanas; eritromicina; G-POEM en refractarios</td></tr>
+<tr><td><strong>Náuseas y vómitos crónicos</strong></td><td>Náusea molesta ≥ 2 días/semana ± vómitos ≥ 1/semana; vaciamiento normal</td><td>Neuromodulador (mirtazapina), antieméticos</td></tr>
+<tr><td><strong>Vómitos cíclicos</strong></td><td>≥ 3 episodios/año, 2 en 6 meses, intervalos libres</td><td>Profilaxis: amitriptilina · aborto: triptán + ondansetrón + sedación</td></tr>
+<tr><td><strong>Hiperémesis por cannabinoides</strong></td><td>Patrón cíclico con uso frecuente y prolongado de cannabis</td><td>Suspensión sostenida; capsaicina tópica, haloperidol en crisis</td></tr>
+</tbody></table></div>
+<p class="ref">Bloque 8 · Intérprete de vaciamiento gástrico</p>
+</div></details>
+
+<details class="ac" data-k="sii intestino irritable bristol subtipos sii-d sii-c sii-m fodmap rifaximina amitriptilina">
+<summary>SII: criterios, subtipos y tratamiento por fenotipo</summary><div class="in">
+<div class="tw"><table class="t"><thead><tr><th>Subtipo</th><th>Bristol (días con deposiciones anormales)</th><th>Específico</th></tr></thead><tbody>
+<tr><td><strong>SII-C</strong></td><td>&gt; 25 % tipo 1–2 y &lt; 25 % tipo 6–7</td><td>Psyllium, PEG, prucaloprida (linaclotida donde exista)</td></tr>
+<tr><td><strong>SII-D</strong></td><td>&gt; 25 % tipo 6–7 y &lt; 25 % tipo 1–2</td><td>Loperamida, rifaximina, ondansetrón, secuestrante de ácidos biliares</td></tr>
+<tr><td><strong>SII-M</strong></td><td>&gt; 25 % de ambos</td><td>Tratar el síntoma dominante del momento</td></tr>
+<tr><td><strong>Todos</strong></td><td colspan="2">Dolor ≥ 3 días/mes asociado a defecación o cambio de frecuencia o forma. Explicación, FODMAP en 3 fases, antiespasmódicos o menta, tricíclico en dosis baja, terapia cerebro-intestino.</td></tr>
+</tbody></table></div>
+<p class="ref">Bloque 9 · Fenotipador de SII</p>
+</div></details>
+
+<details class="ac" data-k="diarrea crónica acuosa ácidos biliares colitis microscópica calprotectina celíaca sehcat colestiramina budesonida">
+<summary>Diarrea crónica funcional: qué descartar</summary><div class="in">
+<div class="tw"><table class="t"><thead><tr><th>Sospecha</th><th>Pista</th><th>Estudio</th><th>Tratamiento</th></tr></thead><tbody>
+<tr><td><strong>Celíaca</strong></td><td>Siempre en diarrea</td><td>Anti-TG2 IgA + IgA total</td><td>Dieta sin gluten</td></tr>
+<tr><td><strong>EII</strong></td><td>Sangre, nocturna, PCR</td><td>Calprotectina</td><td>—</td></tr>
+<tr><td><strong>Ácidos biliares</strong></td><td>Colecistectomía, íleon, posprandial</td><td>SeHCAT o C4; prueba terapéutica</td><td>Colestiramina 4 g, colesevelam</td></tr>
+<tr><td><strong>Colitis microscópica</strong></td><td>Mujer &gt; 50, nocturna, AINE/IBP/ISRS</td><td>Biopsias escalonadas de colon</td><td>Budesonida 9 mg × 8 semanas</td></tr>
+<tr><td><strong>SIBO</strong></td><td>Cirugía, motilidad, IBP</td><td>Test de aire espirado</td><td>Rifaximina</td></tr>
+</tbody></table></div>
+<p class="ref">Bloque 10</p>
+</div></details>
+
+<details class="ac" data-k="constipación crónica funcional tránsito lento disinergia peg prucaloprida bisacodilo laxantes aga acg 2023">
+<summary>Constipación crónica: escalera terapéutica</summary><div class="in">
+<div class="algo-r"><ol>
+<li><strong>Base</strong>: fibra soluble (psyllium) y agua; revisar fármacos; tacto rectal con pujo.</li>
+<li><strong>Osmótico</strong>: PEG 17 g/día (fuerte); lactulosa si no hay otro.</li>
+<li><strong>Estimulante</strong>: bisacodilo o picosulfato 5–10 mg (fuerte), de rescate o diario.</li>
+<li><strong>Procinético</strong>: prucaloprida 2 mg/día (1 mg en &gt; 65 años) (fuerte).</li>
+<li><strong>Secretagogos</strong>: linaclotida, plecanatida (fuertes) y lubiprostona (condicional): no disponibles en Chile.</li>
+<li><strong>Refractaria o síntomas evacuatorios</strong> → manometría anorrectal + test de balón → biorretroalimentación si hay disinergia; tránsito colónico solo si son normales.</li>
+</ol></div>
+<p class="ref">Bloque 11 · Fenotipador de constipación</p>
+</div></details>
+
+<details class="ac" data-k="distensión hinchazón sibo imo test aire espirado hidrógeno metano rifaximina neomicina">
+<summary>Distensión, SIBO e IMO</summary><div class="in">
+<div class="tw"><table class="t"><thead><tr><th>Pregunta</th><th>Criterio</th><th>Conducta</th></tr></thead><tbody>
+<tr><td><strong>¿Hay SIBO?</strong></td><td>H₂ ≥ 20 ppm sobre el basal en ≤ 90 min</td><td>Rifaximina 14 días (Chile: 400 mg c/8 h)</td></tr>
+<tr><td><strong>¿Hay IMO?</strong></td><td>CH₄ ≥ 10 ppm en cualquier momento</td><td>Rifaximina + neomicina; tratar constipación</td></tr>
+<tr><td><strong>¿Pedir el test?</strong></td><td>Factor de riesgo (cirugía, dismotilidad, esclerodermia)</td><td>No de rutina en SII</td></tr>
+<tr><td><strong>Distensión visible</strong></td><td>Aumenta en el día, desaparece de noche</td><td>Disinergia abdominofrénica: respiración diafragmática y biorretroalimentación</td></tr>
+</tbody></table></div>
+<p class="ref">Bloque 12 · Intérprete de test de aire espirado</p>
+</div></details>
+
+<details class="ac" data-k="cipo pseudoobstrucción ogilvie neostigmina ciego octreótido piridostigmina">
+<summary>Pseudoobstrucción crónica y síndrome de Ogilvie</summary><div class="in">
+<div class="tw"><table class="t"><thead><tr><th>Entidad</th><th>Criterio</th><th>Conducta</th></tr></thead><tbody>
+<tr><td><strong>CIPO</strong></td><td>Obstrucción recurrente sin lesión mecánica</td><td>Causas secundarias; nutrición; octreótido nocturno, piridostigmina, prucaloprida; rifaximina en ciclos; evitar cirugía y opioides</td></tr>
+<tr><td><strong>Ogilvie</strong></td><td>Dilatación colónica aguda sin obstrucción</td><td>Conservador 24–48 h → neostigmina 2 mg IV lenta con monitor → descompresión colonoscópica</td></tr>
+<tr><td><strong>Riesgo de perforación</strong></td><td>Ciego &gt; 12 cm o distensión &gt; 6 días</td><td>Intervenir antes</td></tr>
+</tbody></table></div>
+<p class="ref">Bloque 13</p>
+</div></details>
+
+<details class="ac" data-k="anorrectal manometría londres disinergia balón incontinencia fecal proctalgia elevador biorretroalimentación">
+<summary>Anorrectal: disinergia, incontinencia y dolor</summary><div class="in">
+<div class="tw"><table class="t"><thead><tr><th>Entidad</th><th>Criterio</th><th>Tratamiento</th></tr></thead><tbody>
+<tr><td><strong>Defecación disinérgica</strong></td><td>1 prueba anormal = probable; 2 = definitiva (manometría, balón &gt; 1 min, imagen)</td><td>Biorretroalimentación (70–80 %)</td></tr>
+<tr><td><strong>Incontinencia fecal</strong></td><td>≥ 2 episodios de escape involuntario</td><td>Consistencia → biorretroalimentación → neuromodulación sacra</td></tr>
+<tr><td><strong>Síndrome del elevador del ano</strong></td><td>Dolor ≥ 30 min con sensibilidad a la tracción del puborrectal</td><td>Biorretroalimentación</td></tr>
+<tr><td><strong>Proctalgia fugaz</strong></td><td>Episodios de segundos a minutos</td><td>Explicación; salbutamol inhalado</td></tr>
+</tbody></table></div>
+<p class="ref">Bloque 14 · Intérprete de manometría anorrectal</p>
+</div></details>
+
+<details class="ac" data-k="neuromoduladores amitriptilina nortriptilina duloxetina mirtazapina pregabalina escitalopram buspirona dosis">
+<summary>Neuromoduladores: cuál y en qué dosis</summary><div class="in">
+<div class="tw"><table class="t"><thead><tr><th>Fármaco</th><th>Dosis</th><th>Cuándo</th><th>Cuidado</th></tr></thead><tbody>
+<tr><td><strong>Amitriptilina</strong></td><td>10 → 25–50 mg noche</td><td>Dolor, diarrea, insomnio</td><td>Constipación, sequedad, QT</td></tr>
+<tr><td><strong>Nortriptilina</strong></td><td>10 → 25–50 mg noche</td><td>Igual, menos anticolinérgico</td><td>—</td></tr>
+<tr><td><strong>Duloxetina</strong></td><td>30 → 60 mg</td><td>Dolor con ansiedad o fibromialgia</td><td>Náuseas al inicio</td></tr>
+<tr><td><strong>Escitalopram</strong></td><td>5 → 10–20 mg</td><td>Ansiedad, hipervigilancia; SII-C</td><td>Diarrea, QT</td></tr>
+<tr><td><strong>Mirtazapina</strong></td><td>7,5 → 15–30 mg noche</td><td>Náuseas, saciedad, baja de peso</td><td>Somnolencia, aumento de peso</td></tr>
+<tr><td><strong>Buspirona</strong></td><td>10 mg c/8 h antes de comidas</td><td>Saciedad precoz (acomodación)</td><td>Mareo</td></tr>
+<tr><td><strong>Pregabalina</strong></td><td>75 → 150 mg c/12 h</td><td>Hipersensibilidad, dolor</td><td>Somnolencia</td></tr>
+</tbody></table></div>
+<p class="ref">Bloque 15 · Vademécum</p>
+</div></details>
+
+<details class="ac" data-k="preparación suspensión fármacos phmetría manometría vaciamiento test aliento ibp antes del examen">
+<summary>Preparación de los estudios funcionales</summary><div class="in">
+<div class="tw"><table class="t"><thead><tr><th>Estudio</th><th>Suspender</th></tr></thead><tbody>
+<tr><td><strong>pHmetría sin tratamiento</strong></td><td>IBP y P-CAB 7 días · anti-H2 3 días · alginatos 24 h</td></tr>
+<tr><td><strong>Endoscopía para ERGE / EoE</strong></td><td>Antisecretores 2–4 semanas / IBP y corticoide tópico ≥ 3 semanas</td></tr>
+<tr><td><strong>Manometría</strong></td><td>Opioides, procinéticos, nitratos y bloqueadores de calcio ~48 h</td></tr>
+<tr><td><strong>Vaciamiento gástrico</strong></td><td>Procinéticos, opioides, anticolinérgicos 48–72 h; GLP-1 más tiempo; glicemia &lt; 275</td></tr>
+<tr><td><strong>Test de aire espirado</strong></td><td>Antibióticos 4 semanas · procinéticos y laxantes 1 semana · ayuno 8–12 h</td></tr>
+<tr><td><strong><i>H. pylori</i></strong></td><td>IBP 2 semanas · antibióticos y bismuto 4 semanas</td></tr>
+</tbody></table></div>
+<p class="ref">Bloque 16</p>
+</div></details>
+
+</div>
+<p class="vacio" id="r-vacio" hidden>Sin resultados.</p>
+<!-- RAPIDA:FIN -->
+</section>
+
+<section class="vista" id="v-vademecum">
+  <div class="hero" style="padding-block:34px 20px">
+    <p class="eyebrow">Módulo 03</p>
+    <h1 style="font-size:clamp(1.6rem,4.6vw,2.4rem)">Vademécum neurogastroenterológico</h1>
+    <p class="sub">Por fármaco: línea de uso, dosis, ajustes, cuándo esperar respuesta, seguimiento, efectos adversos y disponibilidad en Chile. La pestaña «Líneas de tratamiento» resume la secuencia por enfermedad.</p>
+  </div>
+  <div class="box ojo">
+    <div class="t">Disponibilidad en Chile</div>
+    <p>Los TICI no tienen garantías GES ni cobertura por Ley Ricarte Soto: casi todo es <strong>costo de bolsillo o según plan</strong>. Etiquetas: <strong>Disponible</strong> (comercializado), <strong>Fuera de ficha</strong> (la indicación descrita no está en el registro, pero tiene respaldo de guías o ensayos), <strong>Hospitalario</strong>, <strong>Verificar disponibilidad</strong> y <strong>Sin registro en Chile</strong>. Según el curso de 2025, <strong>no hay linaclotida ni lubiprostona</strong>; tegoprazán se comercializa desde 2024 y la rifaximina registrada es de 200 mg. Verificar en el ISP antes de prescribir.</p>
+  </div>
+  <div class="vad-f" id="vad-tabs" role="tablist" aria-label="Vista del vademécum"><button type="button" class="chip" data-v="far" aria-pressed="true">Fármacos</button><button type="button" class="chip" data-v="lin" aria-pressed="false">Líneas de tratamiento y cinética</button></div>
+  <div id="vad-lin" hidden></div>
+  <div class="atlas-bar">
+    <input type="search" id="vq" placeholder="Buscar fármaco, indicación o efecto adverso…" aria-label="Buscar en el vademécum">
+  </div>
+  <div class="vad-f" id="vad-g" aria-label="Filtrar por grupo"></div>
+  <div class="vad-f" id="vad-c" aria-label="Filtrar por cobertura"></div>
+  <p class="vad-n" id="vad-n"></p>
+  <div id="vad-lista"></div>
+  <p class="vacio" id="vad-vacio" hidden>Sin resultados con esos filtros.</p>
+  <p class="nota" style="margin-top:20px">Dosis para adulto con función renal normal salvo indicación. Verificar siempre la ficha del producto e interacciones.</p>
+<!-- VADEMECUM:DATOS:INICIO -->
+<script type="application/json" id="vad-data">{"grupos":[["as","Antisecretores y ERGE"],["pro","Procinéticos y antieméticos"],["esp","Antiespasmódicos y menta"],["lax","Constipación: osmóticos, estimulantes, procinéticos y secretagogos"],["dia","Diarrea, ácidos biliares y microbiota"],["neu","Neuromoduladores"],["eoe","Esofagitis eosinofílica"],["otr","Motilidad grave, crisis y procedimientos"]],"cobertura":{"bol":["Disponible","Comercializado en Chile; costo de bolsillo o según plan"],"hosp":["Hospitalario","Uso intrahospitalario o en procedimiento: arsenal del establecimiento"],"off":["Fuera de ficha","La indicación descrita no está en la ficha registrada: uso con respaldo de guías o ensayos"],"nd":["Sin registro en Chile","Sin comercialización conocida en Chile a octubre 2026 (verificar en ISP)"],"ver":["Verificar disponibilidad","Disponibilidad comercial en Chile no confirmada"]},"farmacos":[{"id":"omeprazol","n":"Omeprazol","g":"as","cl":"Inhibidor de la bomba de protones (IBP); bloqueo irreversible de la H⁺/K⁺-ATPasa activa.","ind":"ERGE (esofagitis, ERGE no erosiva), prueba terapéutica en pirosis típica, dispepsia funcional tipo SDE, erradicación de <i>H. pylori<\/i>.","lin":"1.ª línea en ERGE y SDE.","dos":"20 mg/día 30–60 min antes del desayuno. Respuesta parcial: <b>20 mg antes de desayuno y cena<\/b> (o 40 mg c/12 h) por 8 semanas. Esofagitis LA C/D: dosis doble 8 semanas y control endoscópico.","aj":"Sin ajuste renal. Metabolismo CYP2C19 (metabolizadores rápidos responden peor). Interacción con clopidogrel (preferir pantoprazol).","resp":"Pirosis: 2–4 semanas; esofagitis: 8 semanas. Sin respuesta con dosis doble: estudiar (pH-impedancia), no seguir escalando.","plan":[["4–8 semanas","Respuesta sintomática; si no hay ERGE probada y responde, intentar desescalar a la dosis mínima o a demanda"],["Esofagitis LA C/D","Endoscopía tras 8 semanas para documentar curación y descartar Barrett"],["Uso crónico","Revisar indicación en cada control; magnesio y B12 si hay factores de riesgo"]],"ea":"Cefalea, diarrea. Uso prolongado: hipomagnesemia, déficit de B12, mayor riesgo de <i>C. difficile<\/i>, colitis microscópica; el exceso de riesgo de fractura y demencia es de causalidad incierta.","cob":["bol"],"ch":"Ampliamente disponible, también en el sistema público.","ev":"ACG 2022 ERGE · Lyon 2.0 (2024)"},{"id":"esomeprazol","n":"Esomeprazol","g":"as","cl":"IBP (S-enantiómero de omeprazol); potencia relativa ~1,6 veces omeprazol.","ind":"ERGE, esofagitis, respuesta parcial a otro IBP.","lin":"1.ª línea; alternativa al cambiar de IBP por respuesta parcial.","dos":"40 mg/día antes del desayuno; dosis doble 40 mg c/12 h.","aj":"Sin ajuste renal. Insuficiencia hepática grave: máximo 20 mg/día.","resp":"Igual que omeprazol.","mon":"Igual que omeprazol.","ea":"Igual que la clase.","cob":["bol"],"ch":"Disponible.","ev":"Kirchheiner 2009 (potencia relativa de IBP)"},{"id":"lansoprazol","n":"Lansoprazol","g":"as","cl":"IBP; potencia relativa ~0,9 omeprazol.","ind":"ERGE, dispepsia, <i>H. pylori<\/i>.","lin":"1.ª línea.","dos":"30 mg/día antes del desayuno; dosis doble 30 mg c/12 h.","aj":"Sin ajuste renal.","resp":"Igual que omeprazol.","ea":"Igual que la clase; colitis microscópica descrita con mayor frecuencia.","cob":["bol"],"ch":"Disponible.","ev":"Kirchheiner 2009"},{"id":"pantoprazol","n":"Pantoprazol","g":"as","cl":"IBP; menor potencia (40 mg ≈ 9 mg de omeprazol) y menos interacciones por CYP2C19.","ind":"ERGE, gastroprotección, usuarios de clopidogrel.","lin":"1.ª línea cuando importan las interacciones.","dos":"40 mg/día antes del desayuno; 40 mg c/12 h.","aj":"Sin ajuste renal.","resp":"Igual que omeprazol.","ea":"Igual que la clase.","cob":["bol"],"ch":"Disponible, también intravenoso.","ev":"Kirchheiner 2009"},{"id":"rabeprazol","n":"Rabeprazol","g":"as","cl":"IBP; mayor potencia relativa (~1,8 omeprazol) y menor dependencia de CYP2C19.","ind":"ERGE, respuesta parcial a otros IBP.","lin":"1.ª línea o cambio de IBP.","dos":"20 mg/día; 20 mg c/12 h.","aj":"Sin ajuste renal.","resp":"Igual que omeprazol.","ea":"Igual que la clase.","cob":["bol"],"ch":"Disponible.","ev":"Kirchheiner 2009"},{"id":"tegoprazan","n":"Tegoprazán","g":"as","cl":"Bloqueador ácido competitivo de potasio (P-CAB): inhibición reversible, inicio rápido, independiente de la comida y de la activación de la bomba.","ind":"Esofagitis erosiva, ERGE no erosiva, úlcera, <i>H. pylori<\/i> (en esquemas).","lin":"Alternativa al IBP; preferible en esofagitis grave (LA C/D), respuesta parcial al IBP o síntomas nocturnos.","dos":"50 mg/día con o sin comida, 4–8 semanas (esofagitis); mantención 25 mg/día.","aj":"Sin ajuste en insuficiencia renal leve a moderada; precaución en grave.","resp":"Control del pH en horas; curación de esofagitis en 4–8 semanas.","mon":"Igual que la clase antisecretora; hipergastrinemia mayor que con IBP (significado clínico incierto).","ea":"Diarrea, cefalea; hipergastrinemia.","cob":["bol"],"ch":"Comercializado en Chile desde 2024.","ev":"Lyon 2.0 · ensayos de fase 3 en esofagitis erosiva (Corea)"},{"id":"vonoprazan","n":"Vonoprazán","g":"as","cl":"P-CAB.","ind":"Esofagitis erosiva (sobre todo LA C/D), mantención, <i>H. pylori<\/i> (terapia dual con amoxicilina).","lin":"Superior a lansoprazol en curación de esofagitis grave.","dos":"20 mg/día por 8 semanas; mantención 10 mg/día.","aj":"Sin ajuste habitual.","resp":"Curación a 8 semanas mayor que IBP en LA C/D.","ea":"Diarrea, hipergastrinemia.","cob":["ver"],"ch":"Registro y comercialización en Chile por confirmar.","ev":"Laine, Gastroenterology 2023 (PHALCON-EE)"},{"id":"fexuprazan","n":"Fexuprazán","g":"as","cl":"P-CAB.","ind":"Esofagitis erosiva, gastritis.","lin":"Alternativa al IBP.","dos":"40 mg/día por 4–8 semanas.","aj":"Sin ajuste habitual.","resp":"No inferior a esomeprazol en curación de esofagitis.","ea":"Diarrea, cefalea.","cob":["ver"],"ch":"Registrado en Chile; verificar disponibilidad comercial.","ev":"Ensayos de fase 3 frente a esomeprazol (Corea)"},{"id":"famotidina","n":"Famotidina","g":"as","cl":"Antagonista del receptor H2.","ind":"Síntomas nocturnos que persisten con IBP 2 veces al día; SDE (alternativa); ERGE leve.","lin":"Complemento nocturno o alternativa en SDE.","dos":"20–40 mg en la noche.","aj":"ClCr &lt; 50: reducir 50 % (riesgo de confusión en adultos mayores).","resp":"Taquifilaxia en 2–4 semanas: usar a demanda o intermitente.","ea":"Cefalea, confusión en adultos mayores con falla renal.","cob":["bol"],"ch":"Disponible (la ranitidina fue retirada).","ev":"ACG 2022 ERGE"},{"id":"alginato","n":"Alginato con antiácido","g":"as","cl":"Forma una balsa de gel sobre la bolsa ácida posprandial.","ind":"Pirosis y regurgitación posprandial, ERGE no erosiva, complemento del IBP, síntomas nocturnos.","lin":"Complemento en cualquier escalón; a demanda en ERGE leve.","dos":"10–20 mL después de las comidas y al acostarse.","aj":"Contenido de sodio: precaución en insuficiencia cardíaca o dieta hiposódica.","resp":"Inmediata (minutos).","ea":"Sabor, distensión.","cob":["bol"],"ch":"Disponible en farmacias.","ev":"Lyon 2.0 · ACG 2022"},{"id":"baclofeno","n":"Baclofeno","g":"as","cl":"Agonista GABA-B: reduce las relajaciones transitorias del esfínter esofágico inferior.","ind":"Regurgitación o reflujo no ácido persistente con IBP, eructo supragástrico, rumiación que no responde a respiración diafragmática.","lin":"Tercera línea; uso limitado por efectos centrales.","dos":"5 mg c/8 h → 10 mg c/8 h (hasta 20 mg c/8 h).","aj":"Insuficiencia renal: reducir dosis (acumulación y encefalopatía). Retirar gradualmente (convulsiones, alucinaciones).","resp":"1–2 semanas.","ea":"Somnolencia, mareo, confusión, constipación.","cob":["bol","off"],"ch":"Disponible; indicación digestiva fuera de ficha.","ev":"ACG 2022 ERGE · Roma V (rumiación)"},{"id":"metoclopramida","n":"Metoclopramida","g":"pro","cl":"Antagonista D2 (central y periférico) con agonismo 5-HT4.","ind":"Gastroparesia, náuseas y vómitos.","lin":"1.ª línea en gastroparesia (AGA 2025, condicional); único aprobado por la FDA en gastroparesia.","dos":"5–10 mg 3–4 veces al día, 30 min antes de comidas y al acostarse; <b>máximo 12 semanas<\/b>. Formulación líquida o intranasal si hay vómitos.","aj":"ClCr &lt; 40: reducir 50 %. Adultos mayores: dosis menores.","resp":"Días a 2 semanas.","plan":[["Inicio","Advertir de efectos extrapiramidales y discinesia tardía; registrar consentimiento"],["4 semanas","Evaluar respuesta; suspender si no hay beneficio"],["12 semanas","Suspender o documentar justificación y vigilancia de movimientos anormales"]],"ea":"Discinesia tardía (advertencia de caja negra de la FDA), distonía aguda, acatisia, hiperprolactinemia, somnolencia, prolongación del QT.","cob":["bol"],"ch":"Disponible oral y parenteral.","ev":"AGA 2025 gastroparesia · ACG 2022 gastroparesia"},{"id":"domperidona","n":"Domperidona","g":"pro","cl":"Antagonista D2 periférico (no cruza la barrera hematoencefálica).","ind":"SDP, gastroparesia, náuseas.","lin":"1.ª línea en SDP (Roma V); AGA 2025 no la recomienda de rutina en primera línea en gastroparesia.","dos":"10 mg c/8 h antes de comidas; <b>máximo 30 mg/día<\/b>.","aj":"Insuficiencia hepática moderada o grave: evitar. Evitar con inhibidores potentes de CYP3A4 y otros fármacos que prolongan el QT.","resp":"1–4 semanas.","plan":[["Basal","ECG (QTc) si hay cardiopatía, &gt; 60 años, electrolitos alterados o fármacos que prolongan el QT"],["4–8 semanas","Evaluar respuesta; suspender si no hay beneficio"]],"ea":"Prolongación del QT y arritmia ventricular, hiperprolactinemia (galactorrea, ginecomastia).","cob":["bol"],"ch":"Disponible.","ev":"Roma V dispepsia · AGA 2025 gastroparesia"},{"id":"levosulpirida","n":"Levosulpirida","g":"pro","cl":"Antagonista D2 con agonismo parcial 5-HT4.","ind":"SDP, gastroparesia leve.","lin":"Procinético alternativo en SDP.","dos":"25 mg c/8 h antes de comidas, 4–8 semanas.","aj":"Insuficiencia renal: reducir dosis.","resp":"2–4 semanas.","ea":"Hiperprolactinemia (galactorrea, amenorrea), extrapiramidales, somnolencia.","cob":["bol"],"ch":"Disponible.","ev":"Roma V dispepsia"},{"id":"cinitaprida","n":"Cinitaprida","g":"pro","cl":"Agonista 5-HT4 y antagonista 5-HT2 y D2 débil.","ind":"SDP, dispepsia con plenitud.","lin":"Procinético alternativo en SDP.","dos":"1 mg c/8 h, 15 min antes de comidas.","aj":"—","resp":"2–4 semanas.","ea":"Somnolencia, extrapiramidales (raros).","cob":["bol"],"ch":"Disponible.","ev":"Roma V dispepsia"},{"id":"eritromicina","n":"Eritromicina","g":"pro","cl":"Macrólido agonista del receptor de motilina: induce contracciones antrales de fase III.","ind":"Gastroparesia (exacerbación o crónica), preparación antes de endoscopía en hemorragia alta.","lin":"AGA 2025: condicional a favor en gastroparesia.","dos":"Oral 125–250 mg c/8 h antes de comidas; IV 3 mg/kg c/8 h en la crisis.","aj":"Interacciones por CYP3A4 (estatinas, anticoagulantes, antiarrítmicos).","resp":"Inmediata; <b>taquifilaxia<\/b> en 1–4 semanas: usar en ciclos con descansos.","ea":"Prolongación del QT, náuseas y cólico (dosis altas), resistencia bacteriana.","cob":["bol","off"],"ch":"Disponible; uso procinético fuera de ficha.","ev":"AGA 2025 gastroparesia"},{"id":"ondansetron","n":"Ondansetrón","g":"pro","cl":"Antagonista 5-HT3.","ind":"Náuseas y vómitos; aborto del episodio de vómitos cíclicos; SII-D (enlentece el tránsito y reduce la urgencia).","lin":"Antiemético de 1.ª línea; SII-D de segunda línea.","dos":"Náuseas: 4–8 mg c/8 h (oral u orodispersable). SII-D: 4 mg/día titulado hasta 8 mg c/8 h según deposiciones.","aj":"Insuficiencia hepática grave: máximo 8 mg/día.","resp":"Náuseas: horas. SII-D: 1–2 semanas.","ea":"Constipación, cefalea, prolongación del QT (dosis altas IV).","cob":["bol","off"],"ch":"Disponible; en SII-D fuera de ficha.","ev":"Garsed, Gut 2014 (SII-D) · Venkatesan, Neurogastroenterol Motil 2019 (ANMS-CVSA, vómitos cíclicos)"},{"id":"aprepitant","n":"Aprepitant","g":"pro","cl":"Antagonista del receptor NK1.","ind":"Vómitos cíclicos refractarios (aborto y profilaxis), náuseas de gastroparesia en refractarios.","lin":"Segunda línea; AGA 2025 no lo recomienda de rutina en gastroparesia.","dos":"Aborto del episodio: 125 mg al inicio, luego 80 mg/día por 2 días.","aj":"Interacciones por CYP3A4 (anticonceptivos, warfarina).","resp":"Horas.","ea":"Fatiga, hipo.","cob":["bol","off"],"ch":"Disponible (oncología); uso en vómitos cíclicos fuera de ficha.","ev":"Venkatesan, Neurogastroenterol Motil 2019 (ANMS-CVSA, vómitos cíclicos)"},{"id":"sumatriptan","n":"Sumatriptán","g":"pro","cl":"Agonista 5-HT1B/1D.","ind":"Aborto de episodios de vómitos cíclicos o migraña abdominal.","lin":"1.ª línea abortiva junto con ondansetrón y sedación.","dos":"20 mg intranasal o 6 mg subcutáneo al inicio del pródromo; puede repetirse una vez.","aj":"Contraindicado en cardiopatía isquémica, HTA no controlada.","resp":"Minutos a horas; mayor efecto si se da en el pródromo.","ea":"Opresión torácica, parestesias.","cob":["bol","off"],"ch":"Disponible (formulaciones según farmacia); uso digestivo fuera de ficha.","ev":"Venkatesan, Neurogastroenterol Motil 2019 (ANMS-CVSA, vómitos cíclicos)"},{"id":"haloperidol","n":"Haloperidol","g":"pro","cl":"Antagonista D2.","ind":"Hiperémesis por cannabinoides en urgencia; náuseas refractarias.","lin":"Superior a ondansetrón en hiperémesis por cannabinoides (HaVOC).","dos":"0,05–0,1 mg/kg IV (HaVOC); habitual 2,5–5 mg IV o IM.","aj":"Adultos mayores: menor dosis.","resp":"Minutos a horas.","ea":"Prolongación del QT, distonía aguda, acatisia.","cob":["hosp","off"],"ch":"Disponible en urgencias.","ev":"Ruberto, Ann Emerg Med 2021 (HaVOC)"},{"id":"capsaicina","n":"Capsaicina tópica","g":"pro","cl":"Agonista TRPV1 (receptor también activado por el calor).","ind":"Hiperémesis por cannabinoides.","lin":"Complemento en urgencia.","dos":"Crema 0,075 % en abdomen o espalda.","aj":"No en mucosas ni piel lesionada.","resp":"Minutos.","ea":"Ardor cutáneo.","cob":["ver","off"],"ch":"Verificar formulación disponible.","ev":"Actualización de práctica clínica de la AGA sobre hiperémesis por cannabinoides"},{"id":"pinaverio","n":"Bromuro de pinaverio","g":"esp","cl":"Antiespasmódico: bloqueador de canales de calcio de acción intestinal.","ind":"Dolor y cólico del SII.","lin":"1.ª línea para dolor en SII.","dos":"50–100 mg c/8 h con comida (máximo 300 mg/día).","aj":"Tragar con agua, sentado (riesgo de esofagitis).","resp":"1–4 semanas.","ea":"Epigastralgia, constipación leve.","cob":["bol"],"ch":"Disponible.","ev":"Metaanálisis de antiespasmódicos en SII · Roma V"},{"id":"trimebutina","n":"Trimebutina","g":"esp","cl":"Agonista opioide periférico (μ, κ, δ) modulador de la motilidad.","ind":"Dolor del SII, dispepsia.","lin":"Alternativa antiespasmódica.","dos":"100–200 mg c/8 h antes de comidas.","aj":"—","resp":"1–4 semanas.","ea":"Sequedad bucal, somnolencia leve.","cob":["bol"],"ch":"Disponible.","ev":"Roma V"},{"id":"otilonio","n":"Bromuro de otilonio","g":"esp","cl":"Antiespasmódico de amonio cuaternario (bloqueo de calcio y muscarínico local).","ind":"Dolor del SII.","lin":"Alternativa antiespasmódica.","dos":"40 mg c/8–12 h.","aj":"Absorción sistémica mínima.","resp":"1–4 semanas.","ea":"Escasos.","cob":["ver"],"ch":"Verificar disponibilidad.","ev":"Clavé, APT 2011 (OBIS)"},{"id":"hioscina","n":"Butilbromuro de hioscina","g":"esp","cl":"Antimuscarínico de amonio cuaternario.","ind":"Cólico abdominal episódico; a demanda en SII.","lin":"Rescate.","dos":"10–20 mg c/6–8 h a demanda.","aj":"Evitar en glaucoma de ángulo cerrado, retención urinaria, megacolon.","resp":"Minutos a horas.","ea":"Sequedad bucal, taquicardia, retención urinaria, constipación.","cob":["bol"],"ch":"Disponible.","ev":"ACG 2021 SII"},{"id":"menta","n":"Aceite de menta (cápsulas entéricas)","g":"esp","cl":"Bloqueo de canales de calcio del músculo liso; agonista TRPM8.","ind":"Dolor global del SII; SDP (combinado con alcaravea).","lin":"ACG 2021: condicional a favor en SII.","dos":"180–225 mg c/8 h, 30 min antes de comidas.","aj":"Puede empeorar la pirosis si se libera en el estómago.","resp":"2–4 semanas.","ea":"Pirosis, olor a menta.","cob":["ver"],"ch":"Verificar formulación con cubierta entérica.","ev":"ACG 2021 SII · Weerts, Gastroenterology 2020 (PERSUADE)"},{"id":"psyllium","n":"Psyllium (ispágula)","g":"lax","cl":"Fibra soluble formadora de gel, poco fermentable.","ind":"Constipación crónica, SII (todos los subtipos), regularizar consistencia en incontinencia fecal.","lin":"Base del tratamiento; ACG 2021 fuerte en SII.","dos":"3,5 g/día → hasta 10–20 g/día, aumentando cada 1–2 semanas, con agua abundante.","aj":"Evitar en sospecha de obstrucción o en tránsito lento grave y disinergia (empeora la distensión).","resp":"2–4 semanas.","ea":"Distensión y flatulencia iniciales.","cob":["bol"],"ch":"Disponible.","ev":"ACG 2021 SII · AGA-ACG 2023 constipación"},{"id":"peg","n":"Polietilenglicol 3350","g":"lax","cl":"Laxante osmótico no absorbible ni fermentable.","ind":"Constipación crónica, SII-C (mejora frecuencia, no dolor), impactación fecal.","lin":"AGA-ACG 2023: <b>fuerte<\/b>, 1.ª línea farmacológica.","dos":"17 g/día (8,5–34 g) en 250 mL de líquido; desimpactación: dosis altas por 3 días.","aj":"Seguro en adultos mayores y ERC.","resp":"1–3 días.","plan":[["2–4 semanas","Ajustar a 1 deposición blanda diaria (Bristol 4)"],["Sin respuesta a dosis máxima","Agregar estimulante; si hay síntomas evacuatorios, manometría anorrectal y test de balón"]],"ea":"Distensión, diarrea con dosis altas.","cob":["bol"],"ch":"Disponible en farmacias.","ev":"Chang, Gastroenterology/AJG 2023 (AGA-ACG)"},{"id":"lactulosa","n":"Lactulosa","g":"lax","cl":"Disacárido osmótico fermentable.","ind":"Constipación crónica cuando no se dispone de otro osmótico.","lin":"AGA-ACG 2023: condicional (si fallan los de venta libre).","dos":"15–30 mL/día (hasta 60 mL).","aj":"—","resp":"1–2 días.","ea":"Distensión y flatulencia (más que PEG).","cob":["bol"],"ch":"Disponible.","ev":"AGA-ACG 2023"},{"id":"bisacodilo","n":"Bisacodilo","g":"lax","cl":"Laxante estimulante (difenilmetano): secreción y contracciones propagadas de alta amplitud.","ind":"Constipación crónica, rescate, constipación por opioides.","lin":"AGA-ACG 2023: <b>fuerte<\/b> (corto plazo, 4 semanas); seguro a largo plazo en la práctica.","dos":"5–10 mg en la noche (efecto en 6–12 h); supositorio 10 mg (15–60 min).","aj":"—","resp":"6–12 h.","ea":"Cólico, diarrea, hipopotasemia con abuso. El «colon catártico» no se ha demostrado con los estimulantes actuales.","cob":["bol"],"ch":"Disponible.","ev":"AGA-ACG 2023"},{"id":"picosulfato","n":"Picosulfato de sodio","g":"lax","cl":"Laxante estimulante (difenilmetano) activado por la microbiota colónica.","ind":"Constipación crónica.","lin":"AGA-ACG 2023: <b>fuerte<\/b> (corto plazo).","dos":"5–10 mg (gotas o comprimidos) en la noche.","aj":"—","resp":"6–12 h.","ea":"Cólico, diarrea.","cob":["bol"],"ch":"Disponible.","ev":"AGA-ACG 2023"},{"id":"sena","n":"Senósidos","g":"lax","cl":"Laxante estimulante antraquinónico.","ind":"Constipación crónica.","lin":"AGA-ACG 2023: condicional.","dos":"8,6–17,2 mg en la noche.","aj":"—","resp":"6–12 h.","ea":"Cólico, melanosis coli (benigna).","cob":["bol"],"ch":"Disponible.","ev":"AGA-ACG 2023"},{"id":"magnesio","n":"Sales de magnesio (óxido o hidróxido)","g":"lax","cl":"Laxante osmótico salino.","ind":"Constipación crónica.","lin":"AGA-ACG 2023: condicional.","dos":"Óxido de magnesio 0,5–1,5 g/día; leche de magnesia 15–30 mL/día.","aj":"<b>Evitar en ERC<\/b> (hipermagnesemia) y adultos mayores frágiles.","resp":"Horas a 1 día.","ea":"Hipermagnesemia, diarrea.","cob":["bol"],"ch":"Disponible.","ev":"AGA-ACG 2023"},{"id":"prucaloprida","n":"Prucaloprida","g":"lax","cl":"Agonista 5-HT4 de alta selectividad (sin afinidad por hERG ni 5-HT1B).","ind":"Constipación crónica refractaria a laxantes; uso prometedor en CIPO y gastroparesia.","lin":"AGA-ACG 2023: <b>fuerte<\/b>. En Chile, el siguiente escalón real tras osmóticos y estimulantes.","dos":"2 mg/día; <b>1 mg/día en &gt; 65 años<\/b> o ClCr &lt; 30.","aj":"Insuficiencia hepática grave: 1 mg.","resp":"Primera semana; si no hay respuesta a las 4 semanas, reconsiderar.","plan":[["Día 1–3","Cefalea y cólico suelen ceder en pocos días; tomar en la mañana"],["4 semanas","Sin aumento de deposiciones completas espontáneas: suspender y estudiar evacuación"]],"ea":"Cefalea, náuseas, cólico, diarrea; ideación suicida descrita (rara).","cob":["bol"],"ch":"Disponible.","ev":"AGA-ACG 2023"},{"id":"linaclotida","n":"Linaclotida","g":"lax","cl":"Agonista de guanilato ciclasa C: secreción de cloro y bicarbonato y reducción de la nocicepción.","ind":"Constipación crónica, SII-C.","lin":"AGA-ACG 2023 y AGA 2022 SII-C: <b>fuerte<\/b>.","dos":"Constipación crónica 72–145 µg/día; SII-C 290 µg/día, 30 min antes del desayuno.","aj":"Contraindicada en menores de 2 años.","resp":"Frecuencia en 1 semana; dolor en 6–8 semanas.","ea":"Diarrea (16–20 %).","cob":["nd"],"ch":"No disponible en Chile (Curso de Neurogastroenterología 2025).","ev":"AGA-ACG 2023 · AGA 2022 SII-C"},{"id":"lubiprostona","n":"Lubiprostona","g":"lax","cl":"Activador de canales de cloro ClC-2.","ind":"Constipación crónica, SII-C en mujeres, constipación por opioides.","lin":"AGA-ACG 2023: condicional.","dos":"Constipación crónica 24 µg c/12 h; SII-C 8 µg c/12 h, con comida.","aj":"Insuficiencia hepática: reducir.","resp":"1 semana.","ea":"Náuseas (hasta 32 %; tomar con comida), disnea transitoria.","cob":["nd"],"ch":"No disponible en Chile (Curso de Neurogastroenterología 2025).","ev":"AGA-ACG 2023"},{"id":"tenapanor","n":"Tenapanor","g":"lax","cl":"Inhibidor del intercambiador NHE3: retiene sodio y agua en el lumen.","ind":"SII-C.","lin":"AGA 2022 SII-C: condicional.","dos":"50 mg c/12 h antes de comidas.","aj":"—","resp":"1–4 semanas.","ea":"Diarrea.","cob":["nd"],"ch":"Sin registro en Chile.","ev":"AGA 2022 SII-C"},{"id":"naloxegol","n":"Naloxegol","g":"lax","cl":"Antagonista periférico de receptores μ (PAMORA).","ind":"Constipación inducida por opioides refractaria a laxantes.","lin":"Tras laxantes convencionales.","dos":"25 mg/día en ayunas (12,5 mg si no se tolera, con inhibidores moderados de CYP3A4 o ClCr &lt; 60).","aj":"Contraindicado en obstrucción intestinal y con inhibidores potentes de CYP3A4.","resp":"Horas a días.","ea":"Dolor abdominal, diarrea, síntomas de abstinencia (raros).","cob":["ver"],"ch":"Verificar disponibilidad.","ev":"AGA 2019 constipación por opioides"},{"id":"metilnaltrexona","n":"Metilnaltrexona","g":"lax","cl":"PAMORA.","ind":"Constipación inducida por opioides.","lin":"Tras laxantes; útil en hospitalizados y cuidados paliativos.","dos":"12 mg subcutáneo día por medio (o 450 mg oral/día).","aj":"ClCr &lt; 30: reducir 50 %. Contraindicado en obstrucción.","resp":"Minutos a horas (subcutáneo).","ea":"Dolor abdominal, perforación (rara).","cob":["ver"],"ch":"Verificar disponibilidad.","ev":"AGA 2019 constipación por opioides"},{"id":"loperamida","n":"Loperamida","g":"dia","cl":"Agonista μ periférico: enlentece el tránsito y aumenta el tono del esfínter anal.","ind":"SII-D, diarrea funcional, incontinencia fecal con deposiciones blandas.","lin":"1.ª línea sintomática; no mejora el dolor.","dos":"2 mg antes de comidas o de salir (preventivo); máximo 16 mg/día.","aj":"—","resp":"Horas.","ea":"Constipación, distensión; arritmias (QT) en sobredosis.","cob":["bol"],"ch":"Disponible.","ev":"ACG 2021 SII · AGA 2022 SII-D"},{"id":"colestiramina","n":"Colestiramina","g":"dia","cl":"Resina secuestradora de ácidos biliares.","ind":"Malabsorción de ácidos biliares (diagnóstico terapéutico), diarrea poscolecistectomía, colitis microscópica leve.","lin":"1.ª línea en malabsorción de ácidos biliares.","dos":"4 g 1–3 veces al día; iniciar con 2–4 g/día y titular.","aj":"Separar otros fármacos (tomarlos 1 h antes o 4–6 h después): levotiroxina, warfarina, anticonceptivos, digoxina.","resp":"Días; la respuesta apoya el diagnóstico.","ea":"Mal sabor, distensión, constipación, malabsorción de vitaminas liposolubles, hipertrigliceridemia.","cob":["bol"],"ch":"Disponible.","ev":"BSG 2018 diarrea crónica (Arasaradnam, Gut 2018) · AGA 2022 SII-D"},{"id":"colesevelam","n":"Colesevelam","g":"dia","cl":"Secuestrador de ácidos biliares de segunda generación.","ind":"Malabsorción de ácidos biliares con intolerancia a colestiramina.","lin":"Alternativa mejor tolerada.","dos":"1.875 mg c/12 h (3 comprimidos de 625 mg).","aj":"Menos interacciones que colestiramina.","resp":"Días.","ea":"Constipación, distensión.","cob":["ver","off"],"ch":"Verificar disponibilidad.","ev":"BSG 2018"},{"id":"budesonida","n":"Budesonida oral (liberación ileal o colónica)","g":"dia","cl":"Corticoide con alto metabolismo de primer paso hepático.","ind":"Colitis microscópica.","lin":"1.ª línea de inducción (AGA 2016, UEG/EMCG 2021).","dos":"<b>9 mg/día por 8 semanas<\/b>; recaída frecuente: mantención 6 mg/día (o mínima eficaz).","aj":"Evitar con inhibidores potentes de CYP3A4. Cirrosis: mayor exposición sistémica.","resp":"1–2 semanas; remisión 80 %.","plan":[["2–4 semanas","Respuesta clínica"],["8 semanas","Suspender (con o sin descenso); recaída en ~60–80 %"],["Mantención","Densitometría y calcio/vitamina D si es prolongada"]],"ea":"Efectos corticoides leves; osteoporosis con uso prolongado.","cob":["ver"],"ch":"Verificar presentación (cápsulas de liberación ileal).","ev":"AGA 2016 · Miehlke, UEG J 2021"},{"id":"rifaximina","n":"Rifaximina","g":"dia","cl":"Antibiótico no absorbible (rifamicina).","ind":"SII-D y SII sin constipación con distensión, SIBO, IMO (con neomicina).","lin":"ACG 2021 y AGA 2022: condicional en SII-D.","dos":"SII-D y SIBO: 550 mg c/8 h por 14 días; retratamiento hasta 2 veces si recae. En Chile la presentación registrada es de 200 mg: <b>400 mg c/8 h por 14 días<\/b>.","aj":"Sin ajuste.","resp":"Durante el curso; respuesta en SII-D ~40 % frente a ~30 % (TARGET).","plan":[["Fin del curso","Evaluar dolor, distensión y consistencia"],["Recaída","Repetir el curso (TARGET 3); hasta 2 retratamientos"]],"ea":"Bien tolerada; náuseas. Riesgo de <i>C. difficile<\/i> muy bajo.","cob":["bol","off"],"ch":"Disponible (200 mg); costo de bolsillo alto. En SII y SIBO, fuera de ficha.","ev":"Pimentel, NEJM 2011 (TARGET 1 y 2) · ACG 2021"},{"id":"bismuto","n":"Subsalicilato de bismuto","g":"dia","cl":"Antisecretor, antimicrobiano y antiinflamatorio local.","ind":"Colitis microscópica leve, diarrea aguda.","lin":"Alternativa en colitis microscópica.","dos":"Colitis microscópica: 524 mg (2 comprimidos de 262 mg) c/8 h por 8 semanas.","aj":"Evitar en alergia a salicilatos, ERC y anticoagulación.","resp":"2–4 semanas.","ea":"Lengua y deposiciones negras, tinnitus (salicilatos).","cob":["bol","off"],"ch":"Disponible.","ev":"AGA 2016 colitis microscópica"},{"id":"eluxadolina","n":"Eluxadolina","g":"dia","cl":"Agonista μ y κ, antagonista δ.","ind":"SII-D.","lin":"AGA 2022 SII-D: condicional.","dos":"100 mg c/12 h.","aj":"<b>Contraindicada sin vesícula<\/b>, con alcohol &gt; 3 tragos/día, pancreatitis o disfunción del esfínter de Oddi.","resp":"1–4 semanas.","ea":"Constipación, pancreatitis.","cob":["nd"],"ch":"Sin registro en Chile.","ev":"AGA 2022 SII-D"},{"id":"alosetron","n":"Alosetrón","g":"dia","cl":"Antagonista 5-HT3 potente.","ind":"SII-D grave en mujeres.","lin":"AGA 2022: condicional; programa de restricción.","dos":"0,5–1 mg c/12 h.","aj":"—","resp":"1–4 semanas.","ea":"Constipación grave, colitis isquémica.","cob":["nd"],"ch":"Sin registro en Chile.","ev":"AGA 2022 SII-D"},{"id":"amitriptilina","n":"Amitriptilina","g":"neu","cl":"Antidepresivo tricíclico (ATC): inhibición de recaptación de serotonina y noradrenalina, anticolinérgico y antihistamínico.","ind":"Dolor del SII (sobre todo SII-D), SDE, CAPS, vómitos cíclicos (profilaxis), pirosis funcional.","lin":"1.ª línea neuromoduladora para dolor; ACG 2021 y Roma V fuerte en SII.","dos":"10 mg en la noche → titular cada 1–2 semanas a 25–50 mg (ATLANTIS: 10–30 mg). Vómitos cíclicos: hasta 75–100 mg o 1 mg/kg.","aj":"Adultos mayores: preferir nortriptilina. Precaución con QT, glaucoma, prostatismo.","resp":"Sueño en días; dolor en 4–8 semanas.","plan":[["Inicio","Explicar que se usa como neuromodulador; advertir sequedad y somnolencia"],["2–4 semanas","Tolerancia; subir dosis"],["8–12 semanas","Evaluar respuesta; si responde, mantener 6–12 meses y retirar lento"],["Basal si hay riesgo","ECG (QTc) en cardiopatía o &gt; 50 años con dosis ≥ 50 mg"]],"ea":"Sequedad, somnolencia, constipación, aumento de peso, hipotensión ortostática, QT; letal en sobredosis.","cob":["bol","off"],"ch":"Disponible; indicación digestiva fuera de ficha.","ev":"Ford, Lancet 2023 (ATLANTIS) · Drossman 2018 (neuromoduladores)"},{"id":"imipramina","n":"Imipramina","g":"neu","cl":"ATC (amina terciaria).","ind":"Dolor del SII, dolor torácico funcional, hipersensibilidad visceral.","lin":"Alternativa a amitriptilina.","dos":"10–25 mg en la noche → 50 mg.","aj":"Igual que la clase.","resp":"4–8 semanas.","ea":"Igual que la clase.","cob":["bol","off"],"ch":"Disponible.","ev":"Drossman 2018"},{"id":"nortriptilina","n":"Nortriptilina","g":"neu","cl":"ATC (amina secundaria): menos anticolinérgico y sedante.","ind":"Dolor del SII y CAPS en adultos mayores o con intolerancia a amitriptilina.","lin":"Alternativa preferida en adultos mayores.","dos":"10 mg en la noche → 25–50 mg.","aj":"—","resp":"4–8 semanas.","ea":"Menos que amitriptilina.","cob":["ver","off"],"ch":"Verificar disponibilidad.","ev":"Drossman 2018"},{"id":"escitalopram","n":"Escitalopram","g":"neu","cl":"Inhibidor selectivo de la recaptación de serotonina (ISRS).","ind":"Hipervigilancia y ansiedad asociadas a TICI, SII-C con dolor, hipersensibilidad esofágica.","lin":"Neuromodulador cuando predomina la ansiedad o hay constipación.","dos":"5 mg → 10 mg/día (máximo 20 mg).","aj":"&gt; 65 años: máximo 10 mg. QT dependiente de dosis.","resp":"4–6 semanas (ansiedad primero).","ea":"Náuseas iniciales, diarrea, disfunción sexual, hiponatremia en adultos mayores, sangrado con AINE.","cob":["bol","off"],"ch":"Disponible.","ev":"Drossman 2018 · Roma V"},{"id":"sertralina","n":"Sertralina","g":"neu","cl":"ISRS.","ind":"Ansiedad o depresión asociada a TICI; dolor torácico funcional.","lin":"Alternativa ISRS.","dos":"25 mg → 50–100 mg/día.","aj":"—","resp":"4–6 semanas.","ea":"Diarrea (mayor que otros ISRS), náuseas.","cob":["bol","off"],"ch":"Disponible.","ev":"Drossman 2018"},{"id":"duloxetina","n":"Duloxetina","g":"neu","cl":"Inhibidor de la recaptación de serotonina y noradrenalina (IRSN).","ind":"Dolor abdominal crónico con fibromialgia, dolor somático o ansiedad; CAPS; SII-C con dolor.","lin":"Neuromodulador de dolor cuando un ATC no se tolera o constipa.","dos":"30 mg/día → 60 mg/día tras 1–2 semanas.","aj":"Evitar en hepatopatía y ClCr &lt; 30. Retiro gradual.","resp":"2–8 semanas.","plan":[["1–2 semanas","Náuseas iniciales (tomar con comida); subir a 60 mg"],["8 semanas","Evaluar dolor y función"]],"ea":"Náuseas, sudoración, insomnio, HTA leve, hepatotoxicidad (rara).","cob":["bol","off"],"ch":"Disponible.","ev":"Drossman 2018 · Roma V"},{"id":"venlafaxina","n":"Venlafaxina","g":"neu","cl":"IRSN (noradrenérgico a dosis &gt; 150 mg).","ind":"Dolor con ansiedad; dispepsia (datos mixtos).","lin":"Alternativa a duloxetina.","dos":"37,5 mg → 75–150 mg/día (liberación prolongada).","aj":"Insuficiencia renal o hepática: reducir.","resp":"4–8 semanas.","ea":"Náuseas, HTA, síndrome de retiro marcado.","cob":["bol","off"],"ch":"Disponible.","ev":"Drossman 2018"},{"id":"mirtazapina","n":"Mirtazapina","g":"neu","cl":"Antidepresivo noradrenérgico y serotoninérgico específico: antagonista α2, 5-HT2, 5-HT3 y H1.","ind":"SDP con baja de peso y saciedad precoz, náuseas y vómitos crónicos, insomnio asociado.","lin":"2.ª línea en SDP con baja de peso (Roma V).","dos":"7,5 mg en la noche → 15 mg (hasta 30 mg).","aj":"Insuficiencia renal o hepática: titular más lento.","resp":"Apetito y náuseas en 1–2 semanas; saciedad en 4–8 semanas.","plan":[["2 semanas","Somnolencia (menor con 15 mg que con 7,5 mg), apetito"],["8 semanas","Peso, saciedad y tolerancia a nutrientes"]],"ea":"Somnolencia, aumento de peso y apetito (deseado aquí), hipertrigliceridemia.","cob":["bol","off"],"ch":"Disponible.","ev":"Tack, Clin Gastroenterol Hepatol 2016 · Roma V"},{"id":"buspirona","n":"Buspirona","g":"neu","cl":"Agonista parcial 5-HT1A: relaja el fondo gástrico y mejora la acomodación.","ind":"SDP con saciedad precoz y plenitud.","lin":"2.ª línea en SDP.","dos":"10 mg c/8 h, 15 min antes de comidas.","aj":"Evitar con IMAO.","resp":"2–4 semanas.","ea":"Mareo, cefalea.","cob":["ver","off"],"ch":"Verificar disponibilidad.","ev":"Tack, Clin Gastroenterol Hepatol 2012"},{"id":"pregabalina","n":"Pregabalina","g":"neu","cl":"Ligando α2δ de canales de calcio: reduce la hipersensibilidad visceral.","ind":"Distensión y dolor del SII con hipersensibilidad; dolor anorrectal; CAPS como complemento.","lin":"Alternativa o aumento.","dos":"75 mg c/12 h → hasta 225 mg c/12 h (ensayo en SII).","aj":"<b>Ajustar a la función renal.<\/b> Riesgo de mal uso.","resp":"2–4 semanas.","ea":"Somnolencia, mareo, edema, aumento de peso.","cob":["bol","off"],"ch":"Disponible.","ev":"Saito, Am J Gastroenterol 2019"},{"id":"gabapentina","n":"Gabapentina","g":"neu","cl":"Ligando α2δ.","ind":"Hipersensibilidad visceral, dolor anorrectal, tos y síntomas laringofaríngeos con hipersensibilidad.","lin":"Alternativa a pregabalina.","dos":"100–300 mg en la noche → 300 mg c/8 h.","aj":"Ajustar a la función renal.","resp":"2–4 semanas.","ea":"Somnolencia, mareo.","cob":["bol","off"],"ch":"Disponible.","ev":"Drossman 2018"},{"id":"quetiapina","n":"Quetiapina","g":"neu","cl":"Antipsicótico atípico (antagonista D2, 5-HT2A, H1).","ind":"Aumento en CAPS refractario o con insomnio y ansiedad; desintoxicación de opioides.","lin":"Aumento, por especialista.","dos":"25 mg en la noche → 50–100 mg.","aj":"—","resp":"Días (sueño) a semanas.","ea":"Somnolencia, síndrome metabólico, QT.","cob":["bol","off"],"ch":"Disponible.","ev":"Drossman 2018"},{"id":"olanzapina","n":"Olanzapina","g":"neu","cl":"Antipsicótico atípico con efecto antiemético potente (D2, 5-HT2, 5-HT3, H1, M).","ind":"Náuseas crónicas refractarias, síndrome de náuseas y vómitos crónicos.","lin":"Aumento en refractarios.","dos":"2,5–5 mg en la noche.","aj":"Adultos mayores: 2,5 mg.","resp":"Días.","ea":"Somnolencia, aumento de peso, hiperglicemia.","cob":["bol","off"],"ch":"Disponible.","ev":"Roma V náuseas y vómitos"},{"id":"clonidina","n":"Clonidina","g":"neu","cl":"Agonista α2 central: atenúa la hiperactividad noradrenérgica de la abstinencia de opioides; también reduce la sensibilidad rectal.","ind":"Desintoxicación en síndrome de intestino narcótico; diarrea diabética.","lin":"Complemento del descenso de opioides.","dos":"0,1 mg c/8–12 h desde que se ha retirado el 50 % del opioide (hasta 0,6 mg/día); luego descenso.","aj":"Retiro gradual (HTA de rebote).","resp":"Horas.","ea":"Hipotensión, bradicardia, somnolencia, sequedad.","cob":["bol","off"],"ch":"Disponible.","ev":"Grunkemeier, Clin Gastroenterol Hepatol 2007 · Drossman y Szigethy 2014 (intestino narcótico)"},{"id":"budesonida_eoe","n":"Budesonida tópica esofágica","g":"eoe","cl":"Corticoide tópico deglutido.","ind":"Esofagitis eosinofílica.","lin":"1.ª línea (junto con IBP y dieta).","dos":"Orodispersable 1 mg c/12 h por 6–12 semanas; mantención 0,5–1 mg c/12 h. Alternativa magistral: suspensión viscosa de budesonida 1 mg c/12 h. No comer ni beber 30 min después.","aj":"—","resp":"Histológica a las 6–12 semanas (biopsias de control).","plan":[["6–12 semanas","Endoscopía con biopsias: meta &lt; 15 eosinófilos/campo"],["Respuesta","Mantención en dosis mínima eficaz"]],"ea":"Candidiasis esofágica (5–10 %), supresión suprarrenal rara.","cob":["ver"],"ch":"Orodispersable: verificar disponibilidad; la suspensión viscosa preparada es una alternativa usada.","ev":"AGA-JTF 2020 EoE (Hirano, Gastroenterology 2020)"},{"id":"fluticasona_eoe","n":"Fluticasona deglutida","g":"eoe","cl":"Corticoide tópico (inhalador deglutido).","ind":"Esofagitis eosinofílica.","lin":"Alternativa a budesonida.","dos":"440–880 µg c/12 h, pulverizado en la boca y deglutido sin espaciador.","aj":"—","resp":"8–12 semanas.","ea":"Candidiasis.","cob":["bol","off"],"ch":"Disponible como inhalador; uso fuera de ficha.","ev":"AGA-JTF 2020 EoE"},{"id":"dupilumab","n":"Dupilumab","g":"eoe","cl":"Anticuerpo anti-receptor α de IL-4 (bloquea IL-4 e IL-13).","ind":"EoE refractaria o con comorbilidad atópica (asma, dermatitis).","lin":"Tras falla de IBP o corticoide tópico (o antes si hay atopia grave).","dos":"300 mg subcutáneo semanal (≥ 12 años y ≥ 40 kg).","aj":"—","resp":"Histológica a las 12–24 semanas.","ea":"Reacción en el sitio de inyección, conjuntivitis.","cob":["ver"],"ch":"Registrado en Chile para otras indicaciones; verificar indicación en EoE y acceso.","ev":"Dellon, NEJM 2022"},{"id":"botox","n":"Toxina botulínica A","g":"otr","cl":"Bloqueo presináptico de la liberación de acetilcolina.","ind":"Incapacidad para eructar (cricofaríngeo), acalasia en pacientes no candidatos a dilatación o cirugía, fisura anal; no se recomienda de rutina en el píloro en gastroparesia.","lin":"Según indicación.","dos":"R-CPD: 50–100 U en el cricofaríngeo (guía electromiográfica o endoscópica). Acalasia: 100 U en 4 cuadrantes del esfínter inferior.","aj":"—","resp":"R-CPD: días, efecto duradero en la mayoría; acalasia: efecto de 6–12 meses.","ea":"Disfagia transitoria (cricofaríngeo), dolor torácico; fibrosis que dificulta la miotomía posterior.","cob":["hosp"],"ch":"Disponible en centros de procedimiento.","ev":"Bastian y Smithson, OTO Open 2019 (R-CPD) · ACG 2020 acalasia · AGA 2025 gastroparesia"},{"id":"octreotido","n":"Octreótido","g":"otr","cl":"Análogo de somatostatina: en dosis bajas nocturnas induce complejos motores migratorios.","ind":"CIPO, SIBO por dismotilidad, esclerodermia, síndrome de dumping.","lin":"Procinético en dismotilidad intestinal grave.","dos":"50–100 µg subcutáneo en la noche (CIPO); dumping: 50–100 µg antes de comidas.","aj":"—","resp":"Días.","ea":"Colelitiasis, esteatorrea, hiperglicemia.","cob":["bol","hosp","off"],"ch":"Disponible.","ev":"Soudah, NEJM 1991"},{"id":"piridostigmina","n":"Piridostigmina","g":"otr","cl":"Inhibidor de acetilcolinesterasa oral.","ind":"CIPO, constipación refractaria con neuropatía autonómica.","lin":"Procinético en CIPO (evidencia creciente).","dos":"30–60 mg c/8–12 h.","aj":"Evitar en asma y bradicardia.","resp":"Días.","ea":"Cólico, sialorrea, bradicardia.","cob":["bol","off"],"ch":"Disponible.","ev":"Revisiones de CIPO"},{"id":"neostigmina","n":"Neostigmina","g":"otr","cl":"Inhibidor de acetilcolinesterasa parenteral.","ind":"Pseudoobstrucción colónica aguda (síndrome de Ogilvie) sin respuesta al manejo conservador.","lin":"Tras 24–48 h de tratamiento conservador o ciego &gt; 12 cm.","dos":"<b>2 mg IV lenta (3–5 min)<\/b> con monitor cardíaco y atropina disponible; puede repetirse una vez.","aj":"Contraindicada en obstrucción mecánica, bradicardia, broncoespasmo activo, perforación.","resp":"Evacuación en 30 min en ~90 %.","ea":"Bradicardia, broncoespasmo, cólico, sialorrea.","cob":["hosp"],"ch":"Disponible en hospitales.","ev":"Ponec, NEJM 1999"}],"lineas":[{"e":"ERGE (síntomas típicos)","r":[["1.ª","IBP en dosis estándar 30–60 min antes del desayuno, 8 semanas","Pirosis en 2–4 semanas"],["Parcial","Optimizar horario → dosis doble 8 semanas o cambio a P-CAB; alginato nocturno","Sin respuesta: endoscopía sin IBP y pH-impedancia"],["ERGE probada refractaria","P-CAB, baclofeno, alginato; cirugía o endoscopía antirreflujo","TEA &gt; 4 % y &gt; 80 reflujos con IBP 2 veces al día"],["Sin ERGE probada","Desescalar o suspender a las 4–8 semanas","—"]]},{"e":"Hipersensibilidad al reflujo y pirosis funcional","r":[["1.ª","ATC en dosis baja (amitriptilina 10–25 mg) o ISRS (escitalopram)","4–8 semanas"],["Complemento","Terapia cerebro-intestino (hipnoterapia, TCC)","—"],["Hipersensibilidad","Mantener antisecretor si hay asociación con reflujo ácido","—"]]},{"e":"Dispepsia: SDP","r":[["Siempre","<i>H. pylori<\/i> y erradicación","Reevaluar a 6–12 meses"],["1.ª","Procinético (domperidona, cinitaprida, levosulpirida) o IBP, 4–8 semanas","Sin respuesta: suspender, no escalar"],["2.ª","Mirtazapina 7,5–15 mg (baja de peso) o buspirona 10 mg c/8 h (saciedad)","8 semanas"],["Refractaria","Vaciamiento gástrico de 4 h; terapia cerebro-intestino","—"]]},{"e":"Dispepsia: SDE","r":[["1.ª","IBP en dosis estándar, sin escalar","4–8 semanas"],["2.ª","ATC en dosis baja","8–12 semanas"],["Complemento","Terapia cerebro-intestino","—"]]},{"e":"Gastroparesia","r":[["Base","Comidas pequeñas, partículas pequeñas, baja grasa y fibra; control glicémico; retirar opioides y GLP-1","—"],["1.ª","Metoclopramida 5–10 mg 3–4 veces al día ≤ 12 semanas","Evaluar a 4 semanas"],["2.ª","Eritromicina en ciclos; antieméticos","Taquifilaxia en 1–4 semanas"],["Refractaria","G-POEM en seleccionados (vaciamiento muy retardado, síntomas de retención); nutrición yeyunal","—"]]},{"e":"Vómitos cíclicos","r":[["Profilaxis (≥ 4 episodios/año o graves)","Amitriptilina 25 → 75–100 mg; alternativa topiramato o aprepitant","Meta: reducción ≥ 50 % de episodios en 3 meses"],["Aborto","Sumatriptán + ondansetrón + sedación (lorazepam) en el pródromo","—"],["Siempre","Suspender cannabis; tratar ansiedad y migraña","—"]]},{"e":"SII con diarrea","r":[["Base","Explicación, FODMAP en 3 fases, psyllium, antiespasmódico o menta","4–6 semanas"],["Síntoma","Loperamida preventiva; colestiramina si se sospecha malabsorción de ácidos biliares","—"],["Global","Rifaximina 14 días (Chile 400 mg c/8 h); ondansetrón titulado","Recaída: repetir rifaximina"],["Dolor","ATC en dosis baja","8–12 semanas"],["Refractario","Terapia cerebro-intestino; revisar diagnóstico (colitis microscópica, ácidos biliares)","—"]]},{"e":"SII con constipación","r":[["Base","Psyllium, PEG, antiespasmódico o menta","PEG mejora frecuencia, no dolor"],["2.ª","Prucaloprida (en la práctica); linaclotida donde exista","4 semanas"],["Dolor","ISRS o duloxetina (no constipan); terapia cerebro-intestino","8 semanas"],["Síntomas evacuatorios","Manometría anorrectal y test de balón → biorretroalimentación","—"]]},{"e":"Constipación crónica","r":[["1.ª","Psyllium y PEG 17 g/día","2–4 semanas"],["2.ª","+ Bisacodilo o picosulfato","—"],["3.ª","Prucaloprida 2 mg (1 mg en &gt; 65)","Sin respuesta en 4 semanas: suspender"],["Refractaria","Pruebas anorrectales → biorretroalimentación; tránsito colónico si son normales","Colectomía solo en inercia colónica pura con evaluación completa"]]},{"e":"Constipación por opioides","r":[["1.ª","PEG o estimulante desde el inicio del opioide","—"],["2.ª","PAMORA: naloxegol 25 mg o metilnaltrexona","Contraindicados en obstrucción"]]},{"e":"Colitis microscópica","r":[["Siempre","Suspender AINE, IBP, ISRS, estatinas si es posible; descartar celíaca","—"],["Inducción","Budesonida 9 mg/día por 8 semanas","Remisión en ~80 %"],["Recaída","Repetir budesonida; mantención en dosis mínima","Refractaria: tiopurinas o biológicos (anti-TNF, vedolizumab)"]]},{"e":"SIBO e IMO","r":[["SIBO","Rifaximina 14 días; tratar la causa (motilidad, anatomía)","Recurrencia frecuente: buscar la causa"],["IMO","Rifaximina + neomicina 500 mg c/12 h, 14 días; tratar la constipación","—"],["Dismotilidad","Procinético nocturno (octreótido, prucaloprida); ciclos de antibiótico","—"]]},{"e":"Esofagitis eosinofílica","r":[["Inducción","IBP dosis alta (omeprazol 20–40 mg c/12 h), budesonida tópica o dieta de eliminación (1–2 alimentos)","Biopsias a 8–12 semanas"],["Refractaria","Cambiar de modalidad; dupilumab","—"],["Estenosis","Dilatación endoscópica además del tratamiento antiinflamatorio","—"]]},{"e":"CAPS e intestino narcótico","r":[["1.ª","Relación terapéutica, metas funcionales, ATC o duloxetina","8–12 semanas"],["Aumento","+ Pregabalina o quetiapina en dosis baja; terapia cerebro-intestino","—"],["Opioides","Descenso planificado; clonidina desde el 50 % retirado; laxantes","Recaída frecuente: seguimiento estrecho"]]}]}</script>
+<!-- VADEMECUM:DATOS:FIN -->
+</section>
+
+<section class="vista" id="v-fuentes">
+  <div class="hero" style="padding-block:34px 20px">
+    <p class="eyebrow">Fuentes</p>
+    <h1 style="font-size:clamp(1.6rem,4.6vw,2.4rem)">Fuentes, autoría y alcance</h1>
+    <p class="sub">De dónde viene cada pieza y cómo se jerarquizó la evidencia.</p>
+  </div>
+  <div class="box bien">
+    <div class="t">Autor del repositorio</div>
+    <p><strong>Dr. Moisés Oropeza</strong>, Médico Internista, Residente de Gastroenterología de la Universidad de los Andes (Clínica Dávila / Clínica Universidad de los Andes). Selección de contenidos, redacción y edición. Santiago de Chile, octubre 2026.</p>
+  </div>
+  <h3 class="sub">Consensos y guías de referencia</h3>
+  <ul>
+    <li><strong>Roma V</strong> (Gastroenterology, 2026): criterios clínicos y de investigación de los TICI.</li>
+    <li><strong>Clasificación de Chicago 4.0</strong> (Neurogastroenterol Motil 2021) y panometría FLIP.</li>
+    <li><strong>Consenso de Lyon 2.0</strong> (Gut 2024) para el diagnóstico de ERGE.</li>
+    <li>AGA 2025 gastroparesia · AGA-ACG 2023 constipación crónica · ACG 2021 SII · AGA 2022 SII-D y SII-C · ACG 2022 ERGE · ACG 2020 acalasia · AGA-JTF 2020 EoE · Consenso norteamericano de test de aire espirado 2017 · IAPWG y clasificación de Londres 2020.</li>
+  </ul>
+  <h3 class="sub">Material docente de base</h3>
+  <ul>
+    <li>Guía de neurogastroenterología del tubo digestivo alto 2026 y cuaderno de avances 2026 del autor, actualizados a Roma V.</li>
+    <li>Curso de Neurogastroenterología (tubo digestivo bajo) 2025 y taller de estudios funcionales 2026.</li>
+  </ul>
+  <h3 class="sub">Jerarquía de evidencia</h3>
+  <p>Consensos y guías vigentes, luego ensayos aleatorizados y metaanálisis, luego el material docente. Cuando dos fuentes discrepan, el texto lo dice (por ejemplo, el PSPW retirado en Lyon 2.0 o los cortes de FLIP que reemplazan a los de los apuntes). El contexto chileno (disponibilidad de fármacos, guía MINSAL de cáncer gástrico) se declara donde cambia la conducta. El atlas usa esquemas propios; no reproduce figuras de terceros.</p>
+  <div class="foot">
+    <p><strong>Repositorio Neurogastroenterología 2026</strong> · Autoría, compilación y edición: <strong>Dr. Moisés Oropeza</strong>, Residente de Gastroenterología, Universidad de los Andes — Clínica Dávila / Clínica Universidad de los Andes. Uso personal de estudio.</p>
+  </div>
+</section>
+
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('tema');
+  try{var g=localStorage.getItem('neuro-tema'); if(g)root.setAttribute('data-theme',g);}catch(e){}
+  btn.addEventListener('click',function(){
+    var oscuro=root.getAttribute('data-theme')==='dark'||(!root.getAttribute('data-theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches);
+    var n=oscuro?'light':'dark'; root.setAttribute('data-theme',n);
+    try{localStorage.setItem('neuro-tema',n);}catch(e){}
+  });
+  var VISTAS=['inicio','rapida','vademecum','fuentes'], tabs=document.getElementById('tabs');
+  function ir(nombre){
+    if(VISTAS.indexOf(nombre)<0) nombre='inicio';
+    VISTAS.forEach(function(v){var el=document.getElementById('v-'+v); if(el) el.classList.toggle('on',v===nombre);});
+    Array.prototype.forEach.call(tabs.querySelectorAll('a'),function(a){a.setAttribute('aria-current',a.getAttribute('href')==='#'+nombre?'true':'false');});
+    window.scrollTo(0,0);
+  }
+  window.addEventListener('hashchange',function(){ir((location.hash||'#inicio').slice(1));});
+  ir((location.hash||'#inicio').slice(1));
+})();
+</script>
+<script>
+/* ---------- consulta rápida: búsqueda ---------- */
+(function(){
+  var q=document.getElementById('rq'); if(!q) return;
+  var items=[].slice.call(document.querySelectorAll('#r-lista>details.ac')), vacio=document.getElementById('r-vacio');
+  function norm(t){return (t||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');}
+  items.forEach(function(d){d._t=norm(d.getAttribute('data-k')+' '+d.textContent);});
+  q.addEventListener('input',function(){
+    var v=norm(q.value.trim()), n=0;
+    items.forEach(function(d){var ok=!v||v.split(/\s+/).every(function(w){return d._t.indexOf(w)>=0;}); d.hidden=!ok; if(ok){n++; if(v) d.open=true;}});
+    vacio.hidden=n>0;
+  });
+  document.getElementById('r-abrir').onclick=function(){items.forEach(function(d){if(!d.hidden)d.open=true;});};
+  document.getElementById('r-cerrar').onclick=function(){items.forEach(function(d){d.open=false;});};
+})();
+/* ---------- vademécum ---------- */
+(function(){
+  var el=document.getElementById('vad-data'); if(!el) return;
+  var D=JSON.parse(el.textContent), G={}, C=D.cobertura;
+  D.grupos.forEach(function(g){G[g[0]]=g[1];});
+  var st={g:'all',c:'all',q:''};
+  try{var m=JSON.parse(localStorage.getItem('neuro-vad')||'{}'); if(m.g)st.g=m.g; if(m.c)st.c=m.c;}catch(e){}
+  function norm(t){return (t||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');}
+  var CF=[['all','Toda disponibilidad'],['bol','Disponible'],['off','Fuera de ficha'],['hosp','Hospitalario'],['ver','Por verificar'],['nd','Sin registro en Chile']];
+  function chips(id,list,key){
+    var box=document.getElementById(id);
+    box.innerHTML=list.map(function(o){return '<button type="button" class="chip" data-v="'+o[0]+'" aria-pressed="'+(st[key]===o[0])+'">'+o[1]+'</button>';}).join('');
+    box.onclick=function(e){var b=e.target.closest('button'); if(!b) return; st[key]=b.getAttribute('data-v');
+      [].forEach.call(box.children,function(x){x.setAttribute('aria-pressed',x===b);}); guardar(); pintar();};
+  }
+  function guardar(){try{localStorage.setItem('neuro-vad',JSON.stringify({g:st.g,c:st.c}));}catch(e){}}
+  chips('vad-g',[['all','Todos los grupos']].concat(D.grupos),'g');
+  chips('vad-c',CF,'c');
+  D.farmacos.forEach(function(f){f._t=norm([f.n,f.cl,f.ind,f.lin,f.dos,f.aj,f.resp,f.mon,f.ea,f.ch,G[f.g]].join(' ').replace(/<[^>]+>/g,' '));});
+  function pasaC(f){
+    if(st.c==='all') return true;
+    if(st.c==='ver') return f.cob.indexOf('ver')>=0;
+    return f.cob.indexOf(st.c)>=0;
+  }
+  function fila(t,v){return v&&v!=='—'?'<dt>'+t+'</dt><dd>'+v+'</dd>':'';}
+  function plan(p){return p&&p.length?'<dt>Seguimiento</dt><dd><table class="vplan">'+p.map(function(r){return '<tr><th>'+r[0]+'</th><td>'+r[1]+'</td></tr>';}).join('')+'</table></dd>':'';}
+  (function(){var L=document.getElementById('vad-lin'); if(!L||!D.lineas) return;
+    L.innerHTML=D.lineas.map(function(x){return '<details class="ac"><summary>'+x.e+'</summary><div class="in"><div class="tw"><table class="t"><thead><tr><th>Línea</th><th>Esquema</th><th>Cuándo esperar respuesta · falla</th></tr></thead><tbody>'+x.r.map(function(r){return '<tr><td><strong>'+r[0]+'</strong></td><td>'+r[1]+'</td><td>'+r[2]+'</td></tr>';}).join('')+'</tbody></table></div></div></details>';}).join('');
+    var tb=document.getElementById('vad-tabs'); tb.onclick=function(e){var b=e.target.closest('button'); if(!b) return; var lin=b.getAttribute('data-v')==='lin';
+      [].forEach.call(tb.children,function(x){x.setAttribute('aria-pressed',x===b);});
+      L.hidden=!lin; ['vad-g','vad-c','vad-n','vad-lista','vq'].forEach(function(i){var el=document.getElementById(i); if(el) (i==='vq'?el.parentNode:el).hidden=lin;});};
+  })();
+  function pintar(){
+    var v=norm(st.q.trim()), lista=document.getElementById('vad-lista'), n=0, html='';
+    D.grupos.forEach(function(g){
+      var fs=D.farmacos.filter(function(f){return f.g===g[0]&&(st.g==='all'||st.g===f.g)&&pasaC(f)&&(!v||v.split(/\s+/).every(function(w){return f._t.indexOf(w)>=0;}));});
+      if(!fs.length) return;
+      n+=fs.length;
+      html+='<div class="grupo"><h4>'+g[1]+'</h4>';
+      fs.forEach(function(f){
+        html+='<details class="ac" id="f-'+f.id+'"><summary><span class="vad-sum"><span class="nm">'+f.n+'</span><span class="gr">'+f.cl+'</span></span><span class="vad-pills">'+
+          f.cob.map(function(c){return '<span class="cob '+c+'" title="'+C[c][1]+'">'+C[c][0]+'</span>';}).join('')+'</span></summary><div class="in"><dl class="vad">'+
+          fila('Indicación',f.ind)+fila('Línea',f.lin)+fila('Dosis',f.dos)+fila('Ajustes',f.aj)+fila('Respuesta esperada',f.resp)+plan(f.plan)+fila(f.plan?'Eficacia y falla':'Monitoreo y falla',f.mon)+fila('Efectos adversos',f.ea)+fila('Chile',f.ch)+fila('Evidencia',f.ev)+
+          '</dl></div></details>';
+      });
+      html+='</div>';
+    });
+    lista.innerHTML=html;
+    document.getElementById('vad-vacio').hidden=n>0;
+    document.getElementById('vad-n').textContent=n+' de '+D.farmacos.length+' fármacos';
+  }
+  var q=document.getElementById('vq');
+  q.addEventListener('input',function(){st.q=q.value; pintar(); if(st.q.trim()) [].forEach.call(document.querySelectorAll('#vad-lista details'),function(d){d.open=true;});});
+  pintar();
+})();
+</script>
+<style>
+
+#pwa-ui{position:fixed;right:14px;bottom:calc(env(safe-area-inset-bottom,0px) + 14px);z-index:300;display:flex;flex-direction:column;align-items:flex-end;gap:8px;font-family:Inter,-apple-system,"Segoe UI",sans-serif}
+#pwa-ui button{border:0;border-radius:999px;padding:9px 16px;font:600 .82rem Inter,-apple-system,sans-serif;background:#1d4a4f;color:#fff;box-shadow:0 4px 18px rgba(0,0,0,.22);cursor:pointer}
+#pwa-ios{max-width:300px;background:#fffefb;color:#1c2530;border:1px solid #ddd6cb;border-radius:12px;padding:11px 14px;font-size:.8rem;line-height:1.45;box-shadow:0 6px 24px rgba(0,0,0,.18)}
+#pwa-ios b{display:block;margin-bottom:3px}#pwa-ios .x{float:right;background:none;border:0;color:#6f7a86;font-size:1rem;padding:0 0 0 8px;box-shadow:none;cursor:pointer}
+#pwa-back{position:fixed;left:14px;bottom:calc(env(safe-area-inset-bottom,0px) + 14px);z-index:300;border-radius:999px;padding:8px 14px;font:600 .8rem Inter,-apple-system,sans-serif;background:#fffefb;color:#1d4a4f;border:1px solid #c9c0b2;text-decoration:none;box-shadow:0 3px 12px rgba(0,0,0,.15)}
+@media (prefers-color-scheme:dark){#pwa-ios{background:#1a2029;color:#e6e9ed;border-color:#2c3642}#pwa-back{background:#1a2029;color:#9fdcd6;border-color:#3d4956}}
+@media print{#pwa-ui,#pwa-back{display:none}}
+
+</style>
+<div id="pwa-ui"></div>
+<script>
+(function(){
+  var SW="sw.js", KEY="pwa-ios-neuro", APP="Neurogastro 2026";
+  var standalone=window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true;
+  if('serviceWorker' in navigator&&/^https?:$/.test(location.protocol)&&!/claude\.ai|claudeusercontent/.test(location.hostname)){
+    window.addEventListener('load',function(){navigator.serviceWorker.register(SW).catch(function(){})});
+  }
+  if(standalone)return;
+  var ui=document.getElementById('pwa-ui'),dp=null;
+  window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();dp=e;
+    var b=document.createElement('button');b.type='button';b.textContent='Instalar '+APP;
+    b.onclick=function(){dp.prompt();dp.userChoice.finally(function(){b.remove()})};ui.appendChild(b)});
+  var ios=/iphone|ipad|ipod/i.test(navigator.userAgent)&&/safari/i.test(navigator.userAgent)&&!/crios|fxios/i.test(navigator.userAgent);
+  var seen=false;try{seen=localStorage.getItem(KEY)==='1'}catch(e){}
+  if(ios&&!seen){var d=document.createElement('div');d.id='pwa-ios';
+    d.innerHTML='<button class="x" type="button" aria-label="Cerrar">✕</button><b>Instalar '+APP+'</b>Toca <span aria-label="Compartir">Compartir ⬆︎</span> y luego «Agregar a inicio». Funcionará sin conexión.';
+    d.querySelector('.x').onclick=function(){d.remove();try{localStorage.setItem(KEY,'1')}catch(e){}};ui.appendChild(d)}
+})();
+</script>
+</body>
+</html>

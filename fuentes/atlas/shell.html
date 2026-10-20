@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="author" content="Dr. Moisés Oropeza">
+<meta name="description" content="Atlas de neurogastroenterología: esquemas originales de Chicago 4.0, Lyon 2.0, FLIP, escala de Bristol, disinergia y mecanismos de los TICI.">
+<meta name="theme-color" content="#1d4a4f">
+<title>Atlas · Neurogastroenterología 2026</title>
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="../icons/icon-192.png">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;700&family=Inter:wght@400;600;700&display=swap">
+<style>
+:root{--bg:#f7f5f1;--panel:#fffefb;--panel-2:#f1ede6;--fg:#1c2530;--fg-2:#4a5664;--fg-3:#78838f;--line:#ddd6cb;--line-2:#c9c0b2;
+ --marino:#1d4a4f;--marino-2:#2a6a70;--acento:#8b3a62;--verde:#3d6b2a;--rojo:#9e2b25;--ambar:#8a6414;--r:12px;
+ --ff-s:"Source Serif 4",Georgia,serif;--ff-b:Inter,-apple-system,"Segoe UI",Roboto,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12161c;--panel:#1a2029;--panel-2:#222b36;--fg:#e6e9ed;--fg-2:#b3bcc6;--fg-3:#8b95a1;--line:#2c3642;--line-2:#3d4956;--marino:#7fcfc8;--marino-2:#9fdcd6;--acento:#e49ac0;--verde:#9ccc7a;--rojo:#e88a84;--ambar:#d9b25c;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#12161c;--panel:#1a2029;--panel-2:#222b36;--fg:#e6e9ed;--fg-2:#b3bcc6;--fg-3:#8b95a1;--line:#2c3642;--line-2:#3d4956;--marino:#7fcfc8;--marino-2:#9fdcd6;--acento:#e49ac0;--verde:#9ccc7a;--rojo:#e88a84;--ambar:#d9b25c;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--ff-b);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.top{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top-in{max-width:1120px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:14px}
+.brand{display:flex;align-items:center;gap:9px;font-family:var(--ff-s);font-weight:700;color:var(--fg);text-decoration:none;white-space:nowrap}
+.dot{width:22px;height:22px;border-radius:6px;background:linear-gradient(135deg,var(--marino),var(--acento));display:grid;place-items:center;color:var(--bg);font:700 .6rem var(--ff-b)}
+.back{margin-left:auto;font-size:.8rem;font-weight:600;color:var(--fg-2);text-decoration:none;padding:6px 10px;border-radius:7px}
+.tema{background:none;border:1px solid var(--line-2);color:var(--fg-2);border-radius:7px;width:30px;height:30px;cursor:pointer}
+main{max-width:1120px;margin:0 auto;padding:24px 20px 80px}
+h1{font-family:var(--ff-s);font-size:clamp(1.6rem,4vw,2.3rem);margin:0 0 6px;letter-spacing:-.02em}
+h2{font-family:var(--ff-s);font-size:clamp(1.2rem,2.6vw,1.45rem);margin:40px 0 6px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+.desc{color:var(--fg-2);max-width:78ch;margin:0 0 14px}
+.idx{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 0}
+.idx a{font-size:.78rem;font-weight:600;border:1px solid var(--line-2);border-radius:99px;padding:5px 12px;color:var(--fg-2);text-decoration:none;background:var(--panel)}
+.idx a:hover{border-color:var(--marino);color:var(--marino)}
+.aviso{border-left:3px solid var(--acento);background:var(--panel);border-radius:0 var(--r) var(--r) 0;padding:12px 15px;font-size:.88rem;color:var(--fg-2);margin:18px 0 0;max-width:78ch}
+.fig{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:14px;overflow-x:auto}
+.fig svg{display:block;width:100%;height:auto;min-width:520px}
+.fig.medio{max-width:520px}.fig.medio svg{min-width:300px}
+.fig text{font-family:Inter,sans-serif}
+.pans{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+figure.pan{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:10px;display:flex;flex-direction:column;gap:8px}
+figure.pan svg{width:100%;height:auto;display:block}
+figure.pan figcaption{display:flex;flex-direction:column;gap:2px;font-size:.8rem;color:var(--fg-2)}
+figure.pan figcaption b{font-family:var(--ff-s);font-size:.98rem;color:var(--fg)}
+.nd rect{fill:var(--panel-2);stroke:var(--line-2)}.nd text{font-size:11px;fill:var(--fg)}
+.nd.si rect{fill:color-mix(in srgb,var(--rojo) 14%,var(--panel));stroke:var(--rojo)}.nd.si text{font-weight:700}
+.nd.md rect{fill:color-mix(in srgb,var(--marino) 12%,var(--panel));stroke:var(--marino)}
+.nd.gr rect{fill:color-mix(in srgb,var(--ambar) 12%,var(--panel));stroke:var(--ambar)}
+.ar{stroke:var(--fg-3);stroke-width:1.5}.fl{font-size:9.5px;fill:var(--fg-3)}
+.bris{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.bri{background:var(--panel);border:1px solid var(--line);border-top:4px solid var(--line-2);border-radius:var(--r);padding:10px;display:flex;flex-direction:column;gap:3px;font-size:.82rem;color:var(--fg-2)}
+.bri svg{width:100%;height:auto}.bri b{font-family:var(--ff-s);color:var(--fg)}
+.bri.c{border-top-color:var(--ambar)}.bri.d{border-top-color:var(--marino-2)}.bri.n{border-top-color:var(--verde)}
+.ley{display:flex;gap:14px;flex-wrap:wrap;font-size:.78rem;color:var(--fg-3);margin:8px 0 0}
+.ley i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+@media (max-width:600px){main{padding:16px 16px 80px}.brand span:last-child{display:none}}
+</style>
+</head>
+<body>
+<header class="top"><div class="top-in">
+  <a class="brand" href="../"><span class="dot">NG</span><span>Atlas · Neurogastro 2026</span></a>
+  <a class="back" href="../">← Repositorio</a>
+  <button class="tema" id="tema" type="button" aria-label="Cambiar tema">◐</button>
+</div></header>
+<main>
+  <h1>Atlas de neurogastroenterología</h1>
+  <p class="desc">{{N}} láminas con esquemas originales para estudiar y para explicar al paciente. No reproducen figuras de las guías ni trazados de pacientes.</p>
+  <nav class="idx">{{INDICE}}</nav>
+  <div class="aviso">Los esquemas de topografía de presión son didácticos: muestran el patrón que define cada diagnóstico, no valores reales. Para clasificar un estudio use el intérprete de manometría.</div>
+  {{CUERPO}}
+</main>
+<script>
+(function(){var root=document.documentElement,btn=document.getElementById('tema');
+  try{var g=localStorage.getItem('neuro-tema');if(g)root.setAttribute('data-theme',g);}catch(e){}
+  btn.onclick=function(){var o=root.getAttribute('data-theme')==='dark'||(!root.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme: dark)').matches);
+    var nn=o?'light':'dark';root.setAttribute('data-theme',nn);try{localStorage.setItem('neuro-tema',nn)}catch(e){}};
+  if('serviceWorker' in navigator&&/^https?:$/.test(location.protocol)&&!/claude\.ai|claudeusercontent/.test(location.hostname)){
+    addEventListener('load',function(){navigator.serviceWorker.register('../sw.js',{scope:'../'}).catch(function(){})});}
+})();
+</script>
+</body>
+</html>

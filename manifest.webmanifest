@@ -1,0 +1,23 @@
+{
+ "id": "./?app=neuro-2026",
+ "name": "Repositorio Neurogastroenterología 2026",
+ "short_name": "Neuro 2026",
+ "description": "Guía Roma V, Chicago 4.0 y Lyon 2.0, consulta rápida, fenotipador terapéutico, intérpretes de estudios, vademécum, calculadoras, atlas, material para pacientes y quiz de neurogastroenterología. Dr. Moisés Oropeza Hernández.",
+ "lang": "es",
+ "start_url": "./",
+ "scope": "./",
+ "display": "standalone",
+ "background_color": "#f7f5f1",
+ "theme_color": "#1d4a4f",
+ "icons": [
+  {"src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png"},
+  {"src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png"},
+  {"src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+ ],
+ "shortcuts": [
+  {"name": "Guía de estudio", "url": "guia-2026.html"},
+  {"name": "Fenotipador", "url": "fenotipos/"},
+  {"name": "Intérpretes de estudios", "url": "estudios/"},
+  {"name": "Quiz", "url": "quiz/"}
+ ]
+}

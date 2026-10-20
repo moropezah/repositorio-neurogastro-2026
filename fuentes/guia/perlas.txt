@@ -1,0 +1,186 @@
+# Perlas por entidad · fuente de las cajas «Perlas» de la guía
+# Formato:
+#   # bNN_archivo.html          → bloque al que pertenecen las perlas siguientes
+#   @ <texto exacto del h3> :: <título de la perla>   → la caja se inserta después de ese h3
+#   Etiqueta: texto             → fila (Definición, Clínica, Examen físico, Criterios, Estudio, Manometría, pH-impedancia, Fisiopatología, Tratamiento, Laboratorio, Endoscopía)
+#   - texto                     → ítem de «Lo que preguntan»
+#   **texto**                   → negrita
+# Se regenera la guía con: python3 fuentes/guia/actualizar.py
+
+# b01_roma_v.html
+@ Qué es un TICI :: Trastornos de la interacción cerebro-intestino
+Definición: Grupo de trastornos clasificados por síntomas gastrointestinales, relacionados con cualquier combinación de alteración de la motilidad, hipersensibilidad visceral, alteración de la función mucosa e inmune, de la microbiota y del procesamiento central.
+Criterios: Roma V separa **criterios clínicos** (para la consulta: ~8 semanas de síntomas, sin exigir 6 meses de antigüedad) de **criterios de investigación** (más estrictos, para ensayos).
+- El diagnóstico es **positivo**, por criterios y ausencia de banderas rojas; no es un diagnóstico de exclusión.
+- «Funcional» y «psicosomático» son términos desaconsejados: transmiten al paciente que «no tiene nada».
+- Un TICI puede coexistir con enfermedad orgánica (EII en remisión, celíaca tratada) y se trata igual.
+
+@ Terapias cerebro-intestino :: Psicoterapias de efecto intestinal
+Tratamiento: **Terapia cognitivo-conductual** e **hipnoterapia dirigida al intestino** tienen la mejor evidencia en SII; el efecto se mantiene meses después de terminar.
+- Se indican por síntomas gastrointestinales, no solo por comorbilidad psiquiátrica.
+- Existen formatos digitales y grupales que reducen la barrera de acceso.
+
+# b02_erge.html
+@ Lyon 2.0: jerarquía de la evidencia :: Lyon 2.0 en una caja
+Endoscopía: Esofagitis **LA B, C o D**, Barrett de segmento largo o estenosis péptica son evidencia concluyente. LA A ya no lo es.
+pH-impedancia: TEA **> 6 %** concluyente; **< 4 %** en contra; 4–6 % zona gris que se resuelve con número de reflujos, MNBI y morfología.
+- Cápsula inalámbrica 96 h: TEA > 6 % en **≥ 2 días** es concluyente.
+- El PSPW salió de Lyon 2.0.
+- ERGE refractaria con IBP: TEA > 4 % **y** > 80 reflujos.
+
+@ Tratamiento médico escalonado :: IBP y P-CAB
+Tratamiento: IBP 30–60 min antes del desayuno; si hay respuesta parcial, optimizar horario, luego dosis doble. Los P-CAB (vonoprazán, tegoprazán, fexuprazán) no dependen de la comida y son superiores en esofagitis grave (LA C/D).
+- Sin evidencia objetiva de ERGE, intentar desescalar o suspender a las 4–8 semanas de respuesta.
+- La pirosis que no responde a IBP en dosis doble es más a menudo esofágica funcional o hipersensibilidad que ERGE refractaria.
+
+# b03_esofago_tici.html
+@ Fenotipos del paciente «refractario» :: Pirosis funcional frente a hipersensibilidad al reflujo
+pH-impedancia: **Hipersensibilidad al reflujo**: TEA normal con asociación sintomática positiva (SI > 50 % y/o SAP > 95 %). **Pirosis funcional**: TEA normal y asociación negativa.
+Criterios: Ambas exigen endoscopía sin esofagitis ni EoE (biopsias) y manometría sin trastorno mayor de la motilidad.
+- Tratamiento: neuromoduladores en dosis bajas (ATC, ISRS), terapia cerebro-intestino; no escalar IBP.
+- Hasta 40 % de los «refractarios» a IBP tienen uno de estos dos fenotipos.
+
+# b04_eructos_rumiacion.html
+@ Síndrome de rumiación :: Rumiación
+Definición: Regurgitación sin esfuerzo, repetida, de alimento recién ingerido, seguida de remasticación o expulsión, sin arcadas previas.
+Manometría: Alta resolución con impedancia y **comida real**: pico de presión abdominal (onda R) > 30 mmHg que precede al flujo retrógrado (contracción no consciente de la pared abdominal).
+Tratamiento: **Respiración diafragmática** después de comer, enseñada con biorretroalimentación.
+- La cápsula de pH no la detecta y puede confundirla con ERGE.
+- Empieza a los pocos minutos de comer; el alimento sabe a lo que se comió, no a ácido.
+
+@ Síndrome de incapacidad para eructar (R-CPD, abelchia) :: R-CPD
+Clínica: Incapacidad para eructar desde siempre, ruidos de gorgoteo en el cuello, distensión y flatulencia excesiva.
+Tratamiento: **Toxina botulínica** en el cricofaríngeo (EMG o endoscopía) con respuesta en la gran mayoría de los pacientes.
+
+# b05_disfagia_eoe.html
+@ Esofagitis eosinofílica :: Esofagitis eosinofílica
+Endoscopía: Edema, anillos, exudados, surcos y estenosis (escala **EREFS**). Al menos **6 biopsias** de dos niveles, aun con mucosa normal.
+Criterios: Síntomas de disfunción esofágica y **≥ 15 eosinófilos por campo de alto aumento**, tras descartar otras causas.
+Tratamiento: IBP en dosis alta, budesonida orodispersable, dieta de eliminación (empírica de 1–2 alimentos como primer paso) o dupilumab; dilatación para estenosis.
+- La respuesta al IBP ya no excluye EoE.
+- Impactación alimentaria en un adulto joven: EoE hasta demostrar lo contrario.
+
+# b06_chicago_acalasia.html
+@ Acalasia :: Acalasia por subtipo
+Manometría: IRP elevado con **100 % de fallas**: tipo I (sin presurización), tipo II (presurización panesofágica en ≥ 20 %), tipo III (≥ 20 % de contracciones prematuras).
+Tratamiento: Tipos I y II responden a dilatación neumática, miotomía de Heller o POEM; el **tipo III** responde mejor a **POEM** (miotomía larga a medida).
+- Seudoacalasia: edad > 60, baja de peso rápida y síntomas breves; buscar tumor de la unión.
+- Esofagograma cronometrado: columna de bario > 5 cm al minuto 1 y/o retención de una tableta de 12,5 mm apoyan obstrucción; sirve también para seguir la respuesta.
+- POEM tiene más ERGE posoperatoria que Heller con funduplicatura.
+
+@ Clasificación jerárquica :: EGJOO
+Criterios: IRP elevado supino **y** sentado, con peristalsis suficiente, más presión intrabolo elevada en ≥ 20 % de las degluciones en supino, **síntomas** de disfagia o dolor y **prueba de apoyo** (esofagograma cronometrado o FLIP).
+- Sin todos esos elementos, el informe dice «EGJOO no concluyente».
+- Opioides, estenosis, EoE y hernia hiatal pueden simularlo.
+
+# b07_dispepsia.html
+@ Criterios de Roma V :: Dispepsia funcional
+Criterios: **Síndrome de distrés posprandial**: plenitud posprandial o saciedad precoz molestas ≥ 2 días por semana. **Síndrome de dolor epigástrico**: dolor o ardor epigástrico molesto ≥ 1 día por semana. Pueden superponerse.
+- Endoscopía con banderas rojas; en Chile, en ≥ 40 años con epigastralgia de más de 15 días (guía MINSAL de cáncer gástrico).
+- Náusea predominante o vómitos persistentes excluyen dispepsia: pensar en síndrome de náuseas y vómitos o gastroparesia.
+- Con plenitud o saciedad precoz, el dolor posprandial forma parte del SDP: **el SDP manda**.
+- Erradicar *H. pylori* primero; si los síntomas desaparecen a los 6–12 meses, era dispepsia asociada a *H. pylori*.
+
+@ Tratamiento escalonado :: Dispepsia: secuencia
+Tratamiento: *H. pylori* en todos → primera línea 4–8 semanas: **SDP** procinético o IBP; **SDE** IBP en dosis estándar sin escalar → segunda línea, neuromodulador: tricíclico en dosis baja (dolor), buspirona (saciedad) o mirtazapina 7,5–15 mg (baja de peso).
+- Sin respuesta al IBP estándar: suspenderlo, no duplicarlo.
+- Los ISRS no superan al placebo en dispepsia funcional.
+
+# b08_gastroparesia_nv.html
+@ Gastroparesia :: Gastroparesia
+Definición: Síntomas de retención gástrica con vaciamiento retardado objetivo y **sin obstrucción mecánica**.
+Estudio: Vaciamiento con comida sólida **de 4 h**: retención > 10 % a las 4 h. Glicemia < 275 mg/dL durante el estudio.
+Tratamiento: Comidas pequeñas, bajas en grasa y fibra, partículas pequeñas; **metoclopramida ≤ 12 semanas** (discinesia tardía); eritromicina condicional a favor (taquifilaxia); AGA 2025 no recomienda de rutina en primera línea domperidona, prucaloprida, aprepitant, nortriptilina ni buspirona; G-POEM en refractarios seleccionados.
+- La correlación entre retraso del vaciamiento y síntomas es pobre.
+- Agonistas de GLP-1 retardan el vaciamiento: suspender antes del estudio.
+
+@ Síndromes de náuseas y vómitos (Roma V) :: Vómitos cíclicos y cannabinoides
+Criterios: **Vómitos cíclicos**: ≥ 3 episodios al año, 2 en los últimos 6 meses, con intervalos sin síntomas. **Hiperémesis por cannabinoides**: patrón similar en uso prolongado y frecuente de cannabis, que se resuelve con la suspensión sostenida.
+Tratamiento: Profilaxis de vómitos cíclicos con amitriptilina; aborto del episodio con triptán, ondansetrón y sedación. En hiperémesis por cannabinoides: capsaicina tópica, haloperidol y suspensión.
+- Baños con agua caliente compulsivos sugieren cannabinoides, pero también ocurren en vómitos cíclicos.
+
+# b09_sii.html
+@ Criterios de Roma V :: Síndrome de intestino irritable
+Criterios: Dolor o molestia abdominal recurrente **≥ 3 días al mes**, no continuo, asociado a ≥ 2 de: defecación, cambio de frecuencia, cambio de forma de las deposiciones.
+Definición: Subtipos por la escala de Bristol en días con deposiciones anormales: SII-C, SII-D, SII-M, SII-U.
+- Roma V reincorpora la «molestia» además del dolor.
+- Dolor continuo sin relación con la defecación: pensar en CAPS, no en SII.
+
+@ Tratamiento :: SII por fenotipo
+Tratamiento: Base para todos: explicación, dieta (baja en FODMAP en 3 fases), fibra soluble (psyllium), antiespasmódicos, ATC en dosis baja, terapias cerebro-intestino. **SII-D**: loperamida, rifaximina, ondansetrón, eluxadolina (no en Chile). **SII-C**: PEG, linaclotida (no disponible en Chile), prucaloprida en la práctica.
+- La fibra insoluble (salvado) empeora la distensión.
+- La FODMAP tiene fase de reintroducción obligatoria: no es una dieta permanente.
+
+# b10_diarrea.html
+@ Malabsorción de ácidos biliares :: Malabsorción de ácidos biliares
+Fisiopatología: Tipo 1 (íleon resecado o enfermo), tipo 2 (idiopática, déficit de FGF19), tipo 3 (colecistectomía, SIBO, pancreatitis).
+Estudio: SeHCAT (< 10 %), C4 sérico o ácidos biliares fecales; sin ellos, prueba terapéutica con colestiramina.
+- Hasta un tercio de los SII-D y diarrea funcional la tienen.
+- Colesevelam se tolera mejor que colestiramina.
+
+@ Colitis microscópica :: Colitis microscópica
+Endoscopía: Mucosa normal o casi normal; biopsias de colon derecho e izquierdo.
+Fisiopatología: Colitis colágena (banda subepitelial > 10 µm) y linfocítica (> 20 linfocitos intraepiteliales por 100 células).
+Tratamiento: **Budesonida 9 mg/día** por 8 semanas; suspender AINE, IBP, ISRS y estatinas si es posible.
+- Mujer > 50 años con diarrea acuosa nocturna y autoinmunidad (celíaca, tiroides).
+
+# b11_constipacion.html
+@ Fisiopatología y subtipos :: Constipación: tres mecanismos
+Fisiopatología: Tránsito normal (el más frecuente), tránsito lento y trastorno evacuatorio (disinergia); pueden coexistir.
+Estudio: Tacto rectal con maniobra de pujo: sensibilidad ~75 % y especificidad ~87 % para disinergia en manos expertas.
+- Digitación, sensación de obstrucción y pujo excesivo orientan a trastorno evacuatorio.
+- La disinergia no responde bien a laxantes: requiere biorretroalimentación.
+
+@ Tratamiento escalonado (AGA-ACG 2023 y Roma V) :: Laxantes con recomendación fuerte
+Tratamiento: AGA-ACG 2023 da recomendación **fuerte** a PEG, picosulfato/bisacodilo, linaclotida, plecanatida y prucaloprida; **condicional** a fibra, lactulosa, senósidos, magnesio y lubiprostona.
+- Prucaloprida es agonista 5-HT4 selectivo, sin el riesgo cardiovascular de cisaprida o tegaserod.
+- Lactulosa produce más distensión que PEG.
+
+# b12_distension_sibo.html
+@ SIBO e IMO :: Test de aire espirado
+Laboratorio: **SIBO**: H₂ ≥ 20 ppm sobre el basal antes de 90 min. **IMO**: CH₄ ≥ 10 ppm en cualquier momento.
+Tratamiento: SIBO: rifaximina 550 mg c/8 h × 14 días (en Chile, con la presentación de 200 mg, 400 mg c/8 h); IMO: rifaximina + neomicina o metronidazol.
+- No pedir de rutina en SII: alto falso positivo con lactulosa por tránsito rápido.
+- El metano se asocia a constipación.
+
+@ Mecanismos :: Distensión abdominal
+Fisiopatología: **Disinergia abdominofrénica**: el diafragma desciende y la pared abdominal se relaja ante una carga normal de gas; el volumen de gas suele ser normal.
+Tratamiento: Biorretroalimentación con EMG de pared abdominal y respiración diafragmática.
+- Distensión visible que aumenta en el día y desaparece de noche.
+
+# b13_cipo.html
+@ Pseudoobstrucción intestinal crónica :: CIPO
+Definición: Síntomas y signos de obstrucción intestinal recurrente con imágenes de dilatación, **sin lesión obstructiva**.
+Estudio: Manometría antroduodenal: patrón miopático (contracciones de baja amplitud) o neuropático (contracciones descoordinadas de amplitud normal).
+- Buscar causas secundarias: esclerodermia, amiloidosis, paraneoplásico (anti-Hu), hipotiroidismo, fármacos.
+- Evitar cirugías innecesarias: las adherencias complican el seguimiento.
+
+@ Pseudoobstrucción colónica aguda (síndrome de Ogilvie) :: Síndrome de Ogilvie
+Tratamiento: Manejo conservador 24–48 h → **neostigmina 2 mg IV** en 3–5 min con monitoreo (atropina disponible) → descompresión colonoscópica si fracasa.
+- Ciego > 12 cm o > 6 días de distensión: alto riesgo de perforación.
+
+# b14_anorrectal.html
+@ Defecación disinérgica :: Defecación disinérgica
+Criterios: Roma V: criterios de constipación funcional o SII-C, más patrón disinérgico en **una** prueba (probable) o en **dos** (definitivo): manometría, test de balón (> 1 min) o imagen.
+Tratamiento: **Biorretroalimentación** (5–6 sesiones): éxito 70–80 %, superior a placebo, laxantes y relajantes musculares.
+- Clasificación de Londres: el patrón «disinérgico» aislado sin test de balón anormal se informa como hallazgo menor.
+
+@ Incontinencia fecal :: Incontinencia fecal
+Tratamiento: Regularizar la consistencia (fibra, loperamida) → biorretroalimentación → neuromodulación sacra en refractarios.
+- Preguntar dirigidamente: muchos pacientes no lo refieren espontáneamente.
+- Diarrea es el principal factor de riesgo modificable.
+
+# b15_dolor_neuromod.html
+@ Neuromoduladores en la práctica :: Neuromoduladores: elección
+Tratamiento: **ATC** (amitriptilina, imipramina, nortriptilina) para dolor y diarrea; **ISRS** para ansiedad y constipación; **IRSN** (duloxetina) para dolor con comorbilidad; **mirtazapina** para náuseas, saciedad y baja de peso; **pregabalina** para hipersensibilidad.
+- Dosis bajas (10–25 mg) y titulación lenta; el efecto aparece en 4–8 semanas.
+- Explicar que se usan como neuromoduladores, no como antidepresivos.
+
+@ Intestino narcótico: desintoxicación :: Intestino narcótico
+Definición: Dolor abdominal crónico que empeora paradójicamente con dosis continuas o crecientes de opioides.
+Tratamiento: Relación terapéutica y neuromodulador primero; luego descenso programado del opioide, con **clonidina desde el 50 % retirado** (0,1 mg c/8–12 h) para la abstinencia; laxantes.
+
+# b16_laboratorio.html
+@ Preparación y suspensión de fármacos :: Preparación del paciente
+Estudio: pHmetría diagnóstica: IBP 7 días, anti-H2 3 días, alginatos 24 h. Vaciamiento gástrico: glicemia controlada y sin procinéticos u opioides. Test de aire espirado: 4 semanas sin antibióticos.
+- Un estudio con mala preparación no se interpreta: se repite.

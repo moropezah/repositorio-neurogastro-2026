@@ -1,0 +1,1872 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#1d4a4f">
+<link rel="icon" type="image/png" sizes="192x192" href="../icons/icon-192.png">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Neuro 2026">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+</head>
+<body>
+<title>Quiz Neurogastroenterología 2026</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F4F2EF; --surface:#FFFFFF; --surface2:#F9F7F5; --ink:#1E1A1D; --muted:#675F66; --line:#E3DDD8;
+  --accent:#1d4a4f; --accent-ink:#FFFFFF; --accent-soft:#e3f0ee;
+  --ba:#8a6414; --ci:#1d4a4f; --et:#3d6b2a; --ot:#9e2b25;
+  --ok:#1D7A4E; --ok-soft:#E3F2EA; --bad:#B0281E; --bad-soft:#FBE7E4; --warn:#9A5B00; --warn-soft:#FBF0DC;
+  --shadow:0 1px 2px rgba(40,20,30,.06),0 4px 16px rgba(40,20,30,.05);
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#151214; --surface:#1F1B1E; --surface2:#262126; --ink:#EEE8EB; --muted:#A79CA4; --line:#372F35;
+    --accent:#7fcfc8; --accent-ink:#0f1720; --accent-soft:#173130;
+    --ba:#d9b25c; --ci:#7fcfc8; --et:#9ccc7a; --ot:#e88a84;
+    --ok:#62C792; --ok-soft:#173226; --bad:#F2887D; --bad-soft:#3A1C1A; --warn:#E6B45F; --warn-soft:#352812;
+    --shadow:0 1px 2px rgba(0,0,0,.4);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#151214; --surface:#1F1B1E; --surface2:#262126; --ink:#EEE8EB; --muted:#A79CA4; --line:#372F35;
+  --accent:#7fcfc8; --accent-ink:#0f1720; --accent-soft:#173130;
+  --ba:#d9b25c; --ci:#7fcfc8; --et:#9ccc7a; --ot:#e88a84;
+  --ok:#62C792; --ok-soft:#173226; --bad:#F2887D; --bad-soft:#3A1C1A; --warn:#E6B45F; --warn-soft:#352812;
+  --shadow:0 1px 2px rgba(0,0,0,.4);
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;margin:0}
+.wrap{max-width:980px;margin:0 auto;padding-inline:16px;padding-block:0 48px}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.top .row{max-width:980px;margin:0 auto;padding:12px 16px 0;display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.brand{font-family:var(--serif);font-weight:700;font-size:21px;letter-spacing:-.01em}
+.brand small{font-family:var(--mono);font-size:11px;color:var(--muted);font-weight:400;margin-left:8px;letter-spacing:.04em}
+.tabs{max-width:980px;margin:0 auto;padding:8px 16px 0;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.tabs button{border:0;background:none;color:var(--muted);font:600 14px var(--sans);padding:8px 12px 10px;border-bottom:2px solid transparent;cursor:pointer;white-space:nowrap}
+.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent)}
+.tabs button:focus-visible,button:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.badge{font-family:var(--mono);font-size:11px;background:var(--surface2);border:1px solid var(--line);border-radius:999px;padding:1px 7px;margin-left:4px;color:var(--muted)}
+
+.filters{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin:18px 0 14px}
+.seg{display:inline-flex;flex-wrap:wrap;max-width:100%;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--surface)}
+.seg button{border:0;background:none;padding:6px 11px;font:500 13px var(--sans);color:var(--muted);cursor:pointer}
+.seg button+button{border-left:1px solid var(--line)}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+.flabel{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-right:6px}
+select{font:500 13px var(--sans);padding:6px 8px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);max-width:100%}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow)}
+.qcard{padding:22px 22px 18px}
+.meta{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:12px}
+.chip{font:600 11px var(--mono);letter-spacing:.04em;padding:2px 8px;border-radius:5px;border:1px solid var(--line);color:var(--muted);background:var(--surface2)}
+.chip.b-ES{color:var(--ba);border-color:currentColor;background:transparent}
+.chip.b-GD{color:var(--ci);border-color:currentColor;background:transparent}
+.chip.b-IN{color:var(--et);border-color:currentColor;background:transparent}
+.chip.b-AR{color:var(--ot);border-color:currentColor;background:transparent}
+.cloudcfg{display:grid;gap:8px;margin-top:6px}.cloudcfg input{font:13px var(--mono);padding:7px 9px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);width:100%}
+.tema-l a{color:var(--accent)}
+.chip.lv-S{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip.fix{color:var(--warn);background:var(--warn-soft);border-color:transparent}
+.chip.new{color:var(--ok);background:var(--ok-soft);border-color:transparent}
+.counter{margin-left:auto;font:500 12px var(--mono);color:var(--muted)}
+.stem{font-family:var(--serif);font-size:18.5px;line-height:1.5;margin:0 0 16px;max-width:68ch;text-wrap:pretty}
+.opts{display:grid;gap:8px}
+.opt{display:flex;gap:12px;align-items:flex-start;text-align:left;width:100%;padding:11px 14px;border:1px solid var(--line);border-radius:9px;background:var(--surface);color:var(--ink);font:15px/1.45 var(--sans);cursor:pointer;transition:border-color .15s,background .15s}
+.opt:hover:not([disabled]){border-color:var(--accent)}
+.opt .L{flex:0 0 26px;height:26px;border-radius:6px;display:grid;place-items:center;font:600 13px var(--mono);background:var(--surface2);border:1px solid var(--line)}
+.opt.sel{border-color:var(--accent);background:var(--accent-soft)}
+.opt.right{border-color:var(--ok);background:var(--ok-soft)}
+.opt.right .L{background:var(--ok);color:var(--surface);border-color:var(--ok)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.opt.wrong .L{background:var(--bad);color:var(--surface);border-color:var(--bad)}
+.opt[disabled]{cursor:default}
+.actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:16px}
+.btn{font:600 14px var(--sans);padding:9px 16px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn:disabled{opacity:.45;cursor:default}
+.btn.ghost{background:none}
+.spacer{flex:1}
+
+.explain{margin-top:18px;border-top:1px solid var(--line);padding-top:16px;display:grid;gap:14px}
+.verdict{font:700 15px var(--sans)}
+.verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+.blk h4{margin:0 0 6px;font:600 11px var(--sans);text-transform:uppercase;letter-spacing:.09em;color:var(--muted)}
+.blk p,.blk li{margin:0;max-width:72ch}
+.blk ul{margin:0;padding-left:0;list-style:none;display:grid;gap:6px}
+.blk li b.L{font-family:var(--mono);margin-right:6px}
+.mech{background:var(--surface2);border-left:3px solid var(--ci);padding:12px 14px;border-radius:0 8px 8px 0}
+.pearl{background:var(--accent-soft);padding:12px 14px;border-radius:8px}
+.fixbox{background:var(--warn-soft);padding:10px 14px;border-radius:8px;color:var(--ink)}
+.newbox{background:var(--ok-soft);padding:10px 14px;border-radius:8px}
+.refs{font-size:13px;color:var(--muted)}
+
+.palette{display:flex;flex-wrap:wrap;gap:4px;margin-top:16px}
+.palette button{width:30px;height:28px;border-radius:6px;border:1px solid var(--line);background:var(--surface);font:500 11px var(--mono);color:var(--muted);cursor:pointer}
+.palette button.cur{border-color:var(--accent);color:var(--ink);font-weight:700}
+.palette button.ok{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
+.palette button.bad{background:var(--bad-soft);border-color:var(--bad);color:var(--bad)}
+.palette button.ans{background:var(--accent-soft)}
+
+.setup{padding:22px;display:grid;gap:16px}
+.setup h2,.panel h2{font-family:var(--serif);font-size:22px;margin:0;text-wrap:balance}
+.setup p{margin:0;color:var(--muted);max-width:68ch}
+.timer{font:600 14px var(--mono);font-variant-numeric:tabular-nums}
+.timer.low{color:var(--bad)}
+.progressbar{height:4px;background:var(--line);border-radius:4px;overflow:hidden;margin:0 0 14px}
+.progressbar i{display:block;height:100%;background:var(--accent);transition:width .3s}
+
+.score{display:flex;gap:24px;flex-wrap:wrap;align-items:flex-end;padding:22px}
+.score .big{font:700 52px/1 var(--serif);font-variant-numeric:tabular-nums}
+.score .sub{color:var(--muted)}
+.bars{display:grid;gap:8px;padding:0 22px 22px}
+.bar{display:grid;grid-template-columns:minmax(120px,190px) 1fr 56px;gap:10px;align-items:center;font-size:13px}
+.bar .track{height:8px;background:var(--surface2);border:1px solid var(--line);border-radius:5px;overflow:hidden}
+.bar .track i{display:block;height:100%}
+.bar .v{font-family:var(--mono);text-align:right;font-variant-numeric:tabular-nums}
+.review{display:grid;gap:10px;margin-top:16px}
+details.rv{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 16px}
+details.rv summary{cursor:pointer;display:flex;gap:10px;align-items:baseline;list-style:none}
+details.rv summary::-webkit-details-marker{display:none}
+.mark{font:700 13px var(--mono);flex:0 0 auto}
+.mark.ok{color:var(--ok)} .mark.bad{color:var(--bad)} .mark.na{color:var(--muted)}
+.rvq{font-size:14px}
+
+.flash{perspective:1400px;margin-top:6px}
+.fc{position:relative;min-height:300px;cursor:pointer;transform-style:preserve-3d;transition:transform .5s}
+.fc.flip{transform:rotateY(180deg)}
+.fc .face{position:absolute;inset:0;backface-visibility:hidden;padding:24px;display:flex;flex-direction:column;gap:12px;overflow:auto}
+.fc .back{transform:rotateY(180deg)}
+.fc .face .hint{margin-top:auto;font-size:12px;color:var(--muted)}
+.fc .ans{font-family:var(--serif);font-size:19px;font-weight:600}
+@media (prefers-reduced-motion:reduce){.fc{transition:none}.progressbar i{transition:none}}
+
+.panel{padding:22px;display:grid;gap:14px}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:600 11px var(--sans);text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
+td.id{font-family:var(--mono);white-space:nowrap}
+.gloss{columns:2 260px;column-gap:28px;font-size:14px}
+.gloss div{break-inside:avoid;padding:3px 0}
+.gloss b{font-family:var(--mono);font-size:13px}
+.muted{color:var(--muted)}
+.empty{padding:28px;text-align:center;color:var(--muted)}
+
+#printArea{display:none}
+textarea.dump{width:100%;min-height:180px;font:12px var(--mono);background:var(--surface2);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:10px}
+.expgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.expgrid .card{padding:16px;display:grid;gap:8px;align-content:start}
+.expgrid h3{margin:0;font:600 15px var(--sans)}
+.expgrid p{margin:0;font-size:13px;color:var(--muted)}
+@media print{
+  body.printing header.top, body.printing main{display:none!important}
+  body.printing #printArea{display:block!important;color:#000;background:#fff;font:11pt/1.4 Georgia,serif}
+  #printArea .pq{break-inside:avoid;border-bottom:1px solid #999;padding:8pt 0}
+  #printArea .pq h4{font:600 9pt Arial,sans-serif;margin:0 0 4pt;color:#444}
+  #printArea .pq p{margin:3pt 0}
+  #printArea .pb{break-before:page}
+}
+.sync{font-family:var(--mono);font-size:11px;color:var(--muted);margin-right:10px;white-space:nowrap}
+.sync.ok{color:var(--ok)}.sync.err{color:var(--warn)}
+@media (max-width:560px){.brand small{display:none}.top .row{padding-top:8px}#themeBtn{padding:6px 10px;font-size:13px}.qcard{padding:16px}.stem{font-size:17px}.bar{grid-template-columns:110px 1fr 48px}.score .big{font-size:42px}}
+</style>
+
+<header class="top">
+  <div class="row">
+    <div class="brand">Quiz Neurogastro <small>2026 · 128 casos · 16 bloques</small></div>
+    <span class="spacer"></span>
+    <span id="syncState" class="sync" title="Estado de guardado">● local</span>
+    <button class="btn ghost" id="themeBtn" type="button" aria-label="Cambiar tema">◐ Tema</button>
+  </div>
+  <nav class="tabs" role="tablist">
+    <button role="tab" data-tab="study" aria-selected="true">Estudio <span class="badge" id="nStudy"></span></button>
+    <button role="tab" data-tab="exam" aria-selected="false">Examen <span class="badge" id="nExam"></span></button>
+    <button role="tab" data-tab="flash" aria-selected="false">Flashcards</button>
+    <button role="tab" data-tab="stats" aria-selected="false">Progreso</button>
+    <button role="tab" data-tab="changes" aria-selected="false">Temario</button>
+    <button role="tab" data-tab="gloss" aria-selected="false">Siglas</button>
+    <button role="tab" data-tab="export" aria-selected="false">Exportar</button>
+  </nav>
+</header>
+
+<main class="wrap">
+  <section id="tab-study"></section>
+  <section id="tab-exam" hidden></section>
+  <section id="tab-flash" hidden></section>
+  <section id="tab-stats" hidden></section>
+  <section id="tab-changes" hidden></section>
+  <section id="tab-gloss" hidden></section>
+  <section id="tab-export" hidden></section>
+</main>
+<div id="printArea" aria-hidden="true"></div>
+
+
+<script>
+// Bloques 1–6 · Roma V · ERGE · TICI esofágicos · Eructos y rumiación · Disfagia y EoE · Chicago 4.0
+const Q1 = [
+/* ===================== Bloque 1 · Roma V y TICI ===================== */
+{id:"RV01",b:"ES",t:"Roma V y TICI",n:"R",md:"E",
+q:"Mujer de 29 años con dolor abdominal 5 días al mes, que mejora al defecar y se asocia a deposiciones blandas, desde hace 10 semanas tras una gastroenteritis. Sin banderas rojas; hemograma, PCR, anti-transglutaminasa y calprotectina normales. ¿Qué corresponde según Roma V?",
+o:["Esperar a completar 6 meses de síntomas antes de diagnosticar SII","Diagnosticar SII-D postinfeccioso con criterios clínicos e iniciar tratamiento","Colonoscopía para descartar enfermedad inflamatoria antes de rotular","Test de aire espirado con lactulosa para descartar SIBO"],
+c:1,
+e:"Roma V separa <b>criterios clínicos</b> (síntomas molestos, ~8 semanas, sin exigir 6 meses) de criterios de investigación. Con estudio mínimo normal y sin alarma, el diagnóstico es <b>positivo</b> y se trata.",
+w:{0:"Los 6 meses de antigüedad quedan para investigación.",2:"Con calprotectina normal y sin alarma, la colonoscopía no está indicada.",3:"Roma V no recomienda test de aire espirado de rutina en el SII."},
+p:"Uno de cada cuatro encuestados en el estudio global de la Fundación Roma tenía síntomas que no alcanzaban los criterios, con peor calidad de vida que los asintomáticos: de ahí los criterios clínicos.",
+r:"Roma V, Gastroenterology 2026 · Sperber, Gastroenterology 2021 (estudio epidemiológico global)"},
+
+{id:"RV02",b:"ES",t:"Roma V y TICI",n:"R",md:"X",
+q:"¿Cuál de estos diagnósticos es NUEVO para el adulto en Roma V?",
+o:["Síndrome de vómitos cíclicos","Migraña abdominal","Proctalgia fugaz","Globo"],
+c:1,
+e:"Roma V incorpora en el adulto la <b>migraña abdominal</b>, la <b>incapacidad para eructar (R-CPD)</b> y los <b>trastornos sensoriales rectales</b> (hipo e hipersensibilidad).",
+w:{0:"Los vómitos cíclicos ya estaban en Roma IV.",2:"La proctalgia fugaz ya existía.",3:"El globo es un trastorno esofágico clásico."},
+p:"Roma V también reemplaza «trastorno gastrointestinal funcional» por trastorno de la interacción cerebro-intestino y retira «funcional» de casi todos los nombres.",
+r:"Roma V, Gastroenterology 2026"},
+
+{id:"RV03",b:"ES",t:"Roma V y TICI",n:"F",md:"E",
+q:"Paciente con SII-D moderado le dice: «otro médico me dijo que no tengo nada, que es estrés». ¿Qué intervención tiene evidencia de mejorar por sí misma los resultados?",
+o:["Repetir la colonoscopía para tranquilizarlo","Explicar el modelo cerebro-intestino, validar el síntoma y acordar metas y seguimiento","Derivar a psiquiatría como primer paso","Indicar dieta sin gluten empírica"],
+c:1,
+e:"La <b>relación médico-paciente</b> (explicación positiva del diagnóstico, validación y metas compartidas) es el primer tratamiento en Roma V y mejora satisfacción, adherencia y síntomas.",
+w:{0:"Los estudios repetidos refuerzan la idea de enfermedad oculta y no tranquilizan.",2:"La derivación sin explicación refuerza el mensaje de «es psicológico».",3:"La dieta sin gluten sin celíaca no es la primera intervención."},
+p:"Evitar «funcional» y «psicosomático» frente al paciente: transmiten que no hay nada real.",
+r:"Roma V, Gastroenterology 2026 · Drossman, Gastroenterology 2021 (comunicación)"},
+
+{id:"RV04",b:"ES",t:"Roma V y TICI",n:"R",md:"X",
+q:"Hombre de 58 años con dolor abdominal y alternancia del hábito de 3 meses, sin estudios previos. ¿Cuál es el hallazgo que obliga a estudiar antes de rotular un TICI?",
+o:["Dolor que mejora al defecar","Inicio de síntomas después de los 50 años","Distensión que aumenta en el día","Sensación de evacuación incompleta"],
+c:1,
+e:"El <b>inicio a partir de los 45–50 años</b> es bandera roja: colonoscopía antes de diagnosticar SII.",
+w:{0:"La mejoría con la defecación es un criterio de SII.",2:"La distensión vespertina es típica de TICI.",3:"La evacuación incompleta es frecuente en TICI y disinergia."},
+p:"Otras banderas: sangrado, anemia, baja de peso, síntomas nocturnos que despiertan, fiebre, masa y antecedente familiar de cáncer colorrectal, EII o celíaca.",
+r:"Roma V, Gastroenterology 2026 · ACG 2021 SII"},
+
+{id:"RV05",b:"ES",t:"Roma V y TICI",n:"F",md:"E",
+q:"¿Qué terapia psicológica tiene evidencia en SII aunque el paciente no tenga ansiedad ni depresión?",
+o:["Psicoanálisis","Hipnoterapia dirigida al intestino","Terapia de grupo de apoyo no estructurada","Mindfulness sin componente intestinal como única opción"],
+c:1,
+e:"La <b>hipnoterapia dirigida al intestino</b> y la <b>TCC</b> reducen síntomas del SII con efecto sostenido meses después; se indican por los síntomas digestivos.",
+w:{0:"Sin evidencia en SII.",2:"Sin evidencia de eficacia sobre síntomas.",3:"Tiene datos menores; no reemplaza a TCC o hipnoterapia."},
+p:"Existen formatos digitales y grupales que reducen la barrera de acceso.",
+r:"Roma V 2026 · ACG 2021 SII"},
+
+{id:"RV06",b:"ES",t:"Roma V y TICI",n:"S",md:"X",
+q:"Según el perfil clínico multidimensional de Roma, ¿qué dimensión decide principalmente la intensidad del tratamiento?",
+o:["El subtipo de Bristol","El impacto en la vida diaria y los modificadores psicosociales","La edad del paciente","El número de estudios negativos previos"],
+c:1,
+e:"Además del diagnóstico, el perfil registra modificadores clínicos, <b>impacto</b>, <b>modificadores psicosociales</b> y biomarcadores. Impacto y comorbilidad psicológica deciden neuromoduladores y terapia cerebro-intestino.",
+w:{0:"El subtipo orienta el fármaco, no la intensidad.",2:"La edad influye en la búsqueda de organicidad.",3:"Más estudios negativos no cambian la intensidad."},
+p:"Anotar en cada paciente: cuánto molesta, qué lo modula y qué comorbilidad psicológica hay.",
+r:"Roma V 2026 · Drossman, Rome Foundation MDCP (4.ª ed.)"},
+
+{id:"RV07",b:"ES",t:"Roma V y TICI",n:"R",md:"E",
+q:"¿Cuál es la proporción aproximada de la población que cumple criterios de al menos un TICI en el estudio global de la Fundación Roma?",
+o:["~10 %","~25 %","~40 %","~65 %"],
+c:2,
+e:"El estudio global (más de 54.000 personas en 26 países) mostró <b>~41 %</b> con al menos un TICI.",
+w:{0:"Subestima la prevalencia.",1:"Corresponde aproximadamente a quienes tienen síntomas sin alcanzar criterios.",3:"Sobreestima."},
+p:"Más de un tercio tiene superposición de TICI de distintas regiones y cada uno suma carga.",
+r:"Sperber AD et al. Gastroenterology 2021;160:99-114"},
+
+{id:"RV08",b:"ES",t:"Roma V y TICI",n:"F",md:"X",
+q:"Paciente con colitis ulcerosa en remisión endoscópica y calprotectina de 40 µg/g, con dolor y diarrea que mejoran al defecar. ¿Conducta?",
+o:["Escalar el biológico","Tratar como síntomas tipo SII en EII en remisión","Repetir colonoscopía","Agregar corticoides"],
+c:1,
+e:"Con remisión objetiva, los síntomas cumplen el patrón de <b>SII superpuesto</b>: se tratan como TICI (dieta, antiespasmódico, loperamida, neuromodulador).",
+w:{0:"Escalar inmunosupresión sin inflamación no mejora y expone a riesgos.",2:"La calprotectina y la endoscopía recientes ya documentan remisión.",3:"Los corticoides no corresponden sin actividad."},
+p:"Un TICI puede coexistir con enfermedad orgánica y se trata igual; descartar antes malabsorción de ácidos biliares si hubo resección ileal.",
+r:"Roma V 2026 · ECCO 2022"},
+
+/* ===================== Bloque 2 · ERGE y Lyon 2.0 ===================== */
+{id:"RG01",b:"ES",t:"ERGE y Lyon 2.0",n:"R",md:"E",
+q:"¿Cuál de estos hallazgos endoscópicos es evidencia CONCLUYENTE de ERGE según Lyon 2.0?",
+o:["Esofagitis LA A","Esofagitis LA B","Hernia hiatal de 2 cm","Unión escamocolumnar irregular sin biopsia"],
+c:1,
+e:"Lyon 2.0 considera concluyentes <b>LA B, C y D</b>, Barrett con biopsia y estenosis péptica. LA A pasó a no concluyente.",
+w:{0:"LA A se ve en sanos y no es concluyente.",2:"La hernia hiatal es solo evidencia adyuvante.",3:"Sin biopsia no hay diagnóstico de Barrett."},
+p:"La endoscopía para diagnosticar ERGE se hace tras 2–4 semanas sin IBP: con 8 semanas de tratamiento cicatriza ~80 % de las esofagitis.",
+r:"Gyawali CP et al. Gut 2024;73:361-71"},
+
+{id:"RG02",b:"ES",t:"ERGE y Lyon 2.0",n:"R",md:"X",
+q:"pH-impedancia sin tratamiento: TEA 5,2 %, 92 reflujos, MNBI 1.300 Ω. ¿Interpretación?",
+o:["Normal","Zona gris que los adyuvantes inclinan a ERGE","ERGE concluyente","Hipersensibilidad al reflujo"],
+c:1,
+e:"TEA 4–6 % es zona gris; <b>&gt; 80 reflujos</b> y <b>MNBI &lt; 1.500 Ω</b> son adyuvantes a favor.",
+w:{0:"TEA &gt; 4 % no es normal.",2:"Concluyente requiere TEA &gt; 6 % o endoscopía LA B–D, Barrett o estenosis.",3:"La hipersensibilidad exige TEA normal."},
+p:"Si la decisión es quirúrgica, repetir con registro prolongado (cápsula 96 h).",
+r:"Lyon 2.0, Gut 2024"},
+
+{id:"RG03",b:"ES",t:"ERGE y Lyon 2.0",n:"F",md:"E",
+q:"¿Qué métrica de pH-impedancia fue retirada en Lyon 2.0?",
+o:["MNBI","Número de reflujos","Índice PSPW","TEA"],
+c:2,
+e:"El <b>PSPW</b> (onda peristáltica inducida por deglución posreflujo) quedó como herramienta de investigación.",
+w:{0:"La MNBI se mantiene como adyuvante.",1:"El número de reflujos se mantiene (&lt; 40 en contra, &gt; 80 a favor).",3:"El TEA es la métrica principal."},
+p:"Lyon 2.0 agregó hernia hiatal e histología como adyuvantes.",
+r:"Lyon 2.0, Gut 2024"},
+
+{id:"RG04",b:"ES",t:"ERGE y Lyon 2.0",n:"F",md:"X",
+q:"Hombre con esofagitis LA C documentada, persiste con pirosis pese a esomeprazol 40 mg c/12 h bien tomado. pH-impedancia con IBP: TEA 5,8 %, 104 reflujos. ¿Qué concluye?",
+o:["Debe repetirse sin IBP","ERGE refractaria accionable","Pirosis funcional sobreagregada","Hipersensibilidad al reflujo"],
+c:1,
+e:"Con IBP optimizado, <b>TEA &gt; 4 % y &gt; 80 reflujos</b> definen ERGE refractaria accionable: P-CAB, alginato, y evaluar cirugía o terapia endoscópica.",
+w:{0:"La ERGE ya está probada: el estudio correcto es con tratamiento.",2:"El TEA está alterado con tratamiento.",3:"La hipersensibilidad exige TEA normal."},
+p:"Sin ERGE probada no se habla de «ERGE refractaria» sino de síntomas refractarios.",
+r:"Lyon 2.0, Gut 2024"},
+
+{id:"RG05",b:"ES",t:"ERGE y Lyon 2.0",n:"R",md:"E",
+q:"Paciente con pirosis que toma omeprazol 20 mg después de almuerzo, cuando se acuerda. ¿Primer paso ante respuesta parcial?",
+o:["Cambiar a P-CAB","Tomar el IBP 30–60 min antes del desayuno a diario","Agregar baclofeno","Pedir pH-impedancia"],
+c:1,
+e:"Los IBP inhiben solo bombas activas: deben tomarse <b>30–60 min antes de la comida</b> y a diario. Optimizar horario y adherencia antes de escalar o estudiar.",
+w:{0:"El cambio de fármaco es posterior a optimizar.",2:"El baclofeno no se usa sin ERGE objetiva refractaria.",3:"Estudiar antes de optimizar lleva a falsos «refractarios»."},
+p:"Los P-CAB no dependen de la comida ni de la activación de la bomba.",
+r:"ACG 2022 ERGE (Katz)"},
+
+{id:"RG06",b:"ES",t:"ERGE y Lyon 2.0",n:"F",md:"E",
+q:"¿En qué escenario un P-CAB tiene ventaja demostrada sobre IBP?",
+o:["ERGE no erosiva con buena respuesta","Curación de esofagitis grave LA C/D","Pirosis funcional","Prevención de úlcera por AINE en bajo riesgo"],
+c:1,
+e:"Vonoprazán fue superior a lansoprazol en curación de esofagitis erosiva, con mayor diferencia en <b>LA C/D</b>.",
+w:{0:"Si responde a IBP, no hay ventaja que justifique el cambio.",2:"La pirosis funcional no responde a más supresión ácida.",3:"Sin ventaja demostrada en ese escenario."},
+p:"En Chile, tegoprazán está disponible desde 2024; vonoprazán y fexuprazán, verificar.",
+r:"Laine L et al. Gastroenterology 2023 (PHALCON-EE)"},
+
+{id:"RG07",b:"ES",t:"ERGE y Lyon 2.0",n:"S",md:"X",
+q:"Mujer de 44 años con ERGE probada (TEA 9 %), regurgitación como síntoma dominante e IMC 37. ¿Qué cirugía antirreflujo es preferible?",
+o:["Fundoplicatura de Nissen","Fundoplicatura parcial de Toupet","Bypass gástrico en Y de Roux","LINX"],
+c:2,
+e:"Con <b>IMC ≥ 35</b>, la fundoplicatura falla más; el <b>bypass gástrico</b> controla el reflujo y trata la obesidad.",
+w:{0:"Mayor tasa de falla y recurrencia en obesidad grave.",1:"Mismo problema que la fundoplicatura completa.",3:"Menos datos en obesidad grave y no trata la obesidad."},
+p:"La manga gástrica empeora o induce ERGE: es mala opción en quien ya la tiene.",
+r:"ACG 2022 ERGE · SAGES 2021"},
+
+{id:"RG08",b:"ES",t:"ERGE y Lyon 2.0",n:"R",md:"E",
+q:"Hombre de 50 años, sin ERGE probada, que responde bien a 8 semanas de IBP. ¿Conducta?",
+o:["IBP continuo indefinido","Intentar desescalar a la mínima dosis o a demanda","Endoscopía de control obligatoria","pH-impedancia con IBP"],
+c:1,
+e:"Sin esofagitis grave, Barrett ni estenosis, se <b>desescala</b> a la dosis mínima eficaz o a demanda.",
+w:{0:"El tratamiento indefinido se reserva para LA C/D, Barrett y estenosis.",2:"No hay indicación de control sin hallazgos.",3:"No corresponde con buena respuesta."},
+p:"Si no se puede suspender en alguien joven que tomará IBP por años, documentar ERGE con estudio sin tratamiento.",
+r:"ACG 2022 ERGE · AGA CPU 2022 desprescripción de IBP"},
+
+/* ===================== Bloque 3 · TICI esofágicos ===================== */
+{id:"TE01",b:"ES",t:"TICI esofágicos",n:"R",md:"E",
+q:"Pirosis sin respuesta a IBP doble. Endoscopía y biopsias normales; manometría sin trastorno mayor. pH-impedancia sin IBP: TEA 1,5 %, SI 70 %, SAP 98 %. ¿Diagnóstico?",
+o:["ERGE no erosiva","Hipersensibilidad al reflujo","Pirosis funcional","ERGE refractaria"],
+c:1,
+e:"<b>TEA normal con asociación sintomática positiva</b> = hipersensibilidad al reflujo (Roma V).",
+w:{0:"Requiere TEA anormal.",2:"La pirosis funcional tiene asociación negativa.",3:"No hay ERGE probada."},
+p:"Tratamiento: neuromodulador en dosis baja (ATC, ISRS, pregabalina) ± antisecretor; terapia cerebro-intestino.",
+r:"Roma V 2026 (trastornos esofágicos)"},
+
+{id:"TE02",b:"ES",t:"TICI esofágicos",n:"R",md:"X",
+q:"En la pirosis funcional, ¿qué tratamiento está contraindicado?",
+o:["Amitriptilina en dosis baja","Fundoplicatura","Hipnoterapia dirigida al esófago","Escitalopram"],
+c:1,
+e:"Sin reflujo patológico ni asociación, la <b>cirugía antirreflujo</b> no mejora y agrega morbilidad.",
+w:{0:"Es tratamiento de primera línea.",2:"Tiene evidencia en hipersensibilidad esofágica.",3:"ISRS es alternativa válida."},
+p:"Suspender el IBP en la pirosis funcional pura.",
+r:"Roma V 2026"},
+
+{id:"TE03",b:"ES",t:"TICI esofágicos",n:"F",md:"E",
+q:"¿Cuál de los siguientes es requisito para diagnosticar dolor torácico funcional?",
+o:["pH-impedancia con TEA > 6 %","Descartar causa cardíaca y ERGE y trastorno motor mayor","Esofagograma normal solamente","Respuesta a IBP"],
+c:1,
+e:"Exige exclusión cardíaca, y ausencia de ERGE, EoE y trastorno motor mayor (acalasia, espasmo, hipercontractilidad).",
+w:{0:"Eso sería ERGE.",2:"No basta: se requiere manometría y evaluación de reflujo.",3:"La respuesta a IBP sugiere ERGE."},
+p:"Neuromoduladores (ATC, ISRS, trazodona) tienen evidencia en dolor torácico no cardíaco.",
+r:"Roma V 2026"},
+
+{id:"TE04",b:"ES",t:"TICI esofágicos",n:"R",md:"X",
+q:"Mujer de 40 años con sensación de nudo en la garganta, entre comidas, que mejora al comer; sin disfagia ni odinofagia. Examen ORL normal. ¿Diagnóstico más probable?",
+o:["Disfagia funcional","Globo","Reflujo laringofaríngeo","Divertículo de Zenker"],
+c:1,
+e:"Sensación de nudo <b>no dolorosa</b>, entre comidas, que mejora al comer, sin disfagia: <b>globo</b>.",
+w:{0:"La disfagia funcional es sensación de paso anormal del bolo.",2:"Diagnóstico sobreutilizado sin evidencia objetiva.",3:"Produce disfagia y regurgitación de alimento no digerido."},
+p:"Disfagia, odinofagia, baja de peso o masa cervical obligan a estudio.",
+r:"Roma V 2026"},
+
+{id:"TE05",b:"ES",t:"TICI esofágicos",n:"F",md:"E",
+q:"Paciente con ronquera y carraspeo crónicos, sin pirosis ni regurgitación, derivado con RSI 22. ¿Siguiente paso más racional?",
+o:["IBP doble por 6 meses","pH-impedancia sin tratamiento antes de tratar prolongadamente","Fundoplicatura","Laringoscopía repetida"],
+c:1,
+e:"El RSI y los hallazgos laríngeos son inespecíficos. Sin síntomas típicos, la prueba empírica rinde poco: <b>documentar reflujo</b> antes de tratamiento prolongado.",
+w:{0:"Los ensayos de IBP en reflujo laringofaríngeo sin síntomas típicos son mayormente negativos.",2:"Sin reflujo probado, la cirugía no se justifica.",3:"No agrega a la evaluación del reflujo."},
+p:"Con síntomas típicos asociados, una prueba de IBP 2 veces al día por 8–12 semanas es razonable.",
+r:"ACG 2022 ERGE · Lyon 2.0"},
+
+{id:"TE06",b:"ES",t:"TICI esofágicos",n:"S",md:"X",
+q:"¿Qué proporción aproximada de pacientes derivados por pirosis «refractaria» a IBP tiene ERGE refractaria real?",
+o:["≤ 20 %","~50 %","~75 %","> 90 %"],
+c:0,
+e:"La mayoría de los «refractarios» tiene <b>hipersensibilidad, pirosis funcional, rumiación o eructos</b>; la ERGE refractaria real es minoría.",
+w:{1:"Sobreestima.",2:"Sobreestima.",3:"Sobreestima."},
+p:"Por eso, sin respuesta a IBP doble: estudiar en vez de escalar.",
+r:"Lyon 2.0 · Roma V 2026"},
+
+{id:"TE07",b:"ES",t:"TICI esofágicos",n:"R",md:"E",
+q:"Disfagia a sólidos con endoscopía, biopsias, manometría y esofagograma normales. ¿Diagnóstico?",
+o:["Acalasia temprana","Disfagia funcional","EoE","EGJOO"],
+c:1,
+e:"Sensación de paso anormal del bolo sin causa estructural, mucosa (incluida EoE) ni trastorno motor mayor: <b>disfagia funcional</b>.",
+w:{0:"La manometría sería anormal o habría que buscar con FLIP si hay sospecha.",2:"Las biopsias son normales.",3:"Requiere IRP elevado."},
+p:"Si persiste la sospecha de obstrucción, FLIP puede detectar alteración no vista en manometría.",
+r:"Roma V 2026"},
+
+{id:"TE08",b:"ES",t:"TICI esofágicos",n:"F",md:"X",
+q:"Paciente con ERGE probada que con IBP queda con pirosis. pH-impedancia con IBP: TEA 0,8 %, 32 reflujos, SAP 97 % con reflujos débilmente ácidos. ¿Conducta?",
+o:["Fundoplicatura","Hipersensibilidad sobreagregada: neuromodulador y mantener antisecretor","Duplicar el IBP","Cambiar a P-CAB"],
+c:1,
+e:"Reflujo controlado (TEA &lt; 1 %, &lt; 40 reflujos) con asociación positiva: <b>hipersensibilidad sobreagregada</b>.",
+w:{0:"La cirugía en hipersensibilidad tiene resultados inferiores.",2:"El ácido ya está controlado.",3:"No hay exposición ácida que reducir."},
+p:"La superposición de ERGE con TICI esofágico es frecuente.",
+r:"Roma V 2026 · Lyon 2.0"},
+
+/* ===================== Bloque 4 · Eructos y rumiación ===================== */
+{id:"RU01",b:"ES",t:"Eructos y rumiación",n:"R",md:"E",
+q:"Adolescente de 19 años con regurgitación sin esfuerzo de comida reconocible a los pocos minutos de comer, que remastica o escupe; sin náuseas ni arcadas. Bajó 5 kg. ¿Diagnóstico más probable?",
+o:["Gastroparesia","Síndrome de rumiación","ERGE grave","Acalasia"],
+c:1,
+e:"Regurgitación <b>precoz, sin esfuerzo ni náusea</b>, con remasticación: <b>rumiación</b>.",
+w:{0:"La gastroparesia produce vómitos tardíos con náusea.",2:"El reflujo no produce regurgitación de comida reconocible y remasticada.",3:"La acalasia produce disfagia y regurgitación de alimento retenido, no remasticado."},
+p:"Indagar activamente trastornos de la conducta alimentaria.",
+r:"Roma V 2026 · Halland, Clin Gastroenterol Hepatol 2018"},
+
+{id:"RU02",b:"ES",t:"Eructos y rumiación",n:"F",md:"X",
+q:"¿Cuál es el estudio de elección para confirmar rumiación?",
+o:["Cápsula de pH 96 h","Manometría de alta resolución con impedancia posprandial y comida real","Vaciamiento gástrico","Manometría con degluciones de agua en ayunas"],
+c:1,
+e:"Se documenta el <b>pico de presión abdominal (onda R) &gt; 30 mmHg</b> que precede al flujo retrógrado, con comida real.",
+w:{0:"La cápsula no mide presión ni impedancia.",2:"No discrimina rumiación.",3:"El estudio con agua no reproduce el fenómeno."},
+p:"La pH-impedancia sola puede confundir rumiación con reflujo posprandial.",
+r:"Roma V 2026"},
+
+{id:"RU03",b:"ES",t:"Eructos y rumiación",n:"R",md:"E",
+q:"¿Cuál es el tratamiento de primera línea de la rumiación?",
+o:["IBP en dosis doble","Respiración diafragmática durante y después de comer","Fundoplicatura","Metoclopramida"],
+c:1,
+e:"La <b>respiración diafragmática</b> (idealmente con biorretroalimentación) es incompatible con la contracción abdominal que genera la regurgitación.",
+w:{0:"No trata el mecanismo; retirarlo progresivamente.",2:"Contraindicada.",3:"Sin rol."},
+p:"Baclofeno si no basta.",
+r:"Roma V 2026"},
+
+{id:"RU04",b:"ES",t:"Eructos y rumiación",n:"F",md:"E",
+q:"Paciente con eructos muy frecuentes que desaparecen al hablar y al dormir. ¿Mecanismo?",
+o:["Aire gástrico que sale por relajación transitoria del esfínter","Aire que entra al esófago y sale de inmediato (supragástrico)","Fermentación bacteriana","Aerofagia por gastroparesia"],
+c:1,
+e:"El <b>eructo supragástrico</b> es una conducta: aire aspirado o deglutido al esófago que se expulsa en segundos, sin llegar al estómago.",
+w:{0:"Es el eructo gástrico fisiológico.",2:"No explica el patrón.",3:"No es el mecanismo."},
+p:"Tratamiento: explicación, logopedia, respiración diafragmática, TCC.",
+r:"Roma V 2026"},
+
+{id:"RU05",b:"ES",t:"Eructos y rumiación",n:"R",md:"X",
+q:"Mujer de 27 años que nunca ha podido eructar, con gorgoteo cervical, distensión y flatulencia excesiva. ¿Tratamiento?",
+o:["Simeticona","Toxina botulínica en el cricofaríngeo","IBP","Dieta baja en FODMAP"],
+c:1,
+e:"<b>Incapacidad para eructar (R-CPD)</b>: el cricofaríngeo no se relaja ante el gas. La <b>toxina botulínica</b> logra respuesta en la gran mayoría.",
+w:{0:"Sin efecto en el mecanismo.",2:"No hay reflujo.",3:"Puede reducir gas, no la incapacidad de eructar."},
+p:"Diagnóstico nuevo de Roma V en el adulto.",
+r:"Bastian RW, Smithson ML. OTO Open 2019 · Roma V 2026"},
+
+{id:"RU06",b:"ES",t:"Eructos y rumiación",n:"S",md:"X",
+q:"En la manometría con agua carbonatada de un paciente con R-CPD, ¿qué se espera ver?",
+o:["Relajación normal del esfínter superior","Falta de relajación del esfínter superior pese a la presurización esofágica por gas","Acalasia","Peristalsis ausente"],
+c:1,
+e:"Tras relajarse el esfínter inferior y presurizarse el esófago, el <b>esfínter superior no se relaja</b> e incluso aumenta su presión.",
+w:{0:"Es lo que ocurre en sanos.",2:"El esfínter inferior se comporta normal.",3:"La peristalsis suele ser normal."},
+p:"Sin provocación, la manometría puede ser normal.",
+r:"Roma V 2026"},
+
+{id:"RU07",b:"ES",t:"Eructos y rumiación",n:"F",md:"E",
+q:"Paciente «refractario» a IBP con regurgitación posprandial precoz. pH-impedancia: TEA 7 % concentrado en la primera hora posprandial, con muchos reflujos no ácidos. ¿Qué buscar antes de indicar cirugía?",
+o:["Gastroparesia","Rumiación","Hernia paraesofágica","EoE"],
+c:1,
+e:"Un TEA posprandial precoz con reflujos no ácidos puede ser <b>rumiación</b>: el ácido «medido» son los episodios de regurgitación. Una ERGE o esofagitis no excluyen rumiación.",
+w:{0:"No produce ese patrón precoz.",2:"No explica el patrón.",3:"No produce reflujo medible."},
+p:"Operar a un rumiador empeora los síntomas.",
+r:"Roma V 2026 · Lyon 2.0"},
+
+{id:"RU08",b:"ES",t:"Eructos y rumiación",n:"R",md:"E",
+q:"¿Qué distingue la rumiación del vómito?",
+o:["El contenido es ácido","Ausencia de náusea y arcadas, y esfuerzo mínimo","Aparece horas después de comer","Siempre hay baja de peso"],
+c:1,
+e:"La rumiación es <b>sin esfuerzo y sin náusea ni arcadas</b>, a los pocos minutos de comer.",
+w:{0:"El contenido sabe a la comida, no a ácido.",2:"Es precoz.",3:"Puede o no haber baja de peso."},
+p:"Roma V excluye rumiación antes de diagnosticar síndromes de náuseas y vómitos.",
+r:"Roma V 2026"},
+
+/* ===================== Bloque 5 · Disfagia y EoE ===================== */
+{id:"EO01",b:"ES",t:"Disfagia y EoE",n:"R",md:"E",
+q:"Hombre de 24 años con impactación alimentaria. Endoscopía: anillos y surcos. ¿Protocolo de biopsias?",
+o:["2 biopsias distales","≥ 6 biopsias de 2 niveles (proximal o medio y distal)","Solo si la mucosa es anormal","Biopsias gástricas y duodenales solamente"],
+c:1,
+e:"Para EoE: <b>≥ 6 biopsias</b> de al menos 2 niveles, aun con mucosa normal.",
+w:{0:"Insuficiente sensibilidad.",2:"La mucosa puede ser normal en EoE.",3:"Se agregan si hay sospecha de gastroenteritis eosinofílica."},
+p:"Impactación en adulto joven: EoE hasta demostrar lo contrario.",
+r:"AGA-JTF 2020 EoE · Dellon, Gastroenterology 2018 (AGREE)"},
+
+{id:"EO02",b:"ES",t:"Disfagia y EoE",n:"R",md:"X",
+q:"¿Cuál es el umbral histológico de EoE?",
+o:["≥ 6 eosinófilos/campo","≥ 15 eosinófilos/campo de alto aumento","≥ 20 linfocitos/100 células","≥ 50 eosinófilos/mm²"],
+c:1,
+e:"Síntomas de disfunción esofágica + <b>≥ 15 eosinófilos/campo de alto aumento</b>, excluyendo otras causas.",
+w:{0:"Umbral demasiado bajo.",2:"Corresponde a colitis linfocítica.",3:"No es el criterio estándar."},
+p:"La respuesta al IBP ya no excluye EoE.",
+r:"AGREE 2018 · AGA-JTF 2020"},
+
+{id:"EO03",b:"ES",t:"Disfagia y EoE",n:"F",md:"E",
+q:"Paciente con EoE que responde histológicamente a omeprazol 40 mg c/12 h. ¿Cómo se clasifica?",
+o:["Eosinofilia esofágica respondedora a IBP, entidad distinta","EoE respondedora a IBP","ERGE","EoE refractaria"],
+c:1,
+e:"Desde AGREE 2018 la antigua «PPI-REE» se considera <b>EoE que responde a IBP</b>.",
+w:{0:"Término abandonado.",2:"No se reclasifica como ERGE.",3:"Respondió."},
+p:"El IBP es tratamiento de primera línea junto a corticoide tópico y dieta.",
+r:"Dellon, Gastroenterology 2018 (AGREE)"},
+
+{id:"EO04",b:"ES",t:"Disfagia y EoE",n:"F",md:"X",
+q:"¿Qué tratamiento biológico está aprobado para EoE?",
+o:["Vedolizumab","Dupilumab","Omalizumab","Mepolizumab"],
+c:1,
+e:"<b>Dupilumab</b> (anti-receptor α de IL-4) 300 mg semanal mejoró histología y disfagia.",
+w:{0:"Sin rol en EoE.",2:"Ensayos negativos.",3:"Resultados histológicos sin mejoría clínica consistente."},
+p:"Útil en refractarios o con atopia grave asociada.",
+r:"Dellon ES et al. NEJM 2022;387:2317-30"},
+
+{id:"EO05",b:"ES",t:"Disfagia y EoE",n:"R",md:"E",
+q:"¿Cuánto tiempo debe suspenderse el IBP antes de una endoscopía diagnóstica de EoE?",
+o:["48 h","1 semana","≥ 3 semanas","No es necesario"],
+c:2,
+e:"El IBP, el corticoide tópico y la dieta pueden enmascarar la eosinofilia: suspender <b>≥ 3 semanas</b>.",
+w:{0:"Insuficiente.",1:"Insuficiente.",3:"Puede producir falso negativo."},
+p:"Para ERGE, la endoscopía sin IBP requiere 2–4 semanas.",
+r:"AGA-JTF 2020"},
+
+{id:"EO06",b:"ES",t:"Disfagia y EoE",n:"R",md:"X",
+q:"Disfagia a sólidos y líquidos desde el inicio, con regurgitación de comida no digerida. ¿Mecanismo más probable?",
+o:["Estenosis péptica","Trastorno motor","Anillo de Schatzki","Cáncer esofágico"],
+c:1,
+e:"Disfagia a <b>sólidos y líquidos desde el inicio</b> sugiere trastorno motor (acalasia).",
+w:{0:"Produce disfagia progresiva a sólidos.",2:"Disfagia intermitente a sólidos.",3:"Disfagia progresiva a sólidos y luego líquidos, con baja de peso."},
+p:"Orofaríngea (tos, voz húmeda, regurgitación nasal) se estudia con videofluoroscopía.",
+r:"ACG 2020 acalasia"},
+
+{id:"EO07",b:"ES",t:"Disfagia y EoE",n:"F",md:"E",
+q:"EoE con estenosis de 11 mm y disfagia pese a remisión histológica. ¿Conducta?",
+o:["Cambiar a dupilumab","Dilatación endoscópica manteniendo tratamiento antiinflamatorio","Aumentar budesonida","Cirugía"],
+c:1,
+e:"La remodelación fibroestenótica requiere <b>dilatación</b>; el antiinflamatorio se mantiene para evitar progresión.",
+w:{0:"Ya hay remisión histológica.",2:"No resuelve la fibrosis.",3:"No corresponde."},
+p:"El riesgo de perforación por dilatación en EoE es bajo (&lt; 1 %).",
+r:"AGA-JTF 2020"},
+
+{id:"EO08",b:"ES",t:"Disfagia y EoE",n:"S",md:"X",
+q:"¿Qué estrategia dietaria inicial recomiendan hoy muchos expertos en EoE del adulto?",
+o:["Dieta elemental","Eliminación de 6 alimentos","Eliminación de 1–2 alimentos (leche ± trigo)","Dieta guiada por prick test"],
+c:2,
+e:"La eliminación de <b>leche</b> (± trigo) tiene eficacia cercana a la de dietas amplias con menos endoscopías y mejor adherencia.",
+w:{0:"Muy eficaz pero impracticable.",1:"Más endoscopías y peor adherencia como primer paso.",3:"Las pruebas cutáneas no predicen los alimentos gatillantes."},
+p:"Se reintroduce un alimento a la vez con biopsias de control.",
+r:"Kliewer KL et al. Lancet Gastroenterol Hepatol 2023"},
+
+/* ===================== Bloque 6 · Chicago 4.0 y acalasia ===================== */
+{id:"CH01",b:"ES",t:"Chicago 4.0 y acalasia",n:"R",md:"E",
+q:"Manometría: IRP 28 mmHg, 100 % degluciones fallidas, presurización panesofágica en 60 %. ¿Diagnóstico?",
+o:["Acalasia tipo I","Acalasia tipo II","Acalasia tipo III","EGJOO"],
+c:1,
+e:"IRP elevado + 100 % fallidas + <b>presurización panesofágica ≥ 20 %</b> = acalasia tipo II.",
+w:{0:"El tipo I no tiene presurización.",2:"El tipo III tiene ≥ 20 % prematuras.",3:"EGJOO tiene peristalsis presente."},
+p:"El tipo II tiene el mejor pronóstico con cualquier tratamiento.",
+r:"Yadlapati R et al. Neurogastroenterol Motil 2021 (Chicago 4.0)"},
+
+{id:"CH02",b:"ES",t:"Chicago 4.0 y acalasia",n:"F",md:"X",
+q:"¿Qué tratamiento es de elección en la acalasia tipo III?",
+o:["Dilatación neumática","Heller con Dor","POEM","Toxina botulínica"],
+c:2,
+e:"El <b>POEM</b> permite una miotomía larga que cubre el segmento espástico.",
+w:{0:"Peores resultados en tipo III.",1:"Miotomía más corta, insuficiente para el segmento espástico.",3:"Efecto transitorio; para no candidatos."},
+p:"POEM tiene esofagitis por reflujo en ~41–44 %: IBP y control.",
+r:"ACG 2020 acalasia (Vaezi) · Chicago 4.0"},
+
+{id:"CH03",b:"ES",t:"Chicago 4.0 y acalasia",n:"F",md:"E",
+q:"Manometría con patrón de EGJOO en un paciente con disfagia que usa tramadol. ¿Qué corresponde antes de tratar?",
+o:["Dilatación neumática","Considerar el efecto del opioide, suspender o rotar, y obtener prueba de apoyo","POEM","Diagnosticar acalasia tipo III"],
+c:1,
+e:"Los <b>opioides</b> producen patrones de EGJOO y espasmo. Chicago 4.0 exige síntomas y <b>prueba de apoyo</b> (esofagograma cronometrado o FLIP).",
+w:{0:"Prematuro.",2:"Prematuro.",3:"No cumple criterios."},
+p:"Además, descartar causa mecánica (cáncer, hernia, EoE).",
+r:"Chicago 4.0, NGM 2021"},
+
+{id:"CH04",b:"ES",t:"Chicago 4.0 y acalasia",n:"R",md:"X",
+q:"IRP normal, 80 % degluciones débiles o fragmentadas, sin prematuras. ¿Diagnóstico?",
+o:["Contractilidad ausente","Motilidad esofágica inefectiva","Espasmo distal","Normal"],
+c:1,
+e:"<b>&gt; 70 % inefectivas</b> (débiles, fallidas o fragmentadas) o ≥ 50 % fallidas = IEM.",
+w:{0:"Requiere 100 % fallidas.",2:"Requiere ≥ 20 % prematuras.",3:"No es normal."},
+p:"La IEM no contraindica la fundoplicatura parcial.",
+r:"Chicago 4.0"},
+
+{id:"CH05",b:"ES",t:"Chicago 4.0 y acalasia",n:"S",md:"E",
+q:"Hombre de 72 años con disfagia de 3 meses, baja de 9 kg y manometría con patrón de acalasia tipo I. ¿Qué descartar primero?",
+o:["Chagas","Pseudoacalasia por cáncer de la unión","EoE","Esclerodermia"],
+c:1,
+e:"<b>Edad &gt; 60, evolución corta y baja de peso</b> orientan a pseudoacalasia: endoscopía con retroflexión cuidadosa, tomografía y endosonografía.",
+w:{0:"Contexto epidemiológico distinto y evolución larga.",2:"No produce patrón de acalasia.",3:"Produce contractilidad ausente con IRP bajo."},
+p:"La endoscopía es normal en 20–30 % de las acalasias.",
+r:"ACG 2020 acalasia"},
+
+{id:"CH06",b:"ES",t:"Chicago 4.0 y acalasia",n:"R",md:"X",
+q:"¿Qué valor de DCI define una deglución hipercontráctil?",
+o:["> 450 mmHg·s·cm","> 5.000 mmHg·s·cm","> 8.000 mmHg·s·cm","> 10.000 mmHg·s·cm"],
+c:2,
+e:"DCI <b>&gt; 8.000</b> = hipercontráctil; esófago hipercontráctil con ≥ 20 % de estas degluciones y síntomas.",
+w:{0:"Es el límite inferior de normal.",1:"Rango normal.",3:"No es el corte."},
+p:"Fallida &lt; 100; débil 100–450.",
+r:"Chicago 4.0"},
+
+{id:"CH07",b:"ES",t:"Chicago 4.0 y acalasia",n:"F",md:"E",
+q:"FLIP en sospecha de EGJOO: EGJ-DI 1,2 mm²/mmHg y diámetro máximo 10 mm. ¿Interpretación?",
+o:["Apertura normal","Apertura reducida que apoya obstrucción","Limítrofe","No interpretable"],
+c:1,
+e:"EGJ-DI &lt; 2,0 y diámetro &lt; 12 mm = <b>apertura reducida</b>.",
+w:{0:"Normal ≥ 2,0 y ≥ 16 mm.",2:"No cumple las combinaciones limítrofes.",3:"Los valores son interpretables."},
+p:"Un FLIP normal tiene alto valor predictivo negativo para trastorno del flujo de salida.",
+r:"Carlson DA et al. Am J Gastroenterol 2021 · Chicago 4.0"},
+
+{id:"CH08",b:"ES",t:"Chicago 4.0 y acalasia",n:"R",md:"X",
+q:"Mujer con esclerosis sistémica, pirosis y disfagia. Manometría: IRP 6 mmHg y 100 % fallidas. ¿Diagnóstico y conducta antirreflujo?",
+o:["Acalasia tipo I; POEM","Contractilidad ausente; IBP agresivo y evitar fundoplicatura completa","IEM; Nissen","Espasmo distal; nitratos"],
+c:1,
+e:"IRP normal + 100 % fallidas = <b>contractilidad ausente</b>; la fundoplicatura completa produciría disfagia.",
+w:{0:"La acalasia requiere IRP elevado.",2:"La IEM no es 100 % fallidas; Nissen contraindicada aquí.",3:"No hay prematuras."},
+p:"Con IRP limítrofe, descartar acalasia tipo I con FLIP o esofagograma.",
+r:"Chicago 4.0"}
+];
+
+// Bloques 7–8 · Dispepsia · Gastroparesia y náuseas
+const Q2 = [
+/* ===================== Bloque 7 · Dispepsia ===================== */
+{id:"DI01",b:"GD",t:"Dispepsia",n:"R",md:"E",
+q:"Plenitud posprandial 3 días por semana y dolor epigástrico que aparece después de comer. Según Roma V, ¿cómo se clasifica?",
+o:["SDE relacionado con las comidas","SDP: el dolor posprandial forma parte del SDP","Superposición obligatoria SDP-SDE","Síndrome de náuseas y vómitos"],
+c:1,
+e:"Roma V resuelve la superposición: con plenitud o saciedad, el <b>dolor posprandial forma parte del SDP</b>, que responde a procinéticos.",
+w:{0:"Esa categoría se absorbe en el SDP.",2:"No es obligatoria cuando el dolor es posprandial.",3:"No hay náusea predominante."},
+p:"SDP ≥ 2 días por semana (antes ≥ 3); SDE ≥ 1 día por semana.",
+r:"Roma V 2026 (trastornos gastroduodenales)"},
+
+{id:"DI02",b:"GD",t:"Dispepsia",n:"R",md:"X",
+q:"Hombre de 35 años con SDE, sin alarma, H. pylori negativo, sin respuesta a 8 semanas de IBP estándar. ¿Qué sigue?",
+o:["Duplicar el IBP","Endoscopía si no se ha hecho y luego tricíclico en dosis baja","ISRS","Vaciamiento gástrico"],
+c:1,
+e:"Roma V no recomienda escalar el IBP. Tras la falla de primera línea: endoscopía si no se hizo y <b>neuromodulador</b> (ATC en SDE).",
+w:{0:"No hay beneficio de escalar.",2:"Los ISRS no superan al placebo en dispepsia.",3:"No es el siguiente paso en SDE."},
+p:"La duración más larga estudiada de neuromoduladores en dispepsia es 12 semanas: reevaluar.",
+r:"Roma V 2026 · ACG-CAG 2017 dispepsia"},
+
+{id:"DI03",b:"GD",t:"Dispepsia",n:"R",md:"E",
+q:"Mujer chilena de 45 años con epigastralgia de 3 semanas, sin baja de peso. ¿Conducta según MINSAL?",
+o:["IBP empírico 8 semanas","Endoscopía digestiva alta","Test de H. pylori y tratar","Ecografía abdominal solamente"],
+c:1,
+e:"La guía MINSAL de cáncer gástrico indica <b>endoscopía en ≥ 40 años con epigastralgia de más de 15 días</b>.",
+w:{0:"Retrasa el diagnóstico en una población de alto riesgo.",2:"Se hace, pero no reemplaza la endoscopía a esta edad.",3:"Complemento frecuente, no reemplazo."},
+p:"Chile tiene alta incidencia de cáncer gástrico: el umbral es más bajo que en guías norteamericanas (≥ 60).",
+r:"Guía MINSAL cáncer gástrico · Roma V 2026"},
+
+{id:"DI04",b:"GD",t:"Dispepsia",n:"F",md:"X",
+q:"Paciente con SDP refractario a procinético, con baja de 6 kg y saciedad precoz. ¿Neuromodulador preferido?",
+o:["Amitriptilina","Mirtazapina","Escitalopram","Duloxetina"],
+c:1,
+e:"La <b>mirtazapina</b> mejora saciedad precoz, tolerancia a nutrientes y peso en dispepsia funcional con baja de peso.",
+w:{0:"Útil en SDE y dolor; no mejora el peso.",2:"Los ISRS no superan al placebo en dispepsia.",3:"Puede empeorar náuseas y apetito."},
+p:"Buspirona mejora la acomodación gástrica cuando predomina la saciedad sin baja de peso.",
+r:"Tack J et al. Clin Gastroenterol Hepatol 2016 · Roma V"},
+
+{id:"DI05",b:"GD",t:"Dispepsia",n:"R",md:"E",
+q:"Dispepsia con H. pylori positivo. Tras erradicar, los síntomas desaparecen y se mantienen ausentes a los 12 meses. ¿Diagnóstico?",
+o:["Dispepsia funcional SDE","Dispepsia asociada a H. pylori","Úlcera péptica","SDP"],
+c:1,
+e:"Si los síntomas desaparecen de forma sostenida (6–12 meses) tras erradicar, era <b>dispepsia asociada a H. pylori</b>, no funcional.",
+w:{0:"La desaparición sostenida excluye dispepsia funcional.",2:"No hay evidencia de úlcera.",3:"Ídem."},
+p:"Maastricht VI y Kioto: la erradicación es el primer tratamiento en dispepsia con H. pylori.",
+r:"Maastricht VI/Florencia 2022 · Kioto 2015"},
+
+{id:"DI06",b:"GD",t:"Dispepsia",n:"F",md:"E",
+q:"¿Qué hallazgo excluye el diagnóstico de dispepsia funcional en Roma V?",
+o:["Pirosis ocasional","Náusea predominante o vómitos persistentes","Distensión posprandial","Superposición con SII"],
+c:1,
+e:"<b>Náusea predominante o vómitos persistentes</b> orientan a síndrome de náuseas y vómitos o gastroparesia.",
+w:{0:"La pirosis puede coexistir.",2:"Es frecuente en SDP.",3:"La superposición es habitual."},
+p:"En ese caso: vaciamiento gástrico de 4 h.",
+r:"Roma V 2026"},
+
+{id:"DI07",b:"GD",t:"Dispepsia",n:"S",md:"X",
+q:"¿Qué mecanismo fisiopatológico de la dispepsia funcional se asocia a eosinofilia duodenal y aumento de permeabilidad?",
+o:["Hipersecreción ácida","Microinflamación duodenal","Hipotiroidismo","Vaciamiento rápido"],
+c:1,
+e:"La <b>microinflamación duodenal</b> (eosinófilos, mastocitos) con aumento de permeabilidad es un mecanismo reconocido, sobre todo en SDP postinfeccioso.",
+w:{0:"Los pacientes no hipersecretan ácido.",2:"No es un mecanismo.",3:"Se ve en una minoría."},
+p:"Explica en parte la respuesta a IBP (efecto antiinflamatorio duodenal) en algunos pacientes.",
+r:"Wauters L et al. Gut 2020 · Roma V 2026"},
+
+{id:"DI08",b:"GD",t:"Dispepsia",n:"R",md:"X",
+q:"Paciente con SDP que inicia domperidona. ¿Qué precaución corresponde?",
+o:["Hemograma semanal","ECG si hay riesgo de QT y máximo 30 mg/día","Ajustar por función hepática solamente","Ninguna"],
+c:1,
+e:"La <b>domperidona</b> prolonga el QT: máximo 30 mg/día y ECG si hay cardiopatía, &gt; 60 años, electrolitos alterados o fármacos que prolongan QT.",
+w:{0:"Sin indicación.",2:"El riesgo principal es cardíaco.",3:"Hay riesgo relevante."},
+p:"Usar procinéticos 4–8 semanas y reevaluar, no indefinidamente.",
+r:"Roma V 2026 · EMA 2014 domperidona"},
+
+/* ===================== Bloque 8 · Gastroparesia y náuseas ===================== */
+{id:"GP01",b:"GD",t:"Gastroparesia y náuseas",n:"R",md:"E",
+q:"¿Cuál es la duración recomendada del vaciamiento gástrico para diagnosticar gastroparesia?",
+o:["1 hora","2 horas","4 horas","24 horas"],
+c:2,
+e:"AGA 2025 recomienda <b>4 horas</b>: el estudio de 2 h tiene sensibilidad ~57 %.",
+w:{0:"Solo evalúa vaciamiento rápido.",1:"Baja sensibilidad.",3:"No es estándar."},
+p:"Retención &gt; 10 % a las 4 h = lento; &lt; 30 % a la hora = rápido.",
+r:"AGA 2025 gastroparesia · Abell, Am J Gastroenterol 2008"},
+
+{id:"GP02",b:"GD",t:"Gastroparesia y náuseas",n:"R",md:"X",
+q:"Diabética con HbA1c 11 % y semaglutida. Vaciamiento con retención de 30 % a las 4 h y glicemia de 320 mg/dL durante el examen. ¿Interpretación?",
+o:["Gastroparesia moderada confirmada","Estudio no interpretable: repetir con glicemia controlada y sin GLP-1","Gastroparesia grave","Normal"],
+c:1,
+e:"La <b>hiperglicemia</b> (&gt; 275 mg/dL) y los <b>agonistas de GLP-1</b> enlentecen el vaciamiento: el estudio no se interpreta.",
+w:{0:"Los factores confundentes invalidan el resultado.",2:"Ídem.",3:"El valor es anormal, pero no interpretable."},
+p:"Suspender procinéticos, opioides y anticolinérgicos 48–72 h; GLP-1 según vida media.",
+r:"AGA 2025 gastroparesia"},
+
+{id:"GP03",b:"GD",t:"Gastroparesia y náuseas",n:"R",md:"E",
+q:"¿Cuál es la duración máxima recomendada de metoclopramida?",
+o:["4 semanas","12 semanas","6 meses","Sin límite"],
+c:1,
+e:"Por riesgo de <b>discinesia tardía</b> (advertencia de caja negra de la FDA): ≤ 12 semanas salvo justificación y vigilancia.",
+w:{0:"Más corto de lo necesario.",2:"Excede la recomendación.",3:"Incorrecto."},
+p:"Es el único fármaco aprobado por la FDA para gastroparesia.",
+r:"AGA 2025 · ACG 2022 gastroparesia"},
+
+{id:"GP04",b:"GD",t:"Gastroparesia y náuseas",n:"F",md:"X",
+q:"Según AGA 2025, ¿qué recomendación hay para eritromicina en gastroparesia?",
+o:["En contra","Condicional a favor","Solo IV en hospitalizados","Solo con toxina pilórica"],
+c:1,
+e:"AGA 2025: <b>condicional a favor</b> de eritromicina; limitada por taquifilaxia en 1–4 semanas.",
+w:{0:"No es en contra.",2:"También se usa oral, en ciclos.",3:"La toxina pilórica de rutina no se recomienda."},
+p:"AGA 2025 no recomienda de rutina en primera línea domperidona, prucaloprida, aprepitant, nortriptilina ni buspirona.",
+r:"AGA 2025 gastroparesia"},
+
+{id:"GP05",b:"GD",t:"Gastroparesia y náuseas",n:"F",md:"E",
+q:"Hombre de 28 años con episodios de vómitos intensos de 2–3 días cada 2 meses, asintomático entre episodios, alivio con duchas calientes. Fuma marihuana diaria desde hace 4 años. ¿Diagnóstico y tratamiento definitivo?",
+o:["Vómitos cíclicos; amitriptilina","Hiperémesis por cannabinoides; suspensión sostenida del cannabis","Gastroparesia; metoclopramida","Migraña abdominal; triptán"],
+c:1,
+e:"Patrón cíclico con uso <b>≥ 1 año y ≥ 4 días/semana</b>: hiperémesis por cannabinoides. Se confirma con resolución tras suspensión ≥ 6 meses o 3 ciclos.",
+w:{0:"Con ese consumo, primero debe suspenderse el cannabis.",2:"Los síntomas no son continuos.",3:"No hay rasgos migrañosos."},
+p:"En la crisis: haloperidol (superior a ondansetrón) y capsaicina tópica.",
+r:"Roma V 2026 · Ruberto, Ann Emerg Med 2021 (HaVOC)"},
+
+{id:"GP06",b:"GD",t:"Gastroparesia y náuseas",n:"R",md:"X",
+q:"¿Cuál es el criterio de frecuencia de Roma para vómitos cíclicos?",
+o:["≥ 1 episodio al año","≥ 3 episodios al año y 2 en los últimos 6 meses","≥ 1 episodio al mes","Vómitos diarios"],
+c:1,
+e:"<b>≥ 3 episodios al año, 2 en los últimos 6 meses</b>, separados por intervalos sin vómitos.",
+w:{0:"Insuficiente.",2:"No es el criterio.",3:"Corresponde a patrón continuo."},
+p:"Profilaxis con amitriptilina si hay ≥ 4 episodios al año o son graves.",
+r:"Roma V 2026 · Venkatesan, NGM 2019"},
+
+{id:"GP07",b:"GD",t:"Gastroparesia y náuseas",n:"S",md:"E",
+q:"Gastroparesia idiopática refractaria con retención de 45 % a 4 h y síntomas dominantes de náuseas y vómitos. ¿Qué intervención considera AGA 2025 en seleccionados?",
+o:["Estimulación eléctrica de rutina","Toxina botulínica pilórica de rutina","G-POEM","Gastrectomía total"],
+c:2,
+e:"AGA 2025 sugiere <b>G-POEM</b> en refractarios seleccionados; en contra de estimulación eléctrica y toxina pilórica de rutina.",
+w:{0:"No se recomienda de rutina.",1:"Ensayos controlados negativos.",3:"No es tratamiento estándar."},
+p:"Los mejores candidatos tienen retención importante y síntomas de retención, no dolor dominante.",
+r:"AGA 2025 gastroparesia"},
+
+{id:"GP08",b:"GD",t:"Gastroparesia y náuseas",n:"F",md:"X",
+q:"Náuseas molestas 4 días por semana, sin vómitos, endoscopía y vaciamiento de 4 h normales. ¿Diagnóstico y tratamiento?",
+o:["Gastroparesia; metoclopramida","Síndrome de náuseas y vómitos crónicos; neuromodulador como mirtazapina","Dispepsia SDP; procinético","Rumiación"],
+c:1,
+e:"Náusea molesta <b>≥ 2 días/semana</b> con vaciamiento normal y sin causa estructural: <b>SNVC</b> (Roma V). Neuromoduladores centrales (mirtazapina, olanzapina en dosis baja, ATC).",
+w:{0:"El vaciamiento es normal.",2:"La náusea predominante excluye dispepsia.",3:"No hay regurgitación sin esfuerzo."},
+p:"La correlación entre retraso del vaciamiento y síntomas es pobre: gastroparesia y SNVC son un espectro.",
+r:"Roma V 2026"}
+];
+
+// Bloques 9–13 · SII · Diarrea crónica · Constipación · Distensión y SIBO · CIPO y Ogilvie
+const Q3 = [
+/* ===================== Bloque 9 · SII ===================== */
+{id:"SI01",b:"IN",t:"SII",n:"R",md:"E",
+q:"¿Qué cambió en el criterio de dolor del SII en Roma V respecto de Roma IV?",
+o:["Exige dolor diario","Dolor o malestar ≥ 3 días al mes, no continuo","Basta 1 día a la semana de dolor","Elimina la asociación con la defecación"],
+c:1,
+e:"Roma V reincorpora el <b>malestar</b> y baja la frecuencia a <b>≥ 3 días al mes</b> (Roma IV exigía dolor ≥ 1 día/semana), siempre no continuo y con ≥ 2 asociaciones.",
+w:{0:"Incorrecto.",2:"Era el criterio de Roma IV.",3:"La asociación se mantiene."},
+p:"Dolor continuo sin relación con funciones digestivas: pensar en CAPS.",
+r:"Roma V 2026 (trastornos intestinales)"},
+
+{id:"SI02",b:"IN",t:"SII",n:"R",md:"X",
+q:"En días con deposiciones anormales, 40 % son Bristol 1–2 y 10 % Bristol 6–7. ¿Subtipo?",
+o:["SII-D","SII-C","SII-M","SII-U"],
+c:1,
+e:"<b>&gt; 25 % Bristol 1–2 y &lt; 25 % Bristol 6–7</b> = SII-C.",
+w:{0:"Requiere &gt; 25 % de 6–7.",2:"Requiere ambos &gt; 25 %.",3:"No aplica: el patrón es clasificable."},
+p:"Subtipificar sin laxantes ni antidiarreicos; con &lt; 4 días anormales al mes es poco fiable.",
+r:"Roma V 2026"},
+
+{id:"SI03",b:"IN",t:"SII",n:"F",md:"E",
+q:"¿Qué neuromodulador tiene ensayo pragmático positivo en atención primaria para SII?",
+o:["Escitalopram","Amitriptilina titulada 10–30 mg","Pregabalina","Duloxetina"],
+c:1,
+e:"ATLANTIS: <b>amitriptilina 10 mg titulada hasta 30 mg</b> fue superior a placebo en síntomas globales del SII.",
+w:{0:"Evidencia menor y no en ese ensayo.",2:"Ensayo positivo pero menor y en especialidad.",3:"Sin ensayo comparable."},
+p:"Explicar que se usa como neuromodulador, no como antidepresivo.",
+r:"Ford AC et al. Lancet 2023 (ATLANTIS)"},
+
+{id:"SI04",b:"IN",t:"SII",n:"R",md:"X",
+q:"¿Qué tipo de fibra se recomienda en SII?",
+o:["Salvado de trigo","Psyllium (soluble)","Fibra insoluble de cereales","Ninguna"],
+c:1,
+e:"El <b>psyllium</b> mejora los síntomas globales (ACG fuerte); la fibra insoluble empeora la distensión.",
+w:{0:"Empeora hinchazón y dolor.",2:"Ídem.",3:"Hay evidencia para la soluble."},
+p:"Subir la dosis gradualmente para evitar distensión inicial.",
+r:"ACG 2021 SII (Lacy)"},
+
+{id:"SI05",b:"IN",t:"SII",n:"F",md:"E",
+q:"¿Cuál es el error más frecuente al indicar la dieta baja en FODMAP?",
+o:["Iniciarla con nutricionista","Mantener la fase de restricción indefinidamente sin reintroducir","Probar un grupo a la vez","Usar alternativas bajas en FODMAP"],
+c:1,
+e:"La dieta tiene 3 fases: restricción (2–6 semanas), <b>reintroducción</b> y personalización. La restricción prolongada empobrece la dieta y la microbiota.",
+w:{0:"Es lo recomendado.",2:"Es la técnica correcta de reintroducción.",3:"Parte de la fase 1."},
+p:"Evitarla en trastornos de la conducta alimentaria.",
+r:"ACG 2021 SII · AGA CPU 2022 dieta en TICI"},
+
+{id:"SI06",b:"IN",t:"SII",n:"S",md:"X",
+q:"Según Roma V, ¿qué estudio NO se recomienda de rutina en la evaluación inicial del SII?",
+o:["Serología de celíaca","Calprotectina fecal en diarrea","Test de aire espirado","Hemograma"],
+c:2,
+e:"Roma V <b>no recomienda</b> test de aire espirado de rutina: baja especificidad y falsos positivos con tránsito rápido.",
+w:{0:"Recomendada.",1:"Recomendada en diarrea.",3:"Parte del estudio mínimo."},
+p:"Se reserva para factores de riesgo de SIBO.",
+r:"Roma V 2026"},
+
+{id:"SI07",b:"IN",t:"SII",n:"F",md:"E",
+q:"SII-C con dolor dominante que necesita neuromodulador. ¿Cuál preferir?",
+o:["Amitriptilina","Duloxetina o un ISRS","Loperamida","Ondansetrón"],
+c:1,
+e:"Los ATC constipan; en SII-C se prefieren <b>ISRS o IRSN</b> (duloxetina).",
+w:{0:"Empeora la constipación.",2:"Constipa y no es neuromodulador.",3:"Constipa."},
+p:"En SII-D, el efecto constipante del ATC es ventaja.",
+r:"AGA 2022 SII-C · Drossman 2018"},
+
+{id:"SI08",b:"IN",t:"SII",n:"R",md:"X",
+q:"¿Qué tratamiento antibiótico tiene evidencia en SII sin constipación?",
+o:["Metronidazol","Rifaximina 550 mg c/8 h por 14 días","Ciprofloxacino","Amoxicilina"],
+c:1,
+e:"TARGET 1 y 2: <b>rifaximina 14 días</b> mejoró síntomas globales y distensión; retratamiento eficaz en recaída.",
+w:{0:"Sin evidencia en SII.",2:"Sin evidencia.",3:"Sin evidencia."},
+p:"En Chile la presentación registrada es de 200 mg: 400 mg c/8 h.",
+r:"Pimentel M et al. NEJM 2011 (TARGET)"},
+
+/* ===================== Bloque 10 · Diarrea crónica ===================== */
+{id:"DC01",b:"IN",t:"Diarrea crónica",n:"R",md:"E",
+q:"Mujer de 62 años con diarrea acuosa nocturna de 3 meses, usa sertralina y omeprazol. Colonoscopía macroscópicamente normal. ¿Qué faltó?",
+o:["Ileoscopía","Biopsias escalonadas de colon derecho e izquierdo","Cápsula endoscópica","Tomografía"],
+c:1,
+e:"La <b>colitis microscópica</b> tiene mucosa normal: el diagnóstico es histológico con biopsias de ambos lados.",
+w:{0:"Útil pero no es lo central aquí.",2:"No diagnostica colitis microscópica.",3:"No diagnostica."},
+p:"IBP, ISRS, AINE y estatinas se asocian; suspender si es posible.",
+r:"AGA 2016 colitis microscópica · Miehlke, UEG J 2021"},
+
+{id:"DC02",b:"IN",t:"Diarrea crónica",n:"R",md:"X",
+q:"Tratamiento de inducción de la colitis microscópica.",
+o:["Mesalazina","Budesonida 9 mg/día por 8 semanas","Prednisona 40 mg","Loperamida sola"],
+c:1,
+e:"<b>Budesonida 9 mg/día por 8 semanas</b>: remisión ~80 %.",
+w:{0:"Inferior a budesonida.",2:"Más efectos sistémicos sin ventaja.",3:"Solo en formas leves."},
+p:"Recaída frecuente: mantención con la dosis mínima (≈ 6 mg/día).",
+r:"AGA 2016 · Miehlke 2021"},
+
+{id:"DC03",b:"IN",t:"Diarrea crónica",n:"F",md:"E",
+q:"Hombre con diarrea posprandial desde una colecistectomía hace 2 años. Estudio básico normal. Sin SeHCAT disponible. ¿Conducta?",
+o:["Rifaximina","Prueba terapéutica con colestiramina","Budesonida","Dieta sin gluten"],
+c:1,
+e:"Sospecha de <b>malabsorción de ácidos biliares</b> tipo 3: sin SeHCAT o C4, la respuesta a colestiramina apoya el diagnóstico.",
+w:{0:"Sin evidencia de SIBO.",2:"Sin colitis microscópica.",3:"Celíaca no sugerida."},
+p:"Separar otros fármacos de la colestiramina (1 h antes o 4–6 h después).",
+r:"BSG 2018 diarrea crónica"},
+
+{id:"DC04",b:"IN",t:"Diarrea crónica",n:"F",md:"X",
+q:"¿Qué proporción aproximada de pacientes con SII-D o diarrea funcional tiene malabsorción de ácidos biliares?",
+o:["< 5 %","Hasta un tercio","Dos tercios","Todos"],
+c:1,
+e:"Metaanálisis con SeHCAT: <b>hasta ~25–30 %</b>.",
+w:{0:"Subestima.",2:"Sobreestima.",3:"Sobreestima."},
+p:"Por eso la prueba con secuestrante es razonable en SII-D refractario.",
+r:"Wedlake L et al. Aliment Pharmacol Ther 2009 · BSG 2018"},
+
+{id:"DC05",b:"IN",t:"Diarrea crónica",n:"R",md:"E",
+q:"¿Cuál es la clasificación de la malabsorción de ácidos biliares tipo 2?",
+o:["Posresección ileal","Idiopática, por déficit de FGF19","Poscolecistectomía","Por SIBO"],
+c:1,
+e:"Tipo 1: íleon resecado o enfermo; <b>tipo 2: idiopática</b> (menor FGF19, exceso de síntesis); tipo 3: otras causas.",
+w:{0:"Tipo 1.",2:"Tipo 3.",3:"Tipo 3."},
+p:"El C4 sérico alto refleja la síntesis aumentada.",
+r:"BSG 2018"},
+
+{id:"DC06",b:"IN",t:"Diarrea crónica",n:"S",md:"X",
+q:"Colitis colágena: ¿qué hallazgo histológico la define?",
+o:["> 20 linfocitos intraepiteliales por 100 células","Banda colágena subepitelial > 10 µm","Criptitis con abscesos","Granulomas"],
+c:1,
+e:"<b>Banda colágena &gt; 10 µm</b>; la linfocítica tiene &gt; 20 linfocitos intraepiteliales/100 células epiteliales.",
+w:{0:"Define la linfocítica.",2:"Orienta a EII o infección.",3:"Orienta a Crohn."},
+p:"Asociación con celíaca y autoinmunidad tiroidea.",
+r:"Miehlke 2021"},
+
+{id:"DC07",b:"IN",t:"Diarrea crónica",n:"R",md:"X",
+q:"¿Qué estudio inicial es obligatorio en toda diarrea crónica sin explicación?",
+o:["Test de aire espirado","Serología de celíaca (anti-TG2 IgA + IgA total)","Tomografía","Elastasa fecal"],
+c:1,
+e:"La <b>celíaca</b> se busca siempre; la IgA total evita falsos negativos por déficit.",
+w:{0:"No es universal.",2:"No es inicial sin alarma.",3:"Solo si se sospecha insuficiencia pancreática."},
+p:"Calprotectina y PCR completan el estudio mínimo.",
+r:"BSG 2018 · ACG 2021 SII"},
+
+{id:"DC08",b:"IN",t:"Diarrea crónica",n:"F",md:"E",
+q:"Diarrea funcional sin dolor, estudio completo negativo. ¿Qué diferencia diagnóstica con SII-D?",
+o:["Presencia de urgencia","Ausencia de dolor asociado a la defecación","Bristol 6–7","Duración"],
+c:1,
+e:"La <b>diarrea funcional</b> es Bristol 6–7 &gt; 25 % sin dolor relevante; con dolor ≥ 3 días/mes asociado, es SII-D.",
+w:{0:"Ambos pueden tener urgencia.",2:"Ambos.",3:"No."},
+p:"Son un espectro; el tratamiento del hábito es similar.",
+r:"Roma V 2026"},
+
+/* ===================== Bloque 11 · Constipación ===================== */
+{id:"CO01",b:"IN",t:"Constipación",n:"R",md:"E",
+q:"Según AGA-ACG 2023, ¿cuál tiene recomendación FUERTE en constipación crónica?",
+o:["Lactulosa","Fibra","Polietilenglicol","Lubiprostona"],
+c:2,
+e:"<b>PEG</b>, bisacodilo/picosulfato, linaclotida, plecanatida y prucaloprida: fuertes. Fibra, lactulosa, sena, magnesio y lubiprostona: condicionales.",
+w:{0:"Condicional.",1:"Condicional.",3:"Condicional."},
+p:"En Chile no hay linaclotida, lubiprostona ni plecanatida.",
+r:"Chang L et al. Gastroenterology/Am J Gastroenterol 2023 (AGA-ACG)"},
+
+{id:"CO02",b:"IN",t:"Constipación",n:"R",md:"X",
+q:"Mujer con constipación que necesita digitación vaginal para evacuar y puja mucho aun con deposiciones blandas. ¿Siguiente paso tras fallar PEG?",
+o:["Agregar prucaloprida","Manometría anorrectal y test de balón","Tránsito colónico","Colonoscopía"],
+c:1,
+e:"Maniobras manuales y pujo con deposición blanda orientan a <b>trastorno evacuatorio</b>: no responde a laxantes, requiere pruebas anorrectales y biorretroalimentación.",
+w:{0:"No trata la disinergia.",2:"Se pide después de descartar disinergia.",3:"Sin alarma no corresponde."},
+p:"Tacto rectal con maniobra de pujo: sensibilidad ~75 %, especificidad ~87 % para disinergia en expertos.",
+r:"AGA-ACG 2023 · Tantiphlachiva, Clin Gastroenterol Hepatol 2010"},
+
+{id:"CO03",b:"IN",t:"Constipación",n:"F",md:"E",
+q:"¿Por qué no se debe pedir tránsito colónico antes de las pruebas anorrectales?",
+o:["Es caro","Hasta dos tercios de los disinérgicos tienen tránsito lento secundario","Es invasivo","No se dispone en Chile"],
+c:1,
+e:"La <b>disinergia produce tránsito lento secundario</b> que mejora con biorretroalimentación; el orden inverso lleva a diagnosticar falsamente inercia colónica.",
+w:{0:"No es el motivo.",2:"No es invasivo.",3:"Está disponible."},
+p:"Colectomía solo en inercia colónica pura con evaluación completa.",
+r:"Rao SSC, Neurogastroenterol Motil 2016"},
+
+{id:"CO04",b:"IN",t:"Constipación",n:"R",md:"X",
+q:"Dosis de prucaloprida en un paciente de 72 años.",
+o:["2 mg/día","1 mg/día","4 mg/día","0,5 mg/día"],
+c:1,
+e:"<b>1 mg/día en &gt; 65 años</b> o ClCr &lt; 30; 2 mg/día en adultos menores.",
+w:{0:"Dosis estándar del adulto joven.",2:"No se usa.",3:"No es la dosis."},
+p:"Sin respuesta a 4 semanas: suspender y estudiar evacuación.",
+r:"AGA-ACG 2023"},
+
+{id:"CO05",b:"IN",t:"Constipación",n:"F",md:"E",
+q:"Paciente oncológico con morfina y constipación pese a PEG y bisacodilo. ¿Siguiente paso?",
+o:["Linaclotida","PAMORA (naloxegol o metilnaltrexona)","Suspender la morfina","Lactulosa"],
+c:1,
+e:"Constipación por opioides refractaria a laxantes: <b>antagonista periférico μ</b>.",
+w:{0:"No disponible en Chile y no es el estándar aquí.",2:"No corresponde en dolor oncológico.",3:"Otro osmótico no aporta."},
+p:"Contraindicados en obstrucción intestinal.",
+r:"AGA 2019 constipación por opioides (Crockett)"},
+
+{id:"CO06",b:"IN",t:"Constipación",n:"R",md:"E",
+q:"¿Cuál es el subtipo fisiopatológico más frecuente de constipación crónica?",
+o:["Tránsito lento","Tránsito normal","Trastorno evacuatorio","Megacolon"],
+c:1,
+e:"La <b>constipación con tránsito normal</b> es la más frecuente; pueden coexistir subtipos.",
+w:{0:"Menos frecuente.",2:"Frecuente en derivados, no el más común.",3:"Raro."},
+p:"Responde a la escalera de laxantes.",
+r:"AGA 2013 constipación · Roma V"},
+
+{id:"CO07",b:"IN",t:"Constipación",n:"S",md:"X",
+q:"¿Qué laxante debe evitarse en enfermedad renal crónica avanzada?",
+o:["PEG","Sales de magnesio","Bisacodilo","Psyllium"],
+c:1,
+e:"Las <b>sales de magnesio</b> pueden producir hipermagnesemia en ERC.",
+w:{0:"Seguro en ERC.",2:"Seguro.",3:"Seguro con agua suficiente."},
+p:"Los enemas de fosfato también se evitan en ERC.",
+r:"AGA-ACG 2023"},
+
+{id:"CO08",b:"IN",t:"Constipación",n:"R",md:"X",
+q:"¿Cuál de estos es criterio de constipación crónica en Roma V?",
+o:["Dolor abdominal ≥ 3 días/mes asociado a la defecación","< 3 deposiciones espontáneas por semana","Deposiciones sueltas frecuentes sin laxantes","Sangrado rectal"],
+c:1,
+e:"Se requieren ≥ 2: pujo, Bristol 1–2, evacuación incompleta, obstrucción, maniobras manuales (&gt; 25 %) o <b>&lt; 3 deposiciones espontáneas por semana</b>.",
+w:{0:"Desplaza el diagnóstico a SII-C.",2:"Debe ser raro sin laxantes.",3:"Bandera roja."},
+p:"Constipación crónica y SII-C son un espectro.",
+r:"Roma V 2026"},
+
+/* ===================== Bloque 12 · Distensión y SIBO ===================== */
+{id:"SB01",b:"IN",t:"Distensión y SIBO",n:"R",md:"E",
+q:"Test de aire espirado con glucosa: H₂ basal 6 ppm, máximo 38 ppm a los 60 min. ¿Interpretación?",
+o:["Negativo","SIBO","IMO","Mala preparación"],
+c:1,
+e:"Alza de H₂ <b>≥ 20 ppm sobre el basal en ≤ 90 min</b> = SIBO.",
+w:{0:"Alza de 32 ppm.",2:"Requiere CH₄ ≥ 10 ppm.",3:"El basal es bajo."},
+p:"La glucosa es más específica que la lactulosa.",
+r:"Rezaie A et al. Am J Gastroenterol 2017 (Consenso norteamericano)"},
+
+{id:"SB02",b:"IN",t:"Distensión y SIBO",n:"R",md:"X",
+q:"¿Qué umbral de metano define IMO?",
+o:["≥ 3 ppm","≥ 10 ppm en cualquier momento","≥ 20 ppm a los 90 min","≥ 50 ppm"],
+c:1,
+e:"<b>CH₄ ≥ 10 ppm</b> en cualquier momento: sobrecrecimiento metanogénico, asociado a constipación.",
+w:{0:"Umbral antiguo.",2:"Es el criterio de H₂.",3:"No es el criterio."},
+p:"IMO: rifaximina + neomicina 14 días y tratar la constipación.",
+r:"Pimentel M et al. ACG Clinical Guideline SIBO 2020"},
+
+{id:"SB03",b:"IN",t:"Distensión y SIBO",n:"F",md:"E",
+q:"Mujer con distensión abdominal visible que aumenta durante el día y desaparece de noche. TC durante la distensión: volumen de gas normal y descenso del diafragma. ¿Mecanismo y tratamiento?",
+o:["SIBO; rifaximina","Disinergia abdominofrénica; respiración diafragmática con biorretroalimentación","Gastroparesia","Ascitis"],
+c:1,
+e:"<b>Disinergia abdominofrénica</b>: el diafragma desciende y la pared anterior se relaja ante una carga normal de gas. Se trata con biorretroalimentación electromiográfica y respiración diafragmática.",
+w:{0:"El gas es normal.",2:"No explica la distensión visible.",3:"No hay líquido."},
+p:"Distensión (visible) e hinchazón (sensación) son distintas en Roma V.",
+r:"Villoria A et al. Am J Gastroenterol 2011 · Roma V 2026"},
+
+{id:"SB04",b:"IN",t:"Distensión y SIBO",n:"S",md:"X",
+q:"Test con lactulosa en SII-D: H₂ sube 25 ppm a los 60 min. ¿Problema principal de interpretación?",
+o:["Falso negativo","Falso positivo por tránsito orocecal rápido","Mala preparación","Producción de metano"],
+c:1,
+e:"Con <b>tránsito rápido</b>, la lactulosa llega al colon antes de 90 min y simula SIBO.",
+w:{0:"Al revés.",2:"No hay datos de mala preparación.",3:"No aplica."},
+p:"Por eso Roma V desaconseja el test de rutina en SII.",
+r:"Rezaie 2017 · Roma V"},
+
+{id:"SB05",b:"IN",t:"Distensión y SIBO",n:"R",md:"E",
+q:"¿Cuál es un factor de riesgo que justifica buscar SIBO?",
+o:["SII sin otros antecedentes","Esclerodermia con compromiso intestinal","Dispepsia funcional","ERGE"],
+c:1,
+e:"Dismotilidad (<b>esclerodermia</b>, CIPO, diabetes), cirugía con asa ciega, divertículos de yeyuno.",
+w:{0:"No de rutina.",2:"No.",3:"No."},
+p:"El SIBO recurrente obliga a corregir la causa.",
+r:"ACG 2020 SIBO"},
+
+{id:"SB06",b:"IN",t:"Distensión y SIBO",n:"F",md:"X",
+q:"H₂ basal de 32 ppm en test de aire espirado. ¿Conducta?",
+o:["Diagnosticar SIBO","Repetir tras preparación adecuada (dieta y ayuno)","Tratar IMO","Informar negativo"],
+c:1,
+e:"Un basal alto indica <b>preparación inadecuada</b> (fermentables, ayuno insuficiente).",
+w:{0:"No interpretable.",2:"No hay datos de metano.",3:"No interpretable."},
+p:"Preparación: 4 semanas sin antibióticos, dieta pobre en fermentables el día previo, ayuno 8–12 h.",
+r:"Rezaie 2017"},
+
+{id:"SB07",b:"IN",t:"Distensión y SIBO",n:"R",md:"X",
+q:"Dosis de rifaximina para SIBO.",
+o:["200 mg/día por 3 días","550 mg c/8 h por 14 días","1 g/día por 30 días","400 mg semanal"],
+c:1,
+e:"<b>550 mg c/8 h por 14 días</b> (en Chile, 400 mg c/8 h con la presentación de 200 mg).",
+w:{0:"Insuficiente.",2:"No es el esquema.",3:"No."},
+p:"Bajo riesgo de C. difficile y resistencia clínicamente relevante.",
+r:"ACG 2020 SIBO"},
+
+{id:"SB08",b:"IN",t:"Distensión y SIBO",n:"F",md:"E",
+q:"¿Qué tratamiento tiene evidencia para la hinchazón en SII sin constipación?",
+o:["Simeticona","Rifaximina","Carbón activado","Probióticos específicos con evidencia sólida"],
+c:1,
+e:"<b>Rifaximina</b> mejoró la hinchazón en TARGET (40 % frente a 30 %).",
+w:{0:"Sin evidencia consistente.",2:"Sin evidencia.",3:"La evidencia es débil y heterogénea."},
+p:"FODMAP, tratar la constipación, respiración diafragmática y neuromoduladores también ayudan.",
+r:"Pimentel NEJM 2011 · AGA CPU 2023 hinchazón y distensión (Moshiree)"},
+
+/* ===================== Bloque 13 · CIPO y Ogilvie ===================== */
+{id:"CI01",b:"IN",t:"CIPO y Ogilvie",n:"R",md:"E",
+q:"Hombre de 70 años en UCI tras cirugía de cadera con distensión colónica masiva, ciego de 13 cm, sin obstrucción mecánica en TC. ¿Conducta tras corregir electrolitos y suspender opioides?",
+o:["Colectomía","Neostigmina 2 mg IV lenta con monitorización","Colonoscopía inmediata como primera opción","Observar 1 semana"],
+c:1,
+e:"<b>Ogilvie</b> con ciego &gt; 12 cm: <b>neostigmina 2 mg IV</b> en 3–5 min con monitor y atropina disponible (respuesta ~90 %).",
+w:{0:"Solo si hay perforación o isquemia.",2:"Si falla la neostigmina.",3:"Riesgo de perforación con ciego &gt; 12 cm o &gt; 6 días."},
+p:"Contraindicada con obstrucción, bradicardia o broncoespasmo.",
+r:"Ponec RJ et al. NEJM 1999 · ASGE 2020"},
+
+{id:"CI02",b:"IN",t:"CIPO y Ogilvie",n:"F",md:"X",
+q:"¿Qué define la pseudoobstrucción intestinal crónica?",
+o:["Obstrucción por adherencias recurrente","Síntomas de obstrucción con dilatación en imagen sin lesión obstructiva","Constipación con tránsito lento","Distensión funcional"],
+c:1,
+e:"Síntomas y signos de obstrucción con <b>imágenes de dilatación</b> y <b>sin lesión mecánica</b>.",
+w:{0:"Es mecánica.",2:"No hay dilatación de delgado.",3:"No hay dilatación en imagen."},
+p:"Evitar cirugías innecesarias: las adherencias complican el diagnóstico posterior.",
+r:"Di Nardo G et al. Neurogastroenterol Motil 2017"},
+
+{id:"CI03",b:"IN",t:"CIPO y Ogilvie",n:"S",md:"E",
+q:"Manometría antroduodenal con contracciones de baja amplitud pero coordinadas. ¿Patrón?",
+o:["Neuropático","Miopático","Normal","Obstructivo"],
+c:1,
+e:"<b>Miopático</b>: baja amplitud. Neuropático: amplitud normal con descoordinación.",
+w:{0:"Amplitud normal descoordinada.",2:"No.",3:"Contracciones prolongadas agrupadas."},
+p:"Esclerodermia y amiloidosis pueden dar patrón miopático.",
+r:"Di Nardo 2017"},
+
+{id:"CI04",b:"IN",t:"CIPO y Ogilvie",n:"F",md:"X",
+q:"¿Qué fármaco en dosis bajas nocturnas induce complejos motores migratorios y se usa en CIPO y esclerodermia?",
+o:["Metoclopramida","Octreótido","Loperamida","Ondansetrón"],
+c:1,
+e:"<b>Octreótido 50–100 µg s.c.</b> nocturno induce fase III y reduce SIBO.",
+w:{0:"Acción gástrica.",2:"Enlentece.",3:"Enlentece."},
+p:"Combinable con eritromicina diurna.",
+r:"Soudah HC et al. NEJM 1991"},
+
+{id:"CI05",b:"IN",t:"CIPO y Ogilvie",n:"R",md:"E",
+q:"¿Qué anticuerpo paraneoplásico se asocia a CIPO?",
+o:["Anti-TPO","Anti-Hu","Anti-TG2","ANCA"],
+c:1,
+e:"<b>Anti-Hu</b> (ANNA-1), típico de cáncer pulmonar de células pequeñas.",
+w:{0:"Tiroiditis.",2:"Celíaca.",3:"Vasculitis."},
+p:"Buscar también hipotiroidismo, amiloidosis, esclerodermia y fármacos.",
+r:"Di Nardo 2017"},
+
+{id:"CI06",b:"IN",t:"CIPO y Ogilvie",n:"F",md:"X",
+q:"¿Cuál es el principio nutricional en CIPO?",
+o:["Nutrición parenteral siempre","Nutrición oral fraccionada baja en residuos y grasa; enteral y parenteral según tolerancia","Ayuno prolongado","Dieta alta en fibra"],
+c:1,
+e:"Priorizar la vía oral fraccionada; escalar a <b>enteral</b> y luego <b>parenteral</b> según tolerancia y desnutrición.",
+w:{0:"Solo si falla la enteral.",2:"Desnutre.",3:"Empeora."},
+p:"Evitar opioides.",
+r:"Di Nardo 2017"},
+
+{id:"CI07",b:"IN",t:"CIPO y Ogilvie",n:"R",md:"X",
+q:"Tamaño cecal sobre el cual aumenta el riesgo de perforación en Ogilvie.",
+o:["> 6 cm","> 9 cm","> 12 cm","> 20 cm"],
+c:2,
+e:"<b>Ciego &gt; 12 cm</b> o distensión de &gt; 6 días.",
+w:{0:"Normal o casi normal.",1:"Límite de dilatación, no el riesgo alto.",3:"Demasiado tarde."},
+p:"La duración importa tanto como el diámetro.",
+r:"ASGE 2020 · Saunders 2005"},
+
+{id:"CI08",b:"IN",t:"CIPO y Ogilvie",n:"S",md:"E",
+q:"¿Qué inhibidor oral de acetilcolinesterasa tiene evidencia creciente en CIPO?",
+o:["Donepezilo","Piridostigmina","Rivastigmina","Galantamina"],
+c:1,
+e:"<b>Piridostigmina</b> 30–60 mg c/8–12 h.",
+w:{0:"No se usa en motilidad.",2:"No.",3:"No."},
+p:"Efectos: cólico, sialorrea, bradicardia.",
+r:"Di Nardo G et al. Neurogastroenterol Motil 2017"}
+];
+
+// Bloques 14–16 · Anorrectal · Dolor y neuromoduladores · Laboratorio funcional
+const Q4 = [
+/* ===================== Bloque 14 · Anorrectal ===================== */
+{id:"AN01",b:"AR",t:"Anorrectal",n:"R",md:"E",
+q:"¿Qué cambió en el criterio de defecación disinérgica en Roma V?",
+o:["Exige 3 pruebas alteradas","Una prueba alterada = probable; dos = definitiva","Ya no requiere síntomas","Solo el test de balón cuenta"],
+c:1,
+e:"Roma V simplifica: <b>1 prueba</b> (manometría, test de balón o imagen) = probable; <b>2</b> = definitiva, con criterios de constipación crónica o SII-C.",
+w:{0:"Nunca fue así.",2:"Siempre requiere síntomas.",3:"Cualquier prueba válida cuenta."},
+p:"La disinergia aislada en manometría es frecuente en sanos: el balón da especificidad.",
+r:"Roma V 2026 (trastornos anorrectales)"},
+
+{id:"AN02",b:"AR",t:"Anorrectal",n:"R",md:"X",
+q:"Tratamiento de primera línea de la defecación disinérgica.",
+o:["Toxina botulínica en el puborrectal","Biorretroalimentación","Prucaloprida","Cirugía"],
+c:1,
+e:"La <b>biorretroalimentación</b> (5–6 sesiones) tiene éxito de 70–80 %, superior a laxantes, placebo y relajantes musculares.",
+w:{0:"Útil si fracasa la biorretroalimentación.",2:"No corrige la coordinación.",3:"No."},
+p:"La versión domiciliaria tiene resultados similares (68 % frente a 70 %).",
+r:"Rao SSC et al. Lancet Gastroenterol Hepatol 2018 · Roma V"},
+
+{id:"AN03",b:"AR",t:"Anorrectal",n:"F",md:"E",
+q:"Manometría anorrectal: reflejo rectoanal inhibitorio ausente en un adulto joven con constipación desde la infancia. ¿Qué sugiere?",
+o:["Disinergia","Enfermedad de Hirschsprung","Hiposensibilidad rectal","Normal"],
+c:1,
+e:"<b>Ausencia del reflejo rectoanal inhibitorio</b> sugiere Hirschsprung: confirmar con biopsia rectal profunda.",
+w:{0:"El reflejo está presente en disinergia.",2:"No afecta el reflejo.",3:"No."},
+p:"Descartar artefacto por megarrecto o volumen insuficiente.",
+r:"Carrington EV et al. NGM 2020 (Londres)"},
+
+{id:"AN04",b:"AR",t:"Anorrectal",n:"R",md:"X",
+q:"Definición de incontinencia fecal en Roma V.",
+o:["1 episodio en la vida","≥ 2 episodios de paso no controlado de material fecal","Escape de gas","Urgencia sin escape"],
+c:1,
+e:"Roma V define <b>≥ 2 episodios</b> de paso involuntario de material fecal.",
+w:{0:"Insuficiente.",2:"La incontinencia a gases sola no basta.",3:"No."},
+p:"Preguntar dirigidamente: muchos no lo refieren.",
+r:"Roma V 2026"},
+
+{id:"AN05",b:"AR",t:"Anorrectal",n:"F",md:"E",
+q:"Incontinencia fecal pasiva (sin aviso). ¿Qué estructura suele estar comprometida?",
+o:["Esfínter anal externo","Esfínter anal interno","Puborrectal","Nervio vago"],
+c:1,
+e:"Pasiva = <b>esfínter interno</b> (presión de reposo baja). De urgencia = <b>externo</b> (contracción débil) o reservorio.",
+w:{0:"Se asocia a incontinencia de urgencia.",2:"Participa, pero no es lo típico.",3:"No."},
+p:"Ecografía endoanal para defectos esfinterianos.",
+r:"Roma V 2026 · Londres"},
+
+{id:"AN06",b:"AR",t:"Anorrectal",n:"R",md:"X",
+q:"Dolor anorrectal de segundos a minutos, nocturno, sin hallazgos. ¿Diagnóstico y tratamiento?",
+o:["Síndrome del elevador; biorretroalimentación","Proctalgia fugaz; explicación y salbutamol inhalado","Fisura; nitratos","Hemorroides"],
+c:1,
+e:"Episodios breves = <b>proctalgia fugaz</b>; salbutamol inhalado en episodios prolongados.",
+w:{0:"Dolor ≥ 30 min con sensibilidad del puborrectal.",2:"Hay dolor defecatorio y hallazgo al examen.",3:"No."},
+p:"Diagnóstico episódico: Roma V no exige ~8 semanas.",
+r:"Roma V 2026"},
+
+{id:"AN07",b:"AR",t:"Anorrectal",n:"S",md:"E",
+q:"Manometría anorrectal con ≥ 2 umbrales sensitivos elevados en un paciente con constipación. ¿Diagnóstico de Roma V?",
+o:["Hipersensibilidad rectal","Hiposensibilidad rectal","Disinergia","Normal"],
+c:1,
+e:"Roma V incorpora los trastornos sensoriales: <b>≥ 2 umbrales elevados = hiposensibilidad rectal</b>.",
+w:{0:"Umbrales bajos.",2:"Requiere patrón de pujo anormal.",3:"No."},
+p:"Se trata con biorretroalimentación sensitiva.",
+r:"Roma V 2026"},
+
+{id:"AN08",b:"AR",t:"Anorrectal",n:"F",md:"X",
+q:"¿Qué clasificación ordena los hallazgos de la manometría anorrectal en cuatro partes?",
+o:["Chicago","Londres","Lyon","Bristol"],
+c:1,
+e:"La <b>clasificación de Londres</b> (IAPWG): reflejo rectoanal inhibitorio, tono y contractilidad, coordinación rectoanal y sensibilidad.",
+w:{0:"Esófago.",2:"ERGE.",3:"Forma de deposiciones."},
+p:"Exige protocolo estandarizado y valores normales del equipo.",
+r:"Carrington EV et al. NGM 2020"},
+
+/* ===================== Bloque 15 · Dolor y neuromoduladores ===================== */
+{id:"DN01",b:"AR",t:"Dolor y neuromoduladores",n:"R",md:"E",
+q:"Mujer con dolor abdominal continuo de 2 años, sin relación con comidas ni defecación, con limitación funcional y estudios negativos. ¿Diagnóstico?",
+o:["SII","Dolor abdominal centralmente mediado (CAPS)","Dispepsia SDE","Migraña abdominal"],
+c:1,
+e:"Dolor <b>continuo o casi continuo</b>, sin relación con funciones digestivas: <b>CAPS</b>.",
+w:{0:"Requiere relación con la defecación.",2:"Requiere relación con comidas o epigastrio.",3:"Es episódico."},
+p:"Metas funcionales, ATC o IRSN y terapia cerebro-intestino; evitar opioides.",
+r:"Roma V 2026"},
+
+{id:"DN02",b:"AR",t:"Dolor y neuromoduladores",n:"F",md:"X",
+q:"Paciente con dolor abdominal que empeora pese a dosis crecientes de tramadol. ¿Diagnóstico?",
+o:["CAPS","Síndrome de intestino narcótico","SII","Pancreatitis crónica"],
+c:1,
+e:"Dolor que <b>empeora paradójicamente</b> con opioides continuos o crecientes: intestino narcótico (hiperalgesia).",
+w:{0:"No hay relación con opioides.",2:"No.",3:"Sin evidencia."},
+p:"Desintoxicación planificada con neuromodulador y clonidina.",
+r:"Grunkemeier DM et al. Clin Gastroenterol Hepatol 2007"},
+
+{id:"DN03",b:"AR",t:"Dolor y neuromoduladores",n:"F",md:"E",
+q:"En la desintoxicación de opioides en intestino narcótico, ¿cuándo se inicia clonidina?",
+o:["Antes de bajar el opioide","Al haber retirado ~50 % del opioide","Solo al final","Nunca"],
+c:1,
+e:"<b>Clonidina 0,1 mg c/8–12 h</b> desde que se retiró el 50 %, hasta 0,6 mg/día, luego descenso.",
+w:{0:"Se inicia neuromodulador antes, no clonidina.",2:"Tarde.",3:"Es parte del protocolo."},
+p:"Retirarla gradualmente por HTA de rebote.",
+r:"Drossman DA, Szigethy E. Am J Gastroenterol Suppl 2014"},
+
+{id:"DN04",b:"AR",t:"Dolor y neuromoduladores",n:"R",md:"X",
+q:"¿Qué neuromodulador elegir en dispepsia con baja de peso y náuseas?",
+o:["Amitriptilina","Mirtazapina","Duloxetina","Escitalopram"],
+c:1,
+e:"<b>Mirtazapina</b>: antiemético (5-HT3), orexígeno y mejora la saciedad.",
+w:{0:"No mejora peso ni náuseas.",2:"Produce náuseas.",3:"Náuseas al inicio; sin beneficio en dispepsia."},
+p:"Somnolencia menor con 15 mg que con 7,5 mg.",
+r:"Drossman DA et al. Gastroenterology 2018 (neuromoduladores)"},
+
+{id:"DN05",b:"AR",t:"Dolor y neuromoduladores",n:"R",md:"E",
+q:"¿En qué plazo se espera el efecto analgésico visceral de un ATC en dosis baja?",
+o:["24 horas","4–8 semanas","6 meses","1 semana como máximo"],
+c:1,
+e:"Sueño en días; dolor en <b>4–8 semanas</b>. Si responde, mantener 6–12 meses y retirar lento.",
+w:{0:"Demasiado pronto.",2:"Demasiado tarde para evaluar.",3:"Demasiado pronto."},
+p:"Advertir efectos adversos iniciales para mejorar adherencia.",
+r:"Drossman 2018"},
+
+{id:"DN06",b:"AR",t:"Dolor y neuromoduladores",n:"S",md:"X",
+q:"Migraña abdominal del adulto en Roma V: ¿qué la caracteriza?",
+o:["Dolor continuo","Episodios estereotipados de dolor ≥ 1 h con síntomas asociados e intervalos normales","Dolor asociado a la defecación","Dolor epigástrico posprandial"],
+c:1,
+e:"Episodios estereotipados, intensos, con <b>anorexia, náuseas, palidez o fotofobia</b>, con intervalos libres.",
+w:{0:"Es CAPS.",2:"Es SII.",3:"Es dispepsia."},
+p:"Profilaxis como en migraña: propranolol, amitriptilina, topiramato.",
+r:"Roma V 2026"},
+
+{id:"DN07",b:"AR",t:"Dolor y neuromoduladores",n:"F",md:"E",
+q:"¿Qué neuromodulador tiene ensayo controlado positivo en SII con dosis titulada hasta 225 mg c/12 h?",
+o:["Gabapentina","Pregabalina","Quetiapina","Duloxetina"],
+c:1,
+e:"<b>Pregabalina</b> mejoró dolor, diarrea y distensión en SII.",
+w:{0:"Sin ensayo comparable.",2:"Uso como aumento.",3:"Sin ensayo comparable en SII."},
+p:"Ajustar a la función renal.",
+r:"Saito YA et al. Am J Gastroenterol 2019"},
+
+{id:"DN08",b:"AR",t:"Dolor y neuromoduladores",n:"R",md:"X",
+q:"Paciente con PHQ-9 de 14 y SII moderado. ¿Implicancia?",
+o:["Ninguna","Depresión moderada que favorece neuromodulador en dosis antidepresiva y terapia psicológica","Contraindica neuromoduladores","Indica colonoscopía"],
+c:1,
+e:"La comorbilidad psicológica (PHQ-9 ≥ 10) es un <b>modificador psicosocial</b> que adelanta neuromoduladores y terapia cerebro-intestino.",
+w:{0:"Cambia el plan.",2:"Al contrario.",3:"No se relaciona."},
+p:"Ítem 9 positivo obliga a evaluar riesgo suicida en la misma consulta.",
+r:"Roma V 2026 · Kroenke 2001"},
+
+/* ===================== Bloque 16 · Laboratorio funcional ===================== */
+{id:"LF01",b:"AR",t:"Laboratorio funcional",n:"R",md:"E",
+q:"¿Cuántos días se suspende el IBP antes de una pHmetría diagnóstica sin tratamiento?",
+o:["24 h","3 días","7 días","4 semanas"],
+c:2,
+e:"<b>IBP y P-CAB 7 días</b>; antagonistas H2 3 días; alginatos y antiácidos 24 h.",
+w:{0:"Insuficiente.",1:"Tiempo de los anti-H2.",3:"Excesivo para pHmetría."},
+p:"El estudio con IBP evalúa refractariedad, no diagnostica ERGE nueva.",
+r:"Lyon 2.0 · Taller de estudios funcionales 2026"},
+
+{id:"LF02",b:"AR",t:"Laboratorio funcional",n:"R",md:"X",
+q:"Orden correcto de estudio en constipación refractaria.",
+o:["Tránsito colónico → manometría anorrectal","Manometría anorrectal y test de balón → tránsito si son normales","Colonoscopía → tránsito","Defecografía primero"],
+c:1,
+e:"Primero <b>pruebas anorrectales</b>; el tránsito colónico solo si son normales.",
+w:{0:"La disinergia produce tránsito lento secundario.",2:"Sin alarma no corresponde.",3:"Complemento si hay discordancia."},
+p:"Laxantes durante el estudio de tránsito lo invalidan.",
+r:"AGA 2013 · AGA-ACG 2023"},
+
+{id:"LF03",b:"AR",t:"Laboratorio funcional",n:"F",md:"E",
+q:"¿Cuánto tiempo sin antibióticos antes de un test de aire espirado?",
+o:["48 h","1 semana","4 semanas","3 meses"],
+c:2,
+e:"<b>4 semanas</b> sin antibióticos; 1 semana sin procinéticos y laxantes; ayuno 8–12 h.",
+w:{0:"Insuficiente.",1:"Insuficiente.",3:"Excesivo."},
+p:"No fumar ni hacer ejercicio el día del examen.",
+r:"Rezaie 2017"},
+
+{id:"LF04",b:"AR",t:"Laboratorio funcional",n:"R",md:"X",
+q:"Retención gástrica de 25 % a las 4 h. ¿Grado?",
+o:["Normal","Grado 1 (leve)","Grado 2 (moderado)","Grado 3 (grave)"],
+c:2,
+e:"Grados: 11–20 % leve; <b>21–35 % moderado</b>; 36–50 % grave; &gt; 50 % muy grave.",
+w:{0:"&gt; 10 % es anormal.",1:"Hasta 20 %.",3:"Desde 36 %."},
+p:"La gravedad correlaciona mal con los síntomas.",
+r:"Abell TL et al. Am J Gastroenterol 2008"},
+
+{id:"LF05",b:"AR",t:"Laboratorio funcional",n:"F",md:"X",
+q:"¿Qué estudio NO detecta rumiación?",
+o:["Manometría con impedancia posprandial","pH-impedancia por catéter","Cápsula inalámbrica de pH","Manometría con comida de prueba"],
+c:2,
+e:"La <b>cápsula</b> solo mide pH; puede confundir rumiación con ERGE.",
+w:{0:"Es el estándar.",1:"Sugiere el patrón, aunque no lo confirma.",3:"Útil."},
+p:"La cápsula es la preferida para diagnosticar ERGE sin tratamiento.",
+r:"Lyon 2.0 · Roma V"},
+
+{id:"LF06",b:"AR",t:"Laboratorio funcional",n:"R",md:"E",
+q:"¿Cuál es la duración mínima válida de un registro de pH-impedancia?",
+o:["6 h","12 h","16–18 h","72 h"],
+c:2,
+e:"Un registro de <b>16–18 h</b> es el mínimo útil; sin marcas de síntomas no hay SI ni SAP.",
+w:{0:"Insuficiente.",1:"Insuficiente.",3:"Duración de la cápsula, no del catéter."},
+p:"Instruir al paciente a hacer vida normal durante el registro.",
+r:"Lyon 2.0"},
+
+{id:"LF07",b:"AR",t:"Laboratorio funcional",n:"S",md:"X",
+q:"¿Qué prueba de apoyo exige Chicago 4.0 para una EGJOO clínicamente relevante?",
+o:["Vaciamiento gástrico","Esofagograma cronometrado o FLIP","pH-impedancia","Endosonografía"],
+c:1,
+e:"<b>Esofagograma cronometrado</b> (columna &gt; 5 cm al minuto 1 o retención de tableta de 12,5 mm) o <b>FLIP</b> con apertura reducida.",
+w:{0:"No.",2:"No.",3:"Descarta causa mecánica, no es prueba de apoyo funcional."},
+p:"Sin síntomas ni prueba de apoyo, la EGJOO es «no concluyente».",
+r:"Chicago 4.0"},
+
+{id:"LF08",b:"AR",t:"Laboratorio funcional",n:"F",md:"E",
+q:"¿Qué fármacos deben suspenderse idealmente 48 h antes de una manometría esofágica?",
+o:["IBP","Opioides, procinéticos, nitratos y bloqueadores de calcio","Levotiroxina","Estatinas"],
+c:1,
+e:"Fármacos que alteran la motilidad o el tono: <b>opioides, procinéticos y relajantes del músculo liso</b>.",
+w:{0:"No alteran la manometría.",2:"No.",3:"No."},
+p:"Los opioides generan patrones de EGJOO y espasmo.",
+r:"Chicago 4.0 · Taller de estudios funcionales 2026"}
+];
+
+</script>
+<script>
+(function(){
+"use strict";
+const SNAP="<!doctype html>\n"+document.documentElement.outerHTML;
+const ALL=[...Q1,...Q2,...Q3,...Q4].map(q=>({...q,mode:q.md||"E",m:q.m||""}));
+const byId=Object.fromEntries(ALL.map(q=>[q.id,q]));
+const BL={ES:"Roma V y esófago",GD:"Estómago",IN:"Intestino",AR:"Anorrectal, dolor y laboratorio"};
+const BS={ES:"Esófago",GD:"Estómago",IN:"Intestino",AR:"Anorrectal · dolor"};
+const BSEG=[["all","Todos"],["ES","Esófago"],["GD","Estómago"],["IN","Intestino"],["AR","Anorrectal·dolor"]];
+const NV={R:"Residente",F:"Fellow",S:"Staff"};
+const LET="ABCDE";
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+/* ---------- almacenamiento: este navegador + nube (Google Sheets) ---------- */
+const KEY="quizNeuro_2026";
+const CLOUD_DEF={api:"https://script.google.com/macros/s/AKfycbwrh1RKcOHr-CEqEHMot4SsY-pk0gb9wDdKY70NLPAO3xxunA9ZsiBGcd-nMAjZS5eR/exec",token:"hepato-2026"};
+const CLOUD=(()=>{let o={};try{o=JSON.parse(localStorage.getItem("quizNeuro_cloud")||"{}")}catch(e){}
+  const api=o.api||CLOUD_DEF.api, tk=o.token||CLOUD_DEF.token;return {api:api.startsWith("http")?api:"",tokens:[tk],token:tk,id:"quizNeuro_2026"}})();
+let tokenReady=null;         // se resuelve cuando se sabe qué clave acepta el script
+let booting=true;            // durante la carga no se marca cambio ni se envía a la nube
+const LOG=[];                // respuestas pendientes de enviar a la hoja "respuestas"
+let pushTimer=null,dirty=false;
+function load(){try{return JSON.parse(localStorage.getItem(KEY))||{}}catch(e){return {}}}
+function writeLocal(){try{localStorage.setItem(KEY,JSON.stringify(DB))}catch(e){}}
+function save(){
+  if(!booting){DB._t=Date.now();dirty=true;clearTimeout(pushTimer);pushTimer=setTimeout(pushCloud,1500);}
+  writeLocal();
+}
+function setSync(st,txt){const el=document.getElementById("syncState");if(!el)return;el.className="sync "+st;el.textContent=txt;el.title=st==="err"?"Motivo: "+syncWhy:"Estado de guardado";
+  const p=document.getElementById("syncNote");if(p)p.textContent=syncNote();}
+let lastSync=null,syncErr=false,syncWhy="";
+function syncNote(){if(!CLOUD.api)return "Sin conexión configurada con Google Sheets: el progreso se guarda solo en este navegador. Pegue abajo la URL del Apps Script para sincronizar entre dispositivos.";return syncErr?`Sin conexión con la nube (${syncWhy||"error desconocido"}): el progreso queda en este navegador y se sincroniza al volver la conexión.`:lastSync?`Progreso sincronizado con Google Sheets (${lastSync.toLocaleTimeString("es-CL",{hour:"2-digit",minute:"2-digit"})}): lo retomas desde cualquier dispositivo.`:"Conectando con la nube…"}
+async function readJSON(r){const t=await r.text();try{return JSON.parse(t)}catch(e){
+  const m=t.replace(/<[^>]+>/g," ").replace(/\s+/g," ").trim().slice(0,140);throw new Error("Google respondió una página en vez de datos: "+m)}}
+async function resolveToken(){
+  for(const t of CLOUD.tokens){
+    const r=await fetch(`${CLOUD.api}?action=load&quizId=${encodeURIComponent(CLOUD.id)}&token=${encodeURIComponent(t)}`);
+    const d=await readJSON(r);
+    if(d.ok){CLOUD.token=t;return d;}
+    if(d.error!=="token inválido")throw new Error(d.error);
+  }
+  throw new Error("token inválido (la clave del script no coincide con la del quiz)");
+}
+async function pushCloud(){
+  clearTimeout(pushTimer);pushTimer=null;
+  if(!CLOUD.api){dirty=false;LOG.length=0;return;}
+  if(tokenReady)try{await tokenReady}catch(e){}
+  if(!dirty&&!LOG.length)return;
+  const lote=LOG.splice(0);dirty=false;
+  try{
+    const r=await fetch(CLOUD.api,{method:"POST",body:JSON.stringify({token:CLOUD.token,action:"save",quizId:CLOUD.id,estado:DB,respuestas:lote})});
+    const d=await readJSON(r);if(!d.ok)throw new Error(d.error);
+    lastSync=new Date();syncErr=false;setSync("ok","☁ guardado");
+  }catch(e){LOG.unshift(...lote);dirty=true;syncErr=true;syncWhy=e.message||String(e);setSync("err","● sin conexión");}
+}
+addEventListener("pagehide",()=>{
+  if(!CLOUD.api||(!dirty&&!LOG.length))return;
+  try{navigator.sendBeacon(CLOUD.api,new Blob([JSON.stringify({token:CLOUD.token,action:"save",quizId:CLOUD.id,estado:DB,respuestas:LOG.splice(0)})],{type:"text/plain"}));dirty=false}catch(e){}
+});
+addEventListener("online",()=>{if(dirty||LOG.length)pushCloud()});
+const DB=load(); DB.q=DB.q||{}; DB.exams=DB.exams||[];
+function record(id,ok,chosen){const r=DB.q[id]||{n:0,ok:0};r.n++;if(ok)r.ok++;r.last=ok?1:0;DB.q[id]=r;
+  const q=byId[id];if(q)LOG.push({preguntaId:id,tema:`${q.b} · ${q.t}`,elegida:chosen==null?"":chosen,correcta:q.c,fecha:new Date().toISOString()});
+  save()}
+
+/* ---------- tema ---------- */
+$("#themeBtn").addEventListener("click",()=>{
+  const root=document.documentElement;
+  const cur=root.getAttribute("data-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");
+  const next=cur==="dark"?"light":"dark";root.setAttribute("data-theme",next);DB.theme=next;save();
+});
+if(DB.theme)document.documentElement.setAttribute("data-theme",DB.theme);
+
+/* ---------- pestañas ---------- */
+const tabs=[...document.querySelectorAll(".tabs button")];
+function showTab(t){tabs.forEach(b=>b.setAttribute("aria-selected",b.dataset.tab===t));
+  document.querySelectorAll("main>section").forEach(s=>s.hidden=s.id!=="tab-"+t);
+  DB.tab=t;save(); if(t==="stats")renderStats(); if(t==="flash")renderFlash(); if(t==="changes")renderChanges();}
+tabs.forEach(b=>b.addEventListener("click",()=>showTab(b.dataset.tab)));
+$("#nStudy").textContent=ALL.filter(q=>q.mode==="E").length;
+$("#nExam").textContent=ALL.filter(q=>q.mode==="X").length;
+
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function segHTML(name,opts,val){return `<div class="seg" data-seg="${name}">`+opts.map(([v,l])=>`<button type="button" data-v="${v}" aria-pressed="${v===val}">${l}</button>`).join("")+`</div>`}
+function bindSeg(root,name,cb){root.querySelectorAll(`[data-seg="${name}"] button`).forEach(b=>b.addEventListener("click",()=>cb(b.dataset.v)))}
+function chips(q){return `<span class="chip b-${q.b}">${BS[q.b]}</span><span class="chip lv-${q.n}">${NV[q.n]}</span><span class="chip">${esc(q.t)}</span>`+(q.fix?`<span class="chip fix">corrige v5</span>`:"")+(q.nuevo?`<span class="chip new">actualización</span>`:"")}
+function explainHTML(q,order,chosen){
+  const ok=chosen===q.c;
+  const wrongs=order.map((oi,pos)=>oi===q.c?"":`<li><b class="L">${LET[pos]}</b>${q.w[oi]}</li>`).join("");
+  return `<div class="explain">
+    ${chosen==null?`<div class="verdict bad">Sin responder</div>`:`<div class="verdict ${ok?"ok":"bad"}">${ok?"Correcto.":"Incorrecto."} Respuesta: ${LET[order.indexOf(q.c)]}</div>`}
+    <div class="blk"><h4>Explicación</h4><p>${q.e}</p></div>
+    <div class="blk"><h4>Por qué no las otras</h4><ul>${wrongs}</ul></div>
+    ${q.m?`<div class="blk mech"><h4>Mecanismo / fisiopatología</h4><p>${q.m}</p></div>`:""}
+    <div class="blk pearl"><h4>Perla</h4><p>${q.p}</p></div>
+    ${q.nuevo?`<div class="blk newbox"><h4>Qué cambió</h4><p>${q.nuevo}</p></div>`:""}
+    ${q.fix?`<div class="blk fixbox"><h4>Corrección respecto de v5 / otras herramientas</h4><p>${q.fix}</p></div>`:""}
+    <div class="blk refs"><h4>Referencias</h4><p>${q.r}</p></div>
+  </div>`;
+}
+function themes(list){return [...new Set(list.map(q=>q.t))].sort((a,b)=>a.localeCompare(b,"es"))}
+
+/* ================= ESTUDIO ================= */
+const ST_DEF=()=>({bank:"E",b:"all",n:"all",t:"all",failed:false,i:0,orders:{},ans:{}});
+const ST=ST_DEF();
+function restoreST(){const d=ST_DEF();Object.keys(ST).forEach(k=>delete ST[k]);Object.assign(ST,d,DB.st||{});ST.orders=ST.orders||{};ST.ans=ST.ans||{};}
+restoreST();
+function studyList(){return ALL.filter(q=>(ST.bank==="all"||q.mode==="E")&&(ST.b==="all"||q.b===ST.b)&&(ST.n==="all"||q.n===ST.n)&&(ST.t==="all"||q.t===ST.t)&&(!ST.failed||(DB.q[q.id]&&DB.q[q.id].last===0)))}
+function renderStudy(){
+  const root=$("#tab-study");const list=studyList();
+  if(ST.i>=list.length)ST.i=Math.max(0,list.length-1);
+  const pool=ALL.filter(q=>ST.bank==="all"||q.mode==="E");
+  let h=`<div class="filters">
+    <span><span class="flabel">Banco</span>${segHTML("bank",[["E",`Estudio (${ALL.filter(q=>q.mode==="E").length})`],["all",`Todo (${ALL.length})`]],ST.bank)}</span>
+    <span><span class="flabel">Bloque</span>${segHTML("b",BSEG,ST.b)}</span>
+    <span><span class="flabel">Nivel</span>${segHTML("n",[["all","Todos"],["R","Residente"],["F","Fellow"],["S","Staff"]],ST.n)}</span>
+    <span><label class="flabel" for="stTema">Tema</label><select id="stTema"><option value="all">Todos</option>${themes(pool).map(t=>`<option ${t===ST.t?"selected":""}>${esc(t)}</option>`).join("")}</select></span>
+    <span>${segHTML("failed",[["0","Todas"],["1","Solo falladas"]],ST.failed?"1":"0")}</span>
+  </div>`;
+  if(!list.length){root.innerHTML=h+`<div class="card empty">No hay preguntas con estos filtros${ST.failed?" (aún no registras preguntas falladas)":""}.</div>`;bindStudy(root);persistST();return;}
+  const q=list[ST.i];
+  if(!ST.orders[q.id])ST.orders[q.id]=shuffle(q.o.map((_,i)=>i));
+  const order=ST.orders[q.id];const chosen=ST.ans[q.id];const done=chosen!==undefined;
+  h+=`<div class="progressbar"><i style="width:${((ST.i+1)/list.length*100).toFixed(1)}%"></i></div>
+  <article class="card qcard">
+    <div class="meta">${chips(q)}<span class="counter">${q.id} · ${ST.i+1}/${list.length}</span></div>
+    <p class="stem">${q.q}</p>
+    <div class="opts">${order.map((oi,pos)=>{
+      let cls="opt";if(done){if(oi===q.c)cls+=" right";else if(oi===chosen)cls+=" wrong";}
+      return `<button type="button" class="${cls}" data-oi="${oi}" ${done?"disabled":""}><span class="L">${LET[pos]}</span><span>${q.o[oi]}</span></button>`}).join("")}</div>
+    ${done?explainHTML(q,order,chosen):""}
+    <div class="actions">
+      <button class="btn" type="button" id="stPrev" ${ST.i===0?"disabled":""}>← Anterior</button>
+      <span class="spacer"></span>
+      ${done?`<button class="btn ghost" type="button" id="stRetry">Reintentar</button>`:""}
+      <button class="btn primary" type="button" id="stNext" ${ST.i>=list.length-1?"disabled":""}>Siguiente →</button>
+    </div>
+    <div class="palette" aria-label="Navegación">${list.map((x,k)=>{const a=ST.ans[x.id];let c=k===ST.i?"cur":"";if(a!==undefined)c+=a===x.c?" ok":" bad";return `<button type="button" class="${c}" data-k="${k}" title="${x.id}">${k+1}</button>`}).join("")}</div>
+  </article>`;
+  root.innerHTML=h;bindStudy(root);persistST();
+  root.querySelectorAll(".opt").forEach(b=>b.addEventListener("click",()=>{const oi=+b.dataset.oi;ST.ans[q.id]=oi;record(q.id,oi===q.c,oi);renderStudy();}));
+  const r=$("#stRetry");if(r)r.addEventListener("click",()=>{delete ST.ans[q.id];ST.orders[q.id]=shuffle(q.o.map((_,i)=>i));renderStudy()});
+  $("#stPrev").addEventListener("click",()=>{ST.i--;renderStudy();scrollTop()});
+  $("#stNext").addEventListener("click",()=>{ST.i++;renderStudy();scrollTop()});
+  root.querySelectorAll(".palette button").forEach(b=>b.addEventListener("click",()=>{ST.i=+b.dataset.k;renderStudy()}));
+}
+function persistST(){const nw=JSON.stringify(ST);if(JSON.stringify(DB.st||null)===nw)return;DB.st=JSON.parse(nw);save();}
+function bindStudy(root){
+  bindSeg(root,"bank",v=>{ST.bank=v;ST.t="all";ST.i=0;renderStudy()});
+  bindSeg(root,"b",v=>{ST.b=v;ST.i=0;renderStudy()});
+  bindSeg(root,"n",v=>{ST.n=v;ST.i=0;renderStudy()});
+  bindSeg(root,"failed",v=>{ST.failed=v==="1";ST.i=0;renderStudy()});
+  const s=root.querySelector("#stTema");if(s)s.addEventListener("change",()=>{ST.t=s.value;ST.i=0;renderStudy()});
+}
+function scrollTop(){const t=$("#tab-study");if(t&&t.getBoundingClientRect().top<0)window.scrollTo({top:0});}
+
+/* ================= EXAMEN ================= */
+const EX={b:"all",n:"all",count:"20",timer:"on",state:"setup",qs:[],orders:{},ans:{},i:0,t0:0,limit:0,tick:null,confirm:false,only:null};
+function examPool(){return ALL.filter(q=>q.mode==="X"&&(EX.b==="all"||q.b===EX.b)&&(EX.n==="all"||q.n===EX.n))}
+function persistEX(){
+  if(EX.state==="run")DB.ex={b:EX.b,n:EX.n,count:EX.count,timer:EX.timer,qids:EX.qs.map(q=>q.id),orders:EX.orders,ans:EX.ans,i:EX.i,t0:EX.t0,limit:EX.limit};
+  else if(!DB.ex)return; else delete DB.ex;
+  save();
+}
+function restoreEX(){
+  clearInterval(EX.tick);EX.tick=null;
+  const d=DB.ex;
+  if(d&&Array.isArray(d.qids)){const qs=d.qids.map(id=>byId[id]).filter(Boolean);
+    if(qs.length){Object.assign(EX,{b:d.b,n:d.n,count:d.count,timer:d.timer,qs,orders:d.orders||{},ans:d.ans||{},i:Math.min(d.i||0,qs.length-1),t0:d.t0,limit:d.limit||0,state:"run",confirm:false});
+      qs.forEach(q=>{if(!EX.orders[q.id])EX.orders[q.id]=shuffle(q.o.map((_,i)=>i))});
+      if(EX.limit)EX.tick=setInterval(updTimer,1000);return;}}
+  if(EX.state==="run")EX.state="setup";
+}
+function renderExam(){
+  const root=$("#tab-exam");persistEX();
+  if(EX.state==="setup"){
+    const pool=examPool();
+    root.innerHTML=`<div class="filters"></div><div class="card setup">
+      <h2>Simulación de examen</h2>
+      <p>Casos clínicos integrados (${ALL.filter(q=>q.mode==="X").length} en el banco), sin retroalimentación hasta finalizar. Al terminar ves el puntaje por bloque y nivel, y la explicación completa de cada caso.</p>
+      <div class="filters" style="margin:0">
+        <span><span class="flabel">Bloque</span>${segHTML("b",BSEG,EX.b)}</span>
+        <span><span class="flabel">Nivel</span>${segHTML("n",[["all","Todos"],["R","Residente"],["F","Fellow"],["S","Staff"]],EX.n)}</span>
+      </div>
+      <div class="filters" style="margin:0">
+        <span><span class="flabel">Preguntas</span>${segHTML("count",[["10","10"],["20","20"],["30","30"],["50","50"],["all",`Todas (${pool.length})`]],EX.count)}</span>
+        <span><span class="flabel">Tiempo</span>${segHTML("timer",[["on","90 s por pregunta"],["off","Sin límite"]],EX.timer)}</span>
+      </div>
+      <div class="actions" style="margin:0"><button class="btn primary" type="button" id="exStart" ${pool.length?"":"disabled"}>Comenzar (${Math.min(pool.length,EX.count==="all"?pool.length:+EX.count)} preguntas)</button>
+      <span class="muted" style="font-size:13px">${pool.length} casos disponibles con estos filtros</span></div>
+    </div>`;
+    bindSeg(root,"b",v=>{EX.b=v;renderExam()});bindSeg(root,"n",v=>{EX.n=v;renderExam()});
+    bindSeg(root,"count",v=>{EX.count=v;renderExam()});bindSeg(root,"timer",v=>{EX.timer=v;renderExam()});
+    $("#exStart").addEventListener("click",()=>startExam(shuffle(pool)));
+    return;
+  }
+  if(EX.state==="run"){
+    const q=EX.qs[EX.i];const order=EX.orders[q.id];const chosen=EX.ans[q.id];
+    const answered=EX.qs.filter(x=>EX.ans[x.id]!==undefined).length;
+    root.innerHTML=`<div class="filters"><span class="flabel">Examen en curso</span><span class="muted">${answered}/${EX.qs.length} respondidas</span><span class="spacer"></span>${EX.timer==="on"?`<span class="timer" id="exTimer"></span>`:""}</div>
+    <div class="progressbar"><i style="width:${(answered/EX.qs.length*100).toFixed(1)}%"></i></div>
+    <article class="card qcard">
+      <div class="meta">${chips({...q,fix:null,nuevo:null})}<span class="counter">${EX.i+1}/${EX.qs.length}</span></div>
+      <p class="stem">${q.q}</p>
+      <div class="opts">${order.map((oi,pos)=>`<button type="button" class="opt ${chosen===oi?"sel":""}" data-oi="${oi}"><span class="L">${LET[pos]}</span><span>${q.o[oi]}</span></button>`).join("")}</div>
+      <div class="actions">
+        <button class="btn" type="button" id="exPrev" ${EX.i===0?"disabled":""}>← Anterior</button>
+        <button class="btn" type="button" id="exNext" ${EX.i>=EX.qs.length-1?"disabled":""}>Siguiente →</button>
+        <span class="spacer"></span>
+        <button class="btn ${EX.confirm?"primary":""}" type="button" id="exEnd">${EX.confirm?`Confirmar: finalizar (${EX.qs.length-answered} sin responder)`:"Finalizar examen"}</button>
+      </div>
+      <div class="palette">${EX.qs.map((x,k)=>`<button type="button" class="${k===EX.i?"cur":""} ${EX.ans[x.id]!==undefined?"ans":""}" data-k="${k}">${k+1}</button>`).join("")}</div>
+    </article>`;
+    root.querySelectorAll(".opt").forEach(b=>b.addEventListener("click",()=>{EX.ans[q.id]=+b.dataset.oi;EX.confirm=false;if(EX.i<EX.qs.length-1)EX.i++;renderExam()}));
+    $("#exPrev").addEventListener("click",()=>{EX.i--;EX.confirm=false;renderExam()});
+    $("#exNext").addEventListener("click",()=>{EX.i++;EX.confirm=false;renderExam()});
+    $("#exEnd").addEventListener("click",()=>{if(EX.confirm)finishExam();else{EX.confirm=true;renderExam()}});
+    root.querySelectorAll(".palette button").forEach(b=>b.addEventListener("click",()=>{EX.i=+b.dataset.k;EX.confirm=false;renderExam()}));
+    updTimer();return;
+  }
+  if(EX.state==="done"){
+    const qs=EX.qs;const ok=qs.filter(q=>EX.ans[q.id]===q.c).length;const pct=Math.round(ok/qs.length*100);
+    const group=(key,labels)=>Object.keys(labels).map(k=>{const g=qs.filter(q=>q[key]===k);if(!g.length)return "";const o=g.filter(q=>EX.ans[q.id]===q.c).length;const p=Math.round(o/g.length*100);
+      return `<div class="bar"><span>${labels[k]}</span><span class="track"><i style="width:${p}%;background:${p>=70?"var(--ok)":p>=50?"var(--warn)":"var(--bad)"}"></i></span><span class="v">${o}/${g.length}</span></div>`}).join("");
+    const secs=Math.round((Date.now()-EX.t0)/1000);
+    root.innerHTML=`<div class="filters"></div><div class="card">
+      <div class="score"><div><div class="big">${pct}%</div><div class="sub">${ok} de ${qs.length} correctas · ${Math.floor(secs/60)} min ${secs%60} s</div></div>
+      <div class="sub" style="max-width:40ch">${pct>=80?"Nivel sólido. Revisa igual las explicaciones de las correctas por azar.":pct>=60?"Base adecuada; enfócate en los bloques bajo 70%.":"Conviene repasar en modo estudio los temas con más errores."}</div></div>
+      <div class="bars">${group("b",BL)}${group("n",NV)}</div>
+    </div>
+    <div class="actions">
+      <button class="btn primary" type="button" id="exWrong" ${ok===qs.length?"disabled":""}>Repetir solo las falladas</button>
+      <button class="btn" type="button" id="exNew">Nuevo examen</button>
+    </div>
+    <div class="review">${qs.map((q,k)=>{const a=EX.ans[q.id];const st=a===undefined?"na":a===q.c?"ok":"bad";
+      return `<details class="rv"><summary><span class="mark ${st}">${st==="ok"?"✓":st==="bad"?"✗":"—"} ${k+1}</span><span class="rvq">${q.q}</span></summary>
+      <div class="meta" style="margin-top:12px">${chips(q)}<span class="counter">${q.id}</span></div>
+      <div class="opts">${EX.orders[q.id].map((oi,pos)=>{let c="opt";if(oi===q.c)c+=" right";else if(oi===a)c+=" wrong";return `<div class="${c}"><span class="L">${LET[pos]}</span><span>${q.o[oi]}</span></div>`}).join("")}</div>
+      ${explainHTML(q,EX.orders[q.id],a===undefined?null:a)}</details>`}).join("")}</div>`;
+    $("#exWrong").addEventListener("click",()=>startExam(qs.filter(q=>EX.ans[q.id]!==q.c)));
+    $("#exNew").addEventListener("click",()=>{EX.state="setup";renderExam()});
+  }
+}
+function startExam(pool){
+  const n=EX.count==="all"?pool.length:Math.min(pool.length,+EX.count);
+  EX.qs=pool.slice(0,n);EX.orders={};EX.ans={};EX.i=0;EX.confirm=false;
+  EX.qs.forEach(q=>EX.orders[q.id]=shuffle(q.o.map((_,i)=>i)));
+  EX.t0=Date.now();EX.limit=EX.timer==="on"?EX.qs.length*90:0;EX.state="run";
+  clearInterval(EX.tick);if(EX.limit)EX.tick=setInterval(updTimer,1000);
+  renderExam();window.scrollTo({top:0});
+}
+function updTimer(){
+  const el=$("#exTimer");if(!EX.limit||EX.state!=="run")return;
+  const left=EX.limit-Math.floor((Date.now()-EX.t0)/1000);
+  if(left<=0){finishExam();return;}
+  if(el){el.textContent=`⏱ ${Math.floor(left/60)}:${String(left%60).padStart(2,"0")}`;el.classList.toggle("low",left<60);}
+}
+function finishExam(){
+  clearInterval(EX.tick);EX.state="done";
+  EX.qs.forEach(q=>{if(EX.ans[q.id]!==undefined)record(q.id,EX.ans[q.id]===q.c,EX.ans[q.id])});
+  const ok=EX.qs.filter(q=>EX.ans[q.id]===q.c).length;
+  DB.exams.push({d:Date.now(),n:EX.qs.length,ok});if(DB.exams.length>30)DB.exams.shift();save();
+  renderExam();window.scrollTo({top:0});
+}
+
+/* ================= FLASHCARDS ================= */
+const FL={b:"all",list:null,i:0,flip:false};
+function renderFlash(){
+  const root=$("#tab-flash");
+  if(!FL.list)FL.list=ALL.filter(q=>FL.b==="all"||q.b===FL.b);
+  const q=FL.list[FL.i];
+  root.innerHTML=`<div class="filters">
+    <span><span class="flabel">Bloque</span>${segHTML("b",BSEG,FL.b)}</span>
+    <button class="btn ghost" type="button" id="flShuffle">Barajar</button>
+    <span class="muted" style="font-size:13px">Clic o espacio para girar · ← → para avanzar</span></div>
+  <div class="flash"><div class="card fc ${FL.flip?"flip":""}" id="fc" tabindex="0" role="button" aria-label="Girar tarjeta">
+    <div class="face front"><div class="meta">${chips({...q,fix:null,nuevo:null})}<span class="counter">${FL.i+1}/${FL.list.length}</span></div>
+      <p class="stem" style="margin:0">${q.q}</p><span class="hint">Piensa tu respuesta y gira la tarjeta.</span></div>
+    <div class="face back"><div class="meta"><span class="chip">Respuesta</span><span class="counter">${q.id}</span></div>
+      <div class="ans">${q.o[q.c]}</div><p style="margin:0">${q.p}</p><p class="refs" style="margin:0">${q.r}</p></div>
+  </div></div>
+  <div class="actions"><button class="btn" type="button" id="flPrev" ${FL.i===0?"disabled":""}>← Anterior</button><span class="spacer"></span><button class="btn primary" type="button" id="flNext" ${FL.i>=FL.list.length-1?"disabled":""}>Siguiente →</button></div>`;
+  const fc=$("#fc");
+  const fit=()=>{const f=fc.querySelectorAll(".face");let h=300;f.forEach(x=>{h=Math.max(h,x.scrollHeight)});fc.style.minHeight=h+"px"};fit();
+  fc.addEventListener("click",()=>{FL.flip=!FL.flip;fc.classList.toggle("flip",FL.flip)});
+  bindSeg(root,"b",v=>{FL.b=v;FL.list=null;FL.i=0;FL.flip=false;renderFlash()});
+  $("#flShuffle").addEventListener("click",()=>{FL.list=shuffle(FL.list);FL.i=0;FL.flip=false;renderFlash()});
+  $("#flPrev").addEventListener("click",()=>{FL.i--;FL.flip=false;renderFlash()});
+  $("#flNext").addEventListener("click",()=>{FL.i++;FL.flip=false;renderFlash()});
+}
+document.addEventListener("keydown",e=>{
+  if($("#tab-flash").hidden||e.target.tagName==="SELECT")return;
+  if(e.key===" "){e.preventDefault();const fc=$("#fc");if(fc){FL.flip=!FL.flip;fc.classList.toggle("flip",FL.flip)}}
+  if(e.key==="ArrowRight"&&FL.list&&FL.i<FL.list.length-1){FL.i++;FL.flip=false;renderFlash()}
+  if(e.key==="ArrowLeft"&&FL.i>0){FL.i--;FL.flip=false;renderFlash()}
+});
+
+/* ================= PROGRESO ================= */
+function renderStats(){
+  const root=$("#tab-stats");const seen=ALL.filter(q=>DB.q[q.id]);
+  const tot=seen.reduce((a,q)=>a+DB.q[q.id].n,0),okc=seen.reduce((a,q)=>a+DB.q[q.id].ok,0);
+  const failed=seen.filter(q=>DB.q[q.id].last===0);
+  const rows=themes(ALL).map(t=>{const g=ALL.filter(q=>q.t===t);const s=g.filter(q=>DB.q[q.id]);const n=s.reduce((a,q)=>a+DB.q[q.id].n,0),o=s.reduce((a,q)=>a+DB.q[q.id].ok,0);const p=n?Math.round(o/n*100):null;
+    return `<div class="bar"><span>${esc(t)} <span class="muted">(${s.length}/${g.length})</span></span><span class="track"><i style="width:${p||0}%;background:${p==null?"transparent":p>=70?"var(--ok)":p>=50?"var(--warn)":"var(--bad)"}"></i></span><span class="v">${p==null?"—":p+"%"}</span></div>`}).join("");
+  root.innerHTML=`<div class="filters"></div><div class="card">
+    <div class="score"><div><div class="big">${tot?Math.round(okc/tot*100)+"%":"—"}</div><div class="sub">aciertos · ${seen.length}/${ALL.length} casos vistos · ${tot} respuestas</div></div>
+    <div class="sub">Exámenes rendidos: ${DB.exams.length}${DB.exams.length?` · último ${Math.round(DB.exams[DB.exams.length-1].ok/DB.exams[DB.exams.length-1].n*100)}%`:""}</div></div>
+    <div class="bars">${rows}</div></div>
+  <div class="actions"><button class="btn primary" type="button" id="goFailed" ${failed.length?"":"disabled"}>Repasar ${failed.length} falladas en modo estudio</button>
+  <span class="spacer"></span><button class="btn ghost" type="button" id="resetP">${statsConfirm?"Confirmar: borrar progreso":"Borrar progreso"}</button></div>
+  <p class="muted" style="font-size:13px" id="syncNote">${syncNote()}</p>
+  <details class="card panel" style="margin-top:12px"><summary style="cursor:pointer;font-weight:600">Conexión con Google Sheets</summary>
+    <div class="cloudcfg"><label class="muted" for="cfgApi" style="font-size:13px">URL de la aplicación web de Apps Script (termina en /exec)</label>
+    <input id="cfgApi" placeholder="https://script.google.com/macros/s/…/exec" value="${esc(CLOUD.api)}">
+    <label class="muted" for="cfgTok" style="font-size:13px">Clave (la misma que TOKEN en Code.gs)</label>
+    <input id="cfgTok" value="${esc(CLOUD.token||"")}">
+    <div class="actions" style="margin:0"><button class="btn primary" type="button" id="cfgSave">Guardar y reconectar</button><button class="btn ghost" type="button" id="cfgDel">Quitar conexión</button></div></div></details>`;
+  $("#cfgSave").addEventListener("click",()=>{try{localStorage.setItem("quizNeuro_cloud",JSON.stringify({api:$("#cfgApi").value.trim(),token:$("#cfgTok").value.trim()}))}catch(e){};location.reload()});
+  $("#cfgDel").addEventListener("click",()=>{try{localStorage.setItem("quizNeuro_cloud",JSON.stringify({api:"-",token:""}))}catch(e){};location.reload()});
+  $("#goFailed").addEventListener("click",()=>{ST.bank="all";ST.failed=true;ST.b="all";ST.n="all";ST.t="all";ST.i=0;renderStudy();showTab("study")});
+  $("#resetP").addEventListener("click",()=>{if(statsConfirm){DB.q={};DB.exams=[];DB.st=null;delete DB.ex;restoreST();EX.state="setup";clearInterval(EX.tick);save();statsConfirm=false;renderStudy();renderExam()}else statsConfirm=true;renderStats()});
+}
+let statsConfirm=false;
+
+/* ================= TEMARIO ================= */
+const TMAP={"Roma V y TICI": [1, "ES"], "ERGE y Lyon 2.0": [2, "ES"], "TICI esofágicos": [3, "ES"], "Eructos y rumiación": [4, "ES"], "Disfagia y EoE": [5, "ES"], "Chicago 4.0 y acalasia": [6, "ES"], "Dispepsia": [7, "GD"], "Gastroparesia y náuseas": [8, "GD"], "SII": [9, "IN"], "Diarrea crónica": [10, "IN"], "Constipación": [11, "IN"], "Distensión y SIBO": [12, "IN"], "CIPO y Ogilvie": [13, "IN"], "Anorrectal": [14, "AR"], "Dolor y neuromoduladores": [15, "AR"], "Laboratorio funcional": [16, "AR"]};
+function renderChanges(){
+  const rows=Object.keys(TMAP).map(t=>{const g=ALL.filter(q=>q.t===t);const e=g.filter(q=>q.mode==="E").length,x=g.length-e;
+    const s=g.filter(q=>DB.q[q.id]);const n=s.reduce((a,q)=>a+DB.q[q.id].n,0),o=s.reduce((a,q)=>a+DB.q[q.id].ok,0);
+    return `<tr><td class="id">${TMAP[t][0]}</td><td class="tema-l"><a href="../guia-2026.html#b${TMAP[t][0]}">${esc(t)}</a></td><td>${BL[TMAP[t][1]]}</td><td>${e}</td><td>${x}</td><td>${n?Math.round(o/n*100)+"%":"—"}</td></tr>`}).join("");
+  $("#tab-changes").innerHTML=`<div class="filters"></div><div class="card panel">
+    <h2>Temario: un tema por bloque de la guía</h2>
+    <p class="muted" style="margin:0">Banco propio escrito sobre los 16 bloques de la Guía de Neurogastroenterología 2026 (Roma V, Chicago 4.0, Lyon 2.0 y guías vigentes). El enlace abre el bloque correspondiente.</p>
+    <div class="tbl"><table><thead><tr><th>Bloque</th><th>Tema</th><th>Grupo</th><th>Estudio</th><th>Examen</th><th>Aciertos</th></tr></thead><tbody>${rows}</tbody></table></div>
+    <p class="refs" style="margin:0">Marco de referencia: Roma V 2026 · Chicago 4.0 · Lyon 2.0 · AGA 2025 gastroparesia · AGA-ACG 2023 constipación · ACG 2021 SII · AGA 2022 SII-D y SII-C · Consenso norteamericano de test de aire espirado · IAPWG/Londres. Verificar ficha técnica y disponibilidad en Chile antes de prescribir.</p>
+  </div>`;
+}
+
+/* ================= EXPORTAR ================= */
+const EMBED=(()=>{try{return window.self!==window.top}catch(e){return true}})();
+const plain=h=>{const d=document.createElement("div");d.innerHTML=h;return (d.textContent||"").replace(/\s+/g," ").trim()};
+const csvCell=v=>'"'+String(v).replace(/"/g,'""')+'"';
+function seededOrder(q){let h=2166136261;for(const ch of q.id+"hep"){h^=ch.charCodeAt(0);h=Math.imul(h,16777619)>>>0}
+  const o=q.o.map((_,i)=>i);for(let i=o.length-1;i>0;i--){h=(Math.imul(h,1664525)+1013904223)>>>0;const j=h%(i+1);[o[i],o[j]]=[o[j],o[i]]}return o}
+function bankRows(list){return list.map(q=>{const or=seededOrder(q);const L=oi=>LET[or.indexOf(+oi)];return {id:q.id,modo:q.mode==="E"?"Estudio":"Examen",bloque:BL[q.b],nivel:NV[q.n],tema:q.t,pregunta:plain(q.q),opciones:or.map(i=>plain(q.o[i])),correcta:L(q.c),respuesta:plain(q.o[q.c]),explicacion:plain(q.e),porQueNo:Object.keys(q.w).sort((x,y)=>or.indexOf(+x)-or.indexOf(+y)).map(k=>L(k)+": "+plain(q.w[k])).join(" | "),mecanismo:plain(q.m||""),perla:plain(q.p),cambio:plain(q.nuevo||""),correccionV5:plain(q.fix||""),referencias:plain(q.r)}})}
+function exportCSV(list){const R=bankRows(list);const H=["id","modo","bloque","nivel","tema","pregunta","A","B","C","D","correcta","respuesta","explicacion","porQueNo","mecanismo","perla","cambio","correccionV5","referencias"];
+  return "﻿"+H.join(";")+"\n"+R.map(r=>[r.id,r.modo,r.bloque,r.nivel,r.tema,r.pregunta,...[0,1,2,3].map(i=>r.opciones[i]||""),r.correcta,r.respuesta,r.explicacion,r.porQueNo,r.mecanismo,r.perla,r.cambio,r.correccionV5,r.referencias].map(csvCell).join(";")).join("\n")}
+function exportAnki(list){const t=s=>String(s).replace(/\t/g," ").replace(/\n/g,"<br>");
+  return "#separator:tab\n#html:true\n#tags column:3\n"+list.map(q=>{const or=seededOrder(q);const front=`<b>${q.id}</b> · ${q.t}<br>${q.q}<br><br>`+or.map((oi,i)=>`${LET[i]}) ${q.o[oi]}`).join("<br>");
+    const back=`<b>${LET[or.indexOf(q.c)]}) ${q.o[q.c]}</b><br><br>${q.e}<br><br><i>Perla:</i> ${q.p}`+(q.m?`<br><br><i>Mecanismo:</i> ${q.m}`:"")+`<br><br><small>${q.r}</small>`;
+    return [t(front),t(back),["Neurogastro",q.b,NV[q.n],q.mode==="E"?"estudio":"examen",q.t.replace(/\s+/g,"_")].join(" ")].join("\t")}).join("\n")}
+function exportProgress(){const H=["id","bloque","nivel","tema","modo","intentos","correctas","ultima"];return "﻿"+H.join(";")+"\n"+ALL.filter(q=>DB.q[q.id]).map(q=>{const r=DB.q[q.id];return [q.id,BL[q.b],NV[q.n],q.t,q.mode==="E"?"Estudio":"Examen",r.n,r.ok,r.last?"correcta":"incorrecta"].map(csvCell).join(";")}).join("\n")}
+let DL=null;
+if(EMBED&&window.claude&&window.claude.use){window.claude.use("downloads").then(d=>{DL=d;if(!$("#tab-export").hidden)renderExport()}).catch(()=>{})}
+function copyFallback(name,content,msg){const out=$("#expOut");
+  out.innerHTML=`<p class="muted" style="margin:0 0 6px">${msg||"Esta vista no permite descargas."} Copia el contenido y pégalo en un archivo <b>${esc(name)}</b>.</p><textarea class="dump" id="dump" readonly></textarea><div class="actions"><button class="btn primary" type="button" id="copyDump">Copiar</button></div>`;
+  $("#dump").value=content;
+  $("#copyDump").addEventListener("click",()=>{const ta=$("#dump");const done=()=>{$("#copyDump").textContent="Copiado"};
+    const legacy=()=>{ta.select();try{document.execCommand("copy");done()}catch(e){}};
+    if(navigator.clipboard)navigator.clipboard.writeText(content).then(done).catch(legacy);else legacy();});}
+function deliver(name,content,mime){
+  const out=$("#expOut");
+  if(!EMBED){try{const b=new Blob([content],{type:mime+";charset=utf-8"});const u=URL.createObjectURL(b);const a=document.createElement("a");a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000);out.innerHTML=`<p class="muted">Descargado: <b>${esc(name)}</b></p>`;return}catch(e){}}
+  if(DL){out.innerHTML=`<p class="muted">Confirma la descarga de <b>${esc(name)}</b> en el aviso.</p>`;
+    DL.save({filename:name,data:content}).then(r=>{out.innerHTML=`<p class="muted">${r&&r.status==="delivered"?"Enviado":"Descargado"}: <b>${esc(name)}</b></p>`})
+      .catch(e=>{const c=e&&e.code;if(c==="declined")out.innerHTML=`<p class="muted">Descarga cancelada.</p>`;else if(c==="rate_limited")out.innerHTML=`<p class="muted">Ya hay un aviso de descarga abierto; intenta de nuevo en unos segundos.</p>`;else copyFallback(name,content,"No se pudo descargar en esta vista.")});return}
+  copyFallback(name,content);
+}
+const EXP={set:"all"};
+function expList(){return ALL.filter(q=>EXP.set==="all"||q.mode===EXP.set)}
+function printBank(){
+  const list=expList();const area=$("#printArea");
+  const qs=list.map((q,k)=>{const or=seededOrder(q);return `<div class="pq"><h4>${k+1}. ${q.id} · ${BL[q.b]} · ${NV[q.n]} · ${esc(q.t)}</h4><p>${q.q}</p>${or.map((oi,i)=>`<p>${LET[i]}) ${q.o[oi]}</p>`).join("")}</div>`}).join("");
+  const key=list.map((q,k)=>{const or=seededOrder(q);return `<div class="pq"><h4>${k+1}. ${q.id} — Respuesta ${LET[or.indexOf(q.c)]}</h4><p>${q.e}</p><p><i>Por qué no las otras:</i> ${Object.keys(q.w).sort((x,y)=>or.indexOf(+x)-or.indexOf(+y)).map(i=>LET[or.indexOf(+i)]+": "+q.w[i]).join(" · ")}</p>${q.m?`<p><i>Mecanismo:</i> ${q.m}</p>`:""}<p><i>Perla:</i> ${q.p}</p><p style="font-size:9pt">${q.r}</p></div>`}).join("");
+  area.innerHTML=`<h1 style="font:700 18pt Georgia,serif">Quiz Neurogastroenterología 2026 — ${EXP.set==="E"?"Estudio":EXP.set==="X"?"Examen":"Banco completo"} (${list.length} casos)</h1>${qs}<div class="pb"><h2 style="font:700 15pt Georgia,serif">Respuestas y explicaciones</h2>${key}</div>`;
+  document.body.classList.add("printing");
+  const done=()=>{document.body.classList.remove("printing");window.removeEventListener("afterprint",done)};
+  window.addEventListener("afterprint",done);window.print();setTimeout(done,1500);
+}
+function renderExport(){
+  const nE=ALL.filter(q=>q.mode==="E").length,nX=ALL.filter(q=>q.mode==="X").length;
+  $("#tab-export").innerHTML=`<div class="filters"><span><span class="flabel">Qué exportar</span>${segHTML("set",[["all",`Todo (${ALL.length})`],["E",`Estudio (${nE})`],["X",`Examen (${nX})`]],EXP.set)}</span></div>
+  ${EMBED?`<div class="card panel" style="margin-bottom:14px"><p style="margin:0">Para imprimir o guardar como PDF, descarga el quiz como HTML y ábrelo en tu computador (funciona sin conexión).</p></div>`:""}
+  <div class="expgrid">
+    <div class="card"><h3>Quiz completo (HTML sin conexión)</h3><p>Un solo archivo con los ${ALL.length} casos y todas las funciones. Ábrelo en cualquier navegador, también sin internet.</p><button class="btn primary" type="button" data-exp="html">Descargar HTML</button></div>
+    <div class="card"><h3>CSV para Excel / Sheets</h3><p>Una fila por caso: pregunta, opciones, respuesta, explicación, mecanismo, perla y referencias. Separador punto y coma, UTF-8.</p><button class="btn" type="button" data-exp="csv">${EMBED&&!DL?"Ver para copiar":"Descargar CSV"}</button></div>
+    <div class="card"><h3>Anki (texto separado por tabulaciones)</h3><p>Frente: caso y opciones. Reverso: respuesta, explicación, perla y referencia. Etiquetas por bloque, nivel, modo y tema.</p><button class="btn" type="button" data-exp="anki">${EMBED&&!DL?"Ver para copiar":"Descargar .txt"}</button></div>
+    <div class="card"><h3>JSON</h3><p>Banco completo estructurado, para reutilizar en otra herramienta.</p><button class="btn" type="button" data-exp="json">${EMBED&&!DL?"Ver para copiar":"Descargar JSON"}</button></div>
+    <div class="card"><h3>Mi progreso</h3><p>Intentos y aciertos por caso guardados en este navegador.</p><button class="btn" type="button" data-exp="prog">${EMBED&&!DL?"Ver para copiar":"Descargar CSV"}</button></div>
+    ${EMBED?"":`<div class="card"><h3>Imprimir o guardar como PDF</h3><p>Cuadernillo con los casos y, al final, la hoja de respuestas con explicaciones.</p><button class="btn primary" type="button" data-exp="print">Imprimir / PDF</button></div>`}
+  </div>
+  <div id="expOut" style="margin-top:14px"></div>`;
+  bindSeg($("#tab-export"),"set",v=>{EXP.set=v;renderExport()});
+  $("#tab-export").querySelectorAll("[data-exp]").forEach(b=>b.addEventListener("click",()=>{const k=b.dataset.exp,l=expList(),suf=EXP.set==="E"?"estudio":EXP.set==="X"?"examen":"completo";
+    if(k==="csv")deliver(`Quiz_Neuro_${suf}.csv`,exportCSV(l),"text/csv");
+    if(k==="anki")deliver(`Quiz_Neuro_${suf}_anki.txt`,exportAnki(l),"text/plain");
+    if(k==="json")deliver(`Quiz_Neuro_${suf}.json`,JSON.stringify(bankRows(l),null,1),"application/json");
+    if(k==="prog")deliver("Quiz_Neuro_progreso.csv",exportProgress(),"text/csv");
+    if(k==="print")printBank();
+    if(k==="html")deliver("Quiz_Neuro_2026.html",SNAP,"text/html");}));
+}
+
+/* ================= SIGLAS ================= */
+const SIG=[["ATC", "Antidepresivo tricíclico"], ["CAPS", "Dolor abdominal centralmente mediado"], ["CH₄", "Metano"], ["CIPO", "Pseudoobstrucción intestinal crónica"], ["DCI", "Integral contráctil distal"], ["DL", "Latencia distal"], ["EGJ-DI", "Índice de distensibilidad de la unión esofagogástrica"], ["EGJOO", "Obstrucción del flujo de salida de la unión esofagogástrica"], ["EoE", "Esofagitis eosinofílica"], ["ERGE", "Enfermedad por reflujo gastroesofágico"], ["EREFS", "Edema, anillos, exudados, surcos y estenosis (escala endoscópica de EoE)"], ["FLIP", "Sonda de imagen luminal funcional"], ["FODMAP", "Oligo-, di-, monosacáridos y polioles fermentables"], ["G-POEM", "Miotomía pilórica endoscópica peroral"], ["H₂", "Hidrógeno"], ["IBP", "Inhibidor de la bomba de protones"], ["IEM", "Motilidad esofágica inefectiva"], ["IMO", "Sobrecrecimiento metanogénico intestinal"], ["IRP", "Presión de relajación integrada"], ["IRSN", "Inhibidor de la recaptación de serotonina y noradrenalina"], ["ISRS", "Inhibidor selectivo de la recaptación de serotonina"], ["LA", "Clasificación de Los Ángeles de esofagitis"], ["MNBI", "Impedancia basal nocturna media"], ["PAMORA", "Antagonista periférico de receptores μ"], ["P-CAB", "Bloqueador ácido competitivo de potasio"], ["PEG", "Polietilenglicol"], ["POEM", "Miotomía endoscópica peroral"], ["R-CPD", "Disfunción retrógrada del cricofaríngeo (incapacidad para eructar)"], ["SAP", "Probabilidad de asociación sintomática"], ["SDE", "Síndrome de dolor epigástrico"], ["SDP", "Síndrome de distrés posprandial"], ["SeHCAT", "Test de retención de ácido selenohomocólico marcado"], ["SI", "Índice de síntomas"], ["SIBO", "Sobrecrecimiento bacteriano del intestino delgado"], ["SII (C, D, M, U)", "Síndrome de intestino irritable (con constipación, diarrea, mixto, no clasificado)"], ["SNVC", "Síndrome de náuseas y vómitos crónicos"], ["TCC", "Terapia cognitivo-conductual"], ["TEA", "Tiempo de exposición ácida"], ["TICI", "Trastornos de la interacción cerebro-intestino"]];
+$("#tab-gloss").innerHTML=`<div class="filters"></div><div class="card panel"><h2>Siglas usadas en el banco</h2><div class="gloss">${SIG.map(([a,b])=>`<div><b>${a}</b> · ${b}</div>`).join("")}</div></div>`;
+
+restoreEX();
+renderStudy();renderExam();renderChanges();renderExport();
+if(DB.tab&&DB.tab!=="study")showTab(DB.tab);
+booting=false;
+
+/* ---------- traer el progreso de la nube (gana la versión más reciente) ---------- */
+function applyRemote(src){
+  booting=true;
+  Object.keys(DB).forEach(k=>delete DB[k]);Object.assign(DB,src);DB.q=DB.q||{};DB.exams=DB.exams||[];
+  if(DB.theme)document.documentElement.setAttribute("data-theme",DB.theme);
+  restoreST();restoreEX();renderStudy();renderExam();
+  if(!$("#tab-stats").hidden)renderStats();
+  writeLocal();booting=false;
+}
+(async()=>{
+  if(!CLOUD.api){setSync("","● este navegador");return;}
+  try{
+    tokenReady=resolveToken();
+    const d=await tokenReady;
+    const remote=d.estado;
+    if(remote&&(remote._t||0)>(DB._t||0))applyRemote(remote);
+    else if(!remote||(remote._t||0)<(DB._t||0)){
+      // la nube está vacía o más atrasada: sube lo de este navegador (incluye el progreso previo a la sincronización)
+      if(Object.keys(DB.q).length||DB.exams.length||DB.ex||(DB.st&&Object.keys(DB.st.ans||{}).length)){DB._t=DB._t||Date.now();writeLocal();dirty=true;await pushCloud();return;}
+    }
+    lastSync=new Date();syncErr=false;setSync("ok","☁ guardado");
+  }catch(e){syncErr=true;syncWhy=e.message||String(e);setSync("err","● sin conexión");}
+})();
+})();
+
+</script>
+
+<style>
+#pwa-ui{position:fixed;right:14px;bottom:calc(env(safe-area-inset-bottom,0px) + 14px);z-index:300;display:flex;flex-direction:column;align-items:flex-end;gap:8px;font-family:Inter,-apple-system,"Segoe UI",sans-serif}
+#pwa-ui button{border:0;border-radius:999px;padding:9px 16px;font:600 .82rem Inter,-apple-system,sans-serif;background:#1d4a4f;color:#fff;box-shadow:0 4px 18px rgba(0,0,0,.22);cursor:pointer}
+#pwa-ios{max-width:300px;background:#fffefb;color:#1c2530;border:1px solid #ddd6cb;border-radius:12px;padding:11px 14px;font-size:.8rem;line-height:1.45;box-shadow:0 6px 24px rgba(0,0,0,.18)}
+#pwa-ios b{display:block;margin-bottom:3px}#pwa-ios .x{float:right;background:none;border:0;color:#6f7a86;font-size:1rem;padding:0 0 0 8px;box-shadow:none;cursor:pointer}
+#pwa-back{position:fixed;left:14px;bottom:calc(env(safe-area-inset-bottom,0px) + 14px);z-index:300;border-radius:999px;padding:8px 14px;font:600 .8rem Inter,-apple-system,sans-serif;background:#fffefb;color:#1d4a4f;border:1px solid #c9c0b2;text-decoration:none;box-shadow:0 3px 12px rgba(0,0,0,.15)}
+@media (prefers-color-scheme:dark){#pwa-ios{background:#1a2029;color:#e6e9ed;border-color:#2c3642}#pwa-back{background:#1a2029;color:#9fdcd6;border-color:#3d4956}}
+@media print{#pwa-ui,#pwa-back{display:none}}
+</style>
+<div id="pwa-ui"></div>
+<script>
+(function(){
+  var SW="../sw.js", KEY="pwa-ios-neuro", APP="Neurogastro 2026", BACK="../", MODE="always";
+  var standalone=window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true;
+  if('serviceWorker' in navigator&&/^https?:$/.test(location.protocol)&&!/claude\.ai|claudeusercontent/.test(location.hostname)){
+    window.addEventListener('load',function(){navigator.serviceWorker.register(SW).catch(function(){})});
+  }
+  if(MODE==='always'||(MODE==='param'&&new URLSearchParams(location.search).get('from')==='neuro')){
+    var a=document.createElement('a');a.id='pwa-back';a.href=BACK;a.textContent='← Repositorio';document.body.appendChild(a)}
+  if(standalone)return;
+  var ui=document.getElementById('pwa-ui'),dp=null;
+  window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();dp=e;
+    var b=document.createElement('button');b.type='button';b.textContent='Instalar '+APP;
+    b.onclick=function(){dp.prompt();dp.userChoice.finally(function(){b.remove()})};ui.appendChild(b)});
+  var ios=/iphone|ipad|ipod/i.test(navigator.userAgent)&&/safari/i.test(navigator.userAgent)&&!/crios|fxios/i.test(navigator.userAgent);
+  var seen=false;try{seen=localStorage.getItem(KEY)==='1'}catch(e){}
+  if(ios&&!seen){var d=document.createElement('div');d.id='pwa-ios';
+    d.innerHTML='<button class="x" type="button" aria-label="Cerrar">✕</button><b>Instalar '+APP+'</b>Toca <span aria-label="Compartir">Compartir ⬆︎</span> y luego «Agregar a inicio». Funcionará sin conexión.';
+    d.querySelector('.x').onclick=function(){d.remove();try{localStorage.setItem(KEY,'1')}catch(e){}};ui.appendChild(d)}
+})();
+</script>
+
+</body>
+</html>

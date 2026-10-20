@@ -1,0 +1,52 @@
+{
+  "titulo": "Neurogastroenterología 2026",
+  "actualizado": "octubre 2026",
+  "grupos": [
+    {
+      "nombre": "Bases",
+      "bloques": [
+        {"id": "b1", "num": 1, "titulo": "Eje intestino-cerebro y Roma V: criterios, banderas rojas y relación médico-paciente", "corto": "Roma V · eje intestino-cerebro", "archivo": "b01_roma_v.html"}
+      ]
+    },
+    {
+      "nombre": "Esófago",
+      "bloques": [
+        {"id": "b2", "num": 2, "titulo": "ERGE: Lyon 2.0, tratamiento escalonado, P-CAB, refractariedad y cirugía", "corto": "ERGE · Lyon 2.0", "archivo": "b02_erge.html"},
+        {"id": "b3", "num": 3, "titulo": "Trastornos esofágicos de Roma V y síntomas laringofaríngeos", "corto": "Pirosis funcional · hipersensibilidad · globo", "archivo": "b03_esofago_tici.html"},
+        {"id": "b4", "num": 4, "titulo": "Eructos, incapacidad para eructar (R-CPD) y rumiación", "corto": "Eructos · R-CPD · rumiación", "archivo": "b04_eructos_rumiacion.html"},
+        {"id": "b5", "num": 5, "titulo": "Disfagia y esofagitis eosinofílica", "corto": "Disfagia · EoE", "archivo": "b05_disfagia_eoe.html"},
+        {"id": "b6", "num": 6, "titulo": "Chicago 4.0: acalasia, EGJOO y trastornos de la peristalsis", "corto": "Chicago 4.0 · acalasia", "archivo": "b06_chicago_acalasia.html"}
+      ]
+    },
+    {
+      "nombre": "Gastroduodenal",
+      "bloques": [
+        {"id": "b7", "num": 7, "titulo": "Dispepsia: síndrome de distrés posprandial, síndrome de dolor epigástrico y dispepsia por H. pylori", "corto": "Dispepsia · SDP · SDE", "archivo": "b07_dispepsia.html"},
+        {"id": "b8", "num": 8, "titulo": "Gastroparesia, náuseas y vómitos crónicos, vómito cíclico e hiperemesis cannabinoide", "corto": "Gastroparesia · náuseas y vómitos", "archivo": "b08_gastroparesia_nv.html"}
+      ]
+    },
+    {
+      "nombre": "Intestino",
+      "bloques": [
+        {"id": "b9", "num": 9, "titulo": "Síndrome de intestino irritable: diagnóstico positivo y manejo escalonado", "corto": "SII · Roma V", "archivo": "b09_sii.html"},
+        {"id": "b10", "num": 10, "titulo": "Diarrea crónica, SII-D y diarrea funcional", "corto": "SII-D · MAB · colitis microscópica", "archivo": "b10_diarrea.html"},
+        {"id": "b11", "num": 11, "titulo": "Constipación crónica y SII-C", "corto": "Constipación · SII-C", "archivo": "b11_constipacion.html"},
+        {"id": "b12", "num": 12, "titulo": "Distensión abdominal, SIBO/IMO y disinergia abdominofrénica", "corto": "Distensión · SIBO · IMO", "archivo": "b12_distension_sibo.html"},
+        {"id": "b13", "num": 13, "titulo": "Dismotilidad del intestino delgado y pseudoobstrucción intestinal crónica", "corto": "CIPO · dismotilidad", "archivo": "b13_cipo.html"}
+      ]
+    },
+    {
+      "nombre": "Anorrectal",
+      "bloques": [
+        {"id": "b14", "num": 14, "titulo": "Trastornos anorrectales: defecación disinérgica, incontinencia fecal, dolor anorrectal y trastornos sensoriales", "corto": "Disinergia · incontinencia · dolor anal", "archivo": "b14_anorrectal.html"}
+      ]
+    },
+    {
+      "nombre": "Transversales",
+      "bloques": [
+        {"id": "b15", "num": 15, "titulo": "Dolor centralmente mediado, migraña abdominal, intestino narcótico y neuromoduladores", "corto": "Dolor central · neuromoduladores", "archivo": "b15_dolor_neuromod.html"},
+        {"id": "b16", "num": 16, "titulo": "Laboratorio de neurogastroenterología: qué pedir, cómo prepararlo y cómo leerlo", "corto": "Laboratorio funcional", "archivo": "b16_laboratorio.html"}
+      ]
+    }
+  ]
+}
