@@ -1,14 +1,14 @@
 /**
- * Quiz Hepatología 2026 · conexión con Google Sheets (Apps Script)
- * Hoja: "Quiz Hepatología 2026 · Progreso" (independiente del quiz de EII)
+ * Quiz Neurogastroenterología 2026 · conexión con Google Sheets (Apps Script)
+ * Hoja: "Quiz Neurogastroenterología 2026 · Progreso" (independiente de los quizzes de hepatología y EII)
  *
  * GET  ?action=load&quizId=…&token=…   → {ok:true, estado:{…}|null}
  * POST {token, action:"save", quizId, estado, respuestas:[…]} → {ok:true}
  *
  * Instrucciones en INSTRUCCIONES.md (misma carpeta).
  */
-const SHEET_ID = '1jjXQ4fYkFmnXrcsOX_vUJsEZd2VfthEUTMvnIKEaQ_g';
-const TOKEN = 'hepato-2026';          // debe coincidir con la clave configurada en el quiz
+const SHEET_ID = '1Ack_ldPRZ5gHNLUHOunpiTTaEB2bm7mjaURmuWTZZsE';
+const TOKEN = 'neuro-2026';           // debe coincidir con la clave configurada en el quiz
 const TROZO = 45000;                  // caracteres por celda (límite de Sheets: 50.000)
 
 function hoja_(nombre, encabezados) {
@@ -56,10 +56,10 @@ function doGet(e) {
   const p = (e && e.parameter) || {};
   if (p.token !== TOKEN) return salida_({ ok: false, error: 'token inválido' });
   if (p.action === 'load') {
-    try { return salida_({ ok: true, estado: leerEstado_(p.quizId || 'quizHepato_2026') }); }
+    try { return salida_({ ok: true, estado: leerEstado_(p.quizId || 'quizNeuro_2026') }); }
     catch (err) { return salida_({ ok: false, error: String(err) }); }
   }
-  return salida_({ ok: true, info: 'Quiz Hepatología 2026' });
+  return salida_({ ok: true, info: 'Quiz Neurogastroenterología 2026' });
 }
 
 function doPost(e) {
@@ -70,7 +70,7 @@ function doPost(e) {
   const lock = LockService.getScriptLock();
   lock.waitLock(20000);
   try {
-    guardarEstado_(d.quizId || 'quizHepato_2026', d.estado);
+    guardarEstado_(d.quizId || 'quizNeuro_2026', d.estado);
     const rs = d.respuestas || [];
     if (rs.length) {
       const sh = hoja_('respuestas', ['fecha', 'quizId', 'preguntaId', 'tema', 'elegida', 'correcta', 'acierto']);
@@ -85,4 +85,22 @@ function doPost(e) {
   } finally {
     lock.releaseLock();
   }
+}
+
+/**
+ * Ejecutar una vez desde el editor (▶ prepararHoja) para crear las pestañas y un resumen por tema.
+ * No es obligatorio: «estado» y «respuestas» también se crean solas con la primera sincronización.
+ */
+function prepararHoja() {
+  hoja_('estado', ['quizId', 'actualizado', 'json']);
+  hoja_('respuestas', ['fecha', 'quizId', 'preguntaId', 'tema', 'elegida', 'correcta', 'acierto']);
+  const ss = SpreadsheetApp.openById(SHEET_ID);
+  let r = ss.getSheetByName('resumen');
+  if (!r) r = ss.insertSheet('resumen');
+  r.clear();
+  r.getRange('A1').setFormula('=IFERROR(QUERY(respuestas!A:G,"select D, count(G), sum(G), avg(G) where B = \'quizNeuro_2026\' and D is not null group by D order by avg(G) label D \'Tema\', count(G) \'Respuestas\', sum(G) \'Aciertos\', avg(G) \'% acierto\'",1),"Sin respuestas todavía")');
+  r.getRange('D:D').setNumberFormat('0%');
+  r.setFrozenRows(1);
+  const s1 = ss.getSheetByName('Hoja 1') || ss.getSheetByName('Sheet1');
+  if (s1 && ss.getSheets().length > 1) ss.deleteSheet(s1);
 }

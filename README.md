@@ -36,7 +36,7 @@ Al publicar cambios, subir la versión de `CACHE` en `sw.js` para que los dispos
 
 ## Quiz y Google Sheets
 
-El progreso se guarda en el navegador. La sincronización usa la misma implementación de Apps Script del quiz de hepatología con un identificador propio (`quizNeuro_2026`), de modo que el progreso de ambos quizzes queda separado en la misma hoja. Para usar una hoja independiente, ver `fuentes/quiz/INSTRUCCIONES.md`.
+El progreso se guarda en el navegador y se sincroniza con una hoja propia (*Quiz Neurogastroenterología 2026 · Progreso*) mediante el Apps Script de `fuentes/quiz/Code.gs`. Pasos de activación en `fuentes/quiz/INSTRUCCIONES.md`.
 
 ## Fuentes y alcance
 

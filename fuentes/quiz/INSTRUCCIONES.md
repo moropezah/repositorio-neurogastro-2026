@@ -1,25 +1,32 @@
 # Quiz Neurogastroenterología 2026 · conexión con Google Sheets
 
-El progreso se guarda siempre en el navegador. Para sincronizarlo entre dispositivos, este quiz usa **la misma implementación de Apps Script que el quiz de hepatología** (`config.json`), con un identificador propio: `quizNeuro_2026`. El script guarda una fila por `quizId` en la hoja **estado** y agrega la columna `quizId` en **respuestas**, así que los dos quizzes no se mezclan.
+El progreso se guarda siempre en el navegador. Para sincronizarlo entre dispositivos se usa una hoja propia, separada de las de hepatología y EII:
 
-No hay que hacer nada para activarla: funciona desde que se publica.
+**Hoja:** [Quiz Neurogastroenterología 2026 · Progreso](https://docs.google.com/spreadsheets/d/1Ack_ldPRZ5gHNLUHOunpiTTaEB2bm7mjaURmuWTZZsE/edit)
 
-## Usar una hoja independiente (opcional)
+## Activar la conexión (una sola vez, ~3 minutos)
 
-1. Cree una hoja nueva en Google Sheets y copie su ID (lo que va entre `/d/` y `/edit` en la URL).
-2. **Extensiones → Apps Script**. Pegue el contenido de `fuentes/quiz/Code.gs`, cambie `SHEET_ID` por el de la hoja nueva y, si quiere, `TOKEN` por una clave propia (por ejemplo `neuro-2026`). Guarde.
-3. **Implementar → Nueva implementación** → tipo **Aplicación web**; ejecutar como **Yo**; acceso **Cualquier usuario**. Autorice y copie la URL que termina en `/exec`.
-4. Escriba la URL y la clave en `fuentes/quiz/config.json`:
+1. Abra la hoja → **Extensiones → Apps Script**.
+2. Borre el contenido de `Código.gs` y pegue el de `fuentes/quiz/Code.gs` (ya trae el ID de la hoja y la clave `neuro-2026`). Guarde.
+3. Opcional: elija la función **prepararHoja** en la barra superior y presione **▶ Ejecutar**. Crea las pestañas `estado`, `respuestas` y `resumen` (aciertos por tema, ordenados del más débil al más fuerte).
+4. **Implementar → Nueva implementación** → tipo **Aplicación web**.
+   - Ejecutar como: **Yo**.
+   - Quién tiene acceso: **Cualquier usuario**.
+5. Autorice los permisos (cuenta propia; si aparece «Google no verificó esta app», **Configuración avanzada → Ir a…**) y copie la **URL de la aplicación web** (termina en `/exec`).
+6. Escriba la URL en `fuentes/quiz/config.json` y ejecute `python3 fuentes/quiz/actualizar.py`:
 
 ```json
 {"api": "https://script.google.com/macros/s/…/exec", "token": "neuro-2026"}
 ```
 
-5. Ejecute `python3 fuentes/quiz/actualizar.py`.
+También puede configurarse sin regenerar: en el quiz → **Progreso** → **Conexión con Google Sheets** → pegar la URL y la clave → **Guardar y reconectar**.
 
-También puede configurarse sin regenerar: en el quiz → **Progreso** → **Conexión con Google Sheets**.
+Si cambia el código de `Code.gs`, use **Implementar → Gestionar implementaciones → editar → Nueva versión** para conservar la misma URL.
 
 ## Qué guarda
 
-- Hoja **estado**: el progreso completo (una fila por quiz, JSON partido en celdas de 45.000 caracteres).
-- Hoja **respuestas**: una fila por respuesta (fecha, quiz, pregunta, tema, opción elegida, correcta, acierto).
+- Pestaña **estado**: el progreso completo (una fila por quiz, JSON partido en celdas de 45.000 caracteres).
+- Pestaña **respuestas**: una fila por respuesta (fecha, quiz, pregunta, tema, opción elegida, correcta, acierto).
+- Pestaña **resumen**: total de respuestas, aciertos y porcentaje por tema.
+
+Si cambia la clave, cámbiela en `Code.gs` (`TOKEN`) y en `config.json`.
