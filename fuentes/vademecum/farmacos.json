@@ -1,255 +1,1689 @@
 {
-"grupos": [
- ["as", "Antisecretores y ERGE"],
- ["pro", "Procinéticos y antieméticos"],
- ["esp", "Antiespasmódicos y menta"],
- ["lax", "Constipación: osmóticos, estimulantes, procinéticos y secretagogos"],
- ["dia", "Diarrea, ácidos biliares y microbiota"],
- ["neu", "Neuromoduladores"],
- ["eoe", "Esofagitis eosinofílica"],
- ["otr", "Motilidad grave, crisis y procedimientos"]
-],
-"cobertura": {
- "bol": ["Disponible", "Comercializado en Chile; costo de bolsillo o según plan"],
- "hosp": ["Hospitalario", "Uso intrahospitalario o en procedimiento: arsenal del establecimiento"],
- "off": ["Fuera de ficha", "La indicación descrita no está en la ficha registrada: uso con respaldo de guías o ensayos"],
- "nd": ["Sin registro en Chile", "Sin comercialización conocida en Chile a octubre 2026 (verificar en ISP)"],
- "ver": ["Verificar disponibilidad", "Disponibilidad comercial en Chile no confirmada"]
-},
-"farmacos": [
-{"id":"omeprazol","n":"Omeprazol","g":"as","cl":"Inhibidor de la bomba de protones (IBP); bloqueo irreversible de la H⁺/K⁺-ATPasa activa.",
- "ind":"ERGE (esofagitis, ERGE no erosiva), prueba terapéutica en pirosis típica, dispepsia funcional tipo SDE, erradicación de <i>H. pylori</i>.",
- "lin":"1.ª línea en ERGE y SDE.",
- "dos":"20 mg/día 30–60 min antes del desayuno. Respuesta parcial: <b>20 mg antes de desayuno y cena</b> (o 40 mg c/12 h) por 8 semanas. Esofagitis LA C/D: dosis doble 8 semanas y control endoscópico.",
- "aj":"Sin ajuste renal. Metabolismo CYP2C19 (metabolizadores rápidos responden peor). Interacción con clopidogrel (preferir pantoprazol).",
- "resp":"Pirosis: 2–4 semanas; esofagitis: 8 semanas. Sin respuesta con dosis doble: estudiar (pH-impedancia), no seguir escalando.",
- "plan":[["4–8 semanas","Respuesta sintomática; si no hay ERGE probada y responde, intentar desescalar a la dosis mínima o a demanda"],["Esofagitis LA C/D","Endoscopía tras 8 semanas para documentar curación y descartar Barrett"],["Uso crónico","Revisar indicación en cada control; magnesio y B12 si hay factores de riesgo"]],
- "ea":"Cefalea, diarrea. Uso prolongado: hipomagnesemia, déficit de B12, mayor riesgo de <i>C. difficile</i>, colitis microscópica; el exceso de riesgo de fractura y demencia es de causalidad incierta.",
- "cob":["bol"],"ch":"Ampliamente disponible, también en el sistema público.","ev":"ACG 2022 ERGE · Lyon 2.0 (2024)"},
-{"id":"esomeprazol","n":"Esomeprazol","g":"as","cl":"IBP (S-enantiómero de omeprazol); potencia relativa ~1,6 veces omeprazol.",
- "ind":"ERGE, esofagitis, respuesta parcial a otro IBP.",
- "lin":"1.ª línea; alternativa al cambiar de IBP por respuesta parcial.",
- "dos":"40 mg/día antes del desayuno; dosis doble 40 mg c/12 h.","aj":"Sin ajuste renal. Insuficiencia hepática grave: máximo 20 mg/día.",
- "resp":"Igual que omeprazol.","mon":"Igual que omeprazol.","ea":"Igual que la clase.","cob":["bol"],"ch":"Disponible.","ev":"Kirchheiner 2009 (potencia relativa de IBP)"},
-{"id":"lansoprazol","n":"Lansoprazol","g":"as","cl":"IBP; potencia relativa ~0,9 omeprazol.",
- "ind":"ERGE, dispepsia, <i>H. pylori</i>.","lin":"1.ª línea.","dos":"30 mg/día antes del desayuno; dosis doble 30 mg c/12 h.","aj":"Sin ajuste renal.","resp":"Igual que omeprazol.","ea":"Igual que la clase; colitis microscópica descrita con mayor frecuencia.","cob":["bol"],"ch":"Disponible.","ev":"Kirchheiner 2009"},
-{"id":"pantoprazol","n":"Pantoprazol","g":"as","cl":"IBP; menor potencia (40 mg ≈ 9 mg de omeprazol) y menos interacciones por CYP2C19.",
- "ind":"ERGE, gastroprotección, usuarios de clopidogrel.","lin":"1.ª línea cuando importan las interacciones.","dos":"40 mg/día antes del desayuno; 40 mg c/12 h.","aj":"Sin ajuste renal.","resp":"Igual que omeprazol.","ea":"Igual que la clase.","cob":["bol"],"ch":"Disponible, también intravenoso.","ev":"Kirchheiner 2009"},
-{"id":"rabeprazol","n":"Rabeprazol","g":"as","cl":"IBP; mayor potencia relativa (~1,8 omeprazol) y menor dependencia de CYP2C19.",
- "ind":"ERGE, respuesta parcial a otros IBP.","lin":"1.ª línea o cambio de IBP.","dos":"20 mg/día; 20 mg c/12 h.","aj":"Sin ajuste renal.","resp":"Igual que omeprazol.","ea":"Igual que la clase.","cob":["bol"],"ch":"Disponible.","ev":"Kirchheiner 2009"},
-{"id":"tegoprazan","n":"Tegoprazán","g":"as","cl":"Bloqueador ácido competitivo de potasio (P-CAB): inhibición reversible, inicio rápido, independiente de la comida y de la activación de la bomba.",
- "ind":"Esofagitis erosiva, ERGE no erosiva, úlcera, <i>H. pylori</i> (en esquemas).","lin":"Alternativa al IBP; preferible en esofagitis grave (LA C/D), respuesta parcial al IBP o síntomas nocturnos.",
- "dos":"50 mg/día con o sin comida, 4–8 semanas (esofagitis); mantención 25 mg/día.","aj":"Sin ajuste en insuficiencia renal leve a moderada; precaución en grave.",
- "resp":"Control del pH en horas; curación de esofagitis en 4–8 semanas.","mon":"Igual que la clase antisecretora; hipergastrinemia mayor que con IBP (significado clínico incierto).",
- "ea":"Diarrea, cefalea; hipergastrinemia.","cob":["bol"],"ch":"Comercializado en Chile desde 2024.","ev":"Lyon 2.0 · ensayos de fase 3 en esofagitis erosiva (Corea)"},
-{"id":"vonoprazan","n":"Vonoprazán","g":"as","cl":"P-CAB.",
- "ind":"Esofagitis erosiva (sobre todo LA C/D), mantención, <i>H. pylori</i> (terapia dual con amoxicilina).","lin":"Superior a lansoprazol en curación de esofagitis grave.",
- "dos":"20 mg/día por 8 semanas; mantención 10 mg/día.","aj":"Sin ajuste habitual.","resp":"Curación a 8 semanas mayor que IBP en LA C/D.",
- "ea":"Diarrea, hipergastrinemia.","cob":["ver"],"ch":"Registro y comercialización en Chile por confirmar.","ev":"Laine, Gastroenterology 2023 (PHALCON-EE)"},
-{"id":"fexuprazan","n":"Fexuprazán","g":"as","cl":"P-CAB.","ind":"Esofagitis erosiva, gastritis.","lin":"Alternativa al IBP.","dos":"40 mg/día por 4–8 semanas.","aj":"Sin ajuste habitual.","resp":"No inferior a esomeprazol en curación de esofagitis.","ea":"Diarrea, cefalea.","cob":["ver"],"ch":"Registrado en Chile; verificar disponibilidad comercial.","ev":"Ensayos de fase 3 frente a esomeprazol (Corea)"},
-{"id":"famotidina","n":"Famotidina","g":"as","cl":"Antagonista del receptor H2.",
- "ind":"Síntomas nocturnos que persisten con IBP 2 veces al día; SDE (alternativa); ERGE leve.","lin":"Complemento nocturno o alternativa en SDE.",
- "dos":"20–40 mg en la noche.","aj":"ClCr &lt; 50: reducir 50 % (riesgo de confusión en adultos mayores).","resp":"Taquifilaxia en 2–4 semanas: usar a demanda o intermitente.",
- "ea":"Cefalea, confusión en adultos mayores con falla renal.","cob":["bol"],"ch":"Disponible (la ranitidina fue retirada).","ev":"ACG 2022 ERGE"},
-{"id":"alginato","n":"Alginato con antiácido","g":"as","cl":"Forma una balsa de gel sobre la bolsa ácida posprandial.",
- "ind":"Pirosis y regurgitación posprandial, ERGE no erosiva, complemento del IBP, síntomas nocturnos.","lin":"Complemento en cualquier escalón; a demanda en ERGE leve.",
- "dos":"10–20 mL después de las comidas y al acostarse.","aj":"Contenido de sodio: precaución en insuficiencia cardíaca o dieta hiposódica.","resp":"Inmediata (minutos).",
- "ea":"Sabor, distensión.","cob":["bol"],"ch":"Disponible en farmacias.","ev":"Lyon 2.0 · ACG 2022"},
-{"id":"baclofeno","n":"Baclofeno","g":"as","cl":"Agonista GABA-B: reduce las relajaciones transitorias del esfínter esofágico inferior.",
- "ind":"Regurgitación o reflujo no ácido persistente con IBP, eructo supragástrico, rumiación que no responde a respiración diafragmática.","lin":"Tercera línea; uso limitado por efectos centrales.",
- "dos":"5 mg c/8 h → 10 mg c/8 h (hasta 20 mg c/8 h).","aj":"Insuficiencia renal: reducir dosis (acumulación y encefalopatía). Retirar gradualmente (convulsiones, alucinaciones).",
- "resp":"1–2 semanas.","ea":"Somnolencia, mareo, confusión, constipación.","cob":["bol","off"],"ch":"Disponible; indicación digestiva fuera de ficha.","ev":"ACG 2022 ERGE · Roma V (rumiación)"},
-
-{"id":"metoclopramida","n":"Metoclopramida","g":"pro","cl":"Antagonista D2 (central y periférico) con agonismo 5-HT4.",
- "ind":"Gastroparesia, náuseas y vómitos.","lin":"1.ª línea en gastroparesia (AGA 2025, condicional); único aprobado por la FDA en gastroparesia.",
- "dos":"5–10 mg 3–4 veces al día, 30 min antes de comidas y al acostarse; <b>máximo 12 semanas</b>. Formulación líquida o intranasal si hay vómitos.",
- "aj":"ClCr &lt; 40: reducir 50 %. Adultos mayores: dosis menores.",
- "resp":"Días a 2 semanas.","plan":[["Inicio","Advertir de efectos extrapiramidales y discinesia tardía; registrar consentimiento"],["4 semanas","Evaluar respuesta; suspender si no hay beneficio"],["12 semanas","Suspender o documentar justificación y vigilancia de movimientos anormales"]],
- "ea":"Discinesia tardía (advertencia de caja negra de la FDA), distonía aguda, acatisia, hiperprolactinemia, somnolencia, prolongación del QT.",
- "cob":["bol"],"ch":"Disponible oral y parenteral.","ev":"AGA 2025 gastroparesia · ACG 2022 gastroparesia"},
-{"id":"domperidona","n":"Domperidona","g":"pro","cl":"Antagonista D2 periférico (no cruza la barrera hematoencefálica).",
- "ind":"SDP, gastroparesia, náuseas.","lin":"1.ª línea en SDP (Roma V); AGA 2025 no la recomienda de rutina en primera línea en gastroparesia.",
- "dos":"10 mg c/8 h antes de comidas; <b>máximo 30 mg/día</b>.","aj":"Insuficiencia hepática moderada o grave: evitar. Evitar con inhibidores potentes de CYP3A4 y otros fármacos que prolongan el QT.",
- "resp":"1–4 semanas.","plan":[["Basal","ECG (QTc) si hay cardiopatía, &gt; 60 años, electrolitos alterados o fármacos que prolongan el QT"],["4–8 semanas","Evaluar respuesta; suspender si no hay beneficio"]],
- "ea":"Prolongación del QT y arritmia ventricular, hiperprolactinemia (galactorrea, ginecomastia).","cob":["bol"],"ch":"Disponible.","ev":"Roma V dispepsia · AGA 2025 gastroparesia"},
-{"id":"levosulpirida","n":"Levosulpirida","g":"pro","cl":"Antagonista D2 con agonismo parcial 5-HT4.","ind":"SDP, gastroparesia leve.","lin":"Procinético alternativo en SDP.",
- "dos":"25 mg c/8 h antes de comidas, 4–8 semanas.","aj":"Insuficiencia renal: reducir dosis.","resp":"2–4 semanas.",
- "ea":"Hiperprolactinemia (galactorrea, amenorrea), extrapiramidales, somnolencia.","cob":["bol"],"ch":"Disponible.","ev":"Roma V dispepsia"},
-{"id":"cinitaprida","n":"Cinitaprida","g":"pro","cl":"Agonista 5-HT4 y antagonista 5-HT2 y D2 débil.","ind":"SDP, dispepsia con plenitud.","lin":"Procinético alternativo en SDP.",
- "dos":"1 mg c/8 h, 15 min antes de comidas.","aj":"—","resp":"2–4 semanas.","ea":"Somnolencia, extrapiramidales (raros).","cob":["bol"],"ch":"Disponible.","ev":"Roma V dispepsia"},
-{"id":"eritromicina","n":"Eritromicina","g":"pro","cl":"Macrólido agonista del receptor de motilina: induce contracciones antrales de fase III.",
- "ind":"Gastroparesia (exacerbación o crónica), preparación antes de endoscopía en hemorragia alta.","lin":"AGA 2025: condicional a favor en gastroparesia.",
- "dos":"Oral 125–250 mg c/8 h antes de comidas; IV 3 mg/kg c/8 h en la crisis.","aj":"Interacciones por CYP3A4 (estatinas, anticoagulantes, antiarrítmicos).",
- "resp":"Inmediata; <b>taquifilaxia</b> en 1–4 semanas: usar en ciclos con descansos.","ea":"Prolongación del QT, náuseas y cólico (dosis altas), resistencia bacteriana.","cob":["bol","off"],"ch":"Disponible; uso procinético fuera de ficha.","ev":"AGA 2025 gastroparesia"},
-{"id":"ondansetron","n":"Ondansetrón","g":"pro","cl":"Antagonista 5-HT3.",
- "ind":"Náuseas y vómitos; aborto del episodio de vómitos cíclicos; SII-D (enlentece el tránsito y reduce la urgencia).","lin":"Antiemético de 1.ª línea; SII-D de segunda línea.",
- "dos":"Náuseas: 4–8 mg c/8 h (oral u orodispersable). SII-D: 4 mg/día titulado hasta 8 mg c/8 h según deposiciones.","aj":"Insuficiencia hepática grave: máximo 8 mg/día.",
- "resp":"Náuseas: horas. SII-D: 1–2 semanas.","ea":"Constipación, cefalea, prolongación del QT (dosis altas IV).","cob":["bol","off"],"ch":"Disponible; en SII-D fuera de ficha.","ev":"Garsed, Gut 2014 (SII-D) · Venkatesan, Neurogastroenterol Motil 2019 (ANMS-CVSA, vómitos cíclicos)"},
-{"id":"aprepitant","n":"Aprepitant","g":"pro","cl":"Antagonista del receptor NK1.","ind":"Vómitos cíclicos refractarios (aborto y profilaxis), náuseas de gastroparesia en refractarios.","lin":"Segunda línea; AGA 2025 no lo recomienda de rutina en gastroparesia.",
- "dos":"Aborto del episodio: 125 mg al inicio, luego 80 mg/día por 2 días.","aj":"Interacciones por CYP3A4 (anticonceptivos, warfarina).","resp":"Horas.","ea":"Fatiga, hipo.","cob":["bol","off"],"ch":"Disponible (oncología); uso en vómitos cíclicos fuera de ficha.","ev":"Venkatesan, Neurogastroenterol Motil 2019 (ANMS-CVSA, vómitos cíclicos)"},
-{"id":"sumatriptan","n":"Sumatriptán","g":"pro","cl":"Agonista 5-HT1B/1D.","ind":"Aborto de episodios de vómitos cíclicos o migraña abdominal.","lin":"1.ª línea abortiva junto con ondansetrón y sedación.",
- "dos":"20 mg intranasal o 6 mg subcutáneo al inicio del pródromo; puede repetirse una vez.","aj":"Contraindicado en cardiopatía isquémica, HTA no controlada.","resp":"Minutos a horas; mayor efecto si se da en el pródromo.",
- "ea":"Opresión torácica, parestesias.","cob":["bol","off"],"ch":"Disponible (formulaciones según farmacia); uso digestivo fuera de ficha.","ev":"Venkatesan, Neurogastroenterol Motil 2019 (ANMS-CVSA, vómitos cíclicos)"},
-{"id":"haloperidol","n":"Haloperidol","g":"pro","cl":"Antagonista D2.","ind":"Hiperémesis por cannabinoides en urgencia; náuseas refractarias.","lin":"Superior a ondansetrón en hiperémesis por cannabinoides (HaVOC).",
- "dos":"0,05–0,1 mg/kg IV (HaVOC); habitual 2,5–5 mg IV o IM.","aj":"Adultos mayores: menor dosis.","resp":"Minutos a horas.","ea":"Prolongación del QT, distonía aguda, acatisia.","cob":["hosp","off"],"ch":"Disponible en urgencias.","ev":"Ruberto, Ann Emerg Med 2021 (HaVOC)"},
-{"id":"capsaicina","n":"Capsaicina tópica","g":"pro","cl":"Agonista TRPV1 (receptor también activado por el calor).","ind":"Hiperémesis por cannabinoides.","lin":"Complemento en urgencia.",
- "dos":"Crema 0,075 % en abdomen o espalda.","aj":"No en mucosas ni piel lesionada.","resp":"Minutos.","ea":"Ardor cutáneo.","cob":["ver","off"],"ch":"Verificar formulación disponible.","ev":"Actualización de práctica clínica de la AGA sobre hiperémesis por cannabinoides"},
-
-{"id":"pinaverio","n":"Bromuro de pinaverio","g":"esp","cl":"Antiespasmódico: bloqueador de canales de calcio de acción intestinal.",
- "ind":"Dolor y cólico del SII.","lin":"1.ª línea para dolor en SII.","dos":"50–100 mg c/8 h con comida (máximo 300 mg/día).","aj":"Tragar con agua, sentado (riesgo de esofagitis).",
- "resp":"1–4 semanas.","ea":"Epigastralgia, constipación leve.","cob":["bol"],"ch":"Disponible.","ev":"Metaanálisis de antiespasmódicos en SII · Roma V"},
-{"id":"trimebutina","n":"Trimebutina","g":"esp","cl":"Agonista opioide periférico (μ, κ, δ) modulador de la motilidad.","ind":"Dolor del SII, dispepsia.","lin":"Alternativa antiespasmódica.",
- "dos":"100–200 mg c/8 h antes de comidas.","aj":"—","resp":"1–4 semanas.","ea":"Sequedad bucal, somnolencia leve.","cob":["bol"],"ch":"Disponible.","ev":"Roma V"},
-{"id":"otilonio","n":"Bromuro de otilonio","g":"esp","cl":"Antiespasmódico de amonio cuaternario (bloqueo de calcio y muscarínico local).","ind":"Dolor del SII.","lin":"Alternativa antiespasmódica.",
- "dos":"40 mg c/8–12 h.","aj":"Absorción sistémica mínima.","resp":"1–4 semanas.","ea":"Escasos.","cob":["ver"],"ch":"Verificar disponibilidad.","ev":"Clavé, APT 2011 (OBIS)"},
-{"id":"hioscina","n":"Butilbromuro de hioscina","g":"esp","cl":"Antimuscarínico de amonio cuaternario.","ind":"Cólico abdominal episódico; a demanda en SII.","lin":"Rescate.",
- "dos":"10–20 mg c/6–8 h a demanda.","aj":"Evitar en glaucoma de ángulo cerrado, retención urinaria, megacolon.","resp":"Minutos a horas.","ea":"Sequedad bucal, taquicardia, retención urinaria, constipación.","cob":["bol"],"ch":"Disponible.","ev":"ACG 2021 SII"},
-{"id":"menta","n":"Aceite de menta (cápsulas entéricas)","g":"esp","cl":"Bloqueo de canales de calcio del músculo liso; agonista TRPM8.",
- "ind":"Dolor global del SII; SDP (combinado con alcaravea).","lin":"ACG 2021: condicional a favor en SII.",
- "dos":"180–225 mg c/8 h, 30 min antes de comidas.","aj":"Puede empeorar la pirosis si se libera en el estómago.","resp":"2–4 semanas.","ea":"Pirosis, olor a menta.","cob":["ver"],"ch":"Verificar formulación con cubierta entérica.","ev":"ACG 2021 SII · Weerts, Gastroenterology 2020 (PERSUADE)"},
-
-{"id":"psyllium","n":"Psyllium (ispágula)","g":"lax","cl":"Fibra soluble formadora de gel, poco fermentable.",
- "ind":"Constipación crónica, SII (todos los subtipos), regularizar consistencia en incontinencia fecal.","lin":"Base del tratamiento; ACG 2021 fuerte en SII.",
- "dos":"3,5 g/día → hasta 10–20 g/día, aumentando cada 1–2 semanas, con agua abundante.","aj":"Evitar en sospecha de obstrucción o en tránsito lento grave y disinergia (empeora la distensión).",
- "resp":"2–4 semanas.","ea":"Distensión y flatulencia iniciales.","cob":["bol"],"ch":"Disponible.","ev":"ACG 2021 SII · AGA-ACG 2023 constipación"},
-{"id":"peg","n":"Polietilenglicol 3350","g":"lax","cl":"Laxante osmótico no absorbible ni fermentable.",
- "ind":"Constipación crónica, SII-C (mejora frecuencia, no dolor), impactación fecal.","lin":"AGA-ACG 2023: <b>fuerte</b>, 1.ª línea farmacológica.",
- "dos":"17 g/día (8,5–34 g) en 250 mL de líquido; desimpactación: dosis altas por 3 días.","aj":"Seguro en adultos mayores y ERC.","resp":"1–3 días.",
- "plan":[["2–4 semanas","Ajustar a 1 deposición blanda diaria (Bristol 4)"],["Sin respuesta a dosis máxima","Agregar estimulante; si hay síntomas evacuatorios, manometría anorrectal y test de balón"]],
- "ea":"Distensión, diarrea con dosis altas.","cob":["bol"],"ch":"Disponible en farmacias.","ev":"Chang, Gastroenterology/AJG 2023 (AGA-ACG)"},
-{"id":"lactulosa","n":"Lactulosa","g":"lax","cl":"Disacárido osmótico fermentable.","ind":"Constipación crónica cuando no se dispone de otro osmótico.","lin":"AGA-ACG 2023: condicional (si fallan los de venta libre).",
- "dos":"15–30 mL/día (hasta 60 mL).","aj":"—","resp":"1–2 días.","ea":"Distensión y flatulencia (más que PEG).","cob":["bol"],"ch":"Disponible.","ev":"AGA-ACG 2023"},
-{"id":"bisacodilo","n":"Bisacodilo","g":"lax","cl":"Laxante estimulante (difenilmetano): secreción y contracciones propagadas de alta amplitud.",
- "ind":"Constipación crónica, rescate, constipación por opioides.","lin":"AGA-ACG 2023: <b>fuerte</b> (corto plazo, 4 semanas); seguro a largo plazo en la práctica.",
- "dos":"5–10 mg en la noche (efecto en 6–12 h); supositorio 10 mg (15–60 min).","aj":"—","resp":"6–12 h.","ea":"Cólico, diarrea, hipopotasemia con abuso. El «colon catártico» no se ha demostrado con los estimulantes actuales.","cob":["bol"],"ch":"Disponible.","ev":"AGA-ACG 2023"},
-{"id":"picosulfato","n":"Picosulfato de sodio","g":"lax","cl":"Laxante estimulante (difenilmetano) activado por la microbiota colónica.","ind":"Constipación crónica.","lin":"AGA-ACG 2023: <b>fuerte</b> (corto plazo).",
- "dos":"5–10 mg (gotas o comprimidos) en la noche.","aj":"—","resp":"6–12 h.","ea":"Cólico, diarrea.","cob":["bol"],"ch":"Disponible.","ev":"AGA-ACG 2023"},
-{"id":"sena","n":"Senósidos","g":"lax","cl":"Laxante estimulante antraquinónico.","ind":"Constipación crónica.","lin":"AGA-ACG 2023: condicional.","dos":"8,6–17,2 mg en la noche.","aj":"—","resp":"6–12 h.","ea":"Cólico, melanosis coli (benigna).","cob":["bol"],"ch":"Disponible.","ev":"AGA-ACG 2023"},
-{"id":"magnesio","n":"Sales de magnesio (óxido o hidróxido)","g":"lax","cl":"Laxante osmótico salino.","ind":"Constipación crónica.","lin":"AGA-ACG 2023: condicional.",
- "dos":"Óxido de magnesio 0,5–1,5 g/día; leche de magnesia 15–30 mL/día.","aj":"<b>Evitar en ERC</b> (hipermagnesemia) y adultos mayores frágiles.","resp":"Horas a 1 día.","ea":"Hipermagnesemia, diarrea.","cob":["bol"],"ch":"Disponible.","ev":"AGA-ACG 2023"},
-{"id":"prucaloprida","n":"Prucaloprida","g":"lax","cl":"Agonista 5-HT4 de alta selectividad (sin afinidad por hERG ni 5-HT1B).",
- "ind":"Constipación crónica refractaria a laxantes; uso prometedor en CIPO y gastroparesia.","lin":"AGA-ACG 2023: <b>fuerte</b>. En Chile, el siguiente escalón real tras osmóticos y estimulantes.",
- "dos":"2 mg/día; <b>1 mg/día en &gt; 65 años</b> o ClCr &lt; 30.","aj":"Insuficiencia hepática grave: 1 mg.",
- "resp":"Primera semana; si no hay respuesta a las 4 semanas, reconsiderar.",
- "plan":[["Día 1–3","Cefalea y cólico suelen ceder en pocos días; tomar en la mañana"],["4 semanas","Sin aumento de deposiciones completas espontáneas: suspender y estudiar evacuación"]],
- "ea":"Cefalea, náuseas, cólico, diarrea; ideación suicida descrita (rara).","cob":["bol"],"ch":"Disponible.","ev":"AGA-ACG 2023"},
-{"id":"linaclotida","n":"Linaclotida","g":"lax","cl":"Agonista de guanilato ciclasa C: secreción de cloro y bicarbonato y reducción de la nocicepción.",
- "ind":"Constipación crónica, SII-C.","lin":"AGA-ACG 2023 y AGA 2022 SII-C: <b>fuerte</b>.",
- "dos":"Constipación crónica 72–145 µg/día; SII-C 290 µg/día, 30 min antes del desayuno.","aj":"Contraindicada en menores de 2 años.","resp":"Frecuencia en 1 semana; dolor en 6–8 semanas.",
- "ea":"Diarrea (16–20 %).","cob":["nd"],"ch":"No disponible en Chile (Curso de Neurogastroenterología 2025).","ev":"AGA-ACG 2023 · AGA 2022 SII-C"},
-{"id":"lubiprostona","n":"Lubiprostona","g":"lax","cl":"Activador de canales de cloro ClC-2.","ind":"Constipación crónica, SII-C en mujeres, constipación por opioides.","lin":"AGA-ACG 2023: condicional.",
- "dos":"Constipación crónica 24 µg c/12 h; SII-C 8 µg c/12 h, con comida.","aj":"Insuficiencia hepática: reducir.","resp":"1 semana.",
- "ea":"Náuseas (hasta 32 %; tomar con comida), disnea transitoria.","cob":["nd"],"ch":"No disponible en Chile (Curso de Neurogastroenterología 2025).","ev":"AGA-ACG 2023"},
-{"id":"tenapanor","n":"Tenapanor","g":"lax","cl":"Inhibidor del intercambiador NHE3: retiene sodio y agua en el lumen.","ind":"SII-C.","lin":"AGA 2022 SII-C: condicional.",
- "dos":"50 mg c/12 h antes de comidas.","aj":"—","resp":"1–4 semanas.","ea":"Diarrea.","cob":["nd"],"ch":"Sin registro en Chile.","ev":"AGA 2022 SII-C"},
-{"id":"naloxegol","n":"Naloxegol","g":"lax","cl":"Antagonista periférico de receptores μ (PAMORA).","ind":"Constipación inducida por opioides refractaria a laxantes.","lin":"Tras laxantes convencionales.",
- "dos":"25 mg/día en ayunas (12,5 mg si no se tolera, con inhibidores moderados de CYP3A4 o ClCr &lt; 60).","aj":"Contraindicado en obstrucción intestinal y con inhibidores potentes de CYP3A4.","resp":"Horas a días.","ea":"Dolor abdominal, diarrea, síntomas de abstinencia (raros).","cob":["ver"],"ch":"Verificar disponibilidad.","ev":"AGA 2019 constipación por opioides"},
-{"id":"metilnaltrexona","n":"Metilnaltrexona","g":"lax","cl":"PAMORA.","ind":"Constipación inducida por opioides.","lin":"Tras laxantes; útil en hospitalizados y cuidados paliativos.",
- "dos":"12 mg subcutáneo día por medio (o 450 mg oral/día).","aj":"ClCr &lt; 30: reducir 50 %. Contraindicado en obstrucción.","resp":"Minutos a horas (subcutáneo).","ea":"Dolor abdominal, perforación (rara).","cob":["ver"],"ch":"Verificar disponibilidad.","ev":"AGA 2019 constipación por opioides"},
-
-{"id":"loperamida","n":"Loperamida","g":"dia","cl":"Agonista μ periférico: enlentece el tránsito y aumenta el tono del esfínter anal.",
- "ind":"SII-D, diarrea funcional, incontinencia fecal con deposiciones blandas.","lin":"1.ª línea sintomática; no mejora el dolor.",
- "dos":"2 mg antes de comidas o de salir (preventivo); máximo 16 mg/día.","aj":"—","resp":"Horas.",
- "ea":"Constipación, distensión; arritmias (QT) en sobredosis.","cob":["bol"],"ch":"Disponible.","ev":"ACG 2021 SII · AGA 2022 SII-D"},
-{"id":"colestiramina","n":"Colestiramina","g":"dia","cl":"Resina secuestradora de ácidos biliares.",
- "ind":"Malabsorción de ácidos biliares (diagnóstico terapéutico), diarrea poscolecistectomía, colitis microscópica leve.","lin":"1.ª línea en malabsorción de ácidos biliares.",
- "dos":"4 g 1–3 veces al día; iniciar con 2–4 g/día y titular.","aj":"Separar otros fármacos (tomarlos 1 h antes o 4–6 h después): levotiroxina, warfarina, anticonceptivos, digoxina.","resp":"Días; la respuesta apoya el diagnóstico.",
- "ea":"Mal sabor, distensión, constipación, malabsorción de vitaminas liposolubles, hipertrigliceridemia.","cob":["bol"],"ch":"Disponible.","ev":"BSG 2018 diarrea crónica (Arasaradnam, Gut 2018) · AGA 2022 SII-D"},
-{"id":"colesevelam","n":"Colesevelam","g":"dia","cl":"Secuestrador de ácidos biliares de segunda generación.","ind":"Malabsorción de ácidos biliares con intolerancia a colestiramina.","lin":"Alternativa mejor tolerada.",
- "dos":"1.875 mg c/12 h (3 comprimidos de 625 mg).","aj":"Menos interacciones que colestiramina.","resp":"Días.","ea":"Constipación, distensión.","cob":["ver","off"],"ch":"Verificar disponibilidad.","ev":"BSG 2018"},
-{"id":"budesonida","n":"Budesonida oral (liberación ileal o colónica)","g":"dia","cl":"Corticoide con alto metabolismo de primer paso hepático.",
- "ind":"Colitis microscópica.","lin":"1.ª línea de inducción (AGA 2016, UEG/EMCG 2021).",
- "dos":"<b>9 mg/día por 8 semanas</b>; recaída frecuente: mantención 6 mg/día (o mínima eficaz).","aj":"Evitar con inhibidores potentes de CYP3A4. Cirrosis: mayor exposición sistémica.",
- "resp":"1–2 semanas; remisión 80 %.","plan":[["2–4 semanas","Respuesta clínica"],["8 semanas","Suspender (con o sin descenso); recaída en ~60–80 %"],["Mantención","Densitometría y calcio/vitamina D si es prolongada"]],
- "ea":"Efectos corticoides leves; osteoporosis con uso prolongado.","cob":["ver"],"ch":"Verificar presentación (cápsulas de liberación ileal).","ev":"AGA 2016 · Miehlke, UEG J 2021"},
-{"id":"rifaximina","n":"Rifaximina","g":"dia","cl":"Antibiótico no absorbible (rifamicina).",
- "ind":"SII-D y SII sin constipación con distensión, SIBO, IMO (con neomicina).","lin":"ACG 2021 y AGA 2022: condicional en SII-D.",
- "dos":"SII-D y SIBO: 550 mg c/8 h por 14 días; retratamiento hasta 2 veces si recae. En Chile la presentación registrada es de 200 mg: <b>400 mg c/8 h por 14 días</b>.","aj":"Sin ajuste.",
- "resp":"Durante el curso; respuesta en SII-D ~40 % frente a ~30 % (TARGET).",
- "plan":[["Fin del curso","Evaluar dolor, distensión y consistencia"],["Recaída","Repetir el curso (TARGET 3); hasta 2 retratamientos"]],
- "ea":"Bien tolerada; náuseas. Riesgo de <i>C. difficile</i> muy bajo.","cob":["bol","off"],"ch":"Disponible (200 mg); costo de bolsillo alto. En SII y SIBO, fuera de ficha.","ev":"Pimentel, NEJM 2011 (TARGET 1 y 2) · ACG 2021"},
-{"id":"bismuto","n":"Subsalicilato de bismuto","g":"dia","cl":"Antisecretor, antimicrobiano y antiinflamatorio local.","ind":"Colitis microscópica leve, diarrea aguda.","lin":"Alternativa en colitis microscópica.",
- "dos":"Colitis microscópica: 524 mg (2 comprimidos de 262 mg) c/8 h por 8 semanas.","aj":"Evitar en alergia a salicilatos, ERC y anticoagulación.","resp":"2–4 semanas.","ea":"Lengua y deposiciones negras, tinnitus (salicilatos).","cob":["bol","off"],"ch":"Disponible.","ev":"AGA 2016 colitis microscópica"},
-{"id":"eluxadolina","n":"Eluxadolina","g":"dia","cl":"Agonista μ y κ, antagonista δ.","ind":"SII-D.","lin":"AGA 2022 SII-D: condicional.",
- "dos":"100 mg c/12 h.","aj":"<b>Contraindicada sin vesícula</b>, con alcohol &gt; 3 tragos/día, pancreatitis o disfunción del esfínter de Oddi.","resp":"1–4 semanas.","ea":"Constipación, pancreatitis.","cob":["nd"],"ch":"Sin registro en Chile.","ev":"AGA 2022 SII-D"},
-{"id":"alosetron","n":"Alosetrón","g":"dia","cl":"Antagonista 5-HT3 potente.","ind":"SII-D grave en mujeres.","lin":"AGA 2022: condicional; programa de restricción.",
- "dos":"0,5–1 mg c/12 h.","aj":"—","resp":"1–4 semanas.","ea":"Constipación grave, colitis isquémica.","cob":["nd"],"ch":"Sin registro en Chile.","ev":"AGA 2022 SII-D"},
-
-{"id":"amitriptilina","n":"Amitriptilina","g":"neu","cl":"Antidepresivo tricíclico (ATC): inhibición de recaptación de serotonina y noradrenalina, anticolinérgico y antihistamínico.",
- "ind":"Dolor del SII (sobre todo SII-D), SDE, CAPS, vómitos cíclicos (profilaxis), pirosis funcional.","lin":"1.ª línea neuromoduladora para dolor; ACG 2021 y Roma V fuerte en SII.",
- "dos":"10 mg en la noche → titular cada 1–2 semanas a 25–50 mg (ATLANTIS: 10–30 mg). Vómitos cíclicos: hasta 75–100 mg o 1 mg/kg.","aj":"Adultos mayores: preferir nortriptilina. Precaución con QT, glaucoma, prostatismo.",
- "resp":"Sueño en días; dolor en 4–8 semanas.",
- "plan":[["Inicio","Explicar que se usa como neuromodulador; advertir sequedad y somnolencia"],["2–4 semanas","Tolerancia; subir dosis"],["8–12 semanas","Evaluar respuesta; si responde, mantener 6–12 meses y retirar lento"],["Basal si hay riesgo","ECG (QTc) en cardiopatía o &gt; 50 años con dosis ≥ 50 mg"]],
- "ea":"Sequedad, somnolencia, constipación, aumento de peso, hipotensión ortostática, QT; letal en sobredosis.","cob":["bol","off"],"ch":"Disponible; indicación digestiva fuera de ficha.","ev":"Ford, Lancet 2023 (ATLANTIS) · Drossman 2018 (neuromoduladores)"},
-{"id":"imipramina","n":"Imipramina","g":"neu","cl":"ATC (amina terciaria).","ind":"Dolor del SII, dolor torácico funcional, hipersensibilidad visceral.","lin":"Alternativa a amitriptilina.",
- "dos":"10–25 mg en la noche → 50 mg.","aj":"Igual que la clase.","resp":"4–8 semanas.","ea":"Igual que la clase.","cob":["bol","off"],"ch":"Disponible.","ev":"Drossman 2018"},
-{"id":"nortriptilina","n":"Nortriptilina","g":"neu","cl":"ATC (amina secundaria): menos anticolinérgico y sedante.","ind":"Dolor del SII y CAPS en adultos mayores o con intolerancia a amitriptilina.","lin":"Alternativa preferida en adultos mayores.",
- "dos":"10 mg en la noche → 25–50 mg.","aj":"—","resp":"4–8 semanas.","ea":"Menos que amitriptilina.","cob":["ver","off"],"ch":"Verificar disponibilidad.","ev":"Drossman 2018"},
-{"id":"escitalopram","n":"Escitalopram","g":"neu","cl":"Inhibidor selectivo de la recaptación de serotonina (ISRS).",
- "ind":"Hipervigilancia y ansiedad asociadas a TICI, SII-C con dolor, hipersensibilidad esofágica.","lin":"Neuromodulador cuando predomina la ansiedad o hay constipación.",
- "dos":"5 mg → 10 mg/día (máximo 20 mg).","aj":"&gt; 65 años: máximo 10 mg. QT dependiente de dosis.","resp":"4–6 semanas (ansiedad primero).","ea":"Náuseas iniciales, diarrea, disfunción sexual, hiponatremia en adultos mayores, sangrado con AINE.","cob":["bol","off"],"ch":"Disponible.","ev":"Drossman 2018 · Roma V"},
-{"id":"sertralina","n":"Sertralina","g":"neu","cl":"ISRS.","ind":"Ansiedad o depresión asociada a TICI; dolor torácico funcional.","lin":"Alternativa ISRS.","dos":"25 mg → 50–100 mg/día.","aj":"—","resp":"4–6 semanas.","ea":"Diarrea (mayor que otros ISRS), náuseas.","cob":["bol","off"],"ch":"Disponible.","ev":"Drossman 2018"},
-{"id":"duloxetina","n":"Duloxetina","g":"neu","cl":"Inhibidor de la recaptación de serotonina y noradrenalina (IRSN).",
- "ind":"Dolor abdominal crónico con fibromialgia, dolor somático o ansiedad; CAPS; SII-C con dolor.","lin":"Neuromodulador de dolor cuando un ATC no se tolera o constipa.",
- "dos":"30 mg/día → 60 mg/día tras 1–2 semanas.","aj":"Evitar en hepatopatía y ClCr &lt; 30. Retiro gradual.","resp":"2–8 semanas.",
- "plan":[["1–2 semanas","Náuseas iniciales (tomar con comida); subir a 60 mg"],["8 semanas","Evaluar dolor y función"]],
- "ea":"Náuseas, sudoración, insomnio, HTA leve, hepatotoxicidad (rara).","cob":["bol","off"],"ch":"Disponible.","ev":"Drossman 2018 · Roma V"},
-{"id":"venlafaxina","n":"Venlafaxina","g":"neu","cl":"IRSN (noradrenérgico a dosis &gt; 150 mg).","ind":"Dolor con ansiedad; dispepsia (datos mixtos).","lin":"Alternativa a duloxetina.","dos":"37,5 mg → 75–150 mg/día (liberación prolongada).","aj":"Insuficiencia renal o hepática: reducir.","resp":"4–8 semanas.","ea":"Náuseas, HTA, síndrome de retiro marcado.","cob":["bol","off"],"ch":"Disponible.","ev":"Drossman 2018"},
-{"id":"mirtazapina","n":"Mirtazapina","g":"neu","cl":"Antidepresivo noradrenérgico y serotoninérgico específico: antagonista α2, 5-HT2, 5-HT3 y H1.",
- "ind":"SDP con baja de peso y saciedad precoz, náuseas y vómitos crónicos, insomnio asociado.","lin":"2.ª línea en SDP con baja de peso (Roma V).",
- "dos":"7,5 mg en la noche → 15 mg (hasta 30 mg).","aj":"Insuficiencia renal o hepática: titular más lento.","resp":"Apetito y náuseas en 1–2 semanas; saciedad en 4–8 semanas.",
- "plan":[["2 semanas","Somnolencia (menor con 15 mg que con 7,5 mg), apetito"],["8 semanas","Peso, saciedad y tolerancia a nutrientes"]],
- "ea":"Somnolencia, aumento de peso y apetito (deseado aquí), hipertrigliceridemia.","cob":["bol","off"],"ch":"Disponible.","ev":"Tack, Clin Gastroenterol Hepatol 2016 · Roma V"},
-{"id":"buspirona","n":"Buspirona","g":"neu","cl":"Agonista parcial 5-HT1A: relaja el fondo gástrico y mejora la acomodación.","ind":"SDP con saciedad precoz y plenitud.","lin":"2.ª línea en SDP.",
- "dos":"10 mg c/8 h, 15 min antes de comidas.","aj":"Evitar con IMAO.","resp":"2–4 semanas.","ea":"Mareo, cefalea.","cob":["ver","off"],"ch":"Verificar disponibilidad.","ev":"Tack, Clin Gastroenterol Hepatol 2012"},
-{"id":"pregabalina","n":"Pregabalina","g":"neu","cl":"Ligando α2δ de canales de calcio: reduce la hipersensibilidad visceral.","ind":"Distensión y dolor del SII con hipersensibilidad; dolor anorrectal; CAPS como complemento.","lin":"Alternativa o aumento.",
- "dos":"75 mg c/12 h → hasta 225 mg c/12 h (ensayo en SII).","aj":"<b>Ajustar a la función renal.</b> Riesgo de mal uso.","resp":"2–4 semanas.","ea":"Somnolencia, mareo, edema, aumento de peso.","cob":["bol","off"],"ch":"Disponible.","ev":"Saito, Am J Gastroenterol 2019"},
-{"id":"gabapentina","n":"Gabapentina","g":"neu","cl":"Ligando α2δ.","ind":"Hipersensibilidad visceral, dolor anorrectal, tos y síntomas laringofaríngeos con hipersensibilidad.","lin":"Alternativa a pregabalina.",
- "dos":"100–300 mg en la noche → 300 mg c/8 h.","aj":"Ajustar a la función renal.","resp":"2–4 semanas.","ea":"Somnolencia, mareo.","cob":["bol","off"],"ch":"Disponible.","ev":"Drossman 2018"},
-{"id":"quetiapina","n":"Quetiapina","g":"neu","cl":"Antipsicótico atípico (antagonista D2, 5-HT2A, H1).","ind":"Aumento en CAPS refractario o con insomnio y ansiedad; desintoxicación de opioides.","lin":"Aumento, por especialista.",
- "dos":"25 mg en la noche → 50–100 mg.","aj":"—","resp":"Días (sueño) a semanas.","ea":"Somnolencia, síndrome metabólico, QT.","cob":["bol","off"],"ch":"Disponible.","ev":"Drossman 2018"},
-{"id":"olanzapina","n":"Olanzapina","g":"neu","cl":"Antipsicótico atípico con efecto antiemético potente (D2, 5-HT2, 5-HT3, H1, M).","ind":"Náuseas crónicas refractarias, síndrome de náuseas y vómitos crónicos.","lin":"Aumento en refractarios.",
- "dos":"2,5–5 mg en la noche.","aj":"Adultos mayores: 2,5 mg.","resp":"Días.","ea":"Somnolencia, aumento de peso, hiperglicemia.","cob":["bol","off"],"ch":"Disponible.","ev":"Roma V náuseas y vómitos"},
-{"id":"clonidina","n":"Clonidina","g":"neu","cl":"Agonista α2 central: atenúa la hiperactividad noradrenérgica de la abstinencia de opioides; también reduce la sensibilidad rectal.",
- "ind":"Desintoxicación en síndrome de intestino narcótico; diarrea diabética.","lin":"Complemento del descenso de opioides.",
- "dos":"0,1 mg c/8–12 h desde que se ha retirado el 50 % del opioide (hasta 0,6 mg/día); luego descenso.","aj":"Retiro gradual (HTA de rebote).","resp":"Horas.","ea":"Hipotensión, bradicardia, somnolencia, sequedad.","cob":["bol","off"],"ch":"Disponible.","ev":"Grunkemeier, Clin Gastroenterol Hepatol 2007 · Drossman y Szigethy 2014 (intestino narcótico)"},
-
-{"id":"budesonida_eoe","n":"Budesonida tópica esofágica","g":"eoe","cl":"Corticoide tópico deglutido.",
- "ind":"Esofagitis eosinofílica.","lin":"1.ª línea (junto con IBP y dieta).",
- "dos":"Orodispersable 1 mg c/12 h por 6–12 semanas; mantención 0,5–1 mg c/12 h. Alternativa magistral: suspensión viscosa de budesonida 1 mg c/12 h. No comer ni beber 30 min después.","aj":"—","resp":"Histológica a las 6–12 semanas (biopsias de control).",
- "plan":[["6–12 semanas","Endoscopía con biopsias: meta &lt; 15 eosinófilos/campo"],["Respuesta","Mantención en dosis mínima eficaz"]],
- "ea":"Candidiasis esofágica (5–10 %), supresión suprarrenal rara.","cob":["ver"],"ch":"Orodispersable: verificar disponibilidad; la suspensión viscosa preparada es una alternativa usada.","ev":"AGA-JTF 2020 EoE (Hirano, Gastroenterology 2020)"},
-{"id":"fluticasona_eoe","n":"Fluticasona deglutida","g":"eoe","cl":"Corticoide tópico (inhalador deglutido).","ind":"Esofagitis eosinofílica.","lin":"Alternativa a budesonida.",
- "dos":"440–880 µg c/12 h, pulverizado en la boca y deglutido sin espaciador.","aj":"—","resp":"8–12 semanas.","ea":"Candidiasis.","cob":["bol","off"],"ch":"Disponible como inhalador; uso fuera de ficha.","ev":"AGA-JTF 2020 EoE"},
-{"id":"dupilumab","n":"Dupilumab","g":"eoe","cl":"Anticuerpo anti-receptor α de IL-4 (bloquea IL-4 e IL-13).","ind":"EoE refractaria o con comorbilidad atópica (asma, dermatitis).","lin":"Tras falla de IBP o corticoide tópico (o antes si hay atopia grave).",
- "dos":"300 mg subcutáneo semanal (≥ 12 años y ≥ 40 kg).","aj":"—","resp":"Histológica a las 12–24 semanas.","ea":"Reacción en el sitio de inyección, conjuntivitis.","cob":["ver"],"ch":"Registrado en Chile para otras indicaciones; verificar indicación en EoE y acceso.","ev":"Dellon, NEJM 2022"},
-
-{"id":"botox","n":"Toxina botulínica A","g":"otr","cl":"Bloqueo presináptico de la liberación de acetilcolina.",
- "ind":"Incapacidad para eructar (cricofaríngeo), acalasia en pacientes no candidatos a dilatación o cirugía, fisura anal; no se recomienda de rutina en el píloro en gastroparesia.","lin":"Según indicación.",
- "dos":"R-CPD: 50–100 U en el cricofaríngeo (guía electromiográfica o endoscópica). Acalasia: 100 U en 4 cuadrantes del esfínter inferior.","aj":"—","resp":"R-CPD: días, efecto duradero en la mayoría; acalasia: efecto de 6–12 meses.",
- "ea":"Disfagia transitoria (cricofaríngeo), dolor torácico; fibrosis que dificulta la miotomía posterior.","cob":["hosp"],"ch":"Disponible en centros de procedimiento.","ev":"Bastian y Smithson, OTO Open 2019 (R-CPD) · ACG 2020 acalasia · AGA 2025 gastroparesia"},
-{"id":"octreotido","n":"Octreótido","g":"otr","cl":"Análogo de somatostatina: en dosis bajas nocturnas induce complejos motores migratorios.","ind":"CIPO, SIBO por dismotilidad, esclerodermia, síndrome de dumping.","lin":"Procinético en dismotilidad intestinal grave.",
- "dos":"50–100 µg subcutáneo en la noche (CIPO); dumping: 50–100 µg antes de comidas.","aj":"—","resp":"Días.","ea":"Colelitiasis, esteatorrea, hiperglicemia.","cob":["bol","hosp","off"],"ch":"Disponible.","ev":"Soudah, NEJM 1991"},
-{"id":"piridostigmina","n":"Piridostigmina","g":"otr","cl":"Inhibidor de acetilcolinesterasa oral.","ind":"CIPO, constipación refractaria con neuropatía autonómica.","lin":"Procinético en CIPO (evidencia creciente).",
- "dos":"30–60 mg c/8–12 h.","aj":"Evitar en asma y bradicardia.","resp":"Días.","ea":"Cólico, sialorrea, bradicardia.","cob":["bol","off"],"ch":"Disponible.","ev":"Revisiones de CIPO"},
-{"id":"neostigmina","n":"Neostigmina","g":"otr","cl":"Inhibidor de acetilcolinesterasa parenteral.","ind":"Pseudoobstrucción colónica aguda (síndrome de Ogilvie) sin respuesta al manejo conservador.","lin":"Tras 24–48 h de tratamiento conservador o ciego &gt; 12 cm.",
- "dos":"<b>2 mg IV lenta (3–5 min)</b> con monitor cardíaco y atropina disponible; puede repetirse una vez.","aj":"Contraindicada en obstrucción mecánica, bradicardia, broncoespasmo activo, perforación.","resp":"Evacuación en 30 min en ~90 %.",
- "ea":"Bradicardia, broncoespasmo, cólico, sialorrea.","cob":["hosp"],"ch":"Disponible en hospitales.","ev":"Ponec, NEJM 1999"}
-],
-"lineas": [
- {"e":"ERGE (síntomas típicos)","r":[["1.ª","IBP en dosis estándar 30–60 min antes del desayuno, 8 semanas","Pirosis en 2–4 semanas"],["Parcial","Optimizar horario → dosis doble 8 semanas o cambio a P-CAB; alginato nocturno","Sin respuesta: endoscopía sin IBP y pH-impedancia"],["ERGE probada refractaria","P-CAB, baclofeno, alginato; cirugía o endoscopía antirreflujo","TEA &gt; 4 % y &gt; 80 reflujos con IBP 2 veces al día"],["Sin ERGE probada","Desescalar o suspender a las 4–8 semanas","—"]]},
- {"e":"Hipersensibilidad al reflujo y pirosis funcional","r":[["1.ª","ATC en dosis baja (amitriptilina 10–25 mg) o ISRS (escitalopram)","4–8 semanas"],["Complemento","Terapia cerebro-intestino (hipnoterapia, TCC)","—"],["Hipersensibilidad","Mantener antisecretor si hay asociación con reflujo ácido","—"]]},
- {"e":"Dispepsia: SDP","r":[["Siempre","<i>H. pylori</i> y erradicación","Reevaluar a 6–12 meses"],["1.ª","Procinético (domperidona, cinitaprida, levosulpirida) o IBP, 4–8 semanas","Sin respuesta: suspender, no escalar"],["2.ª","Mirtazapina 7,5–15 mg (baja de peso) o buspirona 10 mg c/8 h (saciedad)","8 semanas"],["Refractaria","Vaciamiento gástrico de 4 h; terapia cerebro-intestino","—"]]},
- {"e":"Dispepsia: SDE","r":[["1.ª","IBP en dosis estándar, sin escalar","4–8 semanas"],["2.ª","ATC en dosis baja","8–12 semanas"],["Complemento","Terapia cerebro-intestino","—"]]},
- {"e":"Gastroparesia","r":[["Base","Comidas pequeñas, partículas pequeñas, baja grasa y fibra; control glicémico; retirar opioides y GLP-1","—"],["1.ª","Metoclopramida 5–10 mg 3–4 veces al día ≤ 12 semanas","Evaluar a 4 semanas"],["2.ª","Eritromicina en ciclos; antieméticos","Taquifilaxia en 1–4 semanas"],["Refractaria","G-POEM en seleccionados (vaciamiento muy retardado, síntomas de retención); nutrición yeyunal","—"]]},
- {"e":"Vómitos cíclicos","r":[["Profilaxis (≥ 4 episodios/año o graves)","Amitriptilina 25 → 75–100 mg; alternativa topiramato o aprepitant","Meta: reducción ≥ 50 % de episodios en 3 meses"],["Aborto","Sumatriptán + ondansetrón + sedación (lorazepam) en el pródromo","—"],["Siempre","Suspender cannabis; tratar ansiedad y migraña","—"]]},
- {"e":"SII con diarrea","r":[["Base","Explicación, FODMAP en 3 fases, psyllium, antiespasmódico o menta","4–6 semanas"],["Síntoma","Loperamida preventiva; colestiramina si se sospecha malabsorción de ácidos biliares","—"],["Global","Rifaximina 14 días (Chile 400 mg c/8 h); ondansetrón titulado","Recaída: repetir rifaximina"],["Dolor","ATC en dosis baja","8–12 semanas"],["Refractario","Terapia cerebro-intestino; revisar diagnóstico (colitis microscópica, ácidos biliares)","—"]]},
- {"e":"SII con constipación","r":[["Base","Psyllium, PEG, antiespasmódico o menta","PEG mejora frecuencia, no dolor"],["2.ª","Prucaloprida (en la práctica); linaclotida donde exista","4 semanas"],["Dolor","ISRS o duloxetina (no constipan); terapia cerebro-intestino","8 semanas"],["Síntomas evacuatorios","Manometría anorrectal y test de balón → biorretroalimentación","—"]]},
- {"e":"Constipación crónica","r":[["1.ª","Psyllium y PEG 17 g/día","2–4 semanas"],["2.ª","+ Bisacodilo o picosulfato","—"],["3.ª","Prucaloprida 2 mg (1 mg en &gt; 65)","Sin respuesta en 4 semanas: suspender"],["Refractaria","Pruebas anorrectales → biorretroalimentación; tránsito colónico si son normales","Colectomía solo en inercia colónica pura con evaluación completa"]]},
- {"e":"Constipación por opioides","r":[["1.ª","PEG o estimulante desde el inicio del opioide","—"],["2.ª","PAMORA: naloxegol 25 mg o metilnaltrexona","Contraindicados en obstrucción"]]},
- {"e":"Colitis microscópica","r":[["Siempre","Suspender AINE, IBP, ISRS, estatinas si es posible; descartar celíaca","—"],["Inducción","Budesonida 9 mg/día por 8 semanas","Remisión en ~80 %"],["Recaída","Repetir budesonida; mantención en dosis mínima","Refractaria: tiopurinas o biológicos (anti-TNF, vedolizumab)"]]},
- {"e":"SIBO e IMO","r":[["SIBO","Rifaximina 14 días; tratar la causa (motilidad, anatomía)","Recurrencia frecuente: buscar la causa"],["IMO","Rifaximina + neomicina 500 mg c/12 h, 14 días; tratar la constipación","—"],["Dismotilidad","Procinético nocturno (octreótido, prucaloprida); ciclos de antibiótico","—"]]},
- {"e":"Esofagitis eosinofílica","r":[["Inducción","IBP dosis alta (omeprazol 20–40 mg c/12 h), budesonida tópica o dieta de eliminación (1–2 alimentos)","Biopsias a 8–12 semanas"],["Refractaria","Cambiar de modalidad; dupilumab","—"],["Estenosis","Dilatación endoscópica además del tratamiento antiinflamatorio","—"]]},
- {"e":"CAPS e intestino narcótico","r":[["1.ª","Relación terapéutica, metas funcionales, ATC o duloxetina","8–12 semanas"],["Aumento","+ Pregabalina o quetiapina en dosis baja; terapia cerebro-intestino","—"],["Opioides","Descenso planificado; clonidina desde el 50 % retirado; laxantes","Recaída frecuente: seguimiento estrecho"]]}
-]
+ "grupos": [
+  [
+   "as",
+   "Antisecretores y ERGE"
+  ],
+  [
+   "pro",
+   "Procinéticos y antieméticos"
+  ],
+  [
+   "esp",
+   "Antiespasmódicos y menta"
+  ],
+  [
+   "lax",
+   "Constipación: osmóticos, estimulantes, procinéticos y secretagogos"
+  ],
+  [
+   "dia",
+   "Diarrea, ácidos biliares y microbiota"
+  ],
+  [
+   "neu",
+   "Neuromoduladores"
+  ],
+  [
+   "eoe",
+   "Esofagitis eosinofílica"
+  ],
+  [
+   "otr",
+   "Motilidad grave, crisis y procedimientos"
+  ]
+ ],
+ "cobertura": {
+  "bol": [
+   "Disponible",
+   "Comercializado en Chile; costo de bolsillo o según plan"
+  ],
+  "hosp": [
+   "Hospitalario",
+   "Uso intrahospitalario o en procedimiento: arsenal del establecimiento"
+  ],
+  "off": [
+   "Fuera de ficha",
+   "La indicación descrita no está en la ficha registrada: uso con respaldo de guías o ensayos"
+  ],
+  "nd": [
+   "Sin registro en Chile",
+   "Sin comercialización conocida en Chile a octubre 2026 (verificar en ISP)"
+  ],
+  "ver": [
+   "Verificar disponibilidad",
+   "Disponibilidad comercial en Chile no confirmada"
+  ]
+ },
+ "farmacos": [
+  {
+   "id": "omeprazol",
+   "n": "Omeprazol",
+   "g": "as",
+   "cl": "Inhibidor de la bomba de protones (IBP); bloqueo irreversible de la H⁺/K⁺-ATPasa activa.",
+   "ind": "ERGE (esofagitis, ERGE no erosiva), prueba terapéutica en pirosis típica, dispepsia funcional tipo SDE, erradicación de <i>H. pylori</i>.",
+   "lin": "1.ª línea en ERGE y SDE.",
+   "dos": "20 mg/día 30–60 min antes del desayuno. Respuesta parcial: <b>20 mg antes de desayuno y cena</b> (o 40 mg c/12 h) por 8 semanas. Esofagitis LA C/D: dosis doble 8 semanas y control endoscópico.",
+   "aj": "Sin ajuste renal. Metabolismo CYP2C19 (metabolizadores rápidos responden peor). Interacción con clopidogrel (preferir pantoprazol).",
+   "resp": "Pirosis: 2–4 semanas; esofagitis: 8 semanas. Sin respuesta con dosis doble: estudiar (pH-impedancia), no seguir escalando.",
+   "plan": [
+    [
+     "4–8 semanas",
+     "Respuesta sintomática; si no hay ERGE probada y responde, intentar desescalar a la dosis mínima o a demanda"
+    ],
+    [
+     "Esofagitis LA C/D",
+     "Endoscopía tras 8 semanas para documentar curación y descartar Barrett"
+    ],
+    [
+     "Uso crónico",
+     "Revisar indicación en cada control; magnesio y B12 si hay factores de riesgo"
+    ]
+   ],
+   "ea": "Cefalea, diarrea. Uso prolongado: hipomagnesemia, déficit de B12, mayor riesgo de <i>C. difficile</i>, colitis microscópica; el exceso de riesgo de fractura y demencia es de causalidad incierta.",
+   "cob": [
+    "bol"
+   ],
+   "ch": "Ampliamente disponible, también en el sistema público.",
+   "ev": "ACG 2022 ERGE · Lyon 2.0 (2024)"
+  },
+  {
+   "id": "esomeprazol",
+   "n": "Esomeprazol",
+   "g": "as",
+   "cl": "IBP (S-enantiómero de omeprazol); potencia relativa ~1,6 veces omeprazol.",
+   "ind": "ERGE, esofagitis, respuesta parcial a otro IBP.",
+   "lin": "1.ª línea; alternativa al cambiar de IBP por respuesta parcial.",
+   "dos": "40 mg/día antes del desayuno; dosis doble 40 mg c/12 h.",
+   "aj": "Sin ajuste renal. Insuficiencia hepática grave: máximo 20 mg/día.",
+   "resp": "Igual que omeprazol.",
+   "mon": "Igual que omeprazol.",
+   "ea": "Igual que la clase.",
+   "cob": [
+    "bol"
+   ],
+   "ch": "Disponible.",
+   "ev": "Kirchheiner 2009 (potencia relativa de IBP)"
+  },
+  {
+   "id": "lansoprazol",
+   "n": "Lansoprazol",
+   "g": "as",
+   "cl": "IBP; potencia relativa ~0,9 omeprazol.",
+   "ind": "ERGE, dispepsia, <i>H. pylori</i>.",
+   "lin": "1.ª línea.",
+   "dos": "30 mg/día antes del desayuno; dosis doble 30 mg c/12 h.",
+   "aj": "Sin ajuste renal.",
+   "resp": "Igual que omeprazol.",
+   "ea": "Igual que la clase; colitis microscópica descrita con mayor frecuencia.",
+   "cob": [
+    "bol"
+   ],
+   "ch": "Disponible.",
+   "ev": "Kirchheiner 2009"
+  },
+  {
+   "id": "pantoprazol",
+   "n": "Pantoprazol",
+   "g": "as",
+   "cl": "IBP; menor potencia (40 mg ≈ 9 mg de omeprazol) y menos interacciones por CYP2C19.",
+   "ind": "ERGE, gastroprotección, usuarios de clopidogrel.",
+   "lin": "1.ª línea cuando importan las interacciones.",
+   "dos": "40 mg/día antes del desayuno; 40 mg c/12 h.",
+   "aj": "Sin ajuste renal.",
+   "resp": "Igual que omeprazol.",
+   "ea": "Igual que la clase.",
+   "cob": [
+    "bol"
+   ],
+   "ch": "Disponible, también intravenoso.",
+   "ev": "Kirchheiner 2009"
+  },
+  {
+   "id": "rabeprazol",
+   "n": "Rabeprazol",
+   "g": "as",
+   "cl": "IBP; mayor potencia relativa (~1,8 omeprazol) y menor dependencia de CYP2C19.",
+   "ind": "ERGE, respuesta parcial a otros IBP.",
+   "lin": "1.ª línea o cambio de IBP.",
+   "dos": "20 mg/día; 20 mg c/12 h.",
+   "aj": "Sin ajuste renal.",
+   "resp": "Igual que omeprazol.",
+   "ea": "Igual que la clase.",
+   "cob": [
+    "bol"
+   ],
+   "ch": "Disponible.",
+   "ev": "Kirchheiner 2009"
+  },
+  {
+   "id": "tegoprazan",
+   "n": "Tegoprazán",
+   "g": "as",
+   "cl": "Bloqueador ácido competitivo de potasio (P-CAB): inhibición reversible, inicio rápido, independiente de la comida y de la activación de la bomba.",
+   "ind": "Esofagitis erosiva, ERGE no erosiva, úlcera, <i>H. pylori</i> (en esquemas).",
+   "lin": "Alternativa al IBP; preferible en esofagitis grave (LA C/D), respuesta parcial al IBP o síntomas nocturnos.",
+   "dos": "50 mg/día con o sin comida, 4–8 semanas (esofagitis); mantención 25 mg/día.",
+   "aj": "Sin ajuste en insuficiencia renal leve a moderada; precaución en grave.",
+   "resp": "Control del pH en horas; curación de esofagitis en 4–8 semanas.",
+   "mon": "Igual que la clase antisecretora; hipergastrinemia mayor que con IBP (significado clínico incierto).",
+   "ea": "Diarrea, cefalea; hipergastrinemia.",
+   "cob": [
+    "bol"
+   ],
+   "ch": "Comercializado en Chile desde 2024.",
+   "ev": "Lyon 2.0 · ensayos de fase 3 en esofagitis erosiva (Corea)"
+  },
+  {
+   "id": "vonoprazan",
+   "n": "Vonoprazán",
+   "g": "as",
+   "cl": "P-CAB.",
+   "ind": "Esofagitis erosiva (sobre todo LA C/D), mantención, <i>H. pylori</i> (terapia dual con amoxicilina).",
+   "lin": "Superior a lansoprazol en curación de esofagitis grave.",
+   "dos": "20 mg/día por 8 semanas; mantención 10 mg/día.",
+   "aj": "Sin ajuste habitual.",
+   "resp": "Curación a 8 semanas mayor que IBP en LA C/D.",
+   "ea": "Diarrea, hipergastrinemia.",
+   "cob": [
+    "ver"
+   ],
+   "ch": "Registro y comercialización en Chile por confirmar.",
+   "ev": "Laine, Gastroenterology 2023 (PHALCON-EE)"
+  },
+  {
+   "id": "fexuprazan",
+   "n": "Fexuprazán",
+   "g": "as",
+   "cl": "P-CAB.",
+   "ind": "Esofagitis erosiva, gastritis.",
+   "lin": "Alternativa al IBP.",
+   "dos": "40 mg/día por 4–8 semanas.",
+   "aj": "Sin ajuste habitual.",
+   "resp": "No inferior a esomeprazol en curación de esofagitis.",
+   "ea": "Diarrea, cefalea.",
+   "cob": [
+    "bol"
+   ],
+   "ch": "Comercializado en Chile (Fexuclue 40 mg).",
+   "ev": "Ensayos de fase 3 frente a esomeprazol (Corea)"
+  },
+  {
+   "id": "famotidina",
+   "n": "Famotidina",
+   "g": "as",
+   "cl": "Antagonista del receptor H2.",
+   "ind": "Síntomas nocturnos que persisten con IBP 2 veces al día; SDE (alternativa); ERGE leve.",
+   "lin": "Complemento nocturno o alternativa en SDE.",
+   "dos": "20–40 mg en la noche.",
+   "aj": "ClCr &lt; 50: reducir 50 % (riesgo de confusión en adultos mayores).",
+   "resp": "Taquifilaxia en 2–4 semanas: usar a demanda o intermitente.",
+   "ea": "Cefalea, confusión en adultos mayores con falla renal.",
+   "cob": [
+    "bol"
+   ],
+   "ch": "Disponible (la ranitidina fue retirada).",
+   "ev": "ACG 2022 ERGE"
+  },
+  {
+   "id": "alginato",
+   "n": "Alginato con antiácido",
+   "g": "as",
+   "cl": "Forma una balsa de gel sobre la bolsa ácida posprandial.",
+   "ind": "Pirosis y regurgitación posprandial, ERGE no erosiva, complemento del IBP, síntomas nocturnos.",
+   "lin": "Complemento en cualquier escalón; a demanda en ERGE leve.",
+   "dos": "10–20 mL después de las comidas y al acostarse.",
+   "aj": "Contenido de sodio: precaución en insuficiencia cardíaca o dieta hiposódica.",
+   "resp": "Inmediata (minutos).",
+   "ea": "Sabor, distensión.",
+   "cob": [
+    "bol"
+   ],
+   "ch": "Disponible en farmacias.",
+   "ev": "Lyon 2.0 · ACG 2022"
+  },
+  {
+   "id": "baclofeno",
+   "n": "Baclofeno",
+   "g": "as",
+   "cl": "Agonista GABA-B: reduce las relajaciones transitorias del esfínter esofágico inferior.",
+   "ind": "Regurgitación o reflujo no ácido persistente con IBP, eructo supragástrico, rumiación que no responde a respiración diafragmática.",
+   "lin": "Tercera línea; uso limitado por efectos centrales.",
+   "dos": "5 mg c/8 h → 10 mg c/8 h (hasta 20 mg c/8 h).",
+   "aj": "Insuficiencia renal: reducir dosis (acumulación y encefalopatía). Retirar gradualmente (convulsiones, alucinaciones).",
+   "resp": "1–2 semanas.",
+   "ea": "Somnolencia, mareo, confusión, constipación.",
+   "cob": [
+    "bol",
+    "off"
+   ],
+   "ch": "Disponible; indicación digestiva fuera de ficha.",
+   "ev": "ACG 2022 ERGE · Roma V (rumiación)"
+  },
+  {
+   "id": "metoclopramida",
+   "n": "Metoclopramida",
+   "g": "pro",
+   "cl": "Antagonista D2 (central y periférico) con agonismo 5-HT4.",
+   "ind": "Gastroparesia, náuseas y vómitos.",
+   "lin": "1.ª línea en gastroparesia (AGA 2025, condicional); único aprobado por la FDA en gastroparesia.",
+   "dos": "5–10 mg 3–4 veces al día, 30 min antes de comidas y al acostarse; <b>máximo 12 semanas</b>. Formulación líquida o intranasal si hay vómitos.",
+   "aj": "ClCr &lt; 40: reducir 50 %. Adultos mayores: dosis menores.",
+   "resp": "Días a 2 semanas.",
+   "plan": [
+    [
+     "Inicio",
+     "Advertir de efectos extrapiramidales y discinesia tardía; registrar consentimiento"
+    ],
+    [
+     "4 semanas",
+     "Evaluar respuesta; suspender si no hay beneficio"
+    ],
+    [
+     "12 semanas",
+     "Suspender o documentar justificación y vigilancia de movimientos anormales"
+    ]
+   ],
+   "ea": "Discinesia tardía (advertencia de caja negra de la FDA), distonía aguda, acatisia, hiperprolactinemia, somnolencia, prolongación del QT.",
+   "cob": [
+    "bol"
+   ],
+   "ch": "Disponible oral y parenteral.",
+   "ev": "AGA 2025 gastroparesia · ACG 2022 gastroparesia"
+  },
+  {
+   "id": "domperidona",
+   "n": "Domperidona",
+   "g": "pro",
+   "cl": "Antagonista D2 periférico (no cruza la barrera hematoencefálica).",
+   "ind": "SDP, gastroparesia, náuseas.",
+   "lin": "1.ª línea en SDP (Roma V); AGA 2025 no la recomienda de rutina en primera línea en gastroparesia.",
+   "dos": "10 mg c/8 h antes de comidas; <b>máximo 30 mg/día</b>.",
+   "aj": "Insuficiencia hepática moderada o grave: evitar. Evitar con inhibidores potentes de CYP3A4 y otros fármacos que prolongan el QT.",
+   "resp": "1–4 semanas.",
+   "plan": [
+    [
+     "Basal",
+     "ECG (QTc) si hay cardiopatía, &gt; 60 años, electrolitos alterados o fármacos que prolongan el QT"
+    ],
+    [
+     "4–8 semanas",
+     "Evaluar respuesta; suspender si no hay beneficio"
+    ]
+   ],
+   "ea": "Prolongación del QT y arritmia ventricular, hiperprolactinemia (galactorrea, ginecomastia).",
+   "cob": [
+    "bol"
+   ],
+   "ch": "Disponible.",
+   "ev": "Roma V dispepsia · AGA 2025 gastroparesia"
+  },
+  {
+   "id": "levosulpirida",
+   "n": "Levosulpirida",
+   "g": "pro",
+   "cl": "Antagonista D2 con agonismo parcial 5-HT4.",
+   "ind": "SDP, gastroparesia leve.",
+   "lin": "Procinético alternativo en SDP.",
+   "dos": "25 mg c/8 h antes de comidas, 4–8 semanas.",
+   "aj": "Insuficiencia renal: reducir dosis.",
+   "resp": "2–4 semanas.",
+   "ea": "Hiperprolactinemia (galactorrea, amenorrea), extrapiramidales, somnolencia.",
+   "cob": [
+    "bol"
+   ],
+   "ch": "Disponible.",
+   "ev": "Roma V dispepsia"
+  },
+  {
+   "id": "cinitaprida",
+   "n": "Cinitaprida",
+   "g": "pro",
+   "cl": "Agonista 5-HT4 y antagonista 5-HT2 y D2 débil.",
+   "ind": "SDP, dispepsia con plenitud.",
+   "lin": "Procinético alternativo en SDP.",
+   "dos": "1 mg c/8 h, 15 min antes de comidas.",
+   "aj": "—",
+   "resp": "2–4 semanas.",
+   "ea": "Somnolencia, extrapiramidales (raros).",
+   "cob": [
+    "bol"
+   ],
+   "ch": "Disponible.",
+   "ev": "Roma V dispepsia"
+  },
+  {
+   "id": "eritromicina",
+   "n": "Eritromicina",
+   "g": "pro",
+   "cl": "Macrólido agonista del receptor de motilina: induce contracciones antrales de fase III.",
+   "ind": "Gastroparesia (exacerbación o crónica), preparación antes de endoscopía en hemorragia alta.",
+   "lin": "AGA 2025: condicional a favor en gastroparesia.",
+   "dos": "Oral 125–250 mg c/8 h antes de comidas; IV 3 mg/kg c/8 h en la crisis.",
+   "aj": "Interacciones por CYP3A4 (estatinas, anticoagulantes, antiarrítmicos).",
+   "resp": "Inmediata; <b>taquifilaxia</b> en 1–4 semanas: usar en ciclos con descansos.",
+   "ea": "Prolongación del QT, náuseas y cólico (dosis altas), resistencia bacteriana.",
+   "cob": [
+    "bol",
+    "off"
+   ],
+   "ch": "Disponible; uso procinético fuera de ficha.",
+   "ev": "AGA 2025 gastroparesia"
+  },
+  {
+   "id": "ondansetron",
+   "n": "Ondansetrón",
+   "g": "pro",
+   "cl": "Antagonista 5-HT3.",
+   "ind": "Náuseas y vómitos; aborto del episodio de vómitos cíclicos; SII-D (enlentece el tránsito y reduce la urgencia).",
+   "lin": "Antiemético de 1.ª línea; SII-D de segunda línea.",
+   "dos": "Náuseas: 4–8 mg c/8 h (oral u orodispersable). SII-D: 4 mg/día titulado hasta 8 mg c/8 h según deposiciones.",
+   "aj": "Insuficiencia hepática grave: máximo 8 mg/día.",
+   "resp": "Náuseas: horas. SII-D: 1–2 semanas.",
+   "ea": "Constipación, cefalea, prolongación del QT (dosis altas IV).",
+   "cob": [
+    "bol",
+    "off"
+   ],
+   "ch": "Disponible; en SII-D fuera de ficha.",
+   "ev": "Garsed, Gut 2014 (SII-D) · Venkatesan, Neurogastroenterol Motil 2019 (ANMS-CVSA, vómitos cíclicos)"
+  },
+  {
+   "id": "aprepitant",
+   "n": "Aprepitant",
+   "g": "pro",
+   "cl": "Antagonista del receptor NK1.",
+   "ind": "Vómitos cíclicos refractarios (aborto y profilaxis), náuseas de gastroparesia en refractarios.",
+   "lin": "Segunda línea; AGA 2025 no lo recomienda de rutina en gastroparesia.",
+   "dos": "Aborto del episodio: 125 mg al inicio, luego 80 mg/día por 2 días.",
+   "aj": "Interacciones por CYP3A4 (anticonceptivos, warfarina).",
+   "resp": "Horas.",
+   "ea": "Fatiga, hipo.",
+   "cob": [
+    "bol",
+    "off"
+   ],
+   "ch": "Disponible (oncología); uso en vómitos cíclicos fuera de ficha.",
+   "ev": "Venkatesan, Neurogastroenterol Motil 2019 (ANMS-CVSA, vómitos cíclicos)"
+  },
+  {
+   "id": "sumatriptan",
+   "n": "Sumatriptán",
+   "g": "pro",
+   "cl": "Agonista 5-HT1B/1D.",
+   "ind": "Aborto de episodios de vómitos cíclicos o migraña abdominal.",
+   "lin": "1.ª línea abortiva junto con ondansetrón y sedación.",
+   "dos": "20 mg intranasal o 6 mg subcutáneo al inicio del pródromo; puede repetirse una vez.",
+   "aj": "Contraindicado en cardiopatía isquémica, HTA no controlada.",
+   "resp": "Minutos a horas; mayor efecto si se da en el pródromo.",
+   "ea": "Opresión torácica, parestesias.",
+   "cob": [
+    "bol",
+    "off"
+   ],
+   "ch": "Disponible (formulaciones según farmacia); uso digestivo fuera de ficha.",
+   "ev": "Venkatesan, Neurogastroenterol Motil 2019 (ANMS-CVSA, vómitos cíclicos)"
+  },
+  {
+   "id": "haloperidol",
+   "n": "Haloperidol",
+   "g": "pro",
+   "cl": "Antagonista D2.",
+   "ind": "Hiperémesis por cannabinoides en urgencia; náuseas refractarias.",
+   "lin": "Superior a ondansetrón en hiperémesis por cannabinoides (HaVOC).",
+   "dos": "0,05–0,1 mg/kg IV (HaVOC); habitual 2,5–5 mg IV o IM.",
+   "aj": "Adultos mayores: menor dosis.",
+   "resp": "Minutos a horas.",
+   "ea": "Prolongación del QT, distonía aguda, acatisia.",
+   "cob": [
+    "hosp",
+    "off"
+   ],
+   "ch": "Disponible en urgencias.",
+   "ev": "Ruberto, Ann Emerg Med 2021 (HaVOC)"
+  },
+  {
+   "id": "capsaicina",
+   "n": "Capsaicina tópica",
+   "g": "pro",
+   "cl": "Agonista TRPV1 (receptor también activado por el calor).",
+   "ind": "Hiperémesis por cannabinoides.",
+   "lin": "Complemento en urgencia.",
+   "dos": "Crema 0,075 % en abdomen o espalda.",
+   "aj": "No en mucosas ni piel lesionada.",
+   "resp": "Minutos.",
+   "ea": "Ardor cutáneo.",
+   "cob": [
+    "ver",
+    "off"
+   ],
+   "ch": "Verificar formulación disponible.",
+   "ev": "Actualización de práctica clínica de la AGA sobre hiperémesis por cannabinoides"
+  },
+  {
+   "id": "pinaverio",
+   "n": "Bromuro de pinaverio",
+   "g": "esp",
+   "cl": "Antiespasmódico: bloqueador de canales de calcio de acción intestinal.",
+   "ind": "Dolor y cólico del SII.",
+   "lin": "1.ª línea para dolor en SII.",
+   "dos": "50–100 mg c/8 h con comida (máximo 300 mg/día).",
+   "aj": "Tragar con agua, sentado (riesgo de esofagitis).",
+   "resp": "1–4 semanas.",
+   "ea": "Epigastralgia, constipación leve.",
+   "cob": [
+    "bol"
+   ],
+   "ch": "Disponible.",
+   "ev": "Metaanálisis de antiespasmódicos en SII · Roma V"
+  },
+  {
+   "id": "trimebutina",
+   "n": "Trimebutina",
+   "g": "esp",
+   "cl": "Agonista opioide periférico (μ, κ, δ) modulador de la motilidad.",
+   "ind": "Dolor del SII, dispepsia.",
+   "lin": "Alternativa antiespasmódica.",
+   "dos": "100–200 mg c/8 h antes de comidas.",
+   "aj": "—",
+   "resp": "1–4 semanas.",
+   "ea": "Sequedad bucal, somnolencia leve.",
+   "cob": [
+    "bol"
+   ],
+   "ch": "Disponible.",
+   "ev": "Roma V"
+  },
+  {
+   "id": "otilonio",
+   "n": "Bromuro de otilonio",
+   "g": "esp",
+   "cl": "Antiespasmódico de amonio cuaternario (bloqueo de calcio y muscarínico local).",
+   "ind": "Dolor del SII.",
+   "lin": "Alternativa antiespasmódica.",
+   "dos": "40 mg c/8–12 h.",
+   "aj": "Absorción sistémica mínima.",
+   "resp": "1–4 semanas.",
+   "ea": "Escasos.",
+   "cob": [
+    "bol"
+   ],
+   "ch": "Comercializado en Chile.",
+   "ev": "Clavé, APT 2011 (OBIS)"
+  },
+  {
+   "id": "hioscina",
+   "n": "Butilbromuro de hioscina",
+   "g": "esp",
+   "cl": "Antimuscarínico de amonio cuaternario.",
+   "ind": "Cólico abdominal episódico; a demanda en SII.",
+   "lin": "Rescate.",
+   "dos": "10–20 mg c/6–8 h a demanda.",
+   "aj": "Evitar en glaucoma de ángulo cerrado, retención urinaria, megacolon.",
+   "resp": "Minutos a horas.",
+   "ea": "Sequedad bucal, taquicardia, retención urinaria, constipación.",
+   "cob": [
+    "bol"
+   ],
+   "ch": "Disponible.",
+   "ev": "ACG 2021 SII"
+  },
+  {
+   "id": "menta",
+   "n": "Aceite de menta (cápsulas entéricas)",
+   "g": "esp",
+   "cl": "Bloqueo de canales de calcio del músculo liso; agonista TRPM8.",
+   "ind": "Dolor global del SII; SDP (combinado con alcaravea).",
+   "lin": "ACG 2021: condicional a favor en SII.",
+   "dos": "180–225 mg c/8 h, 30 min antes de comidas.",
+   "aj": "Puede empeorar la pirosis si se libera en el estómago.",
+   "resp": "2–4 semanas.",
+   "ea": "Pirosis, olor a menta.",
+   "cob": [
+    "nd"
+   ],
+   "ch": "Sin cápsulas de aceite de menta con cubierta entérica en Chile.",
+   "ev": "ACG 2021 SII · Weerts, Gastroenterology 2020 (PERSUADE)"
+  },
+  {
+   "id": "psyllium",
+   "n": "Psyllium (ispágula)",
+   "g": "lax",
+   "cl": "Fibra soluble formadora de gel, poco fermentable.",
+   "ind": "Constipación crónica, SII (todos los subtipos), regularizar consistencia en incontinencia fecal.",
+   "lin": "Base del tratamiento; ACG 2021 fuerte en SII.",
+   "dos": "3,5 g/día → hasta 10–20 g/día, aumentando cada 1–2 semanas, con agua abundante.",
+   "aj": "Evitar en sospecha de obstrucción o en tránsito lento grave y disinergia (empeora la distensión).",
+   "resp": "2–4 semanas.",
+   "ea": "Distensión y flatulencia iniciales.",
+   "cob": [
+    "bol"
+   ],
+   "ch": "Disponible.",
+   "ev": "ACG 2021 SII · AGA-ACG 2023 constipación"
+  },
+  {
+   "id": "peg",
+   "n": "Polietilenglicol 3350",
+   "g": "lax",
+   "cl": "Laxante osmótico no absorbible ni fermentable.",
+   "ind": "Constipación crónica, SII-C (mejora frecuencia, no dolor), impactación fecal.",
+   "lin": "AGA-ACG 2023: <b>fuerte</b>, 1.ª línea farmacológica.",
+   "dos": "17 g/día (8,5–34 g) en 250 mL de líquido; desimpactación: dosis altas por 3 días.",
+   "aj": "Seguro en adultos mayores y ERC.",
+   "resp": "1–3 días.",
+   "plan": [
+    [
+     "2–4 semanas",
+     "Ajustar a 1 deposición blanda diaria (Bristol 4)"
+    ],
+    [
+     "Sin respuesta a dosis máxima",
+     "Agregar estimulante; si hay síntomas evacuatorios, manometría anorrectal y test de balón"
+    ]
+   ],
+   "ea": "Distensión, diarrea con dosis altas.",
+   "cob": [
+    "bol"
+   ],
+   "ch": "Disponible en farmacias.",
+   "ev": "Chang, Gastroenterology/AJG 2023 (AGA-ACG)"
+  },
+  {
+   "id": "lactulosa",
+   "n": "Lactulosa",
+   "g": "lax",
+   "cl": "Disacárido osmótico fermentable.",
+   "ind": "Constipación crónica cuando no se dispone de otro osmótico.",
+   "lin": "AGA-ACG 2023: condicional (si fallan los de venta libre).",
+   "dos": "15–30 mL/día (hasta 60 mL).",
+   "aj": "—",
+   "resp": "1–2 días.",
+   "ea": "Distensión y flatulencia (más que PEG).",
+   "cob": [
+    "bol"
+   ],
+   "ch": "Disponible.",
+   "ev": "AGA-ACG 2023"
+  },
+  {
+   "id": "bisacodilo",
+   "n": "Bisacodilo",
+   "g": "lax",
+   "cl": "Laxante estimulante (difenilmetano): secreción y contracciones propagadas de alta amplitud.",
+   "ind": "Constipación crónica, rescate, constipación por opioides.",
+   "lin": "AGA-ACG 2023: <b>fuerte</b> (corto plazo, 4 semanas); seguro a largo plazo en la práctica.",
+   "dos": "5–10 mg en la noche (efecto en 6–12 h); supositorio 10 mg (15–60 min).",
+   "aj": "—",
+   "resp": "6–12 h.",
+   "ea": "Cólico, diarrea, hipopotasemia con abuso. El «colon catártico» no se ha demostrado con los estimulantes actuales.",
+   "cob": [
+    "bol"
+   ],
+   "ch": "Disponible.",
+   "ev": "AGA-ACG 2023"
+  },
+  {
+   "id": "picosulfato",
+   "n": "Picosulfato de sodio",
+   "g": "lax",
+   "cl": "Laxante estimulante (difenilmetano) activado por la microbiota colónica.",
+   "ind": "Constipación crónica.",
+   "lin": "AGA-ACG 2023: <b>fuerte</b> (corto plazo).",
+   "dos": "5–10 mg (gotas o comprimidos) en la noche.",
+   "aj": "—",
+   "resp": "6–12 h.",
+   "ea": "Cólico, diarrea.",
+   "cob": [
+    "bol"
+   ],
+   "ch": "Disponible.",
+   "ev": "AGA-ACG 2023"
+  },
+  {
+   "id": "sena",
+   "n": "Senósidos",
+   "g": "lax",
+   "cl": "Laxante estimulante antraquinónico.",
+   "ind": "Constipación crónica.",
+   "lin": "AGA-ACG 2023: condicional.",
+   "dos": "8,6–17,2 mg en la noche.",
+   "aj": "—",
+   "resp": "6–12 h.",
+   "ea": "Cólico, melanosis coli (benigna).",
+   "cob": [
+    "bol"
+   ],
+   "ch": "Disponible.",
+   "ev": "AGA-ACG 2023"
+  },
+  {
+   "id": "magnesio",
+   "n": "Sales de magnesio (óxido o hidróxido)",
+   "g": "lax",
+   "cl": "Laxante osmótico salino.",
+   "ind": "Constipación crónica.",
+   "lin": "AGA-ACG 2023: condicional.",
+   "dos": "Óxido de magnesio 0,5–1,5 g/día; leche de magnesia 15–30 mL/día.",
+   "aj": "<b>Evitar en ERC</b> (hipermagnesemia) y adultos mayores frágiles.",
+   "resp": "Horas a 1 día.",
+   "ea": "Hipermagnesemia, diarrea.",
+   "cob": [
+    "bol"
+   ],
+   "ch": "Disponible.",
+   "ev": "AGA-ACG 2023"
+  },
+  {
+   "id": "prucaloprida",
+   "n": "Prucaloprida",
+   "g": "lax",
+   "cl": "Agonista 5-HT4 de alta selectividad (sin afinidad por hERG ni 5-HT1B).",
+   "ind": "Constipación crónica refractaria a laxantes; uso prometedor en CIPO y gastroparesia.",
+   "lin": "AGA-ACG 2023: <b>fuerte</b>. En Chile, el siguiente escalón real tras osmóticos y estimulantes.",
+   "dos": "2 mg/día; <b>1 mg/día en &gt; 65 años</b> o ClCr &lt; 30.",
+   "aj": "Insuficiencia hepática grave: 1 mg.",
+   "resp": "Primera semana; si no hay respuesta a las 4 semanas, reconsiderar.",
+   "plan": [
+    [
+     "Día 1–3",
+     "Cefalea y cólico suelen ceder en pocos días; tomar en la mañana"
+    ],
+    [
+     "4 semanas",
+     "Sin aumento de deposiciones completas espontáneas: suspender y estudiar evacuación"
+    ]
+   ],
+   "ea": "Cefalea, náuseas, cólico, diarrea; ideación suicida descrita (rara).",
+   "cob": [
+    "bol"
+   ],
+   "ch": "Disponible.",
+   "ev": "AGA-ACG 2023"
+  },
+  {
+   "id": "linaclotida",
+   "n": "Linaclotida",
+   "g": "lax",
+   "cl": "Agonista de guanilato ciclasa C: secreción de cloro y bicarbonato y reducción de la nocicepción.",
+   "ind": "Constipación crónica, SII-C.",
+   "lin": "AGA-ACG 2023 y AGA 2022 SII-C: <b>fuerte</b>.",
+   "dos": "Constipación crónica 72–145 µg/día; SII-C 290 µg/día, 30 min antes del desayuno.",
+   "aj": "Contraindicada en menores de 2 años.",
+   "resp": "Frecuencia en 1 semana; dolor en 6–8 semanas.",
+   "ea": "Diarrea (16–20 %).",
+   "cob": [
+    "nd"
+   ],
+   "ch": "No disponible en Chile (Curso de Neurogastroenterología 2025).",
+   "ev": "AGA-ACG 2023 · AGA 2022 SII-C"
+  },
+  {
+   "id": "lubiprostona",
+   "n": "Lubiprostona",
+   "g": "lax",
+   "cl": "Activador de canales de cloro ClC-2.",
+   "ind": "Constipación crónica, SII-C en mujeres, constipación por opioides.",
+   "lin": "AGA-ACG 2023: condicional.",
+   "dos": "Constipación crónica 24 µg c/12 h; SII-C 8 µg c/12 h, con comida.",
+   "aj": "Insuficiencia hepática: reducir.",
+   "resp": "1 semana.",
+   "ea": "Náuseas (hasta 32 %; tomar con comida), disnea transitoria.",
+   "cob": [
+    "nd"
+   ],
+   "ch": "No disponible en Chile (Curso de Neurogastroenterología 2025).",
+   "ev": "AGA-ACG 2023"
+  },
+  {
+   "id": "tenapanor",
+   "n": "Tenapanor",
+   "g": "lax",
+   "cl": "Inhibidor del intercambiador NHE3: retiene sodio y agua en el lumen.",
+   "ind": "SII-C.",
+   "lin": "AGA 2022 SII-C: condicional.",
+   "dos": "50 mg c/12 h antes de comidas.",
+   "aj": "—",
+   "resp": "1–4 semanas.",
+   "ea": "Diarrea.",
+   "cob": [
+    "nd"
+   ],
+   "ch": "Sin registro en Chile.",
+   "ev": "AGA 2022 SII-C"
+  },
+  {
+   "id": "naloxegol",
+   "n": "Naloxegol",
+   "g": "lax",
+   "cl": "Antagonista periférico de receptores μ (PAMORA).",
+   "ind": "Constipación inducida por opioides refractaria a laxantes.",
+   "lin": "Tras laxantes convencionales.",
+   "dos": "25 mg/día en ayunas (12,5 mg si no se tolera, con inhibidores moderados de CYP3A4 o ClCr &lt; 60).",
+   "aj": "Contraindicado en obstrucción intestinal y con inhibidores potentes de CYP3A4.",
+   "resp": "Horas a días.",
+   "ea": "Dolor abdominal, diarrea, síntomas de abstinencia (raros).",
+   "cob": [
+    "nd"
+   ],
+   "ch": "No disponible en Chile.",
+   "ev": "AGA 2019 constipación por opioides"
+  },
+  {
+   "id": "metilnaltrexona",
+   "n": "Metilnaltrexona",
+   "g": "lax",
+   "cl": "PAMORA.",
+   "ind": "Constipación inducida por opioides.",
+   "lin": "Tras laxantes; útil en hospitalizados y cuidados paliativos.",
+   "dos": "12 mg subcutáneo día por medio (o 450 mg oral/día).",
+   "aj": "ClCr &lt; 30: reducir 50 %. Contraindicado en obstrucción.",
+   "resp": "Minutos a horas (subcutáneo).",
+   "ea": "Dolor abdominal, perforación (rara).",
+   "cob": [
+    "nd"
+   ],
+   "ch": "No disponible en Chile.",
+   "ev": "AGA 2019 constipación por opioides"
+  },
+  {
+   "id": "loperamida",
+   "n": "Loperamida",
+   "g": "dia",
+   "cl": "Agonista μ periférico: enlentece el tránsito y aumenta el tono del esfínter anal.",
+   "ind": "SII-D, diarrea funcional, incontinencia fecal con deposiciones blandas.",
+   "lin": "1.ª línea sintomática; no mejora el dolor.",
+   "dos": "2 mg antes de comidas o de salir (preventivo); máximo 16 mg/día.",
+   "aj": "—",
+   "resp": "Horas.",
+   "ea": "Constipación, distensión; arritmias (QT) en sobredosis.",
+   "cob": [
+    "bol"
+   ],
+   "ch": "Disponible.",
+   "ev": "ACG 2021 SII · AGA 2022 SII-D"
+  },
+  {
+   "id": "colestiramina",
+   "n": "Colestiramina",
+   "g": "dia",
+   "cl": "Resina secuestradora de ácidos biliares.",
+   "ind": "Malabsorción de ácidos biliares (diagnóstico terapéutico), diarrea poscolecistectomía, colitis microscópica leve.",
+   "lin": "1.ª línea en malabsorción de ácidos biliares.",
+   "dos": "4 g 1–3 veces al día; iniciar con 2–4 g/día y titular.",
+   "aj": "Separar otros fármacos (tomarlos 1 h antes o 4–6 h después): levotiroxina, warfarina, anticonceptivos, digoxina.",
+   "resp": "Días; la respuesta apoya el diagnóstico.",
+   "ea": "Mal sabor, distensión, constipación, malabsorción de vitaminas liposolubles, hipertrigliceridemia.",
+   "cob": [
+    "bol"
+   ],
+   "ch": "Disponible.",
+   "ev": "BSG 2018 diarrea crónica (Arasaradnam, Gut 2018) · AGA 2022 SII-D"
+  },
+  {
+   "id": "colesevelam",
+   "n": "Colesevelam",
+   "g": "dia",
+   "cl": "Secuestrador de ácidos biliares de segunda generación.",
+   "ind": "Malabsorción de ácidos biliares con intolerancia a colestiramina.",
+   "lin": "Alternativa mejor tolerada.",
+   "dos": "1.875 mg c/12 h (3 comprimidos de 625 mg).",
+   "aj": "Menos interacciones que colestiramina.",
+   "resp": "Días.",
+   "ea": "Constipación, distensión.",
+   "cob": [
+    "ver",
+    "off"
+   ],
+   "ch": "Verificar disponibilidad.",
+   "ev": "BSG 2018"
+  },
+  {
+   "id": "budesonida",
+   "n": "Budesonida oral (Budenofalk, Cortiment)",
+   "g": "dia",
+   "cl": "Corticoide con alto metabolismo de primer paso hepático.",
+   "ind": "Colitis microscópica.",
+   "lin": "1.ª línea de inducción (AGA 2016, UEG/EMCG 2021).",
+   "dos": "<b>9 mg/día por 8 semanas</b>; recaída frecuente: mantención 6 mg/día (o mínima eficaz).",
+   "aj": "Evitar con inhibidores potentes de CYP3A4. Cirrosis: mayor exposición sistémica.",
+   "resp": "1–2 semanas; remisión 80 %.",
+   "plan": [
+    [
+     "2–4 semanas",
+     "Respuesta clínica"
+    ],
+    [
+     "8 semanas",
+     "Suspender (con o sin descenso); recaída en ~60–80 %"
+    ],
+    [
+     "Mantención",
+     "Densitometría y calcio/vitamina D si es prolongada"
+    ]
+   ],
+   "ea": "Efectos corticoides leves; osteoporosis con uso prolongado.",
+   "cob": [
+    "bol"
+   ],
+   "ch": "Disponible: <b>Budenofalk</b> (cápsulas de 3 mg, liberación ileocecal dependiente de pH: 3 cápsulas al día; formulación del tipo usada en los ensayos de colitis microscópica) y <b>Cortiment</b> MMX 9 mg (liberación colónica, aprobada para colitis ulcerosa; menos evidencia en colitis microscópica).",
+   "ev": "AGA 2016 · Miehlke, UEG J 2021"
+  },
+  {
+   "id": "rifaximina",
+   "n": "Rifaximina",
+   "g": "dia",
+   "cl": "Antibiótico no absorbible (rifamicina).",
+   "ind": "SII-D y SII sin constipación con distensión, SIBO, IMO (con neomicina).",
+   "lin": "ACG 2021 y AGA 2022: condicional en SII-D.",
+   "dos": "SII-D y SIBO: 550 mg c/8 h por 14 días; retratamiento hasta 2 veces si recae. En Chile la presentación registrada es de 200 mg: <b>400 mg c/8 h por 14 días</b>.",
+   "aj": "Sin ajuste.",
+   "resp": "Durante el curso; respuesta en SII-D ~40 % frente a ~30 % (TARGET).",
+   "plan": [
+    [
+     "Fin del curso",
+     "Evaluar dolor, distensión y consistencia"
+    ],
+    [
+     "Recaída",
+     "Repetir el curso (TARGET 3); hasta 2 retratamientos"
+    ]
+   ],
+   "ea": "Bien tolerada; náuseas. Riesgo de <i>C. difficile</i> muy bajo.",
+   "cob": [
+    "bol",
+    "off"
+   ],
+   "ch": "Disponible (200 mg); costo de bolsillo alto. En SII y SIBO, fuera de ficha.",
+   "ev": "Pimentel, NEJM 2011 (TARGET 1 y 2) · ACG 2021"
+  },
+  {
+   "id": "bismuto",
+   "n": "Subsalicilato de bismuto",
+   "g": "dia",
+   "cl": "Antisecretor, antimicrobiano y antiinflamatorio local.",
+   "ind": "Colitis microscópica leve, diarrea aguda.",
+   "lin": "Alternativa en colitis microscópica.",
+   "dos": "Colitis microscópica: 524 mg (2 comprimidos de 262 mg) c/8 h por 8 semanas.",
+   "aj": "Evitar en alergia a salicilatos, ERC y anticoagulación.",
+   "resp": "2–4 semanas.",
+   "ea": "Lengua y deposiciones negras, tinnitus (salicilatos).",
+   "cob": [
+    "bol",
+    "off"
+   ],
+   "ch": "Disponible.",
+   "ev": "AGA 2016 colitis microscópica"
+  },
+  {
+   "id": "eluxadolina",
+   "n": "Eluxadolina",
+   "g": "dia",
+   "cl": "Agonista μ y κ, antagonista δ.",
+   "ind": "SII-D.",
+   "lin": "AGA 2022 SII-D: condicional.",
+   "dos": "100 mg c/12 h.",
+   "aj": "<b>Contraindicada sin vesícula</b>, con alcohol &gt; 3 tragos/día, pancreatitis o disfunción del esfínter de Oddi.",
+   "resp": "1–4 semanas.",
+   "ea": "Constipación, pancreatitis.",
+   "cob": [
+    "nd"
+   ],
+   "ch": "Sin registro en Chile.",
+   "ev": "AGA 2022 SII-D"
+  },
+  {
+   "id": "alosetron",
+   "n": "Alosetrón",
+   "g": "dia",
+   "cl": "Antagonista 5-HT3 potente.",
+   "ind": "SII-D grave en mujeres.",
+   "lin": "AGA 2022: condicional; programa de restricción.",
+   "dos": "0,5–1 mg c/12 h.",
+   "aj": "—",
+   "resp": "1–4 semanas.",
+   "ea": "Constipación grave, colitis isquémica.",
+   "cob": [
+    "nd"
+   ],
+   "ch": "Sin registro en Chile.",
+   "ev": "AGA 2022 SII-D"
+  },
+  {
+   "id": "amitriptilina",
+   "n": "Amitriptilina",
+   "g": "neu",
+   "cl": "Antidepresivo tricíclico (ATC): inhibición de recaptación de serotonina y noradrenalina, anticolinérgico y antihistamínico.",
+   "ind": "Dolor del SII (sobre todo SII-D), SDE, CAPS, vómitos cíclicos (profilaxis), pirosis funcional.",
+   "lin": "1.ª línea neuromoduladora para dolor; ACG 2021 y Roma V fuerte en SII.",
+   "dos": "10 mg en la noche → titular cada 1–2 semanas a 25–50 mg (ATLANTIS: 10–30 mg). Vómitos cíclicos: hasta 75–100 mg o 1 mg/kg.",
+   "aj": "Adultos mayores: preferir nortriptilina. Precaución con QT, glaucoma, prostatismo.",
+   "resp": "Sueño en días; dolor en 4–8 semanas.",
+   "plan": [
+    [
+     "Inicio",
+     "Explicar que se usa como neuromodulador; advertir sequedad y somnolencia"
+    ],
+    [
+     "2–4 semanas",
+     "Tolerancia; subir dosis"
+    ],
+    [
+     "8–12 semanas",
+     "Evaluar respuesta; si responde, mantener 6–12 meses y retirar lento"
+    ],
+    [
+     "Basal si hay riesgo",
+     "ECG (QTc) en cardiopatía o &gt; 50 años con dosis ≥ 50 mg"
+    ]
+   ],
+   "ea": "Sequedad, somnolencia, constipación, aumento de peso, hipotensión ortostática, QT; letal en sobredosis.",
+   "cob": [
+    "bol",
+    "off"
+   ],
+   "ch": "Disponible; indicación digestiva fuera de ficha.",
+   "ev": "Ford, Lancet 2023 (ATLANTIS) · Drossman 2018 (neuromoduladores)"
+  },
+  {
+   "id": "imipramina",
+   "n": "Imipramina",
+   "g": "neu",
+   "cl": "ATC (amina terciaria).",
+   "ind": "Dolor del SII, dolor torácico funcional, hipersensibilidad visceral.",
+   "lin": "Alternativa a amitriptilina.",
+   "dos": "10–25 mg en la noche → 50 mg.",
+   "aj": "Igual que la clase.",
+   "resp": "4–8 semanas.",
+   "ea": "Igual que la clase.",
+   "cob": [
+    "bol",
+    "off"
+   ],
+   "ch": "Disponible.",
+   "ev": "Drossman 2018"
+  },
+  {
+   "id": "nortriptilina",
+   "n": "Nortriptilina",
+   "g": "neu",
+   "cl": "ATC (amina secundaria): menos anticolinérgico y sedante.",
+   "ind": "Dolor del SII y CAPS en adultos mayores o con intolerancia a amitriptilina.",
+   "lin": "Alternativa preferida en adultos mayores.",
+   "dos": "10 mg en la noche → 25–50 mg.",
+   "aj": "—",
+   "resp": "4–8 semanas.",
+   "ea": "Menos que amitriptilina.",
+   "cob": [
+    "ver",
+    "off"
+   ],
+   "ch": "Verificar disponibilidad.",
+   "ev": "Drossman 2018"
+  },
+  {
+   "id": "escitalopram",
+   "n": "Escitalopram",
+   "g": "neu",
+   "cl": "Inhibidor selectivo de la recaptación de serotonina (ISRS).",
+   "ind": "Hipervigilancia y ansiedad asociadas a TICI, SII-C con dolor, hipersensibilidad esofágica.",
+   "lin": "Neuromodulador cuando predomina la ansiedad o hay constipación.",
+   "dos": "5 mg → 10 mg/día (máximo 20 mg).",
+   "aj": "&gt; 65 años: máximo 10 mg. QT dependiente de dosis.",
+   "resp": "4–6 semanas (ansiedad primero).",
+   "ea": "Náuseas iniciales, diarrea, disfunción sexual, hiponatremia en adultos mayores, sangrado con AINE.",
+   "cob": [
+    "bol",
+    "off"
+   ],
+   "ch": "Disponible.",
+   "ev": "Drossman 2018 · Roma V"
+  },
+  {
+   "id": "sertralina",
+   "n": "Sertralina",
+   "g": "neu",
+   "cl": "ISRS.",
+   "ind": "Ansiedad o depresión asociada a TICI; dolor torácico funcional.",
+   "lin": "Alternativa ISRS.",
+   "dos": "25 mg → 50–100 mg/día.",
+   "aj": "—",
+   "resp": "4–6 semanas.",
+   "ea": "Diarrea (mayor que otros ISRS), náuseas.",
+   "cob": [
+    "bol",
+    "off"
+   ],
+   "ch": "Disponible.",
+   "ev": "Drossman 2018"
+  },
+  {
+   "id": "duloxetina",
+   "n": "Duloxetina",
+   "g": "neu",
+   "cl": "Inhibidor de la recaptación de serotonina y noradrenalina (IRSN).",
+   "ind": "Dolor abdominal crónico con fibromialgia, dolor somático o ansiedad; CAPS; SII-C con dolor.",
+   "lin": "Neuromodulador de dolor cuando un ATC no se tolera o constipa.",
+   "dos": "30 mg/día → 60 mg/día tras 1–2 semanas.",
+   "aj": "Evitar en hepatopatía y ClCr &lt; 30. Retiro gradual.",
+   "resp": "2–8 semanas.",
+   "plan": [
+    [
+     "1–2 semanas",
+     "Náuseas iniciales (tomar con comida); subir a 60 mg"
+    ],
+    [
+     "8 semanas",
+     "Evaluar dolor y función"
+    ]
+   ],
+   "ea": "Náuseas, sudoración, insomnio, HTA leve, hepatotoxicidad (rara).",
+   "cob": [
+    "bol",
+    "off"
+   ],
+   "ch": "Disponible.",
+   "ev": "Drossman 2018 · Roma V"
+  },
+  {
+   "id": "venlafaxina",
+   "n": "Venlafaxina",
+   "g": "neu",
+   "cl": "IRSN (noradrenérgico a dosis &gt; 150 mg).",
+   "ind": "Dolor con ansiedad; dispepsia (datos mixtos).",
+   "lin": "Alternativa a duloxetina.",
+   "dos": "37,5 mg → 75–150 mg/día (liberación prolongada).",
+   "aj": "Insuficiencia renal o hepática: reducir.",
+   "resp": "4–8 semanas.",
+   "ea": "Náuseas, HTA, síndrome de retiro marcado.",
+   "cob": [
+    "bol",
+    "off"
+   ],
+   "ch": "Disponible.",
+   "ev": "Drossman 2018"
+  },
+  {
+   "id": "mirtazapina",
+   "n": "Mirtazapina",
+   "g": "neu",
+   "cl": "Antidepresivo noradrenérgico y serotoninérgico específico: antagonista α2, 5-HT2, 5-HT3 y H1.",
+   "ind": "SDP con baja de peso y saciedad precoz, náuseas y vómitos crónicos, insomnio asociado.",
+   "lin": "2.ª línea en SDP con baja de peso (Roma V).",
+   "dos": "7,5 mg en la noche → 15 mg (hasta 30 mg).",
+   "aj": "Insuficiencia renal o hepática: titular más lento.",
+   "resp": "Apetito y náuseas en 1–2 semanas; saciedad en 4–8 semanas.",
+   "plan": [
+    [
+     "2 semanas",
+     "Somnolencia (menor con 15 mg que con 7,5 mg), apetito"
+    ],
+    [
+     "8 semanas",
+     "Peso, saciedad y tolerancia a nutrientes"
+    ]
+   ],
+   "ea": "Somnolencia, aumento de peso y apetito (deseado aquí), hipertrigliceridemia.",
+   "cob": [
+    "bol",
+    "off"
+   ],
+   "ch": "Disponible.",
+   "ev": "Tack, Clin Gastroenterol Hepatol 2016 · Roma V"
+  },
+  {
+   "id": "buspirona",
+   "n": "Buspirona",
+   "g": "neu",
+   "cl": "Agonista parcial 5-HT1A: relaja el fondo gástrico y mejora la acomodación.",
+   "ind": "SDP con saciedad precoz y plenitud.",
+   "lin": "2.ª línea en SDP.",
+   "dos": "10 mg c/8 h, 15 min antes de comidas.",
+   "aj": "Evitar con IMAO.",
+   "resp": "2–4 semanas.",
+   "ea": "Mareo, cefalea.",
+   "cob": [
+    "ver",
+    "off"
+   ],
+   "ch": "Verificar disponibilidad.",
+   "ev": "Tack, Clin Gastroenterol Hepatol 2012"
+  },
+  {
+   "id": "pregabalina",
+   "n": "Pregabalina",
+   "g": "neu",
+   "cl": "Ligando α2δ de canales de calcio: reduce la hipersensibilidad visceral.",
+   "ind": "Distensión y dolor del SII con hipersensibilidad; dolor anorrectal; CAPS como complemento.",
+   "lin": "Alternativa o aumento.",
+   "dos": "75 mg c/12 h → hasta 225 mg c/12 h (ensayo en SII).",
+   "aj": "<b>Ajustar a la función renal.</b> Riesgo de mal uso.",
+   "resp": "2–4 semanas.",
+   "ea": "Somnolencia, mareo, edema, aumento de peso.",
+   "cob": [
+    "bol",
+    "off"
+   ],
+   "ch": "Disponible.",
+   "ev": "Saito, Am J Gastroenterol 2019"
+  },
+  {
+   "id": "gabapentina",
+   "n": "Gabapentina",
+   "g": "neu",
+   "cl": "Ligando α2δ.",
+   "ind": "Hipersensibilidad visceral, dolor anorrectal, tos y síntomas laringofaríngeos con hipersensibilidad.",
+   "lin": "Alternativa a pregabalina.",
+   "dos": "100–300 mg en la noche → 300 mg c/8 h.",
+   "aj": "Ajustar a la función renal.",
+   "resp": "2–4 semanas.",
+   "ea": "Somnolencia, mareo.",
+   "cob": [
+    "bol",
+    "off"
+   ],
+   "ch": "Disponible.",
+   "ev": "Drossman 2018"
+  },
+  {
+   "id": "quetiapina",
+   "n": "Quetiapina",
+   "g": "neu",
+   "cl": "Antipsicótico atípico (antagonista D2, 5-HT2A, H1).",
+   "ind": "Aumento en CAPS refractario o con insomnio y ansiedad; desintoxicación de opioides.",
+   "lin": "Aumento, por especialista.",
+   "dos": "25 mg en la noche → 50–100 mg.",
+   "aj": "—",
+   "resp": "Días (sueño) a semanas.",
+   "ea": "Somnolencia, síndrome metabólico, QT.",
+   "cob": [
+    "bol",
+    "off"
+   ],
+   "ch": "Disponible.",
+   "ev": "Drossman 2018"
+  },
+  {
+   "id": "olanzapina",
+   "n": "Olanzapina",
+   "g": "neu",
+   "cl": "Antipsicótico atípico con efecto antiemético potente (D2, 5-HT2, 5-HT3, H1, M).",
+   "ind": "Náuseas crónicas refractarias, síndrome de náuseas y vómitos crónicos.",
+   "lin": "Aumento en refractarios.",
+   "dos": "2,5–5 mg en la noche.",
+   "aj": "Adultos mayores: 2,5 mg.",
+   "resp": "Días.",
+   "ea": "Somnolencia, aumento de peso, hiperglicemia.",
+   "cob": [
+    "bol",
+    "off"
+   ],
+   "ch": "Disponible.",
+   "ev": "Roma V náuseas y vómitos"
+  },
+  {
+   "id": "clonidina",
+   "n": "Clonidina",
+   "g": "neu",
+   "cl": "Agonista α2 central: atenúa la hiperactividad noradrenérgica de la abstinencia de opioides; también reduce la sensibilidad rectal.",
+   "ind": "Desintoxicación en síndrome de intestino narcótico; diarrea diabética.",
+   "lin": "Complemento del descenso de opioides.",
+   "dos": "0,1 mg c/8–12 h desde que se ha retirado el 50 % del opioide (hasta 0,6 mg/día); luego descenso.",
+   "aj": "Retiro gradual (HTA de rebote).",
+   "resp": "Horas.",
+   "ea": "Hipotensión, bradicardia, somnolencia, sequedad.",
+   "cob": [
+    "bol",
+    "off"
+   ],
+   "ch": "Disponible.",
+   "ev": "Grunkemeier, Clin Gastroenterol Hepatol 2007 · Drossman y Szigethy 2014 (intestino narcótico)"
+  },
+  {
+   "id": "budesonida_eoe",
+   "n": "Budesonida tópica esofágica",
+   "g": "eoe",
+   "cl": "Corticoide tópico deglutido.",
+   "ind": "Esofagitis eosinofílica.",
+   "lin": "1.ª línea (junto con IBP y dieta).",
+   "dos": "Orodispersable 1 mg c/12 h por 6–12 semanas donde exista; en Chile, <b>preparado magistral</b>: suspensión viscosa de budesonida 1 mg c/12 h (por ejemplo, ampollas de nebulización mezcladas con sucralosa). Mantención 0,5–1 mg c/12 h. No comer ni beber 30–60 min después.",
+   "aj": "—",
+   "resp": "Histológica a las 6–12 semanas (biopsias de control).",
+   "plan": [
+    [
+     "6–12 semanas",
+     "Endoscopía con biopsias: meta &lt; 15 eosinófilos/campo"
+    ],
+    [
+     "Respuesta",
+     "Mantención en dosis mínima eficaz"
+    ]
+   ],
+   "ea": "Candidiasis esofágica (5–10 %), supresión suprarrenal rara.",
+   "cob": [
+    "bol",
+    "off"
+   ],
+   "ch": "La orodispersable no está disponible: se indica con <b>receta magistral</b> (suspensión viscosa).",
+   "ev": "AGA-JTF 2020 EoE (Hirano, Gastroenterology 2020)"
+  },
+  {
+   "id": "fluticasona_eoe",
+   "n": "Fluticasona deglutida",
+   "g": "eoe",
+   "cl": "Corticoide tópico (inhalador deglutido).",
+   "ind": "Esofagitis eosinofílica.",
+   "lin": "Alternativa a budesonida.",
+   "dos": "440–880 µg c/12 h, pulverizado en la boca y deglutido sin espaciador.",
+   "aj": "—",
+   "resp": "8–12 semanas.",
+   "ea": "Candidiasis.",
+   "cob": [
+    "bol",
+    "off"
+   ],
+   "ch": "Disponible como inhalador; uso fuera de ficha.",
+   "ev": "AGA-JTF 2020 EoE"
+  },
+  {
+   "id": "dupilumab",
+   "n": "Dupilumab",
+   "g": "eoe",
+   "cl": "Anticuerpo anti-receptor α de IL-4 (bloquea IL-4 e IL-13).",
+   "ind": "EoE refractaria o con comorbilidad atópica (asma, dermatitis).",
+   "lin": "Tras falla de IBP o corticoide tópico (o antes si hay atopia grave).",
+   "dos": "300 mg subcutáneo semanal (≥ 12 años y ≥ 40 kg).",
+   "aj": "—",
+   "resp": "Histológica a las 12–24 semanas.",
+   "ea": "Reacción en el sitio de inyección, conjuntivitis.",
+   "cob": [
+    "ver"
+   ],
+   "ch": "Registrado en Chile para otras indicaciones; verificar indicación en EoE y acceso.",
+   "ev": "Dellon, NEJM 2022"
+  },
+  {
+   "id": "botox",
+   "n": "Toxina botulínica A",
+   "g": "otr",
+   "cl": "Bloqueo presináptico de la liberación de acetilcolina.",
+   "ind": "Incapacidad para eructar (cricofaríngeo), acalasia en pacientes no candidatos a dilatación o cirugía, fisura anal; no se recomienda de rutina en el píloro en gastroparesia.",
+   "lin": "Según indicación.",
+   "dos": "R-CPD: 50–100 U en el cricofaríngeo (guía electromiográfica o endoscópica). Acalasia: 100 U en 4 cuadrantes del esfínter inferior.",
+   "aj": "—",
+   "resp": "R-CPD: días, efecto duradero en la mayoría; acalasia: efecto de 6–12 meses.",
+   "ea": "Disfagia transitoria (cricofaríngeo), dolor torácico; fibrosis que dificulta la miotomía posterior.",
+   "cob": [
+    "hosp"
+   ],
+   "ch": "Disponible en centros de procedimiento.",
+   "ev": "Bastian y Smithson, OTO Open 2019 (R-CPD) · ACG 2020 acalasia · AGA 2025 gastroparesia"
+  },
+  {
+   "id": "octreotido",
+   "n": "Octreótido",
+   "g": "otr",
+   "cl": "Análogo de somatostatina: en dosis bajas nocturnas induce complejos motores migratorios.",
+   "ind": "CIPO, SIBO por dismotilidad, esclerodermia, síndrome de dumping.",
+   "lin": "Procinético en dismotilidad intestinal grave.",
+   "dos": "50–100 µg subcutáneo en la noche (CIPO); dumping: 50–100 µg antes de comidas.",
+   "aj": "—",
+   "resp": "Días.",
+   "ea": "Colelitiasis, esteatorrea, hiperglicemia.",
+   "cob": [
+    "bol",
+    "hosp",
+    "off"
+   ],
+   "ch": "Disponible.",
+   "ev": "Soudah, NEJM 1991"
+  },
+  {
+   "id": "piridostigmina",
+   "n": "Piridostigmina",
+   "g": "otr",
+   "cl": "Inhibidor de acetilcolinesterasa oral.",
+   "ind": "CIPO, constipación refractaria con neuropatía autonómica.",
+   "lin": "Procinético en CIPO (evidencia creciente).",
+   "dos": "30–60 mg c/8–12 h.",
+   "aj": "Evitar en asma y bradicardia.",
+   "resp": "Días.",
+   "ea": "Cólico, sialorrea, bradicardia.",
+   "cob": [
+    "bol",
+    "off"
+   ],
+   "ch": "Disponible.",
+   "ev": "Revisiones de CIPO"
+  },
+  {
+   "id": "neostigmina",
+   "n": "Neostigmina",
+   "g": "otr",
+   "cl": "Inhibidor de acetilcolinesterasa parenteral.",
+   "ind": "Pseudoobstrucción colónica aguda (síndrome de Ogilvie) sin respuesta al manejo conservador.",
+   "lin": "Tras 24–48 h de tratamiento conservador o ciego &gt; 12 cm.",
+   "dos": "<b>2 mg IV lenta (3–5 min)</b> con monitor cardíaco y atropina disponible; puede repetirse una vez.",
+   "aj": "Contraindicada en obstrucción mecánica, bradicardia, broncoespasmo activo, perforación.",
+   "resp": "Evacuación en 30 min en ~90 %.",
+   "ea": "Bradicardia, broncoespasmo, cólico, sialorrea.",
+   "cob": [
+    "hosp"
+   ],
+   "ch": "Disponible en hospitales.",
+   "ev": "Ponec, NEJM 1999"
+  }
+ ],
+ "lineas": [
+  {
+   "e": "ERGE (síntomas típicos)",
+   "r": [
+    [
+     "1.ª",
+     "IBP en dosis estándar 30–60 min antes del desayuno, 8 semanas",
+     "Pirosis en 2–4 semanas"
+    ],
+    [
+     "Parcial",
+     "Optimizar horario → dosis doble 8 semanas o cambio a P-CAB; alginato nocturno",
+     "Sin respuesta: endoscopía sin IBP y pH-impedancia"
+    ],
+    [
+     "ERGE probada refractaria",
+     "P-CAB, baclofeno, alginato; cirugía o endoscopía antirreflujo",
+     "TEA &gt; 4 % y &gt; 80 reflujos con IBP 2 veces al día"
+    ],
+    [
+     "Sin ERGE probada",
+     "Desescalar o suspender a las 4–8 semanas",
+     "—"
+    ]
+   ]
+  },
+  {
+   "e": "Hipersensibilidad al reflujo y pirosis funcional",
+   "r": [
+    [
+     "1.ª",
+     "ATC en dosis baja (amitriptilina 10–25 mg) o ISRS (escitalopram)",
+     "4–8 semanas"
+    ],
+    [
+     "Complemento",
+     "Terapia cerebro-intestino (hipnoterapia, TCC)",
+     "—"
+    ],
+    [
+     "Hipersensibilidad",
+     "Mantener antisecretor si hay asociación con reflujo ácido",
+     "—"
+    ]
+   ]
+  },
+  {
+   "e": "Dispepsia: SDP",
+   "r": [
+    [
+     "Siempre",
+     "<i>H. pylori</i> y erradicación",
+     "Reevaluar a 6–12 meses"
+    ],
+    [
+     "1.ª",
+     "Procinético (domperidona, cinitaprida, levosulpirida) o IBP, 4–8 semanas",
+     "Sin respuesta: suspender, no escalar"
+    ],
+    [
+     "2.ª",
+     "Mirtazapina 7,5–15 mg (baja de peso) o buspirona 10 mg c/8 h (saciedad)",
+     "8 semanas"
+    ],
+    [
+     "Refractaria",
+     "Vaciamiento gástrico de 4 h; terapia cerebro-intestino",
+     "—"
+    ]
+   ]
+  },
+  {
+   "e": "Dispepsia: SDE",
+   "r": [
+    [
+     "1.ª",
+     "IBP en dosis estándar, sin escalar",
+     "4–8 semanas"
+    ],
+    [
+     "2.ª",
+     "ATC en dosis baja",
+     "8–12 semanas"
+    ],
+    [
+     "Complemento",
+     "Terapia cerebro-intestino",
+     "—"
+    ]
+   ]
+  },
+  {
+   "e": "Gastroparesia",
+   "r": [
+    [
+     "Base",
+     "Comidas pequeñas, partículas pequeñas, baja grasa y fibra; control glicémico; retirar opioides y GLP-1",
+     "—"
+    ],
+    [
+     "1.ª",
+     "Metoclopramida 5–10 mg 3–4 veces al día ≤ 12 semanas",
+     "Evaluar a 4 semanas"
+    ],
+    [
+     "2.ª",
+     "Eritromicina en ciclos; antieméticos",
+     "Taquifilaxia en 1–4 semanas"
+    ],
+    [
+     "Refractaria",
+     "G-POEM en seleccionados (vaciamiento muy retardado, síntomas de retención); nutrición yeyunal",
+     "—"
+    ]
+   ]
+  },
+  {
+   "e": "Vómitos cíclicos",
+   "r": [
+    [
+     "Profilaxis (≥ 4 episodios/año o graves)",
+     "Amitriptilina 25 → 75–100 mg; alternativa topiramato o aprepitant",
+     "Meta: reducción ≥ 50 % de episodios en 3 meses"
+    ],
+    [
+     "Aborto",
+     "Sumatriptán + ondansetrón + sedación (lorazepam) en el pródromo",
+     "—"
+    ],
+    [
+     "Siempre",
+     "Suspender cannabis; tratar ansiedad y migraña",
+     "—"
+    ]
+   ]
+  },
+  {
+   "e": "SII con diarrea",
+   "r": [
+    [
+     "Base",
+     "Explicación, FODMAP en 3 fases, psyllium, antiespasmódico (pinaverio, otilonio, trimebutina)",
+     "4–6 semanas"
+    ],
+    [
+     "Síntoma",
+     "Loperamida preventiva; colestiramina si se sospecha malabsorción de ácidos biliares",
+     "—"
+    ],
+    [
+     "Global",
+     "Rifaximina 14 días (Chile 400 mg c/8 h); ondansetrón titulado",
+     "Recaída: repetir rifaximina"
+    ],
+    [
+     "Dolor",
+     "ATC en dosis baja",
+     "8–12 semanas"
+    ],
+    [
+     "Refractario",
+     "Terapia cerebro-intestino; revisar diagnóstico (colitis microscópica, ácidos biliares)",
+     "—"
+    ]
+   ]
+  },
+  {
+   "e": "SII con constipación",
+   "r": [
+    [
+     "Base",
+     "Psyllium, PEG, antiespasmódico (pinaverio, otilonio, trimebutina)",
+     "PEG mejora frecuencia, no dolor"
+    ],
+    [
+     "2.ª",
+     "Prucaloprida (en la práctica); linaclotida donde exista",
+     "4 semanas"
+    ],
+    [
+     "Dolor",
+     "ISRS o duloxetina (no constipan); terapia cerebro-intestino",
+     "8 semanas"
+    ],
+    [
+     "Síntomas evacuatorios",
+     "Manometría anorrectal y test de balón → biorretroalimentación",
+     "—"
+    ]
+   ]
+  },
+  {
+   "e": "Constipación crónica",
+   "r": [
+    [
+     "1.ª",
+     "Psyllium y PEG 17 g/día",
+     "2–4 semanas"
+    ],
+    [
+     "2.ª",
+     "+ Bisacodilo o picosulfato",
+     "—"
+    ],
+    [
+     "3.ª",
+     "Prucaloprida 2 mg (1 mg en &gt; 65)",
+     "Sin respuesta en 4 semanas: suspender"
+    ],
+    [
+     "Refractaria",
+     "Pruebas anorrectales → biorretroalimentación; tránsito colónico si son normales",
+     "Colectomía solo en inercia colónica pura con evaluación completa"
+    ]
+   ]
+  },
+  {
+   "e": "Constipación por opioides",
+   "r": [
+    [
+     "1.ª",
+     "PEG o estimulante desde el inicio del opioide",
+     "—"
+    ],
+    [
+     "2.ª",
+     "PAMORA: naloxegol 25 mg o metilnaltrexona (no disponibles en Chile)",
+     "En Chile: optimizar PEG y estimulantes; prucaloprida como alternativa"
+    ]
+   ]
+  },
+  {
+   "e": "Colitis microscópica",
+   "r": [
+    [
+     "Siempre",
+     "Suspender AINE, IBP, ISRS, estatinas si es posible; descartar celíaca",
+     "—"
+    ],
+    [
+     "Inducción",
+     "Budesonida 9 mg/día por 8 semanas",
+     "Remisión en ~80 %"
+    ],
+    [
+     "Recaída",
+     "Repetir budesonida; mantención en dosis mínima",
+     "Refractaria: tiopurinas o biológicos (anti-TNF, vedolizumab)"
+    ]
+   ]
+  },
+  {
+   "e": "SIBO e IMO",
+   "r": [
+    [
+     "SIBO",
+     "Rifaximina 14 días; tratar la causa (motilidad, anatomía)",
+     "Recurrencia frecuente: buscar la causa"
+    ],
+    [
+     "IMO",
+     "Rifaximina + neomicina 500 mg c/12 h, 14 días; tratar la constipación",
+     "—"
+    ],
+    [
+     "Dismotilidad",
+     "Procinético nocturno (octreótido, prucaloprida); ciclos de antibiótico",
+     "—"
+    ]
+   ]
+  },
+  {
+   "e": "Esofagitis eosinofílica",
+   "r": [
+    [
+     "Inducción",
+     "IBP dosis alta (omeprazol 20–40 mg c/12 h), budesonida tópica (en Chile, magistral) o dieta de eliminación (1–2 alimentos)",
+     "Biopsias a 8–12 semanas"
+    ],
+    [
+     "Refractaria",
+     "Cambiar de modalidad; dupilumab",
+     "—"
+    ],
+    [
+     "Estenosis",
+     "Dilatación endoscópica además del tratamiento antiinflamatorio",
+     "—"
+    ]
+   ]
+  },
+  {
+   "e": "CAPS e intestino narcótico",
+   "r": [
+    [
+     "1.ª",
+     "Relación terapéutica, metas funcionales, ATC o duloxetina",
+     "8–12 semanas"
+    ],
+    [
+     "Aumento",
+     "+ Pregabalina o quetiapina en dosis baja; terapia cerebro-intestino",
+     "—"
+    ],
+    [
+     "Opioides",
+     "Descenso planificado; clonidina desde el 50 % retirado; laxantes",
+     "Recaída frecuente: seguimiento estrecho"
+    ]
+   ]
+  }
+ ]
 }

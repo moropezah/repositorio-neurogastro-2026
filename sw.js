@@ -1,6 +1,6 @@
 /* Service worker · Repositorio Neurogastroenterología 2026 · versión 2026-10-20a */
 const PREFIX='neuro-completa-';
-const CACHE=PREFIX+'2026-10-20b';
+const CACHE=PREFIX+'2026-10-20c';
 const FONTS='neuro-fonts-v1';
 const ASSETS=["./", "index.html", "guia-2026.html", "calc/", "calc/index.html", "estudios/", "estudios/index.html", "fenotipos/", "fenotipos/index.html", "atlas/", "atlas/index.html", "pacientes/", "pacientes/index.html", "quiz/", "quiz/index.html", "manifest.webmanifest", "icons/icon-192.png", "icons/icon-512.png", "icons/apple-touch-icon.png"];
 const FONT_CSS=["https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap"];

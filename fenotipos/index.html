@@ -177,9 +177,9 @@ const CALCS=[
   const base=['Base','Explicación del eje intestino-cerebro; dieta baja en FODMAP en 3 fases guiada (o dieta tradicional NICE); psyllium 3,5 → 10 g/día; ejercicio','4–6 semanas; la FODMAP exige fase de reintroducción'];
   const neu=v.sub==='C'?['Neuromodulador','Dolor: escitalopram 10 mg o duloxetina 30 → 60 mg (no constipan); distensión: pregabalina 75 mg c/12 h','4–8 semanas; falla: sin cambio en 12 semanas']:['Neuromodulador','Amitriptilina 10 mg noche → 25–50 mg (o nortriptilina); distensión con hipersensibilidad: pregabalina','4–8 semanas; mantener 6–12 meses si responde'];
   const psi=['Terapia cerebro-intestino','Terapia cognitivo-conductual o hipnoterapia dirigida al intestino (también digital); combinar con el neuromodulador','8–12 sesiones; efecto sostenido'];
-  if(v.sub==='D')plan=[base,['Hábito y dolor','Loperamida 2 mg preventiva (máx. 16 mg/día) + antiespasmódico (pinaverio 50–100 mg c/8 h) o aceite de menta','1–2 semanas; la loperamida no mejora el dolor'],['Global','Rifaximina 14 días (Chile: 400 mg c/8 h; 550 mg c/8 h donde exista) · ondansetrón 4 mg/día titulado hasta 8 mg c/8 h · colestiramina 4 g si sospecha de ácidos biliares','Recaída tras rifaximina: repetir hasta 2 veces'],neu,psi];
-  else if(v.sub==='C')plan=[base,['Hábito y dolor','PEG 17 g/día + antiespasmódico o aceite de menta','PEG mejora frecuencia, no dolor; 2–4 semanas'],['Secretagogo o procinético','Linaclotida 290 µg/día donde exista (no en Chile) · en Chile: prucaloprida 2 mg/día (1 mg en &gt; 65)','4 semanas; si hay síntomas evacuatorios, manometría anorrectal'],neu,psi];
-  else plan=[base,['Por síntoma del momento','Antiespasmódico o aceite de menta; loperamida o PEG a demanda según el hábito del día','Revisar el subtipo: cambia en el tiempo'],['Global','Rifaximina si predomina la distensión sin constipación','—'],neu,psi];
+  if(v.sub==='D')plan=[base,['Hábito y dolor','Loperamida 2 mg preventiva (máx. 16 mg/día) + antiespasmódico (pinaverio 50–100 mg c/8 h, otilonio 40 mg c/8–12 h o trimebutina)','1–2 semanas; la loperamida no mejora el dolor'],['Global','Rifaximina 14 días (Chile: 400 mg c/8 h; 550 mg c/8 h donde exista) · ondansetrón 4 mg/día titulado hasta 8 mg c/8 h · colestiramina 4 g si sospecha de ácidos biliares','Recaída tras rifaximina: repetir hasta 2 veces'],neu,psi];
+  else if(v.sub==='C')plan=[base,['Hábito y dolor','PEG 17 g/día + antiespasmódico (pinaverio, otilonio, trimebutina)','PEG mejora frecuencia, no dolor; 2–4 semanas'],['Secretagogo o procinético','Linaclotida 290 µg/día donde exista (no en Chile) · en Chile: prucaloprida 2 mg/día (1 mg en &gt; 65)','4 semanas; si hay síntomas evacuatorios, manometría anorrectal'],neu,psi];
+  else plan=[base,['Por síntoma del momento','Antiespasmódico; loperamida o PEG a demanda según el hábito del día','Revisar el subtipo: cambia en el tiempo'],['Global','Rifaximina si predomina la distensión sin constipación','—'],neu,psi];
   let on=Math.min(p+(p>=2&&(v.gr==='g'||v.psi)?1:0),plan.length-1);
   if((v.gr==='g'||v.psi)&&p>=1&&on<3)on=3;
   let t=`<b>Siguiente paso: ${plan[on][0]}.</b> ${plan[on][1]}.`;
@@ -197,13 +197,13 @@ const CALCS=[
     s('arm','Manometría anorrectal y test de balón',[['nd','No realizados'],['dis','Disinergia (balón > 1 min)'],['nor','Normales']]),s('tr','Tránsito colónico',[['nd','No realizado'],['len','Lento'],['nor','Normal']])],
  f(v){let ph=v.opi?'Por opioides':v.dol?'SII-C':v.arm==='dis'?'Trastorno evacuatorio (disinergia)':v.tr==='len'&&v.arm==='nor'?'Tránsito lento':v.tr==='nor'&&v.arm==='nor'?'Tránsito normal':v.eva?'Sospecha de trastorno evacuatorio':'Constipación crónica sin fenotipar';
   const plan=[['1','Psyllium 3,5 → 10 g/día y PEG 17 g/día (8,5–34 g)','2–4 semanas; meta: Bristol 4 diaria'],['2','+ Bisacodilo o picosulfato 5–10 mg en la noche (diario o de rescate)','Días'],['3','Prucaloprida 2 mg/día (1 mg en &gt; 65 o ClCr &lt; 30)','Sin respuesta a 4 semanas: suspender'],['4','Manometría anorrectal + test de balón → biorretroalimentación si hay disinergia','5–6 sesiones; éxito 70–80 %'],['5','Tránsito colónico si las pruebas anorrectales son normales; tránsito lento puro refractario: centro de referencia (colectomía excepcional)','—']];
-  if(v.opi)plan.splice(2,0,['2b','PAMORA: naloxegol 25 mg/día o metilnaltrexona 12 mg s.c.','Contraindicados en obstrucción']);
+  if(v.opi)plan.splice(2,0,['2b','PAMORA (naloxegol, metilnaltrexona) donde existan; en Chile no hay: optimizar PEG y estimulantes o prucaloprida','Contraindicados en obstrucción']);
   let on=+v.paso; if(v.opi&&on>=2)on=on===2?2:on+1;
   if(v.arm==='dis')on=plan.findIndex(r=>r[0]==='4'); else if(v.arm==='nor'&&on>=plan.findIndex(r=>r[0]==='4'))on=plan.length-1;
   if(v.eva&&v.arm==='nd'&&+v.paso>=1)on=Math.max(on,plan.findIndex(r=>r[0]==='4'));
   let t=`<b>Fenotipo: ${ph}.</b> Siguiente: ${plan[on][1]}.`;
   if(v.eva&&v.arm==='nd')t+=' Los síntomas evacuatorios justifican tacto rectal con maniobra de pujo y estudio anorrectal temprano: la disinergia no responde a laxantes.';
-  if(v.dol)t+=' Con dolor dominante: agregar antiespasmódico o aceite de menta y considerar ISRS o duloxetina (no constipan).';
+  if(v.dol)t+=' Con dolor dominante: agregar antiespasmódico y considerar ISRS o duloxetina (no constipan).';
   if(v.tr==='len'&&v.arm==='nd')t+=al('Tránsito lento sin pruebas anorrectales: hasta dos tercios de los disinérgicos tienen tránsito lento secundario. Estudiar la evacuación antes de concluir inercia colónica.');
   t+=nt('En Chile no hay linaclotida, lubiprostona ni plecanatida: tras PEG y estimulantes, el siguiente escalón real es prucaloprida o el estudio anorrectal.');
   return {vals:[V('Fenotipo',ph,'mid'),V('Escalón',plan[on][0],'')],txt:t,plan,on}},
