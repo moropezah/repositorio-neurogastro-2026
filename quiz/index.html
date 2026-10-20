@@ -1413,7 +1413,7 @@ const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",
 
 /* ---------- almacenamiento: este navegador + nube (Google Sheets) ---------- */
 const KEY="quizNeuro_2026";
-const CLOUD_DEF={api:"https://script.google.com/macros/s/AKfycbwrh1RKcOHr-CEqEHMot4SsY-pk0gb9wDdKY70NLPAO3xxunA9ZsiBGcd-nMAjZS5eR/exec",token:"hepato-2026"};
+const CLOUD_DEF={api:"https://script.google.com/macros/s/AKfycbx2ZaMKlpOflSCSYZBb7h4iQk9DyzF7LG0y-DAT-o76syavAQLuDojJoMRB8tUnrFDdkQ/exec",token:"neuro-2026"};
 const CLOUD=(()=>{let o={};try{o=JSON.parse(localStorage.getItem("quizNeuro_cloud")||"{}")}catch(e){}
   const api=o.api||CLOUD_DEF.api, tk=o.token||CLOUD_DEF.token;return {api:api.startsWith("http")?api:"",tokens:[tk],token:tk,id:"quizNeuro_2026"}})();
 let tokenReady=null;         // se resuelve cuando se sabe qué clave acepta el script

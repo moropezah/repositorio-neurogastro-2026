@@ -71,7 +71,7 @@ def main():
     if info["err"]:
         sys.exit("Errores en el banco:\n  " + "\n  ".join(info["err"]))
 
-    cfg = {"api": "", "token": "hepato-2026"}  # misma implementación de Apps Script que el quiz de hepatología; quizId distinto
+    cfg = {"api": "", "token": "neuro-2026"}
     if (F / "config.json").exists():
         cfg.update(json.loads((F / "config.json").read_text(encoding="utf-8")))
 
