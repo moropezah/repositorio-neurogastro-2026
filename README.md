@@ -12,7 +12,7 @@ Sitio estático (HTML, CSS y JavaScript sin dependencias), instalable como aplic
 | 02 | Consulta rápida | `index.html#rapida` | Tarjetas con criterios, cortes y conductas. |
 | 03 | Fenotipador terapéutico | `fenotipos/` | Escalón terapéutico por fenotipo: SII, constipación, reflujo, dispepsia, náuseas y vómitos, diarrea crónica, dolor abdominal. |
 | 04 | Intérpretes de estudios | `estudios/` | pH-impedancia (Lyon 2.0), cápsula 96 h, manometría esofágica (Chicago 4.0), FLIP, vaciamiento gástrico, test de aire espirado, tránsito colónico, manometría anorrectal (Londres). |
-| 05 | Vademécum | `index.html#vademecum` | Fármacos con dosis, ajustes, respuesta esperada, seguimiento y disponibilidad en Chile; líneas por enfermedad. |
+| 05 | Vademécum | `index.html#vademecum` | Ficha breve por fármaco (dosis, cinética, qué vigilar, con qué combinar, disponibilidad en Chile); pestañas de cinética, combinaciones y líneas por enfermedad. |
 | 06 | Calculadoras | `calc/` | Criterios de Roma V, GerdQ, RSI, Eckardt, equivalencia de IBP, GCSI, Sigstad, IBS-SSS, Agachan-Wexner, Wexner, St Mark's, PHQ-9, GAD-7, PHQ-15. |
 | 07 | Atlas | `atlas/` | Esquemas SVG propios (Chicago 4.0, Lyon 2.0, FLIP, Bristol, disinergia, mecanismos). |
 | 08 | Pacientes | `pacientes/` | Hojas imprimibles en lenguaje simple. |
