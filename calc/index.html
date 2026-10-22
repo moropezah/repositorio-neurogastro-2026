@@ -376,7 +376,7 @@ document.getElementById('fq').addEventListener('input',e=>{const q=e.target.valu
 function campo(f){
   if(f.t==='n')return `<div class="f"><label for="i-${f.id}">${f.l}${f.u?` <span class="u">(${f.u})</span>`:''}</label><input type="number" inputmode="decimal" step="any" id="i-${f.id}" data-k="${f.id}" placeholder="${f.ex?'ej. '+f.ex:''}"></div>`;
   if(f.t==='t')return `<div class="f full"><label for="i-${f.id}">${f.l}</label><input type="text" id="i-${f.id}" data-k="${f.id}" placeholder="${f.ex?'ej. '+f.ex:''}"></div>`;
-  if(f.t==='s')return `<div class="f"><label for="i-${f.id}">${f.l}</label><select id="i-${f.id}" data-k="${f.id}">${f.o.map(o=>`<option value="${o[0]}">${o[1]}</option>`).join('')}</select></div>`;
+  if(f.t==='s')return `<div class="f"><label for="i-${f.id}">${f.l}</label><select id="i-${f.id}" data-k="${f.id}"><option value="" selected>— elegir —</option>${f.o.map(o=>`<option value="${o[0]}">${o[1]}</option>`).join('')}</select></div>`;
   return `<div class="f chk full"><input type="checkbox" id="i-${f.id}" data-k="${f.id}"><label for="i-${f.id}">${f.l}</label></div>`;
 }
 function leer(cal){const v={}; cal.i.forEach(f=>{const el=document.getElementById('i-'+f.id);
@@ -387,11 +387,17 @@ function cargar(cal,ej){
   document.getElementById('frm').reset();
   cal.i.forEach(f=>{const el=document.getElementById('i-'+f.id); if(!(f.id in ej.v))return; const x=ej.v[f.id];
     if(f.t==='c')el.checked=!!x; else el.value=String(x);});
+  /* listas que el ejemplo no fija: primera opción (igual que la validación) */
+  cal.i.forEach(f=>{if(f.t==='s'&&!(f.id in ej.v))document.getElementById('i-'+f.id).value=String(f.o[0][0]);});
 }
+let TOCADO=false;
 function escala(cal,v,r){const m=META[cal.id]; if(!m||!m.esc)return ''; let e=null; try{e=m.esc(v,r)}catch(err){e=null} if(!e)return '';
   return `<div class="esc"><h4>Escala completa · fila marcada = este paciente</h4><table><tr>${e.h.map(x=>`<th>${x}</th>`).join('')}</tr>${e.rows.map((row,i)=>`<tr class="${i===e.on?'on':''}">${row.map(x=>`<td>${x}</td>`).join('')}</tr>`).join('')}</table></div>`;}
-function calcular(cal){const v=leer(cal); let r=null; try{r=cal.f(v)}catch(e){r=null}
-  const out=document.getElementById('res');
+function calcular(cal){const v=leer(cal); const out=document.getElementById('res');
+  if(!TOCADO){out.innerHTML='<p class="falta">Herramienta en blanco: complete los datos del paciente o cargue un ejemplo.</p>';return;}
+  const faltan=cal.i.filter(f=>f.t==='s'&&v[f.id]==='').map(f=>f.l);
+  if(faltan.length){out.innerHTML='<p class="falta">Falta elegir: '+faltan.join(' · ')+'.</p>';return;}
+  let r=null; try{r=cal.f(v)}catch(e){r=null}
   if(!r){out.innerHTML='<p class="falta">Complete los campos o cargue un ejemplo para ver el resultado.</p>';return;}
   out.innerHTML=`<div class="vals">${r.vals.map(x=>`<div class="val ${x.cls||''}"><small>${x.k}</small><b>${x.v}</b></div>`).join('')}</div>${escala(cal,v,r)}<div class="interp">${r.txt||''}</div>`;
 }
@@ -416,10 +422,10 @@ function abrir(id){
    <div class="res" id="res"></div><p class="ref">${cal.ref}</p></div>`;
   const frm=document.getElementById('frm'), bts=[...box.querySelectorAll('[data-ej]')];
   const marca=b=>bts.forEach(x=>x.setAttribute('aria-pressed',x===b));
-  frm.addEventListener('input',()=>{marca(null);calcular(cal)}); frm.addEventListener('change',()=>calcular(cal));
-  bts.forEach(b=>b.onclick=()=>{cargar(cal,m.ej[+b.dataset.ej]); marca(b); calcular(cal)});
-  document.getElementById('lim').onclick=()=>{frm.reset(); marca(null); calcular(cal)};
-  calcular(cal);
+  frm.addEventListener('input',()=>{TOCADO=true;marca(null);calcular(cal)}); frm.addEventListener('change',()=>{TOCADO=true;calcular(cal)});
+  bts.forEach(b=>b.onclick=()=>{cargar(cal,m.ej[+b.dataset.ej]); TOCADO=true; marca(b); calcular(cal)});
+  document.getElementById('lim').onclick=()=>{frm.reset(); TOCADO=false; marca(null); calcular(cal)};
+  TOCADO=false; calcular(cal);
 }
 window.addEventListener('hashchange',()=>{abrir(location.hash.slice(1)); window.scrollTo(0,0)});
 abrir(location.hash.slice(1));
