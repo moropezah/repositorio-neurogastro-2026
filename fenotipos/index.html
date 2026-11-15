@@ -240,7 +240,7 @@ const CALCS=[
  f(v){const sdp=v.tipo!=='sde';
   const plan=[['0','<i>H. pylori</i>: test de aire espirado o antígeno (sin IBP 2 semanas) y erradicación','Reevaluar síntomas a 6–12 meses'],
    ['1',sdp?'Procinético: domperidona 10 mg c/8 h (QT), cinitaprida 1 mg c/8 h o levosulpirida 25 mg c/8 h; o IBP estándar':'IBP en dosis estándar 1 vez al día, sin escalar','4–8 semanas; sin respuesta: suspender'],
-   ['2',sdp?(v.peso?'Mirtazapina 7,5–15 mg noche':'Buspirona 10 mg c/8 h antes de comidas o mirtazapina 7,5–15 mg'):'Amitriptilina 10 → 25 mg noche','8–12 semanas'],
+   ['2',sdp?(v.peso?'Mirtazapina 7,5–15 mg noche + apoyo nutricional, sin dietas restrictivas':'Optimizar o cambiar procinético; mirtazapina 7,5–15 mg noche (saciedad o náusea) o amitriptilina 10 → 25 mg si hay dolor'):'Amitriptilina 10 → 25 mg noche','8–12 semanas'],
    ['3','Terapia cerebro-intestino; si es refractaria: vaciamiento gástrico de 4 h y revisar el diagnóstico','—']];
   let on=v.hp==='neg'?1+(+v.paso):0; on=Math.min(on,3);
   let t=`<b>Siguiente:</b> ${plan[on][1]}.`;
