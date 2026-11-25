@@ -61,6 +61,7 @@ document.querySelectorAll('.hoja .imp').forEach(function(b){b.onclick=function()
     d = RAIZ / "pacientes"; d.mkdir(exist_ok=True)
     (d / "index.html").write_text(out, encoding="utf-8")
     print(f"pacientes/index.html: {len(titulos)} hojas")
+    import runpy, pathlib as _p; runpy.run_path(str(_p.Path(__file__).resolve().parents[2] / "fuentes/buscador/actualizar.py"), run_name="__main__")
 
 if __name__ == "__main__":
     main()

@@ -239,6 +239,7 @@ body.solo-perlas main>div.inner>h2[id^="b"]{margin-top:34px}
 .chk label input{margin:0 8px 0 0;vertical-align:-2px}
 
 </style>
+<link rel="stylesheet" href="buscador.css">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
@@ -247,7 +248,7 @@ body.solo-perlas main>div.inner>h2[id^="b"]{margin-top:34px}
 <div id="wrap">
 <aside id="nav">
   <div class="brand"><span>Guía de estudio</span><b>Neurogastroenterología 2026</b></div>
-  <input id="navsearch" type="search" placeholder="Filtrar secciones…" autocomplete="off">
+  <input id="navsearch" type="search" placeholder="Buscar en todo el repositorio…" autocomplete="off" data-buscador readonly>
   <button id="soloperlas" type="button" aria-pressed="false">Solo perlas</button>
   <div id="navlinks">
   <a href="#inicio">Cómo usar esta guía</a>
@@ -322,7 +323,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <h2 id="b1"><span class="num">1</span>Eje intestino-cerebro y Roma V: criterios, banderas rojas y relación médico-paciente</h2>
 <p class="lead">Los trastornos de la interacción intestino-cerebro (TICI; en inglés <i>disorders of gut–brain interaction</i>, DGBI) son síntomas digestivos producidos por cualquier combinación de alteración motora, hipersensibilidad visceral, alteración de la mucosa y de la inmunidad, cambios de la microbiota y procesamiento alterado en el sistema nervioso central. Roma V (Gastroenterology, mayo 2026) reemplaza por completo el término «trastorno gastrointestinal funcional», quita «funcional» de casi todos los diagnósticos y separa los criterios clínicos de los de investigación. El diagnóstico es positivo, no de exclusión.</p>
 
-<h3>Qué cambió</h3>
+<h3 id="b1-s1">Qué cambió</h3>
 <div class="tw"><table class="sm cambio">
 <thead><tr><th>Tema</th><th>Roma IV (2016)</th><th>Roma V (2026)</th></tr></thead>
 <tbody>
@@ -337,7 +338,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <tr><td>Pediatría</td><td class="ant">Clasificación por edad (neonato/lactante y niño/adolescente).</td><td>Clasificación anatómica: TICI digestivos altos (G) y bajos y biliares (H).</td></tr>
 </tbody></table></div>
 
-<h3>Qué es un TICI</h3>
+<h3 id="b1-s2">Qué es un TICI</h3>
 <div class="perla"><div class="pt"><span>Perlas</span>Trastornos de la interacción cerebro-intestino</div><dl><dt>Definición</dt><dd>Grupo de trastornos clasificados por síntomas gastrointestinales, relacionados con cualquier combinación de alteración de la motilidad, hipersensibilidad visceral, alteración de la función mucosa e inmune, de la microbiota y del procesamiento central.</dd><dt>Criterios</dt><dd>Roma V separa <b>criterios clínicos</b> (para la consulta: ~8 semanas de síntomas, sin exigir 6 meses de antigüedad) de <b>criterios de investigación</b> (más estrictos, para ensayos).</dd></dl><div class="pq"><b>Lo que preguntan</b><ul><li>El diagnóstico es <b>positivo</b>, por criterios y ausencia de banderas rojas; no es un diagnóstico de exclusión.</li><li>«Funcional» y «psicosomático» son términos desaconsejados: transmiten al paciente que «no tiene nada».</li><li>Un TICI puede coexistir con enfermedad orgánica (EII en remisión, celíaca tratada) y se trata igual.</li></ul></div></div>
 
 <p>Roma V lista <b>34 diagnósticos del adulto y 22 pediátricos</b>. La clasificación sigue siendo por región anatómica, pero los mecanismos son compartidos y su peso varía entre pacientes y en el tiempo:</p>
@@ -359,7 +360,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <tr><td><b>F. Anorrectal</b></td><td>Incontinencia fecal · síndrome del elevador del ano · dolor anorrectal no explicado · proctalgia fugaz · defecación disinérgica · <b>hiposensibilidad e hipersensibilidad rectal</b></td><td>14</td></tr>
 </tbody></table></div>
 
-<h3>Criterios clínicos frente a criterios de investigación</h3>
+<h3 id="b1-s3">Criterios clínicos frente a criterios de investigación</h3>
 <p>El estudio epidemiológico global de la Fundación Roma (más de 54.000 encuestados en 26 países) mostró que 41 % cumple criterios de al menos un TICI, 33 % no tiene síntomas digestivos y <b>uno de cada cuatro tiene síntomas que no alcanzan los criterios</b>, con peor calidad de vida, más ansiedad y más consultas que los asintomáticos. Además, más de un tercio de quienes tienen un TICI tiene otro en una región distinta (superposición), y cada diagnóstico adicional suma carga. Roma V responde con criterios clínicos para la práctica.</p>
 <div class="tw"><table class="sm">
 <thead><tr><th style="width:24%">Elemento</th><th>Criterio clínico de Roma (consulta)</th><th style="width:30%">Criterio de investigación</th></tr></thead>
@@ -372,7 +373,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <div class="box tip"><div class="t">Perfil clínico multidimensional</div>
 <p>El diagnóstico categórico no basta para tratar. La Fundación Roma propone el perfil clínico multidimensional (4.ª edición): diagnóstico, modificadores clínicos (subtipo, gatillos), impacto en la vida diaria, modificadores psicosociales y biomarcadores fisiológicos. En la práctica: además del diagnóstico, anotar <b>cuánto molesta, qué lo modula y qué comorbilidad psicológica hay</b>, porque eso decide la intensidad del tratamiento y si se agrega un neuromodulador o una terapia psicológica.</p></div>
 
-<h3>Banderas rojas y estudio mínimo</h3>
+<h3 id="b1-s4">Banderas rojas y estudio mínimo</h3>
 <p>El valor predictivo de las banderas rojas es modesto, pero su ausencia permite hacer el diagnóstico positivo con estudio dirigido y limitado. Repetir exámenes normales no tranquiliza (sobre todo en jóvenes) y refuerza la idea de enfermedad oculta.</p>
 <div class="grid2">
 <div class="chk"><h5>Banderas rojas transversales</h5>
@@ -402,7 +403,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <tr><td><b>Pirosis o dolor torácico</b></td><td>Descartar causa cardíaca; prueba de IBP 8 semanas; endoscopía con alarma o sin respuesta.</td><td>pHmetría sin pregunta definida.</td></tr>
 </tbody></table></div>
 
-<h3>Relación médico-paciente: el primer tratamiento</h3>
+<h3 id="b1-s5">Relación médico-paciente: el primer tratamiento</h3>
 <p>Una buena relación médico-paciente mejora el control de síntomas, la adherencia y reduce el uso de recursos. Los médicos tendemos a explicar el SII con un lenguaje más dubitativo que el de una enfermedad orgánica, y esa incertidumbre empuja al paciente a pedir más exámenes.</p>
 <div class="algo">
 <div class="step"><span class="n">1</span><div class="b"><b>Escuchar y validar:</b> preguntar qué cree el paciente que tiene, qué teme (cáncer) y por qué consulta ahora. Identificar el síntoma <b>más molesto</b>: define el objetivo del tratamiento.</div></div>
@@ -414,7 +415,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <div class="box err"><div class="t">Error frecuente</div>
 <p>Pedir exámenes «para tranquilizar». Los resultados normales no mejoran la ansiedad ni la calidad de vida en el SII y abren la puerta a hallazgos incidentales. El estudio se justifica por banderas rojas o por un cambio clínico, no por la insistencia.</p></div>
 
-<h3>Terapias cerebro-intestino</h3>
+<h3 id="b1-s6">Terapias cerebro-intestino</h3>
 <div class="perla"><div class="pt"><span>Perlas</span>Psicoterapias de efecto intestinal</div><dl><dt>Tratamiento</dt><dd><b>Terapia cognitivo-conductual</b> e <b>hipnoterapia dirigida al intestino</b> tienen la mejor evidencia en SII; el efecto se mantiene meses después de terminar.</dd></dl><div class="pq"><b>Lo que preguntan</b><ul><li>Se indican por síntomas gastrointestinales, no solo por comorbilidad psiquiátrica.</li><li>Existen formatos digitales y grupales que reducen la barrera de acceso.</li></ul></div></div>
 
 <p>Las terapias conductuales dirigidas al eje intestino-cerebro (<i>brain–gut behavioral therapies</i>) tienen evidencia más sólida en SII y se extienden a dispepsia, trastornos esofágicos, rumiación, eructo supragástrico y dolor centralmente mediado.</p>
@@ -435,14 +436,14 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <p><b>Diagnóstico positivo con criterios clínicos de Roma V, estudio mínimo dirigido por banderas rojas y una relación médico-paciente explícita.</b> Lo nuevo de Roma V: adiós a «funcional», criterios clínicos de ~8 semanas, tres diagnósticos nuevos en el adulto (incapacidad para eructar, migraña abdominal, trastornos sensoriales anorrectales) y un SII más amplio (≥ 3 días al mes, con malestar).</p></div>
 
 <div class="autoev">
-<h3>Autoevaluación · bloque 1</h3>
+<h3 id="b1-s7">Autoevaluación · bloque 1</h3>
 <div class="caso"><div class="hd">Caso clínico <span class="lvl">Residente</span></div><div class="bd">
 <p>Mujer de 34 años, profesora, con plenitud posprandial 3 días por semana y dolor abdominal bajo con deposiciones blandas unos 4 días al mes desde hace 10 semanas, tras una gastroenteritis en un viaje. Trae hemograma, PCR, calprotectina, serología celíaca, ecografía y endoscopía normales (con <i>H. pylori</i> negativo). Pide una colonoscopía y un «examen de bacterias» porque leyó sobre SIBO. Dice que su médico anterior le dijo que «era estrés».</p>
 <details><summary>¿Cómo la diagnostica según Roma V y qué le propone?</summary><div class="ans">
 <p>Cumple los <b>criterios clínicos</b> de Roma V aunque no lleve 6 meses: síndrome de distrés posprandial (bloque 7) superpuesto con SII-D postinfeccioso (dolor ≥ 3 días/mes, no continuo, asociado a cambio de forma de las deposiciones). No hay banderas rojas y el estudio mínimo ya está hecho: no corresponde colonoscopía (salvo que la diarrea sea acuosa persistente y se quiera descartar colitis microscópica) ni test de aire espirado de rutina. Plan: nombrar el diagnóstico como trastorno real del eje intestino-cerebro desencadenado por la infección, corregir el mensaje de «es estrés», identificar el síntoma más molesto, indicar medidas dietarias (comidas pequeñas, prueba de dieta baja en FODMAP guiada) y un fármaco por síntoma (procinético para el distrés posprandial, antiespasmódico o loperamida a demanda), con control programado a las 4–8 semanas.</p></div></details>
 </div></div>
 
-<h3>Flashcards</h3>
+<h3 id="b1-s8">Flashcards</h3>
 <div class="fc-grid">
 <div class="fc"><div class="q">Cinco mecanismos de la definición de TICI</div><div class="a">Alteración motora, hipersensibilidad visceral, alteración de la mucosa e inmunidad, microbiota alterada y procesamiento central alterado.</div><div class="hint">Clic para ver</div></div>
 <div class="fc"><div class="q">Duración que exigen los criterios clínicos de Roma V</div><div class="a">No se exigen 6 meses; se sugieren ~8 semanas para excluir otras causas.</div><div class="hint">Clic para ver</div></div>
@@ -454,7 +455,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <div class="fc"><div class="q">Riesgo de SII tras gastroenteritis aguda</div><div class="a">Más de 10 % desarrolla SII postinfeccioso.</div><div class="hint">Clic para ver</div></div>
 </div>
 
-<h3>Preguntas</h3>
+<h3 id="b1-s9">Preguntas</h3>
 <div class="qz" data-b="b1"></div>
 <script type="application/json" class="qz-data" data-b="b1">[
 {"p":"Según Roma V, ¿qué se requiere para usar los criterios clínicos de un TICI en la consulta?","o":["Síntomas por 6 meses con la frecuencia exacta de los criterios de investigación","Rasgos cualitativos del síntoma, molestia suficiente y exclusión razonable de causas orgánicas; frecuencia menor y ~8 semanas de duración son aceptables","Un estudio funcional que confirme el mecanismo","Que no exista ningún otro TICI superpuesto"],"c":1,"e":"Los criterios clínicos de Roma V conservan los rasgos cualitativos y agregan la molestia como eje; liberan la frecuencia y la duración (sugieren ~8 semanas). La superposición de TICI es la regla, no una exclusión."},
@@ -478,7 +479,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <h2 id="b2"><span class="num">2</span>ERGE: Lyon 2.0, tratamiento escalonado, P-CAB, refractariedad y cirugía</h2>
 <p class="lead">Ni los síntomas ni la respuesta a inhibidores de bomba de protones (IBP) diagnostican la enfermedad por reflujo gastroesofágico (ERGE). El consenso de Lyon 2.0 define la «ERGE accionable» con evidencia objetiva jerarquizada, y la única métrica con valor predictivo independiente es el tiempo de exposición ácida (TEA, en inglés AET). El tratamiento se escala con criterio de falla definido y se desescala cuando hay respuesta.</p>
 
-<h3>Qué cambió</h3>
+<h3 id="b2-s1">Qué cambió</h3>
 <div class="tw"><table class="sm cambio">
 <thead><tr><th>Tema</th><th>Antes</th><th>Ahora</th></tr></thead>
 <tbody>
@@ -490,14 +491,14 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <tr><td>Bloqueadores ácidos competitivos de potasio (P-CAB)</td><td class="ant">ACG 2022 no los incluía.</td><td>AGA 2024: superiores a IBP en curación de esofagitis grave (LA C/D) y razonables tras falla documentada a IBP; no reemplazan al IBP como primera línea en la ERGE no erosiva. En Chile hay tegoprazán y fexuprazán.</td></tr>
 </tbody></table></div>
 
-<h3>Por qué no basta la clínica</h3>
+<h3 id="b2-s2">Por qué no basta la clínica</h3>
 <ul>
 <li>Pirosis y regurgitación: sensibilidad ~70 %, especificidad algo &gt; 60 %. Se falla ~1 de cada 3 veces en ambos sentidos.</li>
 <li>Respuesta a IBP: ~70 % de quienes tienen ERGE y ~50 % de quienes no la tienen (placebo 40–50 %). La prueba con IBP sirve más como valor predictivo negativo que como confirmación.</li>
 <li>El TEA es continuo y variable: con pHmetrías separadas por una semana y corte de ~4,2 %, ~50 % cambia de categoría. Por eso Lyon define una <b>zona gris</b> (4–6 %) en la que no se toman decisiones mayores.</li>
 </ul>
 
-<h3>Lyon 2.0: jerarquía de la evidencia</h3>
+<h3 id="b2-s3">Lyon 2.0: jerarquía de la evidencia</h3>
 <div class="perla"><div class="pt"><span>Perlas</span>Lyon 2.0 en una caja</div><dl><dt>Endoscopía</dt><dd>Esofagitis <b>LA B, C o D</b>, Barrett de segmento largo o estenosis péptica son evidencia concluyente. LA A ya no lo es.</dd><dt>pH-impedancia</dt><dd>TEA <b>&gt; 6 %</b> concluyente; <b>&lt; 4 %</b> en contra; 4–6 % zona gris que se resuelve con número de reflujos, MNBI y morfología.</dd></dl><div class="pq"><b>Lo que preguntan</b><ul><li>Cápsula inalámbrica 96 h: TEA &gt; 6 % en <b>≥ 2 días</b> es concluyente.</li><li>El PSPW salió de Lyon 2.0.</li><li>ERGE refractaria con IBP: TEA &gt; 4 % <b>y</b> &gt; 80 reflujos.</li></ul></div></div>
 
 <div class="tw"><table class="sm">
@@ -523,7 +524,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <tr><td>¿Reflujo o rumiación / eructo supragástrico?</td><td>pH-impedancia por catéter o manometría con impedancia posprandial.</td><td>La cápsula no detecta reflujo no ácido, gas ni rumiación.</td></tr>
 </tbody></table></div>
 
-<h3>Tratamiento médico escalonado</h3>
+<h3 id="b2-s4">Tratamiento médico escalonado</h3>
 <div class="perla"><div class="pt"><span>Perlas</span>IBP y P-CAB</div><dl><dt>Tratamiento</dt><dd>IBP 30–60 min antes del desayuno; si hay respuesta parcial, optimizar horario, luego dosis doble. Los P-CAB (vonoprazán, tegoprazán, fexuprazán) no dependen de la comida y son superiores en esofagitis grave (LA C/D).</dd></dl><div class="pq"><b>Lo que preguntan</b><ul><li>Sin evidencia objetiva de ERGE, intentar desescalar o suspender a las 4–8 semanas de respuesta.</li><li>La pirosis que no responde a IBP en dosis doble es más a menudo esofágica funcional o hipersensibilidad que ERGE refractaria.</li></ul></div></div>
 
 <div class="algo">
@@ -567,7 +568,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <h4>Seguridad de los IBP a largo plazo</h4>
 <p>Las asociaciones con fractura, enfermedad renal crónica, demencia o infarto provienen de estudios observacionales con confusión residual; los ensayos de largo plazo (p. ej., COMPASS) no mostraron daño relevante salvo un posible exceso de infecciones entéricas. Riesgos plausibles: <i>C. difficile</i> y otras infecciones entéricas, déficit de B12 y magnesio, pólipos de glándulas fúndicas. La respuesta correcta no es suspender a quien tiene indicación (LA C/D, Barrett), sino <b>no indicar sin indicación y desprescribir cuando no la hay</b>.</p>
 
-<h3>ERGE refractaria</h3>
+<h3 id="b2-s5">ERGE refractaria</h3>
 <div class="tw"><table class="sm">
 <thead><tr><th style="width:24%">Escenario</th><th>Definición</th><th style="width:34%">Conducta</th></tr></thead>
 <tbody>
@@ -576,7 +577,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <tr><td><b>Controlada con síntomas</b></td><td>ERGE probada; con IBP: TEA bajo (&lt; 1 % y &lt; 40 reflujos con MNBI &gt; 2.500 Ω apoyan control según Roma V).</td><td>Superposición con hipersensibilidad o pirosis funcional: neuromodulador y terapia conductual (bloque 3).</td></tr>
 </tbody></table></div>
 
-<h3>Cirugía y terapias endoscópicas</h3>
+<h3 id="b2-s6">Cirugía y terapias endoscópicas</h3>
 <ul>
 <li><b>Candidato ideal:</b> ERGE con evidencia concluyente (idealmente TEA elevado), síntomas típicos (sobre todo regurgitación) y buena respuesta previa a IBP. La hipotonía del esfínter esofágico inferior <b>no</b> predice mejor respuesta (serie de ~1.600 pacientes): la cirugía actúa reduciendo las relajaciones transitorias.</li>
 <li><b>Nissen frente a fundoplicatura parcial (Toupet):</b> sin superioridad del Nissen a corto ni largo plazo; las parciales dan menos disfagia y menos <i>gas-bloat</i> (incapacidad de eructar iatrogénica). Guías europeas y americanas prefieren la parcial; en Chile predomina el Nissen por tradición: conocer la evidencia para discutirlo con el cirujano.</li>
@@ -593,14 +594,14 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <p><b>Lyon 2.0: LA B–D, Barrett, estenosis o TEA &gt; 6 % concluyen; 4–6 % no decide; PSPW retirado.</b> Tratamiento: IBP estándar 8 semanas → 2 veces al día ± alginato → P-CAB en LA C/D o falla documentada → si no responde, estudiar en vez de escalar. Fuera de tratamiento para diagnosticar, con tratamiento para evaluar refractariedad.</p></div>
 
 <div class="autoev">
-<h3>Autoevaluación · bloque 2</h3>
+<h3 id="b2-s7">Autoevaluación · bloque 2</h3>
 <div class="caso"><div class="hd">Caso clínico <span class="lvl">Residente</span></div><div class="bd">
 <p>Hombre de 46 años, índice de masa corporal 29, con pirosis y regurgitación nocturna de 2 años. Toma omeprazol 20 mg «cuando se acuerda», después de comer. Endoscopía (con IBP): esofagitis LA A y hernia hiatal de 3 cm. Pide cirugía porque no quiere tomar remedios de por vida.</p>
 <details><summary>¿Tiene ERGE confirmada? ¿Qué hace?</summary><div class="ans">
 <p>No: LA A es limítrofe (y la endoscopía con IBP puede subestimar la gravedad). Primero optimizar: omeprazol 20 mg 30–60 min antes del desayuno, a diario por 8 semanas; si la respuesta es parcial, 2 veces al día y alginato al acostarse; cabecera elevada, cena temprana y baja de peso. Antes de cualquier cirugía necesita <b>evidencia concluyente</b>: endoscopía tras 2–4 semanas sin IBP (buscando LA B–D) y/o monitorización sin tratamiento (cápsula 96 h o pH-impedancia 24 h) con TEA &gt; 6 %, más manometría de alta resolución. Si se confirma ERGE con síntomas típicos y buena respuesta previa, es buen candidato a fundoplicatura (idealmente parcial) o, si baja de peso no es posible y el índice supera 35, a bypass gástrico.</p></div></details>
 </div></div>
 
-<h3>Flashcards</h3>
+<h3 id="b2-s8">Flashcards</h3>
 <div class="fc-grid">
 <div class="fc"><div class="q">Evidencia concluyente de ERGE (Lyon 2.0)</div><div class="a">Esofagitis LA B–D, Barrett con biopsia, estenosis péptica o TEA &gt; 6 % (24 h o ≥ 2 días de cápsula).</div><div class="hint">Clic para ver</div></div>
 <div class="fc"><div class="q">MNBI a favor y en contra de ERGE</div><div class="a">&lt; 1.500 Ω a favor; &gt; 2.500 Ω en contra.</div><div class="hint">Clic para ver</div></div>
@@ -612,7 +613,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <div class="fc"><div class="q">Mejor cirugía antirreflujo en obesidad con IMC &gt; 35</div><div class="a">Bypass gástrico en Y de Roux.</div><div class="hint">Clic para ver</div></div>
 </div>
 
-<h3>Preguntas</h3>
+<h3 id="b2-s9">Preguntas</h3>
 <div class="qz" data-b="b2"></div>
 <script type="application/json" class="qz-data" data-b="b2">[
 {"p":"Mujer de 39 años con pirosis diaria. Endoscopía sin IBP: normal. Cápsula inalámbrica de 96 h: TEA 3,1 %, 5,2 %, 6,8 % y 7,4 % en los días 1 a 4. ¿Interpretación?","o":["Normal, porque el promedio es cercano a 5 %","ERGE concluyente: TEA &gt; 6 % en al menos 2 días","Zona gris: repetir con pH-impedancia","Hipersensibilidad al reflujo"],"c":1,"e":"Con monitorización inalámbrica, Lyon 2.0 define ERGE con TEA &gt; 6 % en ≥ 2 días. Excluye cuando el TEA es &lt; 4 % todos los días con asociación sintomática negativa. Por eso se prefiere el registro de 96 h."},
@@ -638,7 +639,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <h2 id="b3"><span class="num">3</span>Trastornos esofágicos de Roma V y síntomas laringofaríngeos</h2>
 <p class="lead">Pirosis, dolor torácico, globo o disfagia sin lesión estructural, sin ERGE por Lyon 2.0 y sin trastorno motor mayor por Chicago 4.0. El mecanismo central es la hipersensibilidad esofágica (alodinia e hiperalgesia) amplificada por hipervigilancia y ansiedad específica. Entre los «refractarios a IBP», entre 18 y 30 % cae en este espectro y muchos más tienen superposición con una ERGE real.</p>
 
-<h3>Qué cambió</h3>
+<h3 id="b3-s1">Qué cambió</h3>
 <div class="tw"><table class="sm cambio">
 <thead><tr><th>Tema</th><th>Roma IV</th><th>Roma V</th></tr></thead>
 <tbody>
@@ -651,7 +652,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <tr><td>Disfagia funcional</td><td class="ant">Manometría normal bastaba.</td><td>Se recomienda complementar con esofagograma con tableta o FLIP: un FLIP normal la apoya; un tercio con manometría normal tiene FLIP anormal.</td></tr>
 </tbody></table></div>
 
-<h3>Criterios de Roma V</h3>
+<h3 id="b3-s2">Criterios de Roma V</h3>
 <p class="small">Todos exigen síntomas en los últimos 3 meses, inicio ≥ 6 meses antes, frecuencia ≥ 1 vez por semana y (salvo la disfagia) persistencia pese a antisecretor optimizado ≥ 8 semanas. En la consulta se aplican los criterios clínicos (bloque 1).</p>
 <div class="tw"><table class="sm">
 <thead><tr><th style="width:17%">Trastorno</th><th>Debe incluir</th><th style="width:28%">Clave diagnóstica</th></tr></thead>
@@ -663,7 +664,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <tr><td><b>A5. Disfagia funcional</b></td><td>Sensación de alimento que se detiene o pasa anormalmente por el esófago; sin causa mucosa o estructural, sin ERGE, sin trastorno motor mayor.</td><td>Es el TICI esofágico menos frecuente; el FLIP lo vuelve aún más raro. Biopsias siempre (esofagitis eosinofílica, liquen plano).</td></tr>
 </tbody></table></div>
 
-<h3>Fenotipos del paciente «refractario»</h3>
+<h3 id="b3-s3">Fenotipos del paciente «refractario»</h3>
 <div class="perla"><div class="pt"><span>Perlas</span>Pirosis funcional frente a hipersensibilidad al reflujo</div><dl><dt>pH-impedancia</dt><dd><b>Hipersensibilidad al reflujo</b>: TEA normal con asociación sintomática positiva (SI &gt; 50 % y/o SAP &gt; 95 %). <b>Pirosis funcional</b>: TEA normal y asociación negativa.</dd><dt>Criterios</dt><dd>Ambas exigen endoscopía sin esofagitis ni EoE (biopsias) y manometría sin trastorno mayor de la motilidad.</dd></dl><div class="pq"><b>Lo que preguntan</b><ul><li>Tratamiento: neuromoduladores en dosis bajas (ATC, ISRS), terapia cerebro-intestino; no escalar IBP.</li><li>Hasta 40 % de los «refractarios» a IBP tienen uno de estos dos fenotipos.</li></ul></div></div>
 
 <div class="tw"><table class="sm">
@@ -675,7 +676,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <tr><td><b>Superposición ERGE + TICI</b></td><td>ERGE probada sin tratamiento; controlada con tratamiento</td><td>Variable</td><td>Solo 28–40 % de los refractarios con ERGE probada tiene ERGE en curso; el resto, superposición.</td><td>Mantener antisecretor mínimo eficaz + neuromodulador.</td><td><span class="chip c-par">Solo si reflujo refractario objetivo</span></td></tr>
 </tbody></table></div>
 
-<h3>Tratamiento</h3>
+<h3 id="b3-s4">Tratamiento</h3>
 <h4>Neuromoduladores (Roma V, tabla de ensayos)</h4>
 <div class="tw"><table class="sm">
 <thead><tr><th style="width:22%">Fármaco</th><th style="width:16%">Dosis estudiada</th><th>Indicación y resultado</th></tr></thead>
@@ -703,7 +704,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <div class="step go"><span class="n">4</span><div class="b"><b>Fenotipo funcional confirmado:</b> explicar, no repetir exámenes invasivos, vigilar evitación alimentaria excesiva, iniciar neuromodulador en dosis baja y ofrecer TCC o respiración diafragmática desde el principio.</div></div>
 </div>
 
-<h3>Síntomas laringofaríngeos y reflujo laringofaríngeo</h3>
+<h3 id="b3-s5">Síntomas laringofaríngeos y reflujo laringofaríngeo</h3>
 <p><b>Síntomas laringofaríngeos</b> (consenso de San Diego): tos, disfonía, carraspera, sensación de mucosidad y odinofagia crónicos (&gt; 8 semanas) y frecuentes. <b>Reflujo laringofaríngeo</b>: esos síntomas más evidencia objetiva de reflujo. Dos tercios tienen estudio de reflujo normal; con síntomas aislados solo ~10 % tiene ERGE, con síntomas típicos ~40 %. El mecanismo dominante es la hipersensibilidad e hipervigilancia laríngea, no la quemadura ácida.</p>
 <div class="tw"><table class="sm">
 <thead><tr><th style="width:26%">Herramienta</th><th>Para qué sirve</th><th style="width:34%">Para qué no sirve</th></tr></thead>
@@ -727,14 +728,14 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <p><b>TEA &lt; 4 % separa lo funcional; la asociación síntoma-reflujo separa hipersensibilidad (positiva) de pirosis funcional (negativa), y eso cambia la cirugía de discutible a contraindicada.</b> En Roma V, la motilidad inefectiva no excluye, la regurgitación y el eructo no cuentan como hipersensibilidad, y el globo es un predictor negativo de reflujo laringofaríngeo.</p></div>
 
 <div class="autoev">
-<h3>Autoevaluación · bloque 3</h3>
+<h3 id="b3-s6">Autoevaluación · bloque 3</h3>
 <div class="caso"><div class="hd">Caso clínico <span class="lvl">Fellow</span></div><div class="bd">
 <p>Mujer de 41 años con ardor retroesternal diario pese a esomeprazol 40 mg 2 veces al día por 10 semanas. Cardiología normal. Endoscopía tras 4 semanas sin IBP: normal, biopsias sin eosinófilos. Cápsula 96 h sin tratamiento: TEA 1,2–2,8 % por día. pH-impedancia 24 h: 31 reflujos, MNBI 2.900 Ω, SI 18 %, SAP 62 %. Manometría: 60 % de degluciones inefectivas, IRP normal. Le ofrecieron una fundoplicatura.</p>
 <details><summary>¿Diagnóstico y conducta?</summary><div class="ans">
 <p><b>Pirosis funcional</b> (Roma V): ardor retroesternal sin respuesta a antisecretor optimizado, TEA &lt; 4 % todos los días, &lt; 40 reflujos, MNBI &gt; 2.500 Ω y asociación negativa. La motilidad inefectiva no excluye el diagnóstico (y con 60 % ni siquiera cumple el umbral de Chicago 4.0, &gt; 70 %). La fundoplicatura está contraindicada. Plan: explicar el mecanismo, retirar el IBP de forma progresiva, neuromodulador en dosis baja (amitriptilina 10 mg o imipramina 25 mg en la noche, titulando) y TCC o respiración diafragmática; evitar nuevos estudios invasivos.</p></div></details>
 </div></div>
 
-<h3>Flashcards</h3>
+<h3 id="b3-s7">Flashcards</h3>
 <div class="fc-grid">
 <div class="fc"><div class="q">Diferencia entre pirosis funcional e hipersensibilidad al reflujo</div><div class="a">Ambas con TEA fisiológico; la asociación síntoma-reflujo es negativa en la pirosis funcional y positiva en la hipersensibilidad.</div><div class="hint">Clic para ver</div></div>
 <div class="fc"><div class="q">Hallazgo manométrico que NO excluye un TICI esofágico</div><div class="a">Motilidad esofágica inefectiva (y la obstrucción de la unión esofagogástrica no concluyente).</div><div class="hint">Clic para ver</div></div>
@@ -746,7 +747,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <div class="fc"><div class="q">Probabilidad de ERGE con síntomas laríngeos aislados</div><div class="a">~10 % (≈ 40 % si hay síntomas típicos).</div><div class="hint">Clic para ver</div></div>
 </div>
 
-<h3>Preguntas</h3>
+<h3 id="b3-s8">Preguntas</h3>
 <div class="qz" data-b="b3"></div>
 <script type="application/json" class="qz-data" data-b="b3">[
 {"p":"Hombre de 50 años con dolor retroesternal opresivo no relacionado con comidas; coronariografía normal. Sin pirosis ni disfagia. Tras 8 semanas de IBP doble sin respuesta, la endoscopía y la pH-impedancia sin tratamiento son normales. ¿Siguiente paso?","o":["Biopsias esofágicas de rutina","Manometría de alta resolución para excluir trastorno motor mayor","Repetir la pH-impedancia con IBP","Fundoplicatura parcial"],"c":1,"e":"Descartadas la causa cardíaca y la ERGE, la manometría excluye acalasia, espasmo distal o esófago hipercontráctil. Roma V pide biopsias solo si el dolor ocurre con las comidas."},
@@ -771,7 +772,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <h2 id="b4"><span class="num">4</span>Eructos, incapacidad para eructar (R-CPD) y rumiación</h2>
 <p class="lead">Tres trastornos que se confunden con ERGE refractaria y que se diagnostican con impedancia y manometría, no con pHmetría. Casi todo eructo excesivo que consulta es supragástrico, una conducta aprendida que se trata con terapia conductual. En el extremo opuesto, la incapacidad para eructar es una disfunción motora del esfínter esofágico superior que responde a toxina botulínica. La rumiación es regurgitación sin esfuerzo, sin náuseas, que se trata con respiración diafragmática.</p>
 
-<h3>Qué cambió</h3>
+<h3 id="b4-s1">Qué cambió</h3>
 <div class="tw"><table class="sm cambio">
 <thead><tr><th>Tema</th><th>Roma IV</th><th>Roma V</th></tr></thead>
 <tbody>
@@ -781,7 +782,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <tr><td>Toxina botulínica en R-CPD</td><td class="ant">Los apuntes del curso citaban 24 % de éxito.</td><td>Las series y metaanálisis reportan ~80–90 % de respuesta con 50–100 U en el esfínter esofágico superior, con efecto ≥ 6 meses en la mayoría; ~20 % requiere una segunda inyección. El 24 % probablemente fue un error de transcripción.</td></tr>
 </tbody></table></div>
 
-<h3>Eructo gástrico y supragástrico</h3>
+<h3 id="b4-s2">Eructo gástrico y supragástrico</h3>
 <div class="tw"><table class="sm">
 <thead><tr><th style="width:17%">Entidad</th><th>Mecanismo</th><th style="width:20%">Impedancia</th><th style="width:22%">Manometría</th><th style="width:18%">Tratamiento</th></tr></thead>
 <tbody>
@@ -798,7 +799,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <div class="box tip"><div class="t">Truco de consulta</div>
 <p>Pedirle que muerda un lápiz entre los dientes (impide aspirar aire) o demostrarle que uno puede eructar voluntariamente ayuda a convencerlo de que es una conducta aprendida y reversible.</p></div>
 
-<h3>Síndrome de incapacidad para eructar (R-CPD, abelchia)</h3>
+<h3 id="b4-s3">Síndrome de incapacidad para eructar (R-CPD, abelchia)</h3>
 <div class="perla"><div class="pt"><span>Perlas</span>R-CPD</div><dl><dt>Clínica</dt><dd>Incapacidad para eructar desde siempre, ruidos de gorgoteo en el cuello, distensión y flatulencia excesiva.</dd><dt>Tratamiento</dt><dd><b>Toxina botulínica</b> en el cricofaríngeo (EMG o endoscopía) con respuesta en la gran mayoría de los pacientes.</dd></dl></div>
 
 <p>Falla del reflejo de relajación del esfínter esofágico superior (cricofaríngeo) ante la distensión gaseosa del esófago. Normalmente la distensión rápida por gas activa mecanorreceptores que, por vía vagal, inhiben el esfínter (vía A); en la R-CPD predomina la vía de contracción (vía B), el esfínter no se relaja o sube su presión y el aire queda atrapado, oscila en el esófago y vuelve al estómago por peristalsis secundaria.</p>
@@ -823,7 +824,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <li>El <i>gas-bloat</i> tras fundoplicatura es una abelchia iatrogénica: mismo síntoma, otro mecanismo (excluye el diagnóstico de R-CPD).</li>
 </ul>
 
-<h3>Síndrome de rumiación</h3>
+<h3 id="b4-s4">Síndrome de rumiación</h3>
 <div class="perla"><div class="pt"><span>Perlas</span>Rumiación</div><dl><dt>Definición</dt><dd>Regurgitación sin esfuerzo, repetida, de alimento recién ingerido, seguida de remasticación o expulsión, sin arcadas previas.</dd><dt>Manometría</dt><dd>Alta resolución con impedancia y <b>comida real</b>: pico de presión abdominal (onda R) &gt; 30 mmHg que precede al flujo retrógrado (contracción no consciente de la pared abdominal).</dd><dt>Tratamiento</dt><dd><b>Respiración diafragmática</b> después de comer, enseñada con biorretroalimentación.</dd></dl><div class="pq"><b>Lo que preguntan</b><ul><li>La cápsula de pH no la detecta y puede confundirla con ERGE.</li><li>Empieza a los pocos minutos de comer; el alimento sabe a lo que se comió, no a ácido.</li></ul></div></div>
 
 <div class="tw"><table class="sm">
@@ -858,14 +859,14 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <p><b>Eructa mucho: supragástrico (96 %), terapia conductual. No puede eructar nunca, con gorgoteos y distensión: R-CPD, manometría con agua carbonatada y toxina botulínica. Regurgita sin esfuerzo ni náuseas minutos después de comer: rumiación, manometría con impedancia posprandial y respiración diafragmática.</b> Ninguno se trata subiendo el IBP.</p></div>
 
 <div class="autoev">
-<h3>Autoevaluación · bloque 4</h3>
+<h3 id="b4-s5">Autoevaluación · bloque 4</h3>
 <div class="caso"><div class="hd">Caso clínico <span class="lvl">Residente</span></div><div class="bd">
 <p>Mujer de 23 años, estudiante, con «reflujo refractario» desde hace un año: tras cada comida le vuelve el alimento a la boca, sin náuseas, a veces lo vuelve a tragar; bajó 6 kg. Lleva esomeprazol 40 mg 2 veces al día. Endoscopía normal. Una pHmetría con catéter mostró TEA 5 % concentrado en el período posprandial.</p>
 <details><summary>¿Qué sospecha y cómo lo confirma y trata?</summary><div class="ans">
 <p><b>Síndrome de rumiación</b>: regurgitación posprandial precoz, sin esfuerzo ni náuseas, con remasticación y baja de peso. La pHmetría no distingue rumiación de reflujo (el TEA posprandial se explica por los episodios de rumiación). Confirmar con manometría de alta resolución con impedancia y comida de prueba (ondas R &gt; 30 mmHg previas al flujo retrógrado). Indagar activamente trastornos de la conducta alimentaria. Tratamiento: explicación y respiración diafragmática durante y después de comer (idealmente con biorretroalimentación), baclofeno si no basta; retirar progresivamente el IBP.</p></div></details>
 </div></div>
 
-<h3>Flashcards</h3>
+<h3 id="b4-s6">Flashcards</h3>
 <div class="fc-grid">
 <div class="fc"><div class="q">Firma del eructo supragástrico en la impedancia</div><div class="a">Flujo de aire anterógrado seguido de uno retrógrado inmediato, sin llegar al estómago.</div><div class="hint">Clic para ver</div></div>
 <div class="fc"><div class="q">Límite superior normal de eructos supragástricos</div><div class="a">13 en 24 h.</div><div class="hint">Clic para ver</div></div>
@@ -877,7 +878,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <div class="fc"><div class="q">Respuesta del eructo supragástrico a fonoaudiología</div><div class="a">~83 % de respuesta sintomática.</div><div class="hint">Clic para ver</div></div>
 </div>
 
-<h3>Preguntas</h3>
+<h3 id="b4-s7">Preguntas</h3>
 <div class="qz" data-b="b4"></div>
 <script type="application/json" class="qz-data" data-b="b4">[
 {"p":"Hombre de 27 años que nunca ha podido eructar, con distensión dolorosa posprandial y gorgoteos cervicales audibles. ¿Estudio y tratamiento?","o":["pHmetría de 24 h e IBP","Manometría con impedancia y agua carbonatada; toxina botulínica en el esfínter esofágico superior","Vaciamiento gástrico y procinético","TCC como primera línea"],"c":1,"e":"Es el cuadro típico de R-CPD, diagnóstico nuevo de Roma V. La provocación carbonatada muestra el aire atrapado sin relajación del esfínter superior; la toxina botulínica es el tratamiento mejor establecido."},
@@ -901,7 +902,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <h2 id="b5"><span class="num">5</span>Disfagia y esofagitis eosinofílica</h2>
 <p class="lead">Primero triaje de urgencias; luego separar disfagia orofaríngea de esofágica. En la esofágica, la endoscopía con biopsias de dos niveles es siempre el primer paso, incluso con mucosa de aspecto normal: la esofagitis eosinofílica (EoE) explica 17–30 % de las disfagias estudiadas. La EoE es una enfermedad crónica inmunomediada (Th2) que progresa de inflamatoria a fibroestenótica; la remisión se certifica con histología.</p>
 
-<h3>Qué cambió</h3>
+<h3 id="b5-s1">Qué cambió</h3>
 <div class="tw"><table class="sm cambio">
 <thead><tr><th>Tema</th><th>Antes</th><th>Ahora</th></tr></thead>
 <tbody>
@@ -912,7 +913,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <tr><td>Biopsias por pirosis aislada</td><td class="ant">Frecuentes.</td><td>Roma V y el curso: biopsiar si hay disfagia, impactación, dolor torácico al comer o signos endoscópicos; sin ellos el rendimiento es muy bajo.</td></tr>
 </tbody></table></div>
 
-<h3>Disfagia: definición y triaje</h3>
+<h3 id="b5-s2">Disfagia: definición y triaje</h3>
 <p>Dificultad para iniciar o propulsar la deglución, o sensación de que el bolo se detiene. <b>No son disfagia</b>: odinofagia, globo, rumiación ni la evitación de tragar por temor.</p>
 <div class="box err"><div class="t">Urgencia</div>
 <p>Atoro con las propias secreciones, obstrucción esofágica completa (impactación), compromiso de vía aérea, sospecha de perforación o cuerpo extraño. Evaluación preferente: disfagia progresiva, baja de peso, cambios de voz.</p></div>
@@ -948,7 +949,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <div class="step go"><span class="n">6</span><div class="b"><b>Todo normal:</b> disfagia funcional. Explicar, comer sentado, masticar bien, líquidos con cada bocado; neuromodulador si persiste; <b>dilatación empírica con bujía 50–54 Fr</b> beneficia a 68–85 % con disfagia a sólidos inexplicada (no así la dilatación con balón de la unión). TCC con exposición si hay miedo a tragar.</div></div>
 </div>
 
-<h3>Esofagitis eosinofílica</h3>
+<h3 id="b5-s3">Esofagitis eosinofílica</h3>
 <div class="perla"><div class="pt"><span>Perlas</span>Esofagitis eosinofílica</div><dl><dt>Endoscopía</dt><dd>Edema, anillos, exudados, surcos y estenosis (escala <b>EREFS</b>). Al menos <b>6 biopsias</b> de dos niveles, aun con mucosa normal.</dd><dt>Criterios</dt><dd>Síntomas de disfunción esofágica y <b>≥ 15 eosinófilos por campo de alto aumento</b>, tras descartar otras causas.</dd><dt>Tratamiento</dt><dd>IBP en dosis alta, budesonida orodispersable, dieta de eliminación (empírica de 1–2 alimentos como primer paso) o dupilumab; dilatación para estenosis.</dd></dl><div class="pq"><b>Lo que preguntan</b><ul><li>La respuesta al IBP ya no excluye EoE.</li><li>Impactación alimentaria en un adulto joven: EoE hasta demostrar lo contrario.</li></ul></div></div>
 
 <h4>Epidemiología y patogenia</h4>
@@ -1002,14 +1003,14 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <p><b>Toda disfagia esofágica se biopsia en 2 niveles aunque la mucosa sea normal.</b> EoE: ≥ 15 eosinófilos/campo, endoscopía sin IBP, cuatro primeras líneas (IBP doble, corticoide tópico, dieta escalonada desde la leche, dupilumab en refractarios o atópicos), control histológico a las 8–12 semanas y mantención indefinida. Dilatar a ≥ 16 mm, nunca sola.</p></div>
 
 <div class="autoev">
-<h3>Autoevaluación · bloque 5</h3>
+<h3 id="b5-s4">Autoevaluación · bloque 5</h3>
 <div class="caso"><div class="hd">Caso clínico <span class="lvl">Residente</span></div><div class="bd">
 <p>Hombre de 29 años con rinitis alérgica y asma, consulta en urgencias por impactación de carne. Tras la extracción endoscópica le dicen que «no había lesión». Refiere desde hace años que corta la comida en trozos muy pequeños y toma agua con cada bocado.</p>
 <details><summary>¿Qué debió hacerse y cómo sigue?</summary><div class="ans">
 <p>Debieron tomarse biopsias en la endoscopía de urgencia (≥ 6, de 2 niveles): la impactación en un varón joven atópico con conductas adaptativas es EoE hasta demostrar lo contrario, y hasta 21 % tiene mucosa normal. Ahora: endoscopía programada sin IBP con EREFS y biopsias. Si se confirma (≥ 15 eosinófilos/campo), con asma asociada es razonable discutir dupilumab de entrada o iniciar IBP doble o budesonida deglutida, con control histológico a las 8–12 semanas y mantención indefinida. Si hay estenosis, dilatar a ≥ 16 mm junto con el antiinflamatorio.</p></div></details>
 </div></div>
 
-<h3>Flashcards</h3>
+<h3 id="b5-s5">Flashcards</h3>
 <div class="fc-grid">
 <div class="fc"><div class="q">Protocolo de biopsias en sospecha de EoE</div><div class="a">≥ 6 biopsias: 3 proximales o medias y 3 distales, dirigidas a zonas alteradas.</div><div class="hint">Clic para ver</div></div>
 <div class="fc"><div class="q">Umbral histológico de EoE</div><div class="a">≥ 15 eosinófilos por campo de alto aumento.</div><div class="hint">Clic para ver</div></div>
@@ -1021,7 +1022,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <div class="fc"><div class="q">Dilatación empírica en disfagia funcional</div><div class="a">Bujía 50–54 Fr: beneficio en 68–85 % con disfagia a sólidos inexplicada.</div><div class="hint">Clic para ver</div></div>
 </div>
 
-<h3>Preguntas</h3>
+<h3 id="b5-s6">Preguntas</h3>
 <div class="qz" data-b="b5"></div>
 <script type="application/json" class="qz-data" data-b="b5">[
 {"p":"Paciente con EoE en budesonida deglutida, asintomático a las 12 semanas. ¿Conducta?","o":["Suspender por respuesta clínica","Mantener y controlar solo por clínica","Endoscopía con biopsias para certificar remisión histológica","Iniciar dupilumab"],"c":2,"e":"La disociación entre síntomas e histología es habitual: la remisión se certifica con biopsias. Si hay remisión, se mantiene el tratamiento porque la enfermedad recae al suspender."},
@@ -1045,7 +1046,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <h2 id="b6"><span class="num">6</span>Chicago 4.0: acalasia, EGJOO y trastornos de la peristalsis</h2>
 <p class="lead">La manometría de alta resolución leída con la clasificación de Chicago 4.0 organiza el diagnóstico en dos ramas: presión de relajación integrada (IRP) elevada (acalasia y obstrucción del flujo de salida de la unión esofagogástrica, EGJOO) o IRP normal (trastornos de la peristalsis). Chicago 4.0 exige protocolo en supino y sentado con maniobras de provocación, y que la EGJOO, la motilidad inefectiva y el esófago hipercontráctil se acompañen de síntomas para ser clínicamente relevantes.</p>
 
-<h3>Qué cambió</h3>
+<h3 id="b6-s1">Qué cambió</h3>
 <div class="tw"><table class="sm cambio">
 <thead><tr><th>Tema</th><th>Chicago 3.0 (2015)</th><th>Chicago 4.0 (2021)</th></tr></thead>
 <tbody>
@@ -1056,7 +1057,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <tr><td>FLIP</td><td class="ant">Sin rol formal.</td><td>Prueba de apoyo. Panometría: apertura normal (índice de distensibilidad ≥ 2,0 mm²/mmHg y diámetro máximo ≥ 16 mm) frente a reducida (&lt; 2,0 y &lt; 12 mm). Los apuntes del curso usaban otros cortes (&lt; 2,0 con &lt; 13 mm; 2–3 limítrofe; &gt; 3 normal): se reemplazan por estos.</td></tr>
 </tbody></table></div>
 
-<h3>Métricas</h3>
+<h3 id="b6-s2">Métricas</h3>
 <div class="tw"><table class="sm">
 <thead><tr><th style="width:24%">Métrica</th><th>Definición y corte</th></tr></thead>
 <tbody>
@@ -1068,7 +1069,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <tr><td><b>Morfología de la unión</b></td><td>Tipo I (esfínter inferior y diafragma superpuestos), tipo II (separación &lt; 3 cm), tipo III (≥ 3 cm, hernia hiatal).</td></tr>
 </tbody></table></div>
 
-<h3>Clasificación jerárquica</h3>
+<h3 id="b6-s3">Clasificación jerárquica</h3>
 <div class="perla"><div class="pt"><span>Perlas</span>EGJOO</div><dl><dt>Criterios</dt><dd>IRP elevado supino <b>y</b> sentado, con peristalsis suficiente, más presión intrabolo elevada en ≥ 20 % de las degluciones en supino, <b>síntomas</b> de disfagia o dolor y <b>prueba de apoyo</b> (esofagograma cronometrado o FLIP).</dd></dl><div class="pq"><b>Lo que preguntan</b><ul><li>Sin todos esos elementos, el informe dice «EGJOO no concluyente».</li><li>Opioides, estenosis, EoE y hernia hiatal pueden simularlo.</li></ul></div></div>
 
 <div class="tw"><table class="sm">
@@ -1089,7 +1090,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <li><b>FLIP</b> (sonda de imagen luminal funcional, durante la endoscopía): apertura reducida con índice &lt; 2,0 mm²/mmHg y diámetro &lt; 12 mm; normal con ≥ 2,0 y ≥ 16 mm; lo demás, limítrofe. Respuesta contráctil normal: contracciones anterógradas repetitivas; anormal: ausente, débil, desordenada o espástica (contracciones retrógradas repetitivas, oclusión sostenida). Un FLIP normal tiene alto valor predictivo negativo para trastorno del flujo de salida. Disponibilidad limitada en Chile.</li>
 </ul></div>
 
-<h3>Acalasia</h3>
+<h3 id="b6-s4">Acalasia</h3>
 <div class="perla"><div class="pt"><span>Perlas</span>Acalasia por subtipo</div><dl><dt>Manometría</dt><dd>IRP elevado con <b>100 % de fallas</b>: tipo I (sin presurización), tipo II (presurización panesofágica en ≥ 20 %), tipo III (≥ 20 % de contracciones prematuras).</dd><dt>Tratamiento</dt><dd>Tipos I y II responden a dilatación neumática, miotomía de Heller o POEM; el <b>tipo III</b> responde mejor a <b>POEM</b> (miotomía larga a medida).</dd></dl><div class="pq"><b>Lo que preguntan</b><ul><li>Seudoacalasia: edad &gt; 60, baja de peso rápida y síntomas breves; buscar tumor de la unión.</li><li>Esofagograma cronometrado: columna de bario &gt; 5 cm al minuto 1 y/o retención de una tableta de 12,5 mm apoyan obstrucción; sirve también para seguir la respuesta.</li><li>POEM tiene más ERGE posoperatoria que Heller con funduplicatura.</li></ul></div></div>
 
 <p>Pérdida de neuronas inhibitorias (óxido nítrico) del plexo mientérico, probablemente autoinmune gatillada por virus (herpes, varicela-zóster) en predispuestos. Disfagia a sólidos y líquidos, regurgitación, pérdida de peso, dolor torácico (tipo III) y pirosis por fermentación. La endoscopía es normal en 20–30 % y el esofagograma en ~10 %: la manometría es el estándar. Descartar <b>pseudoacalasia</b> (cáncer de la unión, sobre todo con edad &gt; 60, baja de peso rápida y evolución corta): endoscopía cuidadosa, tomografía o endosonografía. Chagas en zonas endémicas.</p>
@@ -1107,7 +1108,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <li>Acalasia terminal (megaesófago sigmoideo) refractaria: esofagectomía en centros expertos.</li>
 </ul>
 
-<h3>Trastornos con IRP normal</h3>
+<h3 id="b6-s5">Trastornos con IRP normal</h3>
 <ul>
 <li><b>Contractilidad ausente:</b> esclerosis sistémica y otras conectivopatías; manejo agresivo del reflujo; evitar fundoplicatura completa.</li>
 <li><b>IEM:</b> hallazgo frecuente en ERGE; no contraindica una fundoplicatura parcial. Las degluciones rápidas múltiples con reserva contráctil predicen menos disfagia posoperatoria.</li>
@@ -1125,14 +1126,14 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <p><b>Leer primero el IRP (supino y sentado), luego el cuerpo (DCI, DL, presurización) y siempre correlacionar con la clínica.</b> Tipo II: mejor pronóstico; tipo III: POEM. EGJOO solo con síntomas, IRP elevado en ambas posiciones y prueba de apoyo. IEM &gt; 70 % inefectivas o ≥ 50 % fallidas, y casi nunca explica el síntoma.</p></div>
 
 <div class="autoev">
-<h3>Autoevaluación · bloque 6</h3>
+<h3 id="b6-s6">Autoevaluación · bloque 6</h3>
 <div class="caso"><div class="hd">Caso clínico <span class="lvl">Fellow</span></div><div class="bd">
 <p>Hombre de 63 años con disfagia a sólidos de 4 meses, baja de 9 kg. Usa tramadol por lumbago. Manometría: IRP 19 mmHg supino y 14 sentado, peristalsis presente con presión intrabolo elevada en 40 % de las degluciones. Endoscopía con estómago y unión «sin lesiones».</p>
 <details><summary>¿Cómo lo interpreta y qué hace?</summary><div class="ans">
 <p>Patrón de EGJOO manométrica. Antes de etiquetarla: (1) el tramadol (opioide) puede generar ese patrón; suspenderlo o rotarlo y repetir; (2) la edad, la evolución corta y la baja de peso obligan a descartar <b>pseudoacalasia</b> por cáncer de la unión o infiltración: retroflexión cuidadosa, tomografía y endosonografía. Para considerarla clínicamente relevante necesita una prueba de apoyo (esofagograma cronometrado con tableta de 12,5 mm o FLIP con apertura reducida). Solo con causa mecánica descartada y apoyo positivo se discute tratamiento (dilatación o POEM).</p></div></details>
 </div></div>
 
-<h3>Flashcards</h3>
+<h3 id="b6-s7">Flashcards</h3>
 <div class="fc-grid">
 <div class="fc"><div class="q">IRP anormal (Medtronic) en Chicago 4.0</div><div class="a">&gt; 15 mmHg en supino y &gt; 12 mmHg sentado.</div><div class="hint">Clic para ver</div></div>
 <div class="fc"><div class="q">Acalasia tipo II</div><div class="a">IRP elevado, 100 % fallidas y presurización panesofágica en ≥ 20 %.</div><div class="hint">Clic para ver</div></div>
@@ -1144,7 +1145,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <div class="fc"><div class="q">Requisitos de EGJOO clínicamente relevante</div><div class="a">Síntomas + IRP elevado en supino y sentado + prueba de apoyo positiva + exclusión mecánica.</div><div class="hint">Clic para ver</div></div>
 </div>
 
-<h3>Preguntas</h3>
+<h3 id="b6-s8">Preguntas</h3>
 <div class="qz" data-b="b6"></div>
 <script type="application/json" class="qz-data" data-b="b6">[
 {"p":"Manometría: IRP 24 mmHg supino y 18 sentado, 100 % sin peristalsis, presurización panesofágica en 70 %. ¿Diagnóstico?","o":["Acalasia tipo I","Acalasia tipo II","Acalasia tipo III","EGJOO"],"c":1,"e":"IRP elevado con aperistalsis y presurización panesofágica en ≥ 20 % define el tipo II, el más frecuente y de mejor pronóstico."},
@@ -1168,7 +1169,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <h2 id="b7"><span class="num">7</span>Dispepsia: síndrome de distrés posprandial, síndrome de dolor epigástrico y dispepsia por H. pylori</h2>
 <p class="lead">Plenitud posprandial, saciedad precoz, dolor o ardor epigástrico molestos sin enfermedad estructural, sistémica o metabólica que los explique. Prevalencia de 7,2 % en el estudio global de la Fundación Roma. Roma V pide usar preferentemente los subtipos: el síndrome de distrés posprandial (SDP) y el síndrome de dolor epigástrico (SDE). El subtipo orienta el fármaco inicial; los neuromoduladores son la segunda línea con mejor número necesario a tratar (NNT 6).</p>
 
-<h3>Qué cambió</h3>
+<h3 id="b7-s1">Qué cambió</h3>
 <div class="tw"><table class="sm cambio">
 <thead><tr><th>Tema</th><th>Roma IV</th><th>Roma V</th></tr></thead>
 <tbody>
@@ -1182,7 +1183,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <tr><td>Algoritmo terapéutico</td><td class="ant">IBP primero.</td><td>Algoritmo por subtipo; en SDP, IBP, procinético o fitoterápicos validados como primera línea según disponibilidad; neuromoduladores en segunda línea; vaciamiento gástrico solo en refractarios.</td></tr>
 </tbody></table></div>
 
-<h3>Criterios de Roma V</h3>
+<h3 id="b7-s2">Criterios de Roma V</h3>
 <div class="perla"><div class="pt"><span>Perlas</span>Dispepsia funcional</div><dl><dt>Criterios</dt><dd><b>Síndrome de distrés posprandial</b>: plenitud posprandial o saciedad precoz molestas ≥ 2 días por semana. <b>Síndrome de dolor epigástrico</b>: dolor o ardor epigástrico molesto ≥ 1 día por semana. Pueden superponerse.</dd></dl><div class="pq"><b>Lo que preguntan</b><ul><li>Endoscopía con banderas rojas; en Chile, en ≥ 40 años con epigastralgia de más de 15 días (guía MINSAL de cáncer gástrico).</li><li>Náusea predominante o vómitos persistentes excluyen dispepsia: pensar en síndrome de náuseas y vómitos o gastroparesia.</li><li>Con plenitud o saciedad precoz, el dolor posprandial forma parte del SDP: <b>el SDP manda</b>.</li><li>Erradicar *H. pylori* primero; si los síntomas desaparecen a los 6–12 meses, era dispepsia asociada a *H. pylori*.</li></ul></div></div>
 
 <div class="grid2">
@@ -1201,7 +1202,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 </div>
 <p class="small">Ambos: sin evidencia de enfermedad estructural, sistémica o metabólica en los estudios de rutina; criterios de investigación por 3 meses con inicio ≥ 6 meses antes.</p>
 
-<h3>Fisiopatología</h3>
+<h3 id="b7-s3">Fisiopatología</h3>
 <ul>
 <li><b>Acomodación gástrica alterada</b> en hasta 40 % (saciedad precoz, plenitud, baja de peso); <b>vaciamiento lento</b> en ~30 % (plenitud, náuseas, vómitos); <b>hipersensibilidad</b> en hasta 30 % (al ácido, nutrientes y lípidos).</li>
 <li><b>Duodeno:</b> permeabilidad aumentada y activación inmune de bajo grado, con más eosinófilos y mastocitos (sobre todo en la forma postinfecciosa) cerca de las terminaciones nerviosas. La budesonida y el IBP reducen eosinófilos y síntomas.</li>
@@ -1209,7 +1210,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <li><b><i>H. pylori</i>:</b> la gastritis por <i>H. pylori</i> es una enfermedad orgánica (Kioto). Si los síntomas remiten ≥ 6 meses tras la erradicación, se diagnostica <b>dispepsia asociada a <i>H. pylori</i></b>; la erradicación es eficaz en ~30 % (NNT 15).</li>
 </ul>
 
-<h3>Estudio</h3>
+<h3 id="b7-s4">Estudio</h3>
 <div class="algo">
 <div class="step stop"><span class="n">1</span><div class="b"><b>Alarma:</b> baja de peso, disfagia, vómitos persistentes, hemorragia o anemia, masa, antecedente familiar de cáncer gástrico → endoscopía con biopsias (protocolo de Sydney si corresponde).</div></div>
 <div class="step"><span class="n">2</span><div class="b"><b>Sin alarma:</b> suspender fármacos o suplementos que puedan causarla (antiinflamatorios, hierro, metformina, agonistas de GLP-1). <i>H. pylori</i> en todos (test de aire espirado con urea o antígeno fecal, sin IBP 2 semanas).</div></div>
@@ -1219,7 +1220,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <div class="box"><div class="t">Chile</div>
 <p>Chile tiene alta incidencia de cáncer gástrico. La guía MINSAL de cáncer gástrico recomienda endoscopía a personas de 40 años o más con epigastralgia de más de 15 días; muchos centros agregan ecografía abdominal por la alta prevalencia de colelitiasis. La erradicación de <i>H. pylori</i> se indica también por prevención de cáncer gástrico (Maastricht VI).</p></div>
 
-<h3>Tratamiento escalonado</h3>
+<h3 id="b7-s5">Tratamiento escalonado</h3>
 <div class="perla"><div class="pt"><span>Perlas</span>Dispepsia: secuencia</div><dl><dt>Tratamiento</dt><dd>*H. pylori* en todos → primera línea 4–8 semanas: <b>SDP</b> procinético o IBP; <b>SDE</b> IBP en dosis estándar sin escalar → segunda línea, neuromodulador: tricíclico en dosis baja (dolor), buspirona (saciedad) o mirtazapina 7,5–15 mg (baja de peso).</dd></dl><div class="pq"><b>Lo que preguntan</b><ul><li>Sin respuesta al IBP estándar: suspenderlo, no duplicarlo.</li><li>Los ISRS no superan al placebo en dispepsia funcional.</li></ul></div></div>
 
 <div class="tw"><table class="sm">
@@ -1255,14 +1256,14 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <p><b>El SDP manda: si hay plenitud o saciedad precoz (≥ 2 días/semana, ventana de 2 h), es SDP aunque duela.</b> <i>H. pylori</i> en todos; endoscopía con alarma (en Chile, ≥ 40 años con epigastralgia &gt; 15 días). SDP: procinético o IBP; SDE: IBP. Segunda línea: neuromoduladores (tricíclico para dolor, buspirona para saciedad, mirtazapina para baja de peso).</p></div>
 
 <div class="autoev">
-<h3>Autoevaluación · bloque 7</h3>
+<h3 id="b7-s6">Autoevaluación · bloque 7</h3>
 <div class="caso"><div class="hd">Caso clínico <span class="lvl">Residente</span></div><div class="bd">
 <p>Mujer de 32 años con saciedad precoz y plenitud 4 días por semana y dolor epigástrico ocasional después de comer, desde una gastroenteritis hace 8 meses. Bajó 4 kg. Endoscopía con biopsias normal, <i>H. pylori</i> negativo. Probó omeprazol 20 mg por 8 semanas sin respuesta; su médico subió a 40 mg 2 veces al día.</p>
 <details><summary>¿Clasificación y siguiente paso?</summary><div class="ans">
 <p>SDP postinfeccioso (el dolor posprandial forma parte del SDP). No escalar el IBP: suspenderlo. Pasar a procinético (domperidona 10 mg antes de las comidas, con ECG si hay riesgo de QT, o cinitaprida) por 4–8 semanas, con comidas pequeñas. Si persiste, neuromodulador: por la baja de peso, <b>mirtazapina</b> 7,5–15 mg en la noche (mejora la saciedad, la tolerancia a nutrientes y el peso) o buspirona. Si es refractaria, vaciamiento gástrico de 4 h.</p></div></details>
 </div></div>
 
-<h3>Flashcards</h3>
+<h3 id="b7-s7">Flashcards</h3>
 <div class="fc-grid">
 <div class="fc"><div class="q">Frecuencia mínima del SDP en Roma V</div><div class="a">≥ 2 días por semana.</div><div class="hint">Clic para ver</div></div>
 <div class="fc"><div class="q">Ventana posprandial de Roma V</div><div class="a">2 horas tras la comida.</div><div class="hint">Clic para ver</div></div>
@@ -1274,7 +1275,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <div class="fc"><div class="q">Qué excluye el diagnóstico de dispepsia</div><div class="a">Náusea predominante o vómitos persistentes.</div><div class="hint">Clic para ver</div></div>
 </div>
 
-<h3>Preguntas</h3>
+<h3 id="b7-s8">Preguntas</h3>
 <div class="qz" data-b="b7"></div>
 <script type="application/json" class="qz-data" data-b="b7">[
 {"p":"Paciente con plenitud posprandial 3 días/semana y dolor epigástrico que aparece después de comer. Según Roma V, ¿cómo se clasifica?","o":["SDE relacionado con las comidas","SDP: el dolor posprandial en presencia de plenitud o saciedad forma parte del SDP","Superposición SDP-SDE obligatoria","Síndrome de náuseas y vómitos crónicos"],"c":1,"e":"Roma V resuelve la superposición: con síntomas cardinales de SDP, el dolor posprandial se incluye en el SDP, que además responde a procinéticos."},
@@ -1301,7 +1302,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <h2 id="b8"><span class="num">8</span>Gastroparesia, náuseas y vómitos crónicos, vómito cíclico e hiperemesis cannabinoide</h2>
 <p class="lead">El patrón temporal separa los síndromes: episódico con intercrisis libres orienta a vómito cíclico, hiperemesis cannabinoide o migraña abdominal; continuo, a síndrome de náuseas y vómitos crónicos (SNVC) o gastroparesia. La gastroparesia exige náuseas o vómitos predominantes con vaciamiento gástrico enlentecido en un estudio de 4 horas y sin obstrucción; el grado de retención no se correlaciona con la gravedad y comparte un continuo con la dispepsia.</p>
 
-<h3>Qué cambió</h3>
+<h3 id="b8-s1">Qué cambió</h3>
 <div class="tw"><table class="sm cambio">
 <thead><tr><th>Tema</th><th>Antes</th><th>Ahora</th></tr></thead>
 <tbody>
@@ -1312,7 +1313,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <tr><td>Migraña abdominal</td><td class="ant">Diagnóstico pediátrico.</td><td>Diagnóstico del adulto (bloque 15).</td></tr>
 </tbody></table></div>
 
-<h3>Definir el síntoma antes de estudiar</h3>
+<h3 id="b8-s2">Definir el síntoma antes de estudiar</h3>
 <p><b>Náusea</b>: sensación desagradable de querer vomitar. <b>Vómito</b>: expulsión forzada con contracción abdominal. <b>Regurgitación</b>: retorno pasivo sin esfuerzo. <b>Rumiación</b>: regurgitación sin náuseas, minutos después de comer (bloque 4). Siempre preguntar por fármacos y sustancias (opioides, agonistas de GLP-1, cannabis, alcohol, antipsicóticos), embarazo, uremia, patología del sistema nervioso central y vestibular, y trastornos de la conducta alimentaria.</p>
 <div class="algo">
 <div class="step"><span class="n">1</span><div class="b">Definir el síntoma y buscar alarma (vómitos biliosos, dolor con defensa, signos neurológicos, baja de peso).</div></div>
@@ -1324,7 +1325,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <div class="step stop"><span class="n">6</span><div class="b">Refractario a tratamiento por mecanismo → reconfirmar el fenotipo (pH-impedancia de 24 h sin IBP si hay sospecha de regurgitación o reflujo) y escalar: antagonista NK1, potenciación con neuromoduladores, estimulación eléctrica gástrica en seleccionados.</div></div>
 </div>
 
-<h3>Gastroparesia</h3>
+<h3 id="b8-s3">Gastroparesia</h3>
 <div class="perla"><div class="pt"><span>Perlas</span>Gastroparesia</div><dl><dt>Definición</dt><dd>Síntomas de retención gástrica con vaciamiento retardado objetivo y <b>sin obstrucción mecánica</b>.</dd><dt>Estudio</dt><dd>Vaciamiento con comida sólida <b>de 4 h</b>: retención &gt; 10 % a las 4 h. Glicemia &lt; 275 mg/dL durante el estudio.</dd><dt>Tratamiento</dt><dd>Comidas pequeñas, bajas en grasa y fibra, partículas pequeñas; <b>metoclopramida ≤ 12 semanas</b> (discinesia tardía); eritromicina condicional a favor (taquifilaxia); AGA 2025 no recomienda de rutina en primera línea domperidona, prucaloprida, aprepitant, nortriptilina ni buspirona; G-POEM en refractarios seleccionados.</dd></dl><div class="pq"><b>Lo que preguntan</b><ul><li>La correlación entre retraso del vaciamiento y síntomas es pobre.</li><li>Agonistas de GLP-1 retardan el vaciamiento: suspender antes del estudio.</li></ul></div></div>
 
 <ul>
@@ -1350,7 +1351,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <li>Indicar procinéticos sin revisar antes si el paciente usa un agonista de GLP-1 u opioides.</li>
 <li>Indicar G-POEM con dolor predominante o en usuario de opioides.</li></ul></div>
 
-<h3>Síndromes de náuseas y vómitos (Roma V)</h3>
+<h3 id="b8-s4">Síndromes de náuseas y vómitos (Roma V)</h3>
 <div class="perla"><div class="pt"><span>Perlas</span>Vómitos cíclicos y cannabinoides</div><dl><dt>Criterios</dt><dd><b>Vómitos cíclicos</b>: ≥ 3 episodios al año, 2 en los últimos 6 meses, con intervalos sin síntomas. <b>Hiperémesis por cannabinoides</b>: patrón similar en uso prolongado y frecuente de cannabis, que se resuelve con la suspensión sostenida.</dd><dt>Tratamiento</dt><dd>Profilaxis de vómitos cíclicos con amitriptilina; aborto del episodio con triptán, ondansetrón y sedación. En hiperémesis por cannabinoides: capsaicina tópica, haloperidol y suspensión.</dd></dl><div class="pq"><b>Lo que preguntan</b><ul><li>Baños con agua caliente compulsivos sugieren cannabinoides, pero también ocurren en vómitos cíclicos.</li></ul></div></div>
 
 <div class="tw"><table class="sm">
@@ -1372,14 +1373,14 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <p><b>Continuo con vaciamiento lento a las 4 h: gastroparesia; continuo con vaciamiento normal: SNVC; episódico con intercrisis: vómito cíclico o hiperemesis cannabinoide (la ducha caliente y el consumo ≥ 4 días/semana lo delatan).</b> En gastroparesia: fase 1 (glicemia, GLP-1, opioides, dieta) antes que cualquier procinético; metoclopramida ≤ 12 semanas; eritromicina con descansos; G-POEM en el refractario bien seleccionado.</p></div>
 
 <div class="autoev">
-<h3>Autoevaluación · bloque 8</h3>
+<h3 id="b8-s5">Autoevaluación · bloque 8</h3>
 <div class="caso"><div class="hd">Caso clínico <span class="lvl">Residente</span></div><div class="bd">
 <p>Hombre de 24 años con 4 episodios de vómitos incoercibles en el último año, de 3–4 días cada uno, con varias consultas en urgencias. Entre crisis está bien. En las crisis pasa horas en la ducha caliente. Fuma marihuana a diario desde hace 3 años. Endoscopía y laboratorio normales.</p>
 <details><summary>¿Diagnóstico y plan?</summary><div class="ans">
 <p>Probable <b>hiperemesis cannabinoide</b> (episodios tipo vómito cíclico, consumo ≥ 1 año y ≥ 4 días/semana, conducta de baños calientes). Se confirma con alivio tras suspensión sostenida ≥ 6 meses o 3 ciclos. En crisis: hidratación, capsaicina tópica, haloperidol o droperidol con ECG, benzodiazepinas; evitar opioides. De fondo: abstinencia con apoyo (TCC, programa de consumo), advirtiendo que la mejoría puede tardar semanas a meses. Si persisten crisis tras 6 meses sin consumo, replantear vómito cíclico e iniciar profilaxis (amitriptilina o topiramato).</p></div></details>
 </div></div>
 
-<h3>Flashcards</h3>
+<h3 id="b8-s6">Flashcards</h3>
 <div class="fc-grid">
 <div class="fc"><div class="q">Vaciamiento gástrico enlentecido</div><div class="a">Retención &gt; 10 % a las 4 h (comida sólida estandarizada).</div><div class="hint">Clic para ver</div></div>
 <div class="fc"><div class="q">Por qué no sirve el vaciamiento de 2 h (AGA 2025)</div><div class="a">Sensibilidad de solo 57 %.</div><div class="hint">Clic para ver</div></div>
@@ -1391,7 +1392,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <div class="fc"><div class="q">Mejor candidato a G-POEM</div><div class="a">Diabético o posquirúrgico con náuseas y vómitos predominantes, corta evolución y sin opioides.</div><div class="hint">Clic para ver</div></div>
 </div>
 
-<h3>Preguntas</h3>
+<h3 id="b8-s7">Preguntas</h3>
 <div class="qz" data-b="b8"></div>
 <script type="application/json" class="qz-data" data-b="b8">[
 {"p":"Diabético tipo 2 en semaglutida, con náuseas y plenitud. Vaciamiento a 4 h: retención 28 %. ¿Primer paso?","o":["Metoclopramida","G-POEM","Optimizar la glicemia y evaluar suspender o cambiar el agonista de GLP-1","Amitriptilina"],"c":2,"e":"Fase 1: los agonistas de GLP-1 causan vaciamiento lento en 4–9 % y la hiperglicemia lo enlentece por sí sola; el estudio puede normalizarse al retirar el gatillo."},
@@ -1419,7 +1420,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <h2 id="b9"><span class="num">9</span>Síndrome de intestino irritable: diagnóstico positivo y manejo escalonado</h2>
 <p class="lead">Dolor o malestar abdominal recurrente, no continuo, asociado a cambios en la defecación. El SII no es un diagnóstico de exclusión: con criterios cumplidos y sin banderas rojas, el estudio es selectivo y limitado. El tratamiento parte por la relación médico-paciente y la dieta, y se elige el fármaco según el síntoma más molesto (hábito intestinal y dolor), con terapias cerebro-intestino en cualquier escalón.</p>
 
-<h3>Qué cambió</h3>
+<h3 id="b9-s1">Qué cambió</h3>
 <div class="tw"><table class="sm cambio">
 <thead><tr><th>Tema</th><th>Roma IV</th><th>Roma V</th></tr></thead>
 <tbody>
@@ -1431,7 +1432,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <tr><td>Test de aire espirado y SIBO</td><td class="ant">Uso variable.</td><td>Roma V <b>no recomienda</b> test de aire espirado de rutina en la evaluación inicial del SII.</td></tr>
 </tbody></table></div>
 
-<h3>Criterios de Roma V</h3>
+<h3 id="b9-s2">Criterios de Roma V</h3>
 <div class="perla"><div class="pt"><span>Perlas</span>Síndrome de intestino irritable</div><dl><dt>Criterios</dt><dd>Dolor o molestia abdominal recurrente <b>≥ 3 días al mes</b>, no continuo, asociado a ≥ 2 de: defecación, cambio de frecuencia, cambio de forma de las deposiciones.</dd><dt>Definición</dt><dd>Subtipos por la escala de Bristol en días con deposiciones anormales: SII-C, SII-D, SII-M, SII-U.</dd></dl><div class="pq"><b>Lo que preguntan</b><ul><li>Roma V reincorpora la «molestia» además del dolor.</li><li>Dolor continuo sin relación con la defecación: pensar en CAPS, no en SII.</li></ul></div></div>
 
 <div class="box"><div class="t">C1. Síndrome de intestino irritable</div>
@@ -1446,14 +1447,14 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 </tbody></table></div>
 <p>Epidemiología: 4,3 % en el estudio global (24 países), con pico entre 18 y 39 años y relación mujer:hombre 1,8:1. El SII-D y el SII-C son los de mayor carga. Superposición frecuente con dispepsia (55 %), ERGE y TICI anorrectales.</p>
 
-<h3>Fisiopatología</h3>
+<h3 id="b9-s3">Fisiopatología</h3>
 <ul>
 <li>Modelo biopsicosocial: tránsito acelerado o lento, hipersensibilidad visceral (periférica y central), permeabilidad aumentada (4–62 %, sobre todo SII-D y postinfeccioso), activación inmune (mastocitos), serotonina, microbiota y metabolitos (ácidos grasos de cadena corta), reacciones locales a alimentos y malabsorción de ácidos biliares (~25 % del SII-D).</li>
 <li><b>Postinfeccioso:</b> &gt; 10 % tras una gastroenteritis (riesgo mayor tras <i>Campylobacter</i>, <i>Salmonella</i>, <i>Shigella</i>, norovirus); también descrito tras COVID-19.</li>
 <li>Abuso en la infancia o adultez: riesgo casi 3 veces mayor; depresión y ansiedad frecuentes (hasta 50 % en centros terciarios).</li>
 </ul>
 
-<h3>Evaluación: diagnóstico positivo</h3>
+<h3 id="b9-s4">Evaluación: diagnóstico positivo</h3>
 <div class="tw"><table class="sm">
 <thead><tr><th style="width:30%">Prueba</th><th>Rol en el SII</th></tr></thead>
 <tbody>
@@ -1468,7 +1469,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <tr><td>Pruebas anorrectales</td><td>SII-C con síntomas de evacuación difícil que no responde (bloque 14).</td></tr>
 </tbody></table></div>
 
-<h3>Tratamiento</h3>
+<h3 id="b9-s5">Tratamiento</h3>
 <div class="perla"><div class="pt"><span>Perlas</span>SII por fenotipo</div><dl><dt>Tratamiento</dt><dd>Base para todos: explicación, dieta (baja en FODMAP en 3 fases), fibra soluble (psyllium), antiespasmódicos, ATC en dosis baja, terapias cerebro-intestino. <b>SII-D</b>: loperamida, rifaximina, ondansetrón, eluxadolina (no en Chile). <b>SII-C</b>: PEG, linaclotida (no disponible en Chile), prucaloprida en la práctica.</dd></dl><div class="pq"><b>Lo que preguntan</b><ul><li>La fibra insoluble (salvado) empeora la distensión.</li><li>La FODMAP tiene fase de reintroducción obligatoria: no es una dieta permanente.</li></ul></div></div>
 
 <h4>Escalón 1: relación médico-paciente, estilo de vida y dieta</h4>
@@ -1505,21 +1506,21 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <tr><td>Estrategia de diagnóstico positivo · serología celíaca en SII-D/M · calprotectina o lactoferrina y PCR · fibra soluble · prueba limitada de dieta baja en FODMAP · antiespasmódicos y menta · tricíclicos · secretagogos en SII-C · rifaximina, alosetrón (mujeres, SII-D grave) y eluxadolina en SII-D · terapias psicológicas · pruebas anorrectales en SII con síntomas de disinergia refractarios</td><td>Colonoscopía de rutina en &lt; 45 años sin alarma · parasitológico rutinario · test de alergia o sensibilidad alimentaria · ISRS para el dolor · probióticos de rutina · trasplante de microbiota fecal</td></tr>
 </tbody></table></div>
 
-<h3>Síntomas tipo SII en la EII en remisión</h3>
+<h3 id="b9-s6">Síntomas tipo SII en la EII en remisión</h3>
 <p>La urgencia fecal es frecuente incluso en remisión (en una serie chilena de 3 centros, 20 % de los pacientes con EII; en colitis ulcerosa con urgencia, 59 % estaba en remisión endoscópica). Mecanismos: hipersensibilidad rectal, menor distensibilidad, disfunción anorrectal, SII superpuesto, SIBO y malabsorción de ácidos biliares. Clasificación de urgencia (2023): leve 5–15 min para llegar al baño, moderada 2–5 min, grave &lt; 2 min. Primero confirmar remisión objetiva (calprotectina, ecografía intestinal, endoscopía); luego tratar como TICI: dieta baja en FODMAP, loperamida, secuestrantes, tricíclicos, biorretroalimentación y psicoterapia.</p>
 
 <div class="key"><div class="t">Idea clave</div>
 <p><b>Roma V: dolor o malestar ≥ 3 días/mes, no continuo, con ≥ 2 de relación con la defecación, cambio de frecuencia o de forma.</b> Diagnóstico positivo con PCR, calprotectina y serología celíaca (si hay diarrea). Tratamiento por síntoma predominante: fibra soluble y FODMAP en fases, antiespasmódico o menta para el dolor, amitriptilina 10–30 mg si persiste, y terapias cerebro-intestino desde el principio.</p></div>
 
 <div class="autoev">
-<h3>Autoevaluación · bloque 9</h3>
+<h3 id="b9-s7">Autoevaluación · bloque 9</h3>
 <div class="caso"><div class="hd">Caso clínico <span class="lvl">Residente</span></div><div class="bd">
 <p>Mujer de 26 años con dolor cólico abdominal bajo unos 5 días al mes, que alivia al defecar, con deposiciones Bristol 6 la mitad de las veces y Bristol 4 el resto, desde hace 1 año. Sin alarma. Lleva 3 meses con dieta sin gluten, sin lácteos y sin legumbres por su cuenta, y bajó 3 kg. Pide un test de intolerancias alimentarias por IgG.</p>
 <details><summary>¿Diagnóstico, estudio y plan?</summary><div class="ans">
 <p>SII-D por Roma V (dolor ≥ 3 días/mes no continuo, relacionado con la defecación y con cambio de forma; &gt; 25 % Bristol 6–7). Estudio: hemograma, PCR, calprotectina y serología celíaca <b>con</b> IgA total, advirtiendo que la dieta sin gluten reduce su sensibilidad (si es negativa y la sospecha persiste, reintroducir gluten antes de repetir o considerar HLA-DQ2/DQ8). No pedir IgG a alimentos. Revisar el riesgo de ARFID por la restricción autoimpuesta y la baja de peso. Plan: explicar el mecanismo; reemplazar las restricciones por una dieta baja en FODMAP guiada por nutricionista con reintroducción; antiespasmódico o menta para el dolor; loperamida a demanda; amitriptilina 10 mg si el dolor persiste; ofrecer TCC o hipnoterapia.</p></div></details>
 </div></div>
 
-<h3>Flashcards</h3>
+<h3 id="b9-s8">Flashcards</h3>
 <div class="fc-grid">
 <div class="fc"><div class="q">Frecuencia del dolor en SII según Roma V</div><div class="a">≥ 3 días al mes en promedio (Roma IV: ≥ 1 día/semana).</div><div class="hint">Clic para ver</div></div>
 <div class="fc"><div class="q">Qué separa el SII del dolor centralmente mediado en Roma V</div><div class="a">En el SII el dolor no es continuo.</div><div class="hint">Clic para ver</div></div>
@@ -1531,7 +1532,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <div class="fc"><div class="q">Probióticos con certeza moderada en SII</div><div class="a">Cepas de Escherichia coli; el resto, certeza baja o muy baja.</div><div class="hint">Clic para ver</div></div>
 </div>
 
-<h3>Preguntas</h3>
+<h3 id="b9-s9">Preguntas</h3>
 <div class="qz" data-b="b9"></div>
 <script type="application/json" class="qz-data" data-b="b9">[
 {"p":"Hombre de 30 años con dolor abdominal 4 días al mes asociado a cambio de frecuencia y forma de las deposiciones, desde hace 1 año, sin alarma. ¿Cumple Roma V?","o":["No, porque requiere dolor ≥ 1 día por semana","Sí: dolor ≥ 3 días/mes no continuo con 2 criterios asociados","No, porque falta la relación con la defecación","Solo si la colonoscopía es normal"],"c":1,"e":"Roma V bajó el umbral a ≥ 3 días al mes y exige ≥ 2 de 3 criterios (no necesariamente la relación con la defecación). El diagnóstico es positivo, sin colonoscopía obligatoria."},
@@ -1555,7 +1556,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <h2 id="b10"><span class="num">10</span>Diarrea crónica, SII-D y diarrea funcional</h2>
 <p class="lead">Ante diarrea crónica (&gt; 4 semanas) sin banderas rojas hay que separar SII-D y diarrea funcional de sus grandes imitadores: malabsorción de ácidos biliares (MAB), colitis microscópica, enfermedad celíaca, giardiasis, malabsorción de carbohidratos, fármacos e hipertiroidismo. En Roma V la diarrea funcional excluye el SII-D y el dolor no predomina. El tratamiento se elige por síntoma: loperamida para frecuencia y urgencia, secuestrantes si se sospecha MAB, rifaximina, antagonistas 5-HT3 o eluxadolina en el SII-D, y neuromoduladores si domina el dolor.</p>
 
-<h3>Qué cambió</h3>
+<h3 id="b10-s1">Qué cambió</h3>
 <div class="tw"><table class="sm cambio">
 <thead><tr><th>Tema</th><th>Antes</th><th>Ahora</th></tr></thead>
 <tbody>
@@ -1565,7 +1566,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <tr><td>Eluxadolina</td><td class="ant">—</td><td>Contraindicada con pancreatitis previa, disfunción del esfínter de Oddi, consumo de alcohol, <b>colecistectomía</b> o insuficiencia hepática grave.</td></tr>
 </tbody></table></div>
 
-<h3>Evaluación</h3>
+<h3 id="b10-s2">Evaluación</h3>
 <div class="grid2">
 <div class="chk"><h5>Banderas rojas en diarrea</h5>
 <label><input type="checkbox"> Inicio reciente, sobre todo en edad avanzada</label>
@@ -1599,7 +1600,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <div class="step"><span class="n">4</span><div class="b"><b>Sin respuesta al tratamiento estándar:</b> MAB (SeHCAT, C4 sérico o prueba terapéutica con secuestrante 4 semanas), test de aire espirado de lactosa o fructosa en seleccionados, elastasa fecal si hay esteatorrea o factores de riesgo pancreático.</div></div>
 </div>
 
-<h3>Malabsorción de ácidos biliares</h3>
+<h3 id="b10-s3">Malabsorción de ácidos biliares</h3>
 <div class="perla"><div class="pt"><span>Perlas</span>Malabsorción de ácidos biliares</div><dl><dt>Fisiopatología</dt><dd>Tipo 1 (íleon resecado o enfermo), tipo 2 (idiopática, déficit de FGF19), tipo 3 (colecistectomía, SIBO, pancreatitis).</dd><dt>Estudio</dt><dd>SeHCAT (&lt; 10 %), C4 sérico o ácidos biliares fecales; sin ellos, prueba terapéutica con colestiramina.</dd></dl><div class="pq"><b>Lo que preguntan</b><ul><li>Hasta un tercio de los SII-D y diarrea funcional la tienen.</li><li>Colesevelam se tolera mejor que colestiramina.</li></ul></div></div>
 
 <ul>
@@ -1609,7 +1610,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <li><b>Tratamiento:</b> colestiramina 4 g 1–3 veces al día (separada 4 h de otros fármacos), colestipol o colesevelam 625 mg 2–3 comprimidos 1–2 veces al día (mejor tolerado); dieta baja en grasa. Responde ~70 %, con tolerancia limitada (sabor, distensión, constipación).</li>
 </ul>
 
-<h3>Colitis microscópica</h3>
+<h3 id="b10-s4">Colitis microscópica</h3>
 <div class="perla"><div class="pt"><span>Perlas</span>Colitis microscópica</div><dl><dt>Endoscopía</dt><dd>Mucosa normal o casi normal; biopsias de colon derecho e izquierdo.</dd><dt>Fisiopatología</dt><dd>Colitis colágena (banda subepitelial &gt; 10 µm) y linfocítica (&gt; 20 linfocitos intraepiteliales por 100 células).</dd><dt>Tratamiento</dt><dd><b>Budesonida 9 mg/día</b> por 8 semanas; suspender AINE, IBP, ISRS y estatinas si es posible.</dd></dl><div class="pq"><b>Lo que preguntan</b><ul><li>Mujer &gt; 50 años con diarrea acuosa nocturna y autoinmunidad (celíaca, tiroides).</li></ul></div></div>
 
 <ul>
@@ -1618,7 +1619,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <li><b>Tratamiento:</b> suspender fármacos asociados; leve: loperamida, colestiramina o subsalicilato de bismuto; inducción: <b>budesonida 9 mg/día por 8 semanas</b> (luego mantención 6 mg con descenso en recaídas frecuentes).</li>
 </ul>
 
-<h3>Tratamiento del SII-D y la diarrea funcional</h3>
+<h3 id="b10-s5">Tratamiento del SII-D y la diarrea funcional</h3>
 <div class="tw"><table class="sm">
 <thead><tr><th style="width:20%">Fármaco</th><th>Dosis</th><th style="width:38%">Notas</th></tr></thead>
 <tbody>
@@ -1641,14 +1642,14 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <p><b>Diarrea crónica sin alarma: PCR, calprotectina, serología celíaca, TSH y Giardia; biopsias escalonadas si es acuosa en mayor de 45–50 años.</b> MAB: pensar tras colecistectomía y probar secuestrante 4 semanas. SII-D: loperamida para urgencia, rifaximina para distensión y global, tricíclico para dolor.</p></div>
 
 <div class="autoev">
-<h3>Autoevaluación · bloque 10</h3>
+<h3 id="b10-s6">Autoevaluación · bloque 10</h3>
 <div class="caso"><div class="hd">Caso clínico <span class="lvl">Residente</span></div><div class="bd">
 <p>Mujer de 54 años con manga gástrica hace 6 años, hipotiroidea, en escitalopram 20 mg. Diarrea acuosa explosiva de años, 10 episodios al día con despertar nocturno, urgencia e incontinencia; usa hasta 10 comprimidos de loperamida diarios sin respuesta. Serología celíaca normal, calprotectina 80 µg/g, parasitológico normal; colonoscopía «normal» hace 2 años, sin biopsias.</p>
 <details><summary>¿Qué estudio pide y qué espera?</summary><div class="ans">
 <p>La diarrea nocturna, acuosa y con incontinencia en una mujer de 54 años en ISRS obliga a repetir la colonoscopía con <b>biopsias escalonadas</b> buscando colitis microscópica (la calprotectina normal o leve no la descarta). Revisar TSH y ajustar levotiroxina. Por la cirugía bariátrica, considerar SIBO y MAB (prueba de secuestrante). Si se confirma colitis microscópica: evaluar el cambio del ISRS y budesonida 9 mg/día por 8 semanas; reducir la loperamida a dosis seguras.</p></div></details>
 </div></div>
 
-<h3>Flashcards</h3>
+<h3 id="b10-s7">Flashcards</h3>
 <div class="fc-grid">
 <div class="fc"><div class="q">Criterio nuevo de diarrea funcional en Roma V</div><div class="a">Las deposiciones duras son raras sin fármacos constipantes.</div><div class="hint">Clic para ver</div></div>
 <div class="fc"><div class="q">Frecuencia de MAB en el SII-D</div><div class="a">~25 %.</div><div class="hint">Clic para ver</div></div>
@@ -1660,7 +1661,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <div class="fc"><div class="q">Síntoma que el ondansetrón no mejora en SII-D</div><div class="a">El dolor abdominal.</div><div class="hint">Clic para ver</div></div>
 </div>
 
-<h3>Preguntas</h3>
+<h3 id="b10-s8">Preguntas</h3>
 <div class="qz" data-b="b10"></div>
 <script type="application/json" class="qz-data" data-b="b10">[
 {"p":"Hombre de 45 años colecistectomizado hace 2 años, con diarrea acuosa posprandial y urgencia desde entonces; estudio básico normal. Sin SeHCAT disponible. ¿Conducta?","o":["Rifaximina","Prueba terapéutica con colestiramina por ≥ 4 semanas","Eluxadolina","Dieta sin gluten"],"c":1,"e":"La MAB es frecuente tras colecistectomía; sin SeHCAT, Roma V propone un secuestrante empírico ≥ 4 semanas. La eluxadolina está contraindicada sin vesícula."},
@@ -1684,7 +1685,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <h2 id="b11"><span class="num">11</span>Constipación crónica y SII-C</h2>
 <p class="lead">Defecación difícil, infrecuente o incompleta. Roma V la llama constipación crónica (ya no «funcional»); la diferencia con el SII-C es el predominio del dolor o malestar. La mayoría tiene tránsito normal; ~1 de cada 4 tiene un trastorno defecatorio que no responde a laxantes y se trata con biorretroalimentación. El tacto rectal es parte del diagnóstico. El tratamiento es escalonado con fármacos de fuerte evidencia: polietilenglicol (PEG), laxantes estimulantes, secretagogos y prucaloprida.</p>
 
-<h3>Qué cambió</h3>
+<h3 id="b11-s1">Qué cambió</h3>
 <div class="tw"><table class="sm cambio">
 <thead><tr><th>Tema</th><th>Antes</th><th>Ahora</th></tr></thead>
 <tbody>
@@ -1695,13 +1696,13 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <tr><td>Disinergia</td><td class="ant">2 pruebas alteradas.</td><td>1 prueba alterada basta (bloque 14).</td></tr>
 </tbody></table></div>
 
-<h3>Criterios de Roma V</h3>
+<h3 id="b11-s2">Criterios de Roma V</h3>
 <div class="box"><div class="t">C2. Constipación crónica</div>
 <p>(1) ≥ 2 de los siguientes en &gt; 25 % de las defecaciones: pujo, deposiciones duras (Bristol 1–2), sensación de evacuación incompleta, sensación de obstrucción anorrectal, maniobras manuales (digitación, soporte del periné); o &lt; 3 deposiciones espontáneas por semana. (2) Deposiciones sueltas raras sin laxantes. (3) Criterios insuficientes para SII. Últimos 3 meses, inicio ≥ 6 meses antes.</p></div>
 <div class="box"><div class="t">C6. Constipación por opioides</div>
 <p>Constipación nueva o que empeora al iniciar, cambiar o subir opioides, con ≥ 2 de los mismos síntomas; deposiciones sueltas raras sin laxantes. Prevalencia ~1,6 %.</p></div>
 
-<h3>Fisiopatología y subtipos</h3>
+<h3 id="b11-s3">Fisiopatología y subtipos</h3>
 <div class="perla"><div class="pt"><span>Perlas</span>Constipación: tres mecanismos</div><dl><dt>Fisiopatología</dt><dd>Tránsito normal (el más frecuente), tránsito lento y trastorno evacuatorio (disinergia); pueden coexistir.</dd><dt>Estudio</dt><dd>Tacto rectal con maniobra de pujo: sensibilidad ~75 % y especificidad ~87 % para disinergia en manos expertas.</dd></dl><div class="pq"><b>Lo que preguntan</b><ul><li>Digitación, sensación de obstrucción y pujo excesivo orientan a trastorno evacuatorio.</li><li>La disinergia no responde bien a laxantes: requiere biorretroalimentación.</li></ul></div></div>
 
 <div class="tw"><table class="sm">
@@ -1713,7 +1714,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 </tbody></table></div>
 <p>Factores de riesgo: sexo femenino, edad, nivel socioeconómico bajo, sedentarismo, fármacos (opioides, anticolinérgicos, antipsicóticos, bloqueadores de calcio, hierro, calcio, antiácidos con aluminio), hipotiroidismo, hipercalcemia, diabetes, Parkinson, esclerosis múltiple, embarazo.</p>
 
-<h3>Evaluación</h3>
+<h3 id="b11-s4">Evaluación</h3>
 <ul>
 <li><b>Tacto rectal</b> en reposo, al contraer y al pujar: tono, contracción paradójica del puborrectal, descenso perineal, rectocele, impactación, fisura. Un tacto bien hecho tiene buena sensibilidad para disinergia.</li>
 <li>Hemograma; TSH, glicemia y calcio si la clínica lo sugiere. Colonoscopía por tamizaje según edad o con banderas rojas (&gt; 45–50 años sin tamizaje, cambio reciente, anemia, sangrado, baja de peso, historia familiar).</li>
@@ -1721,7 +1722,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <li><b>Falla del tratamiento</b> (fibra + osmótico): manometría anorrectal y test de expulsión de balón (bloque 14) → si son normales, <b>tránsito colónico</b> con marcadores radiopacos (método de Hinton: 20–24 marcadores, radiografía al día 5; retención &gt; 20 % sugiere tránsito lento) o cintigrafía. Antes de una colectomía, estudiar el tránsito del tubo digestivo alto (excluir dismotilidad difusa).</li>
 </ul>
 
-<h3>Tratamiento escalonado (AGA-ACG 2023 y Roma V)</h3>
+<h3 id="b11-s5">Tratamiento escalonado (AGA-ACG 2023 y Roma V)</h3>
 <div class="perla"><div class="pt"><span>Perlas</span>Laxantes con recomendación fuerte</div><dl><dt>Tratamiento</dt><dd>AGA-ACG 2023 da recomendación <b>fuerte</b> a PEG, picosulfato/bisacodilo, linaclotida, plecanatida y prucaloprida; <b>condicional</b> a fibra, lactulosa, senósidos, magnesio y lubiprostona.</dd></dl><div class="pq"><b>Lo que preguntan</b><ul><li>Prucaloprida es agonista 5-HT4 selectivo, sin el riesgo cardiovascular de cisaprida o tegaserod.</li><li>Lactulosa produce más distensión que PEG.</li></ul></div></div>
 
 <div class="tw"><table class="sm">
@@ -1749,14 +1750,14 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <p><b>Tacto rectal siempre; PEG primero (fuerte), estimulantes como rescate (fuerte); secretagogos o prucaloprida si fallan.</b> Si no responde, piense en trastorno defecatorio y estúdielo antes de pedir tránsito colónico o escalar fármacos: la disinergia se trata con biorretroalimentación, no con más laxantes.</p></div>
 
 <div class="autoev">
-<h3>Autoevaluación · bloque 11</h3>
+<h3 id="b11-s6">Autoevaluación · bloque 11</h3>
 <div class="caso"><div class="hd">Caso clínico <span class="lvl">Residente</span></div><div class="bd">
 <p>Mujer de 38 años con constipación desde la adolescencia: pujo intenso, sensación de bloqueo y necesidad de presionar el periné para evacuar en la mayoría de las deposiciones, 2 por semana. Probó psyllium (más distensión), PEG 17 g diario y bisacodilo con respuesta parcial. Al tacto rectal, al pujar el puborrectal se contrae en vez de relajarse.</p>
 <details><summary>¿Qué sospecha y cómo sigue?</summary><div class="ans">
 <p>Constipación crónica con alta sospecha de <b>defecación disinérgica</b> (síntomas de evacuación, maniobras manuales, contracción paradójica al tacto, falla de laxantes). Siguiente paso: manometría anorrectal de alta resolución y test de expulsión de balón (Roma V: una prueba alterada basta para disinergia probable). Si se confirma, <b>biorretroalimentación</b> (≥ 5 sesiones; predictores de éxito: digitación, heces duras, balón prolongado), manteniendo el PEG. No pedir tránsito colónico ni escalar a prucaloprida antes de tratar la disinergia.</p></div></details>
 </div></div>
 
-<h3>Flashcards</h3>
+<h3 id="b11-s7">Flashcards</h3>
 <div class="fc-grid">
 <div class="fc"><div class="q">Nuevo nombre de la constipación funcional en Roma V</div><div class="a">Constipación crónica.</div><div class="hint">Clic para ver</div></div>
 <div class="fc"><div class="q">Diferencia conceptual entre constipación crónica y SII-C</div><div class="a">El predominio del dolor o malestar abdominal en el SII-C.</div><div class="hint">Clic para ver</div></div>
@@ -1768,7 +1769,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <div class="fc"><div class="q">¿Los laxantes estimulantes dañan el colon?</div><div class="a">No: no hay evidencia de dependencia ni daño estructural.</div><div class="hint">Clic para ver</div></div>
 </div>
 
-<h3>Preguntas</h3>
+<h3 id="b11-s8">Preguntas</h3>
 <div class="qz" data-b="b11"></div>
 <script type="application/json" class="qz-data" data-b="b11">[
 {"p":"Según la guía AGA-ACG 2023, ¿cuál de estos tiene recomendación FUERTE en constipación crónica?","o":["Lactulosa","Fibra","Polietilenglicol","Lubiprostona"],"c":2,"e":"PEG tiene recomendación fuerte con certeza moderada. Fibra, magnesio, sena, lactulosa y lubiprostona son condicionales."},
@@ -1790,7 +1791,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <h2 id="b12"><span class="num">12</span>Distensión abdominal, SIBO/IMO y disinergia abdominofrénica</h2>
 <p class="lead">La hinchazón (sensación subjetiva de presión o gas atrapado) y la distensión (aumento visible del perímetro) son casi universales en el SII (97 %) y la dispepsia (89 %). La mayoría de los pacientes no tiene más gas que los sanos: los mecanismos son hipersensibilidad, manejo anormal del gas, fermentación, constipación con retención distal y un reflejo abdominofrénico anormal. El sobrecrecimiento bacteriano del intestino delgado (SIBO) existe, pero se sobrediagnostica: el test de aire espirado no es de rutina y los antibióticos se reservan para casos con sospecha razonable.</p>
 
-<h3>Qué cambió</h3>
+<h3 id="b12-s1">Qué cambió</h3>
 <div class="tw"><table class="sm cambio">
 <thead><tr><th>Tema</th><th>Antes</th><th>Ahora</th></tr></thead>
 <tbody>
@@ -1800,11 +1801,11 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <tr><td>Biorretroalimentación</td><td class="ant">Experimental.</td><td>Ensayo controlado: la biorretroalimentación guiada por movimiento toracoabdominal mejora la distensión visible posprandial (Roma V).</td></tr>
 </tbody></table></div>
 
-<h3>Criterios de Roma V</h3>
+<h3 id="b12-s2">Criterios de Roma V</h3>
 <div class="box"><div class="t">C4. Hinchazón abdominal funcional</div>
 <p>(1) Hinchazón y/o distensión visible recurrente, en promedio ≥ 1 día/semana, que <b>predomina</b> sobre otros síntomas. (2) Criterios insuficientes para SII, constipación crónica, diarrea funcional o SDP. Puede haber dolor leve o alteraciones menores del hábito que no predominan. Últimos 3 meses, inicio ≥ 6 meses antes.</p></div>
 
-<h3>Mecanismos</h3>
+<h3 id="b12-s3">Mecanismos</h3>
 <div class="perla"><div class="pt"><span>Perlas</span>Distensión abdominal</div><dl><dt>Fisiopatología</dt><dd><b>Disinergia abdominofrénica</b>: el diafragma desciende y la pared abdominal se relaja ante una carga normal de gas; el volumen de gas suele ser normal.</dd><dt>Tratamiento</dt><dd>Biorretroalimentación con EMG de pared abdominal y respiración diafragmática.</dd></dl><div class="pq"><b>Lo que preguntan</b><ul><li>Distensión visible que aumenta en el día y desaparece de noche.</li></ul></div></div>
 
 <div class="cards">
@@ -1820,7 +1821,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <label><input type="checkbox"> Cirugía digestiva previa, diabetes, esclerodermia, opioides</label>
 </div>
 
-<h3>SIBO e IMO</h3>
+<h3 id="b12-s4">SIBO e IMO</h3>
 <div class="perla"><div class="pt"><span>Perlas</span>Test de aire espirado</div><dl><dt>Laboratorio</dt><dd><b>SIBO</b>: H₂ ≥ 20 ppm sobre el basal antes de 90 min. <b>IMO</b>: CH₄ ≥ 10 ppm en cualquier momento.</dd><dt>Tratamiento</dt><dd>SIBO: rifaximina 550 mg c/8 h × 14 días (en Chile, con la presentación de 200 mg, 400 mg c/8 h); IMO: rifaximina + neomicina o metronidazol.</dd></dl><div class="pq"><b>Lo que preguntan</b><ul><li>No pedir de rutina en SII: alto falso positivo con lactulosa por tránsito rápido.</li><li>El metano se asocia a constipación.</li></ul></div></div>
 
 <ul>
@@ -1846,7 +1847,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <li>Probióticos, herbales y dieta elemental: evidencia insuficiente para tratar el SIBO (la dieta elemental es opción en refractarios seleccionados).</li>
 </ul>
 
-<h3>Tratamiento de la hinchazón y distensión</h3>
+<h3 id="b12-s5">Tratamiento de la hinchazón y distensión</h3>
 <div class="tw"><table class="sm">
 <thead><tr><th style="width:22%">Estrategia</th><th>Detalle</th></tr></thead>
 <tbody>
@@ -1863,14 +1864,14 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <p><b>No es más gas: es sensibilidad, fermentación, constipación y un reflejo abdominofrénico invertido.</b> FODMAP, tratar la constipación, respiración diafragmática y biorretroalimentación; rifaximina en SII sin constipación. Test de aire espirado solo con factores de riesgo de SIBO: hidrógeno ≥ 20 ppm a los 90 min, metano ≥ 10 ppm = IMO.</p></div>
 
 <div class="autoev">
-<h3>Autoevaluación · bloque 12</h3>
+<h3 id="b12-s6">Autoevaluación · bloque 12</h3>
 <div class="caso"><div class="hd">Caso clínico <span class="lvl">Residente</span></div><div class="bd">
 <p>Mujer de 36 años con distensión visible que empeora a lo largo del día y con las comidas («parezco embarazada en la tarde»), sin diarrea ni constipación relevantes. Le hicieron un test de lactulosa en un laboratorio privado: hidrógeno sube 25 ppm a los 120 min. Recibió 3 ciclos de rifaximina sin cambios.</p>
 <details><summary>¿Cómo interpreta y qué propone?</summary><div class="ans">
 <p>El test no cumple criterio de SIBO (el aumento debe ser ≥ 20 ppm dentro de los 90 min; a los 120 min con lactulosa refleja llegada al colon). El cuadro sugiere <b>hinchazón abdominal funcional con disinergia abdominofrénica</b> (distensión visible posprandial progresiva sin exceso de gas). Suspender antibióticos; explicar el mecanismo; respiración diafragmática posprandial y, si está disponible, biorretroalimentación abdominofrénica; dieta baja en FODMAP guiada; neuromodulador en dosis baja si persiste. Revisar constipación oculta y trastorno defecatorio.</p></div></details>
 </div></div>
 
-<h3>Flashcards</h3>
+<h3 id="b12-s7">Flashcards</h3>
 <div class="fc-grid">
 <div class="fc"><div class="q">Criterio de SIBO en test de aire espirado</div><div class="a">Aumento de hidrógeno ≥ 20 ppm sobre el basal dentro de los 90 min.</div><div class="hint">Clic para ver</div></div>
 <div class="fc"><div class="q">Criterio de IMO</div><div class="a">Metano ≥ 10 ppm en cualquier momento.</div><div class="hint">Clic para ver</div></div>
@@ -1882,7 +1883,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <div class="fc"><div class="q">Laboratorio que sugiere SIBO</div><div class="a">B12 baja con folato alto.</div><div class="hint">Clic para ver</div></div>
 </div>
 
-<h3>Preguntas</h3>
+<h3 id="b12-s8">Preguntas</h3>
 <div class="qz" data-b="b12"></div>
 <script type="application/json" class="qz-data" data-b="b12">[
 {"p":"Test de glucosa: hidrógeno basal 8 ppm, 34 ppm a los 60 min; metano &lt; 3 ppm en todo el examen. ¿Interpretación?","o":["Normal","SIBO positivo","IMO","Malabsorción de glucosa"],"c":1,"e":"Un aumento de hidrógeno ≥ 20 ppm sobre el basal dentro de 90 min es positivo para SIBO; el metano no alcanza 10 ppm."},
@@ -1906,14 +1907,14 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <h2 id="b13"><span class="num">13</span>Dismotilidad del intestino delgado y pseudoobstrucción intestinal crónica</h2>
 <p class="lead">La pseudoobstrucción intestinal crónica (CIPO) es el extremo grave de la dismotilidad: clínica de obstrucción sin causa mecánica. Es infrecuente, pero hay que reconocerla porque evoluciona a falla intestinal y porque cada laparotomía innecesaria la empeora. El manejo es escalonado: nutrición, control del SIBO, procinéticos y, en el extremo, descompresión, nutrición parenteral o trasplante intestinal.</p>
 
-<h3>Fisiología del intestino delgado</h3>
+<h3 id="b13-s1">Fisiología del intestino delgado</h3>
 <ul>
 <li>Contracciones segmentarias (mezcla y absorción) y propulsivas (~1 cm/min).</li>
 <li><b>Complejo motor migratorio</b> en ayuno, cada ~90–120 min: fase I (quiescencia), fase II (actividad irregular), fase III (ráfaga propagada, el «barrido» que previene el SIBO). Lo inducen la motilina (y la eritromicina) y el octreótido.</li>
 <li>Control por el plexo mientérico (motor) y submucoso (secreción), células intersticiales de Cajal (marcapaso) y músculo liso.</li>
 </ul>
 
-<h3>Pseudoobstrucción intestinal crónica</h3>
+<h3 id="b13-s2">Pseudoobstrucción intestinal crónica</h3>
 <div class="perla"><div class="pt"><span>Perlas</span>CIPO</div><dl><dt>Definición</dt><dd>Síntomas y signos de obstrucción intestinal recurrente con imágenes de dilatación, <b>sin lesión obstructiva</b>.</dd><dt>Estudio</dt><dd>Manometría antroduodenal: patrón miopático (contracciones de baja amplitud) o neuropático (contracciones descoordinadas de amplitud normal).</dd></dl><div class="pq"><b>Lo que preguntan</b><ul><li>Buscar causas secundarias: esclerodermia, amiloidosis, paraneoplásico (anti-Hu), hipotiroidismo, fármacos.</li><li>Evitar cirugías innecesarias: las adherencias complican el seguimiento.</li></ul></div></div>
 
 <div class="tw"><table class="sm">
@@ -1931,7 +1932,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <div class="step"><span class="n">4</span><div class="b"><b>Evaluar complicaciones</b>: SIBO (test de aire espirado o aspirado), estado nutricional, micronutrientes.</div></div>
 </div>
 
-<h3>Tratamiento escalonado</h3>
+<h3 id="b13-s3">Tratamiento escalonado</h3>
 <div class="tw"><table class="sm">
 <thead><tr><th style="width:18%">Eje</th><th>Conducta</th><th style="width:30%">Nota</th></tr></thead>
 <tbody>
@@ -1943,7 +1944,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <tr><td><b>Cirugía</b></td><td>Gastrostomía o yeyunostomía de descompresión y alimentación; ostomías de descompresión; resección muy seleccionada. <b>Trasplante intestinal</b> (± multivisceral) en falla intestinal irreversible.</td><td>—</td></tr>
 </tbody></table></div>
 
-<h3>Pseudoobstrucción colónica aguda (síndrome de Ogilvie)</h3>
+<h3 id="b13-s4">Pseudoobstrucción colónica aguda (síndrome de Ogilvie)</h3>
 <div class="perla"><div class="pt"><span>Perlas</span>Síndrome de Ogilvie</div><dl><dt>Tratamiento</dt><dd>Manejo conservador 24–48 h → <b>neostigmina 2 mg IV</b> en 3–5 min con monitoreo (atropina disponible) → descompresión colonoscópica si fracasa.</dd></dl><div class="pq"><b>Lo que preguntan</b><ul><li>Ciego &gt; 12 cm o &gt; 6 días de distensión: alto riesgo de perforación.</li></ul></div></div>
 
 <ul>
@@ -1958,14 +1959,14 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <p><b>Clínica de obstrucción sin causa mecánica por ≥ 6 meses: CIPO.</b> Evitar cirugías y opioides; nutrición primero, rifaximina en ciclos para el SIBO, procinéticos combinados (octreótido nocturno, piridostigmina, prucaloprida) y neostigmina en crisis. Ogilvie: ciego &gt; 12 cm → neostigmina 2 mg IV monitorizado.</p></div>
 
 <div class="autoev">
-<h3>Autoevaluación · bloque 13</h3>
+<h3 id="b13-s5">Autoevaluación · bloque 13</h3>
 <div class="caso"><div class="hd">Caso clínico <span class="lvl">Fellow</span></div><div class="bd">
 <p>Mujer de 48 años con esclerosis sistémica, distensión abdominal recurrente, vómitos y diarrea con esteatorrea; dos laparotomías previas «en blanco». Tomografía: asas de delgado dilatadas sin punto de transición. Bajó 10 kg.</p>
 <details><summary>¿Diagnóstico y plan?</summary><div class="ans">
 <p><b>CIPO secundaria a esclerosis sistémica</b> (miopática o mixta) con SIBO probable (esteatorrea) y desnutrición. Plan: no más laparotomías; evaluación nutricional (dieta líquida o en puré, enteral yeyunal o parenteral según tolerancia); rifaximina en ciclos rotando antibióticos; <b>octreótido 50 µg subcutáneo nocturno</b> (induce el complejo motor migratorio, con evidencia en esclerodermia), solo o con eritromicina o prucaloprida; evitar opioides; micronutrientes (B12, vitaminas liposolubles). Derivar a centro con nutrición parenteral domiciliaria si no logra metas.</p></div></details>
 </div></div>
 
-<h3>Flashcards</h3>
+<h3 id="b13-s6">Flashcards</h3>
 <div class="fc-grid">
 <div class="fc"><div class="q">Definición de CIPO</div><div class="a">Clínica e imágenes de obstrucción sin causa mecánica por ≥ 6 meses.</div><div class="hint">Clic para ver</div></div>
 <div class="fc"><div class="q">Patrón neuropático en manometría antroduodenal</div><div class="a">Contracciones de amplitud normal pero desorganizadas; complejo motor migratorio anormal.</div><div class="hint">Clic para ver</div></div>
@@ -1977,7 +1978,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <div class="fc"><div class="q">Tratamiento de la falla intestinal irreversible</div><div class="a">Nutrición parenteral domiciliaria y trasplante intestinal (± multivisceral).</div><div class="hint">Clic para ver</div></div>
 </div>
 
-<h3>Preguntas</h3>
+<h3 id="b13-s7">Preguntas</h3>
 <div class="qz" data-b="b13"></div>
 <script type="application/json" class="qz-data" data-b="b13">[
 {"p":"¿Cuál es el primer paso ante sospecha de CIPO?","o":["Manometría antroduodenal","Descartar obstrucción mecánica con imágenes y endoscopía","Iniciar neostigmina","Laparotomía exploradora"],"c":1,"e":"La CIPO es un diagnóstico que exige excluir obstrucción mecánica; las laparotomías innecesarias empeoran el pronóstico."},
@@ -2000,7 +2001,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <h2 id="b14"><span class="num">14</span>Trastornos anorrectales: defecación disinérgica, incontinencia fecal, dolor anorrectal y trastornos sensoriales</h2>
 <p class="lead">A diferencia del resto de los TICI, aquí el diagnóstico suele requerir pruebas de función anorrectal. Roma V simplifica la disinergia (una prueba alterada basta), define la incontinencia fecal con ≥ 2 episodios, mantiene los síndromes de dolor anorrectal y agrega los trastornos sensoriales rectales. La biorretroalimentación es el tratamiento con mejor evidencia en disinergia, incontinencia, síndrome del elevador del ano y trastornos sensoriales.</p>
 
-<h3>Qué cambió</h3>
+<h3 id="b14-s1">Qué cambió</h3>
 <div class="tw"><table class="sm cambio">
 <thead><tr><th>Tema</th><th>Roma IV y apuntes del curso</th><th>Roma V</th></tr></thead>
 <tbody>
@@ -2011,7 +2012,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <tr><td>Trastornos sensoriales</td><td class="ant">—</td><td><b>Hiposensibilidad rectal</b> (≥ 2 umbrales &gt; 2 DE sobre lo normal) e <b>hipersensibilidad rectal</b> (≥ 1 umbral &lt; 2 DE bajo lo normal), en pacientes con síntomas de incontinencia o disinergia.</td></tr>
 </tbody></table></div>
 
-<h3>Fisiología esencial</h3>
+<h3 id="b14-s2">Fisiología esencial</h3>
 <ul>
 <li><b>Esfínter anal interno</b> (músculo liso): ~80 % del tono de reposo; continencia en reposo y durante el sueño. <b>Esfínter externo</b> (estriado): contracción voluntaria y urgencia. El <b>puborrectal</b> mantiene el ángulo anorrectal (válvula).</li>
 <li><b>Reflejo rectoanal inhibitorio</b>: la distensión rectal relaja el esfínter interno y permite el «muestreo» (sólido, líquido o gas). Ausente en la enfermedad de Hirschsprung.</li>
@@ -2019,7 +2020,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <li>Defecación normal: aumento de la presión rectal coordinado con relajación del ano y del puborrectal y descenso perineal; el gradiente rectoanal positivo abre el canal.</li>
 </ul>
 
-<h3>Pruebas de función anorrectal</h3>
+<h3 id="b14-s3">Pruebas de función anorrectal</h3>
 <div class="tw"><table class="sm">
 <thead><tr><th style="width:24%">Prueba</th><th>Qué aporta</th><th style="width:30%">Corte o lectura</th></tr></thead>
 <tbody>
@@ -2032,7 +2033,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <div class="box tip"><div class="t">Clasificación de Londres (resumen)</div>
 <p>Parte 1: trastornos del reflejo rectoanal inhibitorio (ausente → Hirschsprung). Parte 2: tono y contractilidad anal (hipotensión, hipocontractilidad, hipertonía). Parte 3: coordinación rectoanal (propulsión pobre, disinergia). Parte 4: sensibilidad rectal (hipo e hipersensibilidad). Cada hallazgo se califica como mayor, menor o no concluyente. Intérprete en el módulo de estudios.</p></div>
 
-<h3>Defecación disinérgica</h3>
+<h3 id="b14-s4">Defecación disinérgica</h3>
 <div class="perla"><div class="pt"><span>Perlas</span>Defecación disinérgica</div><dl><dt>Criterios</dt><dd>Roma V: criterios de constipación funcional o SII-C, más patrón disinérgico en <b>una</b> prueba (probable) o en <b>dos</b> (definitivo): manometría, test de balón (&gt; 1 min) o imagen.</dd><dt>Tratamiento</dt><dd><b>Biorretroalimentación</b> (5–6 sesiones): éxito 70–80 %, superior a placebo, laxantes y relajantes musculares.</dd></dl><div class="pq"><b>Lo que preguntan</b><ul><li>Clasificación de Londres: el patrón «disinérgico» aislado sin test de balón anormal se informa como hallazgo menor.</li></ul></div></div>
 
 <div class="box"><div class="t">F3. Criterios de Roma V</div>
@@ -2050,7 +2051,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <div class="step stop"><span class="n">4</span><div class="b">Toxina botulínica en el puborrectal: evidencia limitada. Cirugía del rectocele solo si es grande, retiene contraste y se reduce con digitación vaginal, tras tratar la disinergia.</div></div>
 </div>
 
-<h3>Incontinencia fecal</h3>
+<h3 id="b14-s5">Incontinencia fecal</h3>
 <div class="perla"><div class="pt"><span>Perlas</span>Incontinencia fecal</div><dl><dt>Tratamiento</dt><dd>Regularizar la consistencia (fibra, loperamida) → biorretroalimentación → neuromodulación sacra en refractarios.</dd></dl><div class="pq"><b>Lo que preguntan</b><ul><li>Preguntar dirigidamente: muchos pacientes no lo refieren espontáneamente.</li><li>Diarrea es el principal factor de riesgo modificable.</li></ul></div></div>
 
 <p>Prevalencia 7–15 % (50–70 % en residencias de adultos mayores); el paciente no la cuenta si no se pregunta. Distinguir <b>urgencia-incontinencia</b> (presión de contracción baja, capacidad rectal reducida, hipersensibilidad) de <b>incontinencia pasiva</b> (presión de reposo baja: esfínter interno, diabetes, esclerodermia) y del manchado por evacuación incompleta. Nocturna: neuropatía autonómica o esfínter interno. Diario de deposiciones con escala de Bristol; puntajes de gravedad (St Mark's/Vaizey y Wexner/Cleveland en el módulo de calculadoras).</p>
@@ -2064,7 +2065,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <tr><td><b>5. Cirugía</b></td><td>Esfinteroplastia en defectos anatómicos (mejoría inicial ~69 % que cae a ~46 % a largo plazo); agentes de abultamiento (dextranómero); ostomía como último recurso.</td></tr>
 </tbody></table></div>
 
-<h3>Dolor anorrectal</h3>
+<h3 id="b14-s6">Dolor anorrectal</h3>
 <div class="tw"><table class="sm">
 <thead><tr><th style="width:20%">Entidad</th><th>Criterios de Roma V</th><th style="width:34%">Tratamiento</th></tr></thead>
 <tbody>
@@ -2073,7 +2074,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <tr><td><b>Proctalgia fugaz</b></td><td>Episodios recurrentes de dolor anorrectal de segundos a minutos, no relacionados con la defecación, sin dolor entre episodios; exclusión de otras causas. Prevalencia 1,5–5,6 %; &lt; 5 crisis al año en la mitad.</td><td>Tranquilizar («inofensivo, desagradable e incurable»). <b>Salbutamol inhalado</b> acorta crisis prolongadas (ensayo); clonidina, nitroglicerina tópica.</td></tr>
 </tbody></table></div>
 
-<h3>Trastornos sensoriales rectales</h3>
+<h3 id="b14-s7">Trastornos sensoriales rectales</h3>
 <ul>
 <li><b>Hiposensibilidad rectal:</b> ≥ 2 umbrales (primera sensación, deseo, urgencia, máxima tolerancia) &gt; 2 DE sobre lo normal en pacientes con síntomas de incontinencia o disinergia; sin enfermedad estructural ni metabólica. Presente en ~24 % de los constipados y 12 % de las incontinencias. Causas: megarrecto, retención crónica, diabetes, opioides, Parkinson, lesión medular; disociación en antecedentes de abuso. Tratamiento: vaciar el recto (laxantes, enemas) y <b>entrenamiento sensorial con balón</b> (jeringa o barostato, bajando de 5–10 mL por insuflación).</li>
 <li><b>Hipersensibilidad rectal:</b> ≥ 1 umbral (deseo, urgencia, máxima tolerancia o dolor; no la primera sensación) &lt; 2 DE bajo lo normal; urgencia, dolor, distensión; asociada a SII e incontinencia de urgencia y a capacidad rectal reducida. Tratamiento: <b>terapia de adaptación sensorial</b> con barostato (6 sesiones en 3 meses; superior a escitalopram en un ensayo), neuromoduladores.</li>
@@ -2085,14 +2086,14 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <p><b>Roma V: disinergia con ≥ 1 síntoma de evacuación difícil y 1 prueba alterada (probable) o ≥ 2 (definitiva); test de balón normal ≤ 1 min.</b> Biorretroalimentación para disinergia, incontinencia, elevador del ano con sensibilidad del puborrectal y trastornos sensoriales. Incontinencia: primero la consistencia (loperamida, fibra), después biorretroalimentación, dispositivos y neuromodulación.</p></div>
 
 <div class="autoev">
-<h3>Autoevaluación · bloque 14</h3>
+<h3 id="b14-s8">Autoevaluación · bloque 14</h3>
 <div class="caso"><div class="hd">Caso clínico <span class="lvl">Residente</span></div><div class="bd">
 <p>Mujer de 61 años, 3 partos vaginales (uno con fórceps), con escapes de deposición líquida sin aviso 3 veces al mes y urgencia; además diarrea leve desde una colecistectomía. Nunca lo había contado. Al tacto: tono de reposo bajo y contracción voluntaria débil.</p>
 <details><summary>¿Cómo lo estudia y trata?</summary><div class="ans">
 <p>Incontinencia fecal (≥ 2 episodios) mixta: pasiva (tono de reposo bajo, esfínter interno) y de urgencia (contracción débil), agravada por diarrea probablemente por malabsorción de ácidos biliares. Estudio: colonoscopía según edad (con biopsias si hay diarrea acuosa), manometría anorrectal de alta resolución con sensibilidad, ecografía endoanal para defectos obstétricos. Tratamiento escalonado: corregir la consistencia (colestiramina de prueba, psyllium, loperamida antes de salir), biorretroalimentación con ejercicios y entrenamiento sensorial; si hay defecto esfinteriano grande y no responde, discutir esfinteroplastia o neuromodulación sacra.</p></div></details>
 </div></div>
 
-<h3>Flashcards</h3>
+<h3 id="b14-s9">Flashcards</h3>
 <div class="fc-grid">
 <div class="fc"><div class="q">Cuántas pruebas alteradas exige Roma V para disinergia</div><div class="a">Una (probable); dos o más (definitiva).</div><div class="hint">Clic para ver</div></div>
 <div class="fc"><div class="q">Corte del test de expulsión de balón</div><div class="a">≤ 1 minuto con 50 mL, sentado.</div><div class="hint">Clic para ver</div></div>
@@ -2104,7 +2105,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <div class="fc"><div class="q">Hipersensibilidad rectal según Roma V</div><div class="a">≥ 1 umbral (no la primera sensación) &lt; 2 DE bajo lo normal.</div><div class="hint">Clic para ver</div></div>
 </div>
 
-<h3>Preguntas</h3>
+<h3 id="b14-s10">Preguntas</h3>
 <div class="qz" data-b="b14"></div>
 <script type="application/json" class="qz-data" data-b="b14">[
 {"p":"Paciente con pujo excesivo y digitación en el 40 % de las deposiciones, que hace 1 deposición diaria. Manometría con gradiente rectoanal normal; test de balón: 3 min. Según Roma V:","o":["No es disinergia: no cumple constipación y solo una prueba es anormal","Disinergia probable: basta 1 síntoma de evacuación difícil y 1 prueba alterada","Debe hacerse defecografía para cumplir 2 pruebas","Disinergia definitiva"],"c":1,"e":"Roma V amplía el espectro de síntomas (no exige constipación) y acepta cualquier prueba alterada: 1 = probable, ≥ 2 = definitiva."},
@@ -2127,7 +2128,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <h2 id="b15"><span class="num">15</span>Dolor centralmente mediado, migraña abdominal, intestino narcótico y neuromoduladores</h2>
 <p class="lead">El dolor abdominal crónico ocupa un continuo: en el SII hay componentes periféricos y centrales; en el síndrome de dolor abdominal centralmente mediado (CAPS) dominan la sensibilización central y la falla de la inhibición descendente (dolor nociplástico). Roma V redefine el CAPS por la continuidad del dolor, incorpora la migraña abdominal del adulto y mantiene el síndrome de intestino narcótico. Los neuromoduladores son el eje farmacológico de todo el campo, y saber usarlos es una competencia básica del gastroenterólogo.</p>
 
-<h3>Qué cambió</h3>
+<h3 id="b15-s1">Qué cambió</h3>
 <div class="tw"><table class="sm cambio">
 <thead><tr><th>Tema</th><th>Roma IV</th><th>Roma V</th></tr></thead>
 <tbody>
@@ -2136,7 +2137,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <tr><td>Intestino narcótico</td><td class="ant">Síndrome de intestino narcótico.</td><td>Síndrome de intestino narcótico o <b>hiperalgesia digestiva inducida por opioides</b>; criterios sin cambios de fondo.</td></tr>
 </tbody></table></div>
 
-<h3>Abordaje del dolor abdominal crónico</h3>
+<h3 id="b15-s2">Abordaje del dolor abdominal crónico</h3>
 <ul>
 <li>«Lo atípico de lo frecuente es más probable que lo típico de lo infrecuente»: recordar biliar, celiaquía, pared abdominal, isquemia mesentérica, Crohn, pancreatitis crónica, endometriosis.</li>
 <li><b>Dolor de pared abdominal</b> (atrapamiento del nervio cutáneo anterior): dolor localizado en un punto, <b>signo de Carnett positivo</b> (aumenta al tensar el abdomen), alodinia cutánea. Responde a infiltración con anestésico ± corticoide (diagnóstica y terapéutica).</li>
@@ -2144,7 +2145,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <li>Mecanismo por capas: somático (piel y músculo), visceral (mucosa a serosa), neuropático y central.</li>
 </ul>
 
-<h3>Criterios de Roma V</h3>
+<h3 id="b15-s3">Criterios de Roma V</h3>
 <div class="tw"><table class="sm">
 <thead><tr><th style="width:22%">Trastorno</th><th>Criterios</th></tr></thead>
 <tbody>
@@ -2153,7 +2154,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <tr><td><b>D3. Intestino narcótico</b></td><td>Todos: (1) dolor abdominal crónico o recurrente, la mayoría de los días, tratado con opioides; (2) no explicado por un diagnóstico digestivo actual o previo (puede haber EII o pancreatitis, pero no justifican el dolor); (3) ≥ 2 de: el dolor empeora o no se resuelve con dosis continuas o crecientes; empeora marcadamente al bajar la dosis y mejora al reponerla («subir y caer»); progresión de frecuencia, duración e intensidad.</td></tr>
 </tbody></table></div>
 
-<h3>Tratamiento del CAPS</h3>
+<h3 id="b15-s4">Tratamiento del CAPS</h3>
 <ul>
 <li><b>Relación terapéutica:</b> escuchar activamente, aceptar el CAPS como trastorno real, empatizar, validar, metas realistas, educar, negociar, mantener límites. Responsabilidad compartida; preferir la consulta presencial.</li>
 <li><b>Fármacos:</b> la categoría A responde más a neuromoduladores centrales; la B puede beneficiarse además de periféricos (antiespasmódicos, laxantes). Analgésicos comunes aportan poco; <b>opioides contraindicados</b>.</li>
@@ -2162,10 +2163,10 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <li>Derivar a salud mental o a una unidad multidisciplinaria de dolor según gravedad y discapacidad.</li>
 </ul>
 
-<h3>Migraña abdominal</h3>
+<h3 id="b15-s5">Migraña abdominal</h3>
 <p>Crisis: hidratación, antieméticos, analgesia (paracetamol IV, antiinflamatorio), <b>triptanes</b>; opioides solo si es imprescindible. Profilaxis: propranolol, flunarizina, ciproheptadina o pizotifeno, topiramato o valproato, y neuromoduladores (tricíclicos o duloxetina) con TCC. En estudio: lasmiditán y anticuerpos anti-CGRP. Se asocia a vómito cíclico.</p>
 
-<h3>Intestino narcótico: desintoxicación</h3>
+<h3 id="b15-s6">Intestino narcótico: desintoxicación</h3>
 <div class="perla"><div class="pt"><span>Perlas</span>Intestino narcótico</div><dl><dt>Definición</dt><dd>Dolor abdominal crónico que empeora paradójicamente con dosis continuas o crecientes de opioides.</dd><dt>Tratamiento</dt><dd>Relación terapéutica y neuromodulador primero; luego descenso programado del opioide, con <b>clonidina desde el 50 % retirado</b> (0,1 mg c/8–12 h) para la abstinencia; laxantes.</dd></dl></div>
 
 <div class="algo">
@@ -2176,7 +2177,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <div class="step stop"><span class="n">5</span><div class="b">Resultado: desintoxicación exitosa en ~90 %, 60 % respondedores; pero 43 % reinicia opioides a 3 meses. Quien se mantiene sin opioides tiene menos dolor. Ketamina en dosis baja: alternativa emergente.</div></div>
 </div>
 
-<h3>Neuromoduladores en la práctica</h3>
+<h3 id="b15-s7">Neuromoduladores en la práctica</h3>
 <div class="perla"><div class="pt"><span>Perlas</span>Neuromoduladores: elección</div><dl><dt>Tratamiento</dt><dd><b>ATC</b> (amitriptilina, imipramina, nortriptilina) para dolor y diarrea; <b>ISRS</b> para ansiedad y constipación; <b>IRSN</b> (duloxetina) para dolor con comorbilidad; <b>mirtazapina</b> para náuseas, saciedad y baja de peso; <b>pregabalina</b> para hipersensibilidad.</dd></dl><div class="pq"><b>Lo que preguntan</b><ul><li>Dosis bajas (10–25 mg) y titulación lenta; el efecto aparece en 4–8 semanas.</li><li>Explicar que se usan como neuromoduladores, no como antidepresivos.</li></ul></div></div>
 
 <div class="box tip"><div class="t">Principios</div>
@@ -2218,14 +2219,14 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <p><b>Dolor continuo = CAPS (A sin relación, B modulado pero sin pausas); episódico con intercrisis = migraña abdominal; dolor que sube y cae con el opioide = intestino narcótico.</b> Neuromoduladores: empezar bajo, subir lento, esperar 3–4 semanas, mantener 6–12 meses, potenciar en vez de maximizar, y cuidar QT, serotonina y anticolinérgicos.</p></div>
 
 <div class="autoev">
-<h3>Autoevaluación · bloque 15</h3>
+<h3 id="b15-s8">Autoevaluación · bloque 15</h3>
 <div class="caso"><div class="hd">Caso clínico <span class="lvl">Fellow</span></div><div class="bd">
 <p>Mujer de 44 años con dolor abdominal difuso diario, que «nunca se le quita», empeora un poco al comer; 6 años de evolución, múltiples consultas en urgencias, colecistectomía y laparoscopía diagnóstica normales. Usa tramadol 100 mg c/8 h y, desde hace 4 meses, el dolor es más intenso y se dispara cuando atrasa la dosis. Fibromialgia y ansiedad.</p>
 <details><summary>¿Diagnóstico y plan?</summary><div class="ans">
 <p>CAPS <b>categoría B</b> (dolor continuo modulado por la comida) con <b>síndrome de intestino narcótico</b> superpuesto (empeora con dosis continuas y «sube y cae» con cada dosis). Plan: relación terapéutica explícita y metas; iniciar duloxetina 30 → 60 mg (dolor, fibromialgia, ansiedad; no constipa) y TCC; luego desintoxicación planificada del tramadol con descenso progresivo, clonidina desde el 50 % y quetiapina en dosis baja para sueño; PEG para la constipación. Cuidado: tramadol + duloxetina aumenta el riesgo serotoninérgico durante la superposición. Derivación a unidad de dolor o salud mental.</p></div></details>
 </div></div>
 
-<h3>Flashcards</h3>
+<h3 id="b15-s9">Flashcards</h3>
 <div class="fc-grid">
 <div class="fc"><div class="q">Característica que define el CAPS en Roma V</div><div class="a">Dolor abdominal continuo (en vigilia).</div><div class="hint">Clic para ver</div></div>
 <div class="fc"><div class="q">CAPS categoría B</div><div class="a">Dolor continuo cuya intensidad varía con eventos fisiológicos (comer, defecar, menstruar), sin pausas.</div><div class="hint">Clic para ver</div></div>
@@ -2237,7 +2238,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <div class="fc"><div class="q">Dosis de venlafaxina para efecto noradrenérgico</div><div class="a">≥ 150 mg/día.</div><div class="hint">Clic para ver</div></div>
 </div>
 
-<h3>Preguntas</h3>
+<h3 id="b15-s10">Preguntas</h3>
 <div class="qz" data-b="b15"></div>
 <script type="application/json" class="qz-data" data-b="b15">[
 {"p":"Paciente con dolor abdominal intermitente 6 días al mes, que alivia con la defecación y se asocia a deposiciones blandas. ¿Diagnóstico según Roma V?","o":["CAPS categoría B","SII","Migraña abdominal","Intestino narcótico"],"c":1,"e":"El dolor no es continuo: es SII. El CAPS exige dolor continuo; la categoría B permite modulación por eventos fisiológicos, pero sin pausas."},
@@ -2260,7 +2261,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <h2 id="b16"><span class="num">16</span>Laboratorio de neurogastroenterología: qué pedir, cómo prepararlo y cómo leerlo</h2>
 <p class="lead">Cada estudio funcional contesta una pregunta distinta, y si se pide sin pregunta o con la preparación equivocada, no contesta ninguna. Este bloque reúne indicación, preparación, umbrales y errores de interpretación de los estudios que se piden en la consulta. Los intérpretes interactivos están en el módulo de estudios.</p>
 
-<h3>Qué cambió</h3>
+<h3 id="b16-s1">Qué cambió</h3>
 <div class="tw"><table class="sm cambio">
 <thead><tr><th>Estudio</th><th>Antes</th><th>Ahora</th></tr></thead>
 <tbody>
@@ -2271,7 +2272,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <tr><td>Manometría anorrectal</td><td class="ant">Disinergia por 2 pruebas.</td><td>Roma V: 1 prueba (probable); protocolo del Grupo Internacional y clasificación de Londres.</td></tr>
 </tbody></table></div>
 
-<h3>Qué estudio pedir según la pregunta</h3>
+<h3 id="b16-s2">Qué estudio pedir según la pregunta</h3>
 <div class="tw"><table class="sm">
 <thead><tr><th style="width:30%">Pregunta clínica</th><th>Estudio</th><th style="width:30%">Condición clave</th></tr></thead>
 <tbody>
@@ -2289,7 +2290,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <tr><td>Diarrea acuosa crónica en &gt; 45–50 años</td><td>Colonoscopía con biopsias escalonadas</td><td>Aunque la mucosa sea normal</td></tr>
 </tbody></table></div>
 
-<h3>Preparación y suspensión de fármacos</h3>
+<h3 id="b16-s3">Preparación y suspensión de fármacos</h3>
 <div class="perla"><div class="pt"><span>Perlas</span>Preparación del paciente</div><dl><dt>Estudio</dt><dd>pHmetría diagnóstica: IBP 7 días, anti-H2 3 días, alginatos 24 h. Vaciamiento gástrico: glicemia controlada y sin procinéticos u opioides. Test de aire espirado: 4 semanas sin antibióticos.</dd></dl><div class="pq"><b>Lo que preguntan</b><ul><li>Un estudio con mala preparación no se interpreta: se repite.</li></ul></div></div>
 
 <div class="tw"><table class="sm">
@@ -2304,7 +2305,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <tr><td>Test de <i>H. pylori</i> (aliento o antígeno)</td><td>IBP · antibióticos y bismuto</td><td>2 semanas · 4 semanas</td></tr>
 </tbody></table></div>
 
-<h3>Lectura rápida de cada estudio</h3>
+<h3 id="b16-s4">Lectura rápida de cada estudio</h3>
 <div class="grid2">
 <div class="card"><h5>pH-impedancia (Lyon 2.0)</h5><ul>
 <li>TEA &lt; 4 % normal; 4–6 % zona gris; &gt; 6 % ERGE.</li>
@@ -2359,14 +2360,14 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <p><b>Definir la pregunta antes de pedir el examen:</b> diagnosticar (sin tratamiento), evaluar control (con tratamiento) o caracterizar un mecanismo (impedancia y provocación). Preparación correcta o el examen no sirve.</p></div>
 
 <div class="autoev">
-<h3>Autoevaluación · bloque 16</h3>
+<h3 id="b16-s5">Autoevaluación · bloque 16</h3>
 <div class="caso"><div class="hd">Caso clínico <span class="lvl">Residente</span></div><div class="bd">
 <p>Le llegan tres órdenes para revisar: (1) «pHmetría con IBP» en un paciente que nunca tuvo diagnóstico de ERGE y quiere operarse; (2) «vaciamiento gástrico de 2 h» en una diabética con HbA1c 11 % y semaglutida; (3) «tránsito colónico» en una mujer con digitación para evacuar que no ha tenido estudio anorrectal.</p>
 <details><summary>¿Qué corrige en cada una?</summary><div class="ans">
 <p>(1) Sin ERGE probada, el estudio debe ser <b>sin tratamiento</b> (suspender IBP 7 días): cápsula 96 h o pH-impedancia 24 h, más endoscopía tras 2–4 semanas sin IBP y manometría antes de operar. (2) Vaciamiento de <b>4 h</b>, con glicemia controlada y tras suspender el agonista de GLP-1 el tiempo adecuado; si no, el resultado no se interpreta. (3) Primero <b>manometría anorrectal y test de balón</b>: la digitación sugiere disinergia y hasta dos tercios de los disinérgicos tienen tránsito lento secundario.</p></div></details>
 </div></div>
 
-<h3>Flashcards</h3>
+<h3 id="b16-s6">Flashcards</h3>
 <div class="fc-grid">
 <div class="fc"><div class="q">Suspensión de IBP antes de pHmetría sin tratamiento</div><div class="a">7 días (antagonistas H2 3 días; alginatos 24 h).</div><div class="hint">Clic para ver</div></div>
 <div class="fc"><div class="q">Registro mínimo válido de pH-impedancia</div><div class="a">16–18 h.</div><div class="hint">Clic para ver</div></div>
@@ -2378,7 +2379,7 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <div class="fc"><div class="q">Hidrógeno basal &gt; 20 ppm en test de aire espirado</div><div class="a">Mala preparación (dieta o ayuno inadecuados): repetir.</div><div class="hint">Clic para ver</div></div>
 </div>
 
-<h3>Preguntas</h3>
+<h3 id="b16-s7">Preguntas</h3>
 <div class="qz" data-b="b16"></div>
 <script type="application/json" class="qz-data" data-b="b16">[
 {"p":"Paciente sin diagnóstico previo de ERGE, con pirosis pese a IBP. Se quiere saber si tiene reflujo patológico. ¿Estudio correcto?","o":["pH-impedancia con IBP","Cápsula 96 h sin tratamiento, suspendiendo IBP 7 días","Manometría de alta resolución","FLIP"],"c":1,"e":"La pregunta es diagnóstica: sin tratamiento, y Lyon 2.0 prefiere el registro prolongado."},
@@ -2412,12 +2413,13 @@ Los apuntes del curso se respetan, pero cuando un dato quedó superado (Lyon 2.0
 <tr><td><b>Simposio de Gastroenterología Clínica Dávila 2026</b></td><td>Reflujo refractario (Tortorolo).</td></tr>
 <tr><td><b>Guías y consensos</b></td><td>Lyon 2.0, Chicago 4.0, ACG 2022 (ERGE), ACG 2021 (SII), AGA 2022 (SII-C y SII-D), AGA-ACG 2023 (constipación), ACG/CAG 2017 y BSG 2022 (dispepsia), ACG 2022 y AGA 2025 (gastroparesia), ACG 2020 (acalasia y SIBO), ACG 2021 (anorrectal), ACG 2025 (EoE), clasificación de Londres, actualizaciones AGA (eructos y distensión 2023, P-CAB 2024, hiperemesis cannabinoide 2024). Citadas al final de cada bloque.</td></tr>
 </tbody></table></div>
-<p class="small">Generado con <code>fuentes/guia/actualizar.py</code> el 2026-11-15.</p>
+<p class="small">Generado con <code>fuentes/guia/actualizar.py</code> el 2026-11-24.</p>
 
 </div>
 </main>
 </div>
 <a class="volver" href="./">← Repositorio</a>
+<script src="buscador.js"></script>
 <script>
 /* ---------- Navegación activa ---------- */
 var links=[].slice.call(document.querySelectorAll('#navlinks a'));
@@ -2429,11 +2431,27 @@ function onScroll(){
 }
 window.addEventListener('scroll',onScroll); onScroll();
 
-/* ---------- Filtro del índice ---------- */
-document.getElementById('navsearch').addEventListener('input',function(e){
-  var q=e.target.value.toLowerCase();
-  links.forEach(function(a){ a.style.display = a.textContent.toLowerCase().indexOf(q)>-1 ? '' : 'none'; });
-});
+/* ---------- Buscador: destino dentro de la guía ---------- */
+(function(){
+  if(!window.Buscador) return;
+  Buscador.prefer='g';
+  function irSeccion(id,q){
+    var el=document.getElementById(id); if(!el) return;
+    if(document.body.classList.contains('solo-perlas')){ var sp=document.getElementById('soloperlas'); if(sp) sp.click(); }
+    var mk=Buscador.resaltar(el,q,function(e){return /^H[23]$/.test(e.nodeName);});
+    var y=(mk||el).getBoundingClientRect().top+window.scrollY-(mk?120:16);
+    window.scrollTo({top:Math.max(0,y),behavior:'smooth'});
+  }
+  Buscador.alAbrir=function(it,q){
+    if(it.m!=='g') return false;
+    var id=it.h.split('#')[1];
+    try{ history.pushState(null,'','?q='+encodeURIComponent(q)+'#'+id); }catch(e){ location.hash=id; }
+    irSeccion(id,q); return true;
+  };
+  function desdeUrl(){ var id=location.hash.slice(1), q=Buscador.qDeUrl(); if(id&&q) setTimeout(function(){irSeccion(id,q);},60); }
+  window.addEventListener('load',desdeUrl);
+  window.addEventListener('popstate',desdeUrl);
+})();
 
 /* ---------- Flashcards ---------- */
 [].forEach.call(document.querySelectorAll('.fc'),function(c){

@@ -66,12 +66,13 @@ def main():
         if res["errs"]:
             sys.exit(f"{pag}.js:\n  " + "\n  ".join(res["errs"]))
         html = (tpl.replace("{{TITULO}}", cfg["titulo"]).replace("{{MARCA}}", cfg["marca"])
-                   .replace("{{DESC}}", cfg["desc"]).replace("{{CSS}}", CSS_EXTRA).replace("{{DATOS}}", datos))
+                   .replace("{{DESC}}", cfg["desc"]).replace("{{PREF}}", {"calc": "c", "estudios": "e", "fenotipos": "f"}[pag]).replace("{{CSS}}", CSS_EXTRA).replace("{{DATOS}}", datos))
         d = RAIZ / pag; d.mkdir(exist_ok=True)
         (d / "index.html").write_text(html, encoding="utf-8")
         print(f"{pag}/index.html: {res['n']} herramientas, {res['nej']} ejemplos validados")
         total += res["n"]
     val.unlink()
+    import runpy, pathlib as _p; runpy.run_path(str(_p.Path(__file__).resolve().parents[2] / "fuentes/buscador/actualizar.py"), run_name="__main__")
 
 if __name__ == "__main__":
     main()

@@ -186,6 +186,7 @@ def main():
     d = RAIZ / "atlas"; d.mkdir(exist_ok=True)
     (d / "index.html").write_text(out, encoding="utf-8")
     print(f"atlas/index.html: {len(SEC)} láminas, {len(PANELES)} patrones de Chicago")
+    import runpy, pathlib as _p; runpy.run_path(str(_p.Path(__file__).resolve().parents[2] / "fuentes/buscador/actualizar.py"), run_name="__main__")
 
 if __name__ == "__main__":
     main()

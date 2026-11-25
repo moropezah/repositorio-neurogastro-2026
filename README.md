@@ -16,6 +16,7 @@ Sitio estático (HTML, CSS y JavaScript sin dependencias), instalable como aplic
 | 06 | Calculadoras | `calc/` | Criterios de Roma V, GerdQ, RSI, Eckardt, equivalencia de IBP, GCSI, Sigstad, IBS-SSS, Agachan-Wexner, Wexner, St Mark's, PHQ-9, GAD-7, PHQ-15. |
 | 07 | Atlas | `atlas/` | Esquemas SVG propios (Chicago 4.0, Lyon 2.0, FLIP, Bristol, disinergia, mecanismos). |
 | 08 | Pacientes | `pacientes/` | Hojas imprimibles en lenguaje simple. |
+| 10 | Buscador global | `buscador.js` · `buscador-indice.json` | Busca en guía (por sección), consulta rápida, vademécum (fármacos, líneas y combinaciones), fenotipador, intérpretes, calculadoras, atlas y hojas para pacientes. Se abre con el botón «Buscar», con «/» o Ctrl/Cmd+K, y desde el campo del índice de la guía; lleva al punto exacto y resalta el término. No indexa el quiz (para no mostrar respuestas). |
 | 09 | Quiz | `quiz/` | Banco de casos clínicos con modos estudio y examen, flashcards, progreso y sincronización con Google Sheets. |
 
 ## Cómo se actualiza
@@ -29,6 +30,7 @@ python3 fuentes/atlas/construir.py          # atlas/
 python3 fuentes/pacientes/construir.py      # pacientes/
 python3 fuentes/quiz/actualizar.py          # quiz/ (valida el banco con Node)
 python3 fuentes/repositorio/actualizar.py   # consulta rápida y vademécum dentro de index.html
+python3 fuentes/buscador/actualizar.py      # índice del buscador (lo corren solos los demás constructores)
 python3 fuentes/repositorio/portada.py      # portada, módulos y cifras de index.html
 ```
 

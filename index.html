@@ -334,6 +334,15 @@ table.kt2 td:nth-child(2){min-width:200px}
 .eje .fl a:hover{border-color:var(--marino);color:var(--marino)}
 @media (max-width:700px){.ctl div,.cmb div{grid-template-columns:1fr;gap:2px}table.kt2 td:nth-child(2){min-width:150px}}
 </style>
+<style>
+.bq-hero{display:flex;align-items:center;gap:10px;width:min(620px,100%);margin:22px 0 4px;padding:12px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--fg-3,#6b7684);font:500 .95rem var(--ff-b,Inter),sans-serif;cursor:text;text-align:left;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.bq-hero:hover{border-color:var(--marino)}
+.bq-hero span{flex:1}
+.bq-hero kbd{font:600 .72rem Inter,sans-serif;border:1px solid var(--line);border-radius:5px;padding:1px 7px;color:var(--fg-2)}
+@media (max-width:600px){.bq-hero kbd{display:none}}
+</style>
+<link rel="stylesheet" href="buscador.css">
+<script src="buscador.js" defer></script>
 </head>
 <body>
 <header class="top">
@@ -362,6 +371,7 @@ table.kt2 td:nth-child(2){min-width:200px}
     <p class="eyebrow">Postgrado Gastroenterología · Universidad de los Andes</p>
     <h1>Neurogastroenterología:<br><em>repositorio de estudio 2026</em></h1>
     <p class="sub">Guía de repaso de los trastornos de la interacción cerebro-intestino y de la motilidad, con Roma V, Chicago 4.0 y Lyon 2.0; herramientas para decidir el tratamiento por fenotipo e interpretar los estudios funcionales; fármacos con su disponibilidad en Chile, calculadoras, atlas, material para pacientes y un banco de casos propio.</p>
+    <button type="button" class="bq-hero" onclick="window.Buscador&&Buscador.abrir()" aria-label="Buscar en todo el repositorio"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg><span>Buscar en guía, consulta rápida, vademécum y herramientas…</span><kbd>/</kbd></button>
     <div class="meta">
       <span>Actualizado octubre 2026</span>
       <span>Roma V · Chicago 4.0 · Lyon 2.0</span>
@@ -475,7 +485,7 @@ table.kt2 td:nth-child(2){min-width:200px}
 </div>
 <div id="r-lista">
 
-<details class="ac" data-k="roma v tici criterios clínicos banderas rojas alarma estudio mínimo">
+<details class="ac" id="r-1" data-k="roma v tici criterios clínicos banderas rojas alarma estudio mínimo">
 <summary>Roma V: diagnóstico positivo y banderas rojas</summary><div class="in">
 <div class="tw"><table class="t"><thead><tr><th>Elemento</th><th>Roma V</th><th>Conducta</th></tr></thead><tbody>
 <tr><td><strong>Criterios clínicos</strong></td><td>Síntomas ~8 semanas, molestos, con el patrón del trastorno</td><td>Diagnóstico positivo en la primera consulta</td></tr>
@@ -487,7 +497,7 @@ table.kt2 td:nth-child(2){min-width:200px}
 <p class="ref">Bloque 1 · Roma V 2026</p>
 </div></details>
 
-<details class="ac" data-k="erge lyon 2.0 pirosis regurgitación tea phmetría impedancia mnbi la b esofagitis">
+<details class="ac" id="r-2" data-k="erge lyon 2.0 pirosis regurgitación tea phmetría impedancia mnbi la b esofagitis">
 <summary>ERGE: Lyon 2.0 en una tabla</summary><div class="in">
 <div class="tw"><table class="t"><thead><tr><th>Métrica</th><th>Concluyente a favor</th><th>Zona gris</th><th>En contra</th></tr></thead><tbody>
 <tr><td><strong>Endoscopía</strong></td><td>LA B, C o D · Barrett largo · estenosis péptica</td><td>LA A</td><td>Normal (no excluye)</td></tr>
@@ -500,7 +510,7 @@ table.kt2 td:nth-child(2){min-width:200px}
 <p class="ref">Bloques 2 y 16 · Intérprete de pH-impedancia</p>
 </div></details>
 
-<details class="ac" data-k="ibp p-cab vonoprazán tegoprazán fexuprazán refractaria escalonado optimizar">
+<details class="ac" id="r-3" data-k="ibp p-cab vonoprazán tegoprazán fexuprazán refractaria escalonado optimizar">
 <summary>Pirosis que no responde al IBP</summary><div class="in">
 <div class="algo-r"><ol>
 <li><strong>Verificar adherencia y horario</strong>: IBP 30–60 min antes del desayuno; dosis doble antes de desayuno y cena por 8 semanas.</li>
@@ -512,7 +522,7 @@ table.kt2 td:nth-child(2){min-width:200px}
 <p class="ref">Bloques 2 y 3 · Fenotipador de reflujo</p>
 </div></details>
 
-<details class="ac" data-k="pirosis funcional hipersensibilidad reflujo dolor torácico globo disfagia funcional roma v esófago">
+<details class="ac" id="r-4" data-k="pirosis funcional hipersensibilidad reflujo dolor torácico globo disfagia funcional roma v esófago">
 <summary>TICI esofágicos: cómo separar los fenotipos</summary><div class="in">
 <div class="tw"><table class="t"><thead><tr><th>Fenotipo</th><th>TEA</th><th>Asociación sintomática</th><th>Tratamiento</th></tr></thead><tbody>
 <tr><td><strong>ERGE no erosiva</strong></td><td>&gt; 6 %</td><td>Cualquiera</td><td>Antisecretor</td></tr>
@@ -524,7 +534,7 @@ table.kt2 td:nth-child(2){min-width:200px}
 <p class="ref">Bloque 3 · Roma V</p>
 </div></details>
 
-<details class="ac" data-k="rumiación eructo supragástrico r-cpd abelchia incapacidad eructar botox respiración diafragmática">
+<details class="ac" id="r-5" data-k="rumiación eructo supragástrico r-cpd abelchia incapacidad eructar botox respiración diafragmática">
 <summary>Rumiación, eructos e incapacidad para eructar</summary><div class="in">
 <div class="tw"><table class="t"><thead><tr><th>Entidad</th><th>Pista</th><th>Confirmación</th><th>Tratamiento</th></tr></thead><tbody>
 <tr><td><strong>Rumiación</strong></td><td>Regurgitación sin esfuerzo minutos después de comer; remasticación</td><td>Manometría con impedancia y comida real: onda R &gt; 30 mmHg</td><td>Respiración diafragmática con biorretroalimentación; baclofeno</td></tr>
@@ -534,7 +544,7 @@ table.kt2 td:nth-child(2){min-width:200px}
 <p class="ref">Bloque 4</p>
 </div></details>
 
-<details class="ac" data-k="disfagia eoe esofagitis eosinofílica biopsias eosinófilos erefs dupilumab budesonida">
+<details class="ac" id="r-6" data-k="disfagia eoe esofagitis eosinofílica biopsias eosinófilos erefs dupilumab budesonida">
 <summary>Disfagia y esofagitis eosinofílica</summary><div class="in">
 <div class="tw"><table class="t"><thead><tr><th>Paso</th><th>Criterio</th><th>Conducta</th></tr></thead><tbody>
 <tr><td><strong>Triaje</strong></td><td>Orofaríngea frente a esofágica; sólidos (mecánica) frente a sólidos y líquidos (motora)</td><td>Orofaríngea: videofluoroscopía y fonoaudiología</td></tr>
@@ -546,7 +556,7 @@ table.kt2 td:nth-child(2){min-width:200px}
 <p class="ref">Bloque 5</p>
 </div></details>
 
-<details class="ac" data-k="chicago 4.0 manometría irp dci dl acalasia egjoo iem espasmo jackhammer ausente">
+<details class="ac" id="r-7" data-k="chicago 4.0 manometría irp dci dl acalasia egjoo iem espasmo jackhammer ausente">
 <summary>Chicago 4.0: lectura jerárquica</summary><div class="in">
 <div class="tw"><table class="t"><thead><tr><th>IRP</th><th>Cuerpo esofágico</th><th>Diagnóstico</th></tr></thead><tbody>
 <tr><td rowspan="3"><strong>Elevado</strong> (&gt; 15 supino / &gt; 12 sentado)</td><td>100 % fallidas, sin presurización</td><td>Acalasia tipo I</td></tr>
@@ -561,7 +571,7 @@ table.kt2 td:nth-child(2){min-width:200px}
 <p class="ref">Bloque 6 · Intérprete de manometría esofágica</p>
 </div></details>
 
-<details class="ac" data-k="dispepsia funcional sdp sde distrés posprandial dolor epigástrico pylori endoscopía procinético">
+<details class="ac" id="r-8" data-k="dispepsia funcional sdp sde distrés posprandial dolor epigástrico pylori endoscopía procinético">
 <summary>Dispepsia funcional: SDP y SDE</summary><div class="in">
 <div class="tw"><table class="t"><thead><tr><th></th><th>SDP</th><th>SDE</th></tr></thead><tbody>
 <tr><td><strong>Criterio</strong></td><td>Plenitud posprandial o saciedad precoz molestas ≥ 2 días/semana</td><td>Dolor o ardor epigástrico molesto ≥ 1 día/semana</td></tr>
@@ -573,7 +583,7 @@ table.kt2 td:nth-child(2){min-width:200px}
 <p class="ref">Bloque 7 · Fenotipador de dispepsia</p>
 </div></details>
 
-<details class="ac" data-k="gastroparesia vaciamiento gástrico 4 h metoclopramida eritromicina g-poem náuseas vómitos cíclicos cannabinoides">
+<details class="ac" id="r-9" data-k="gastroparesia vaciamiento gástrico 4 h metoclopramida eritromicina g-poem náuseas vómitos cíclicos cannabinoides">
 <summary>Gastroparesia y síndromes de náuseas y vómitos</summary><div class="in">
 <div class="tw"><table class="t"><thead><tr><th>Entidad</th><th>Criterio</th><th>Conducta</th></tr></thead><tbody>
 <tr><td><strong>Gastroparesia</strong></td><td>Retención &gt; 10 % a las 4 h (glicemia &lt; 275 mg/dL)</td><td>Dieta de partículas pequeñas; metoclopramida ≤ 12 semanas; eritromicina; G-POEM en refractarios</td></tr>
@@ -584,7 +594,7 @@ table.kt2 td:nth-child(2){min-width:200px}
 <p class="ref">Bloque 8 · Intérprete de vaciamiento gástrico</p>
 </div></details>
 
-<details class="ac" data-k="sii intestino irritable bristol subtipos sii-d sii-c sii-m fodmap rifaximina amitriptilina">
+<details class="ac" id="r-10" data-k="sii intestino irritable bristol subtipos sii-d sii-c sii-m fodmap rifaximina amitriptilina">
 <summary>SII: criterios, subtipos y tratamiento por fenotipo</summary><div class="in">
 <div class="tw"><table class="t"><thead><tr><th>Subtipo</th><th>Bristol (días con deposiciones anormales)</th><th>Específico</th></tr></thead><tbody>
 <tr><td><strong>SII-C</strong></td><td>&gt; 25 % tipo 1–2 y &lt; 25 % tipo 6–7</td><td>Psyllium, PEG, prucaloprida (linaclotida donde exista)</td></tr>
@@ -595,7 +605,7 @@ table.kt2 td:nth-child(2){min-width:200px}
 <p class="ref">Bloque 9 · Fenotipador de SII</p>
 </div></details>
 
-<details class="ac" data-k="diarrea crónica acuosa ácidos biliares colitis microscópica calprotectina celíaca sehcat colestiramina budesonida">
+<details class="ac" id="r-11" data-k="diarrea crónica acuosa ácidos biliares colitis microscópica calprotectina celíaca sehcat colestiramina budesonida">
 <summary>Diarrea crónica funcional: qué descartar</summary><div class="in">
 <div class="tw"><table class="t"><thead><tr><th>Sospecha</th><th>Pista</th><th>Estudio</th><th>Tratamiento</th></tr></thead><tbody>
 <tr><td><strong>Celíaca</strong></td><td>Siempre en diarrea</td><td>Anti-TG2 IgA + IgA total</td><td>Dieta sin gluten</td></tr>
@@ -607,7 +617,7 @@ table.kt2 td:nth-child(2){min-width:200px}
 <p class="ref">Bloque 10</p>
 </div></details>
 
-<details class="ac" data-k="constipación crónica funcional tránsito lento disinergia peg prucaloprida bisacodilo laxantes aga acg 2023">
+<details class="ac" id="r-12" data-k="constipación crónica funcional tránsito lento disinergia peg prucaloprida bisacodilo laxantes aga acg 2023">
 <summary>Constipación crónica: escalera terapéutica</summary><div class="in">
 <div class="algo-r"><ol>
 <li><strong>Base</strong>: fibra soluble (psyllium) y agua; revisar fármacos; tacto rectal con pujo.</li>
@@ -620,7 +630,7 @@ table.kt2 td:nth-child(2){min-width:200px}
 <p class="ref">Bloque 11 · Fenotipador de constipación</p>
 </div></details>
 
-<details class="ac" data-k="distensión hinchazón sibo imo test aire espirado hidrógeno metano rifaximina neomicina">
+<details class="ac" id="r-13" data-k="distensión hinchazón sibo imo test aire espirado hidrógeno metano rifaximina neomicina">
 <summary>Distensión, SIBO e IMO</summary><div class="in">
 <div class="tw"><table class="t"><thead><tr><th>Pregunta</th><th>Criterio</th><th>Conducta</th></tr></thead><tbody>
 <tr><td><strong>¿Hay SIBO?</strong></td><td>H₂ ≥ 20 ppm sobre el basal en ≤ 90 min</td><td>Rifaximina 14 días (Chile: 400 mg c/8 h)</td></tr>
@@ -631,7 +641,7 @@ table.kt2 td:nth-child(2){min-width:200px}
 <p class="ref">Bloque 12 · Intérprete de test de aire espirado</p>
 </div></details>
 
-<details class="ac" data-k="cipo pseudoobstrucción ogilvie neostigmina ciego octreótido piridostigmina">
+<details class="ac" id="r-14" data-k="cipo pseudoobstrucción ogilvie neostigmina ciego octreótido piridostigmina">
 <summary>Pseudoobstrucción crónica y síndrome de Ogilvie</summary><div class="in">
 <div class="tw"><table class="t"><thead><tr><th>Entidad</th><th>Criterio</th><th>Conducta</th></tr></thead><tbody>
 <tr><td><strong>CIPO</strong></td><td>Obstrucción recurrente sin lesión mecánica</td><td>Causas secundarias; nutrición; octreótido nocturno, piridostigmina, prucaloprida; rifaximina en ciclos; evitar cirugía y opioides</td></tr>
@@ -641,7 +651,7 @@ table.kt2 td:nth-child(2){min-width:200px}
 <p class="ref">Bloque 13</p>
 </div></details>
 
-<details class="ac" data-k="anorrectal manometría londres disinergia balón incontinencia fecal proctalgia elevador biorretroalimentación">
+<details class="ac" id="r-15" data-k="anorrectal manometría londres disinergia balón incontinencia fecal proctalgia elevador biorretroalimentación">
 <summary>Anorrectal: disinergia, incontinencia y dolor</summary><div class="in">
 <div class="tw"><table class="t"><thead><tr><th>Entidad</th><th>Criterio</th><th>Tratamiento</th></tr></thead><tbody>
 <tr><td><strong>Defecación disinérgica</strong></td><td>1 prueba anormal = probable; 2 = definitiva (manometría, balón &gt; 1 min, imagen)</td><td>Biorretroalimentación (70–80 %)</td></tr>
@@ -652,7 +662,7 @@ table.kt2 td:nth-child(2){min-width:200px}
 <p class="ref">Bloque 14 · Intérprete de manometría anorrectal</p>
 </div></details>
 
-<details class="ac" data-k="neuromoduladores amitriptilina nortriptilina duloxetina mirtazapina pregabalina escitalopram buspirona dosis">
+<details class="ac" id="r-16" data-k="neuromoduladores amitriptilina nortriptilina duloxetina mirtazapina pregabalina escitalopram buspirona dosis">
 <summary>Neuromoduladores: cuál y en qué dosis</summary><div class="in">
 <div class="tw"><table class="t"><thead><tr><th>Fármaco</th><th>Dosis</th><th>Cuándo</th><th>Cuidado</th></tr></thead><tbody>
 <tr><td><strong>Amitriptilina</strong></td><td>10 → 25–50 mg noche</td><td>Dolor, diarrea, insomnio</td><td>Constipación, sequedad, QT</td></tr>
@@ -666,7 +676,7 @@ table.kt2 td:nth-child(2){min-width:200px}
 <p class="ref">Bloque 15 · Vademécum</p>
 </div></details>
 
-<details class="ac" data-k="preparación suspensión fármacos phmetría manometría vaciamiento test aliento ibp antes del examen">
+<details class="ac" id="r-17" data-k="preparación suspensión fármacos phmetría manometría vaciamiento test aliento ibp antes del examen">
 <summary>Preparación de los estudios funcionales</summary><div class="in">
 <div class="tw"><table class="t"><thead><tr><th>Estudio</th><th>Suspender</th></tr></thead><tbody>
 <tr><td><strong>pHmetría sin tratamiento</strong></td><td>IBP y P-CAB 7 días · anti-H2 3 días · alginatos 24 h</td></tr>
@@ -760,10 +770,23 @@ table.kt2 td:nth-child(2){min-width:200px}
   });
   var VISTAS=['inicio','rapida','vademecum','fuentes'], tabs=document.getElementById('tabs');
   function ir(nombre){
+    var sub=''; nombre=nombre.split('?')[0]; if(nombre.indexOf('/')>0){ sub=nombre.split('/')[1]; nombre=nombre.split('/')[0]; }
     if(VISTAS.indexOf(nombre)<0) nombre='inicio';
     VISTAS.forEach(function(v){var el=document.getElementById('v-'+v); if(el) el.classList.toggle('on',v===nombre);});
     Array.prototype.forEach.call(tabs.querySelectorAll('a'),function(a){a.setAttribute('aria-current',a.getAttribute('href')==='#'+nombre?'true':'false');});
     window.scrollTo(0,0);
+    if(sub) setTimeout(function(){ irA(nombre,sub); },30);
+  }
+  /* destino de un resultado del buscador: abre la tarjeta o el fármaco y resalta el término */
+  function irA(vista,sub){
+    var el=null;
+    if(vista==='rapida'){ var rq=document.getElementById('rq'); if(rq&&rq.value){ rq.value=''; rq.dispatchEvent(new Event('input')); } el=document.getElementById(sub); }
+    else if(vista==='vademecum'&&window.vadIr){ el=window.vadIr(sub); }
+    if(!el) return;
+    if(el.nodeName==='DETAILS') el.open=true;
+    var mk=window.Buscador?Buscador.resaltar(el,Buscador.qDeUrl(),function(){return true;}):null;
+    var y=(mk||el).getBoundingClientRect().top+window.scrollY-(mk?140:84);
+    window.scrollTo({top:Math.max(0,y),behavior:'smooth'});
   }
   window.addEventListener('hashchange',function(){ir((location.hash||'#inicio').slice(1));});
   ir((location.hash||'#inicio').slice(1));
@@ -870,7 +893,7 @@ table.kt2 td:nth-child(2){min-width:200px}
   }
   /* ----- líneas ----- */
   (function(){var L=$('vad-lin'); if(!L||!D.lineas) return;
-    L.innerHTML=D.lineas.map(function(x){return '<details class="ac"><summary>'+x.e+'</summary><div class="in"><div class="tw"><table class="t"><thead><tr><th>Línea</th><th>Esquema</th><th>Cuándo esperar respuesta · falla</th></tr></thead><tbody>'+x.r.map(function(r){return '<tr><td><strong>'+r[0]+'</strong></td><td>'+r[1]+'</td><td>'+r[2]+'</td></tr>';}).join('')+'</tbody></table></div></div></details>';}).join('');
+    L.innerHTML=D.lineas.map(function(x,i){return '<details class="ac" id="l-'+i+'"><summary>'+x.e+'</summary><div class="in"><div class="tw"><table class="t"><thead><tr><th>Línea</th><th>Esquema</th><th>Cuándo esperar respuesta · falla</th></tr></thead><tbody>'+x.r.map(function(r){return '<tr><td><strong>'+r[0]+'</strong></td><td>'+r[1]+'</td><td>'+r[2]+'</td></tr>';}).join('')+'</tbody></table></div></div></details>';}).join('');
   })();
   /* ----- vistas ----- */
   var VV={far:['vad-far'],kin:['vad-kin'],comb:['vad-comb'],lin:['vad-lin']};
@@ -888,6 +911,14 @@ table.kt2 td:nth-child(2){min-width:200px}
   var q=$('vq');
   q.addEventListener('input',function(){st.q=q.value; pintar(); if(st.q.trim()) [].forEach.call(document.querySelectorAll('#vad-lista details.ac'),function(d){d.open=true;});});
   pintar(); pintarKin(); pintarComb(); vista(st.v||'far');
+  /* destino del buscador: f-ID (fármaco), l-N (línea) o comb (combinaciones) */
+  window.vadIr=function(id){
+    if(id==='comb'){ vista('comb'); return $('vad-comb'); }
+    if(id.indexOf('l-')===0){ vista('lin'); return $(id); }
+    vista('far'); st.q=''; $('vq').value=''; st.g='all'; st.c='all';
+    chips('vad-g',[['all','Todos los grupos']].concat(D.grupos),'g'); chips('vad-c',CF,'c'); pintar();
+    return $(id);
+  };
 })();
 </script>
 <style>
